@@ -1,0 +1,49 @@
+body
+  background-color: $body-background
+
+%block-padding
+  padding: $block-padding
+
+%block-wide-element,
+.block-wide-element
+  padding:
+    left: $block-padding
+    right: $block-padding
+  margin:
+    left: - $block-padding
+    right: - $block-padding
+
+
+%block-wide-divider,
+.block-wide-divider
+  margin:
+    left: - $block-padding
+    right: - $block-padding
+
+
+%app-fixed-block
+  +box-sizing(border-box)
+  position: fixed
+  top: 0
+  bottom: 0
+  height: 100%
+  @extend %block-padding
+
+.app-left-sidebar,
+.app-main-content,
+  @extend %app-fixed-block
+
+
+.app-left-sidebar
+  left: 0
+  width: $left-sidebar-width
+  overflow:
+    y: auto
+  z-index: $left-sidebar-z-index
+
+.app-main-content
+  width: auto
+  left: $left-sidebar-width
+  right: 0
+  overflow:
+    y: auto

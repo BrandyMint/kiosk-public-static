@@ -1,0 +1,2 @@
+require './libs'
+require './static'

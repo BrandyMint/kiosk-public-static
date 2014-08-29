@@ -1,0 +1,91 @@
+$products-list-item-image-width: 318px
+$products-list-item-height: 380px
+
+%products__list-item
+  margin:
+    top: $grid-gutter-width/2
+    bottom: $grid-gutter-width/2
+  cursor: pointer
+  +transition(color 0.2s ease)
+  +antialiased
+
+.products__list-item-new
+  @extend %products__list-item
+  position: relative
+  .products__list-item-image
+    border: 1px solid $gray-lighter
+    +transition(background 0.2s ease)
+    &:hover
+      background: $gray-lightest
+
+.products__list-item-new-label
+  position: absolute
+  top: 50%
+  margin-top: 42px
+  left: 0
+  width: $products-list-item-image-width
+  max-width: 100%
+  text-align: center
+  +breakpoint('phone-landscape')
+    display: none
+
+.products__list-item
+  @extend %products__list-item
+  position: relative
+  &:hover
+    color: $link-hover-color
+
+.products__list-item-image
+  max-width: 100%
+
+
+.products__list-item-title
+  font-size: 1.2em
+  margin:
+    top: 0.5em
+  white-space: nowrap
+  text-overflow: ellipsis
+  overflow: hidden
+
+
+.products__list-item-notification
+  position: absolute
+  top: 0
+  left: 0
+  width: 16px
+  height: 16px
+  margin:
+    top: - (16px/2)
+    left: - (16px/2)
+  border-radius: 100%
+  background-color: $red
+
+.products-new__title
+  font-size: $font-size-h1*0.85
+  text-transform: uppercase
+  letter-spacing: 1px
+  padding-top: 3px
+
+.products__new-form-submit-btn
+  @extend .btn
+  @extend .btn-block
+  @extend .btn-yellow
+  font-size: $font-size-h2
+  padding: 1em
+  height: auto
+  margin-top: $grid-gutter-width*2
+
+.products__new-form-add-categories-btn
+  @extend .btn
+  @extend .form-control
+  margin:
+    left: - $grid-gutter-width - 5px
+  padding: $block-padding - 1px
+  &:hover, &:focus
+    border-bottom-color: $yellow
+    color: $link-hover-color
+
+.products__new-form-select
+  @extend .login__form-select--no-icon
+  padding-left: 0
+

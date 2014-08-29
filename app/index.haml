@@ -1,0 +1,19 @@
+!!! 5
+%html
+  %head
+    @@include('./shared/_head.haml')
+  %body
+    .navbar-transparent
+      .container
+        %h1.text-center wannabe static
+    .login__content.login__content--fullscreen
+      .login__block
+        -#.alert.alert-danger
+        .login__form
+          -# pages = ['signup.html', 'signup_errors.html', 'signup_pin.html', 'login.html', 'login_errors.html', 'reset_password.html', 'orders.html', 'products.html', 'products_new.html']
+          -# for page of pages
+            - page = pages[page]
+            %h3
+              %a{href: "#{page}"}
+                = page
+

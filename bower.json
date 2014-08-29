@@ -1,0 +1,15 @@
+{
+  "name": "kiosk-static",
+  "version": "0.0.1",
+  "dependencies": {
+    "compass-mixins": "~1.0.1",
+    "bootstrap-sass-official": "~3.2.0",
+    "font-awesome": "~4.1.0"
+  },
+  "devDependencies": {
+    "jquery": "latest",
+    "modernizr": "~2.8.2",
+    "momentjs": "~2.7.0",
+    "jquery.role": "git://github.com/kossnocorp/role#~1.3.1"
+  }
+}

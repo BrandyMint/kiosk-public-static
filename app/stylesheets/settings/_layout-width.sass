@@ -1,0 +1,40 @@
+// Turns off responsive layouts
+
+$layout-min-width: $container-md
+
+=reset-responsive-cols
+  @each $bp in xs, sm, md, lg
+    @for $i from 1 through 12
+      .col-#{$bp}-#{$i}
+        float: left
+        width: percentage(($i / $grid-columns))
+      .col-#{$bp}-offset-#{$i}
+        margin-left: percentage(($i / $grid-columns))
+
+body,
+  &.non-responsive
+    &, .app-container
+      min-width: $layout-min-width
+  &.responsive
+    &, .app-container
+      min-width: 0
+
+
+.container
+  +container-fixed
+  max-width: none !important
+  overflow: visible
+  @media (max-width: $screen-sm)
+    width: $layout-min-width
+    +reset-responsive-cols
+  @media (max-width: $screen-md)
+    width: $layout-min-width
+    +reset-responsive-cols
+  //
+    @media (min-width: $screen-md-min)
+      width: $layout-min-width
+      +reset-responsive-cols
+    @media (min-width: $screen-lg-min)
+      width: $container-lg
+      +reset-responsive-cols
+
