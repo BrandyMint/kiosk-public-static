@@ -1,5 +1,27 @@
-.navbar-transparent
-  @extend .navbar
-  @extend .navbar-fixed-top
-  background: none
+$navbar-logo-width: 164px
+$navbar-logo-height: 105px
+
+.application-navbar
+  padding:
+    top: $grid-gutter-width*2
+    bottom: $grid-gutter-width*2
+
+.navbar-brand-link
+  display: block
+  text-align: center
+
+.navbar-brand-image
+  display: inline-block
+  max-width: 100%
+
+
+.navbar-cart-btn
+  @extend .btn
+  height: 59px
+  padding: 18px 30px
+  font-size: $font-size-base
+  +link-colors(#fff, #fff)
+  background-color: $gray-lighter
+  &:hover
+    background-color: $link-color-hover
 

@@ -1,0 +1,17 @@
+.categories-nav
+  @extend .nav
+  text-align: justify
+  font-size: 0
+  &:after
+    content: ""
+    display: inline-block
+    width: 100%
+  & > li
+    display: inline-block
+    text-align: left
+    & > a
+      font-size: 18px
+      text-transform: uppercase
+      padding: $grid-gutter-width/2
+      &, &:hover
+        background: none

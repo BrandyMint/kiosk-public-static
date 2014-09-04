@@ -1,0 +1,43 @@
+!!! 5
+%html
+  %head
+    @@include('./shared/_head.haml')
+  %body
+    .application-navbar
+      .container
+        .row
+          .col-sm-4
+            Магазин современных украшений
+            %br
+            = "+7 903 595 1737"
+            %br
+            = "+7 495 999 7939"
+          .col-sm-4
+            %a.navbar-brand-link{href: 'welcome.html'}
+              %img.navbar-brand-image{src: 'images/logo.svg'}
+          .col-sm-4
+            %a.navbar-cart-btn.pull-right
+              Корзина &mdash; пока пусто
+            .clearfix
+    .application-content
+      .container
+        %ul.categories-nav
+          - categories = ['Классика', 'Как-карат', 'Рич', 'Поп', 'Браслеты–ниточки', 'Кольца-трансформеры' ]
+          - for c in categories
+            %li
+              %a{href: '#'}= "#{c}"
+        .welcome-carousel
+          .carousel.slide
+            .carousel-inner.welcome-carousel__inner
+              %div.welcome-carousel__item.item.active.welcome-carousel__item-bg{ style: "background-image: url('images/product-cover.jpg')"}
+                .container
+                  .row
+                    .col-sm-5.col-sm-offset-7
+                      .welcome-carousel__item-container
+                        .welcome-carousel__item-content
+                          .welcome-carousel__item-title
+                            Моно-серьга
+                          .welcome-carousel__item-text
+                            имитация тоннеля серебряная черненая с черными цирконами
+                          .welcome-carousel__item-price 8 900 р.
+

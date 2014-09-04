@@ -10,8 +10,8 @@
       .login__block
         -#.alert.alert-danger
         .login__form
-          -# pages = ['signup.html', 'signup_errors.html', 'signup_pin.html', 'login.html', 'login_errors.html', 'reset_password.html', 'orders.html', 'products.html', 'products_new.html']
-          -# for page of pages
+          - pages = ['welcome.html']
+          - for page of pages
             - page = pages[page]
             %h3
               %a{href: "#{page}"}
