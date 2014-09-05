@@ -1,3 +1,13 @@
+$container-tablet:             ((714px + $grid-gutter-width))
+$container-sm:                 $container-tablet
+
+$container-desktop:            ((942px + $grid-gutter-width))
+$container-md:                 $container-desktop
+
+$container-large-desktop:      ((1002px + $grid-gutter-width))
+$container-lg:                 $container-large-desktop
+
+
 $gray-darker:            lighten(#000, 20%)
 $gray-dark:              lighten(#000, 30%)
 $gray:                   lighten(#000, 40%)
@@ -9,13 +19,14 @@ $blue: #009BFF
 $blue-dark: darken($blue, 20%)
 $red: #f6584f
 $green: #3fd4ad
+$green-dark: darken($green, 10%)
 $orange: #ffae00
 $yellow: #FFD400
 $purple: rgb(158, 0, 93)
 
 $brand-color: $green
 $brand-color-light: lighten($green, 10%)
-$brand-color-dark: darken($green, 10%)
+$brand-color-dark:  $green-dark
 $line-color: $gray-lightest
 
 $text-color: $gray-darker
@@ -26,7 +37,8 @@ $text-color-lighter: lighten($text-color, 20%)
 $link-color: $gray-dark
 $link-color-hover: $green
 $link-hover-color: $link-color-hover
-$link-color-hover-light: lighten($link-color-hover, 30%)
+$link-hover-color-light: lighten($link-color-hover, 30%)
+$link-hover-color-dark: $green-dark
 
 $border-radius-base: 0
 $input-border-radius: 0
@@ -73,5 +85,7 @@ $hr-border: $gray-lighter
 $input-background-inactive: rgba(#fff, 0.85)
 
 $left-sidebar-z-index: 300
+
+
 
 

@@ -12,6 +12,11 @@ $welcome-carousel-height: 480px
   height: $welcome-carousel-height
   overflow: hidden
   position: relative
+  cursor: pointer
+  &:hover
+    .welcome-carousel__item-content
+      color: $link-hover-color-dark
+  
 
 %welcome-carousel__item-block
   position: absolute
@@ -34,12 +39,15 @@ $welcome-carousel-height: 480px
     size: cover
 
 .welcome-carousel__item-content
+  // fix center-block-content behavior with 99% width
   width: 99%
   +center-block-content
   text-align: left
   color: #000
-  padding: $grid-gutter-width/2
+  padding:
+    right: $grid-gutter-width
   +antialiased
+  +transition(color 0.2s ease)
   a
     +link-colors(#000, $link-color)
 
@@ -47,10 +55,16 @@ $welcome-carousel-height: 480px
   font:
     size: 36px
     weight: bold
+  text-transform: uppercase
   margin-top: 0
 
-.welcome-carousel__item-text
+.welcome-carousel__item-text,
+.welcome-carousel__item-price
   font-size: 21px
+
+.welcome-carousel__item-price
+  font-weight: bold
+  margin-top: 0.7em
 
 .welcome-carousel__btn
   @extend .btn
