@@ -43,7 +43,7 @@
 
         .products__list
           .row
-            - for i in [1..6]
+            - for i in [1..5]
               .col-md-4.col-sm-6
                 .products__list-item
                   - if i == 1
@@ -54,6 +54,10 @@
                     Моно-серьга имитация тоннеля серебряная с белыми цирконами
                   .products__list-item-price
                     8 900 руб.
+            .col-md-4.col-sm-6
+              .products__list-item
+                .products__list-item-image-block
+                  %img.products__list-item-image{src: 'images/product-more.svg'}
 
       .application-footer
         .container
