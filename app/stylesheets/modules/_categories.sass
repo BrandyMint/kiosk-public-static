@@ -10,9 +10,10 @@
     display: inline-block
     text-align: left
     & > a
-      font-size: 18px
+      font-size: 16px
       text-transform: uppercase
       padding: $grid-gutter-width/2
       +antialiased
+      +link-colors($categories-link-color, $link-color-hover)
       &:hover
         background: none
