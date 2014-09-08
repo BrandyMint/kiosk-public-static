@@ -1,0 +1,81 @@
+!!! 5
+%html
+  %head
+    @@include('./shared/_head.haml')
+  %body
+    .application-navbar
+      .container
+        .row
+          .col-sm-4
+            Магазин современных украшений
+            %br
+            = "+7 903 595 1737"
+            %br
+            = "+7 495 999 7939"
+          .col-sm-4
+            %a.navbar-brand-link{href: 'welcome.html'}
+              %img.navbar-brand-image{src: 'images/logo.svg'}
+          .col-sm-4
+            %a.navbar-cart-btn.navbar-cart-btn-empty.pull-right
+              Корзина &mdash; пока пусто
+            .clearfix
+    .application-content
+      .container
+        %ul.categories-nav
+          - categories = ['Классика', 'Как-карат', 'Рич', 'Поп', 'Браслеты–ниточки', 'Кольца-трансформеры' ]
+          - for c in categories
+            %li
+              %a{href: '#'}= "#{c}"
+        .products__show
+          .row
+            .col-sm-6
+              .products__show-item-image-block
+                %img.products__show-item-image{ src: "images/product-square-large.png" }
+            .col-sm-6
+              .products__show-item-content
+                .products__show-item-category
+                  Поп
+                .products__show-item-title
+                  Моно-серьга имитация тоннеля
+                  серебряная золоченая с белыми
+                  цирконами
+                  %nobr.products__show-item-articul Арт: 1687
+                .row
+                  .col-xs-6
+                    .products__show-item-price
+                      8 900 руб.
+                  .col-xs-6
+                    %a.products__show-item-cart-btn{href: 'cart.html'}
+                      В корзину
+                .row
+                  .products__show-item-details
+                    .col-md-8
+                      .row
+                        - details = [{'Серебро': '12 К'}, {'Цирконы': '10 К'}, {'Кристаллов': '1294'}, {'Вес': '3 гр' }]
+                        - for obj, i in details
+                          .col-xs-6
+                            - for key of obj
+                              = key
+                              = obj[key]
+                          - if i % 2
+                            .row
+                            %hr.mini
+
+
+
+      .application-footer
+        .container
+          .row
+            .col-sm-8
+              %ul.footer-nav
+                - footer_links = ['Доставка', 'Форма оплаты', 'Контакты', 'О нас', 'Новости']
+                - for l in footer_links
+                  %li
+                    %a{href: '#'}= "#{l}"
+            .col-sm-4
+              %ul.footer-nav.pull-right
+                - footer_social = ['Instagram', 'Facebook']
+                - for l in footer_social
+                  %li
+                    %a{href: '#'}= "#{l}"
+              .clearfix

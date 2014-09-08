@@ -1,0 +1,17 @@
+%cart-btn
+  @extend .btn
+  height: 59px
+  padding: 18px 30px
+  font-size: $font-size-base
+  +link-colors(#fff, #fff)
+  background-color: $gray-darker
+  &:hover
+    background-color: $link-color-hover
+
+%cart-btn-disabled
+  background-color: $gray-lighter
+  &:hover
+    background-color: $link-color-hover
+
+
+

@@ -1,6 +1,7 @@
 $products-list-item-image-width: 228px
 $products-list-item-height: 228px
 $products-form-images-list-padding: 12px
+$products-show-image-width: 477px
 
 %products__list-item
   margin:
@@ -42,4 +43,50 @@ $products-form-images-list-padding: 12px
     weight: bold
     size: 18px
   margin-top: 0.5em
+
+
+
+.products__show
+  margin:
+    top: $grid-gutter-width
+    bottom: $grid-gutter-width*2
+
+.products__show-item-content
+  padding-top: $grid-gutter-width*3
+
+.products__show-item-image
+  max-width: 100%
+
+.products__show-item-category
+  font:
+    size: 14px
+    weight: bold
+  text-transform: uppercase
+
+.products__show-item-title
+  font:
+    size: 26px
+    weight: normal
+  margin-bottom: 0.7em
+
+.products__show-item-articul
+  font:
+    size: $font-size-base
+    weight: normal
+  color: $gray
+
+.products__show-item-price
+  font:
+    size: 24px
+    weight: bold
+  padding-top: 0.5em
+
+.products__show-item-details
+  font:
+    size: $font-size-base
+  margin-top: $grid-gutter-width*1.5
+
+.products__show-item-cart-btn
+  @extend %cart-btn
+  display: block
 

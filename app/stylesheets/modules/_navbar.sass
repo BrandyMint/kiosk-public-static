@@ -14,14 +14,8 @@ $navbar-logo-height: 105px
   display: inline-block
   max-width: 100%
 
-
 .navbar-cart-btn
-  @extend .btn
-  height: 59px
-  padding: 18px 30px
-  font-size: $font-size-base
-  +link-colors(#fff, #fff)
-  background-color: $gray-lighter
-  &:hover
-    background-color: $link-color-hover
+  @extend %cart-btn
+  &.navbar-cart-btn-empty
+    @extend %cart-btn-disabled
 

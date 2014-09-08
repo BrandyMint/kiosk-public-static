@@ -3,6 +3,8 @@
   %head
     @@include('./shared/_head.haml')
   %body
+    %script{src: 'scripts/bundle.js'}
+
     .application-navbar
       .container
         .row
@@ -16,7 +18,7 @@
             %a.navbar-brand-link{href: 'welcome.html'}
               %img.navbar-brand-image{src: 'images/logo.svg'}
           .col-sm-4
-            %a.navbar-cart-btn.pull-right
+            %a.navbar-cart-btn.navbar-cart-btn-empty.pull-right
               Корзина &mdash; пока пусто
             .clearfix
     .application-content
@@ -45,7 +47,7 @@
           .row
             - for i in [1..5]
               .col-md-4.col-sm-6
-                .products__list-item
+                .products__list-item{role: 'jump', 'data-href': 'product.html'}
                   - if i == 1
                     .products__list-item-notification
                   .products__list-item-image-block
