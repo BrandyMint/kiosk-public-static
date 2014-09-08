@@ -1,0 +1,62 @@
+!!! 5
+%html
+  %head
+    @@include('./shared/_head.haml')
+  %body
+    .application-navbar
+      .container
+        .row
+          .col-sm-4
+            Магазин современных украшений
+            %br
+            = "+7 903 595 1737"
+            %br
+            = "+7 495 999 7939"
+          .col-sm-4
+            %a.navbar-brand-link{href: 'welcome.html'}
+              %img.navbar-brand-image{src: 'images/logo.svg'}
+          .col-sm-4
+            %a.navbar-cart-btn.navbar-cart-btn-empty.pull-right
+              Корзина &mdash; пока пусто
+            .clearfix
+    .application-content
+      .container
+        %ul.categories-nav
+          - categories = ['Классика', 'Как-карат', 'Рич', 'Поп', 'Браслеты–ниточки', 'Кольца-трансформеры' ]
+          - for c in categories
+            %li
+              %a{href: '#'}= "#{c}"
+        .products__show
+          .col-lg-8.col-lg-offset-2
+            %h1.page-title Корзина
+            %table.table
+              - for i in [1..5]
+                %tr
+                  %td
+                    %img{ src: "images/product-thumb.png", width: 46, height: 46}
+                  %td
+                    Моно-серьга имитация тоннеля серебряная с белыми цирконами
+                  %td
+                    %nobr 1 штука
+                  %td.text-right
+                    %nobr
+                      %strong
+                        8 900 руб.
+
+
+      .application-footer
+        .container
+          .row
+            .col-sm-8
+              %ul.footer-nav
+                - footer_links = ['Доставка', 'Форма оплаты', 'Контакты', 'О нас', 'Новости']
+                - for l in footer_links
+                  %li
+                    %a{href: '#'}= "#{l}"
+            .col-sm-4
+              %ul.footer-nav.pull-right
+                - footer_social = ['Instagram', 'Facebook']
+                - for l in footer_social
+                  %li
+                    %a{href: '#'}= "#{l}"
+              .clearfix
