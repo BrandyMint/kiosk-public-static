@@ -92,7 +92,7 @@ gulp.task "fonts", ->
 
 gulp.task "assets", ->
   gulp
-    .src("app/{api,stylesheets,includes.fonts}/**/*.{less,sass,css,json,html,haml,js,eot,svg,ttf,woff}")
+    .src("app/{api,stylesheets,includes,fonts}/**/*.{less,sass,css,json,html,haml,js,eot,svg,ttf,woff}")
     .pipe gulp.dest("dist/")
 
 # HTML
