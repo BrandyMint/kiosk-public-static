@@ -70,3 +70,26 @@ $welcome-carousel-height: 480px
   @extend .btn
   @extend .btn-white__white
   +antialiased
+
+.carousel
+  .carousel-control
+    display: block
+    background: none
+    cursor: pointer
+    text-shadow: none
+    +link-colors($gray, $link-hover-color)
+    font-size: 30px
+
+.carousel-control-icon
+  position: absolute
+  top: 50%
+  left: 0
+  width: 100%
+  text-align: center
+  z-index: 5
+  display: inline-block
+  height: $grid-gutter-width
+  margin-top: - $grid-gutter-width/2
+
+      
+  

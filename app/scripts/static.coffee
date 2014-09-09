@@ -1,4 +1,12 @@
 $ ->
+  $('@carousel').carousel()
+  $('[data-slide-to]').on 'click', () ->
+    slide = $(@).data('slide-to')
+    target = $(@).data('target')
+    $(target).carousel(slide)
+
+  $('@product-show-image').on 'click', () ->
+    $('@product-modal').modal()
 
   $('@jump').on 'click', (e) ->
     href = $(this).data('href')

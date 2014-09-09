@@ -1,6 +1,6 @@
 $products-list-item-image-width: 228px
 $products-list-item-height: 228px
-$products-form-images-list-padding: 12px
+$products-form-images-list-padding: $grid-gutter-width
 $products-show-image-width: 477px
 
 %products__list-item
@@ -54,8 +54,39 @@ $products-show-image-width: 477px
 .products__show-item-content
   padding-top: $grid-gutter-width*3
 
+.products__show-item-image-block
+  text-align: center
+  padding:
+    left: $grid-gutter-width
+    right: $grid-gutter-width
+  cursor: pointer
+
 .products__show-item-image
   max-width: 100%
+  display: inline-block
+  margin: 0 auto
+
+.products__show-images-list
+  margin:
+    left: - $products-form-images-list-padding/2
+    right: - $products-form-images-list-padding/2
+
+.products__show-image-thumb-block
+  @extend .col-xs-4
+  padding: $products-form-images-list-padding/2
+  cursor: pointer
+  &:hover
+    .products__show-image-thumb-remove
+      display: block
+
+.products__show-image-thumb
+  position: relative
+  max-width: 100%
+  +transition(opacity 0.2s ease)
+  &:hover
+    +opacity(0.7)
+
+
 
 .products__show-item-category
   font:
@@ -84,9 +115,14 @@ $products-show-image-width: 477px
 .products__show-item-details
   font:
     size: $font-size-base
-  margin-top: $grid-gutter-width*1.5
+  margin:
+    top: $grid-gutter-width*1.5
+    bottom: $grid-gutter-width
 
 .products__show-item-cart-btn
   @extend %cart-btn
   display: block
 
+
+.product-show-modal-image
+  max-width: 100%

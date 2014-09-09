@@ -3,6 +3,7 @@
   %head
     @@include('./shared/_head.haml')
   %body
+    %script{src: 'scripts/bundle.js'}
     .application-navbar
       .container
         .row
@@ -29,8 +30,24 @@
         .products__show
           .row
             .col-sm-6
-              .products__show-item-image-block
-                %img.products__show-item-image{ src: "images/product-square-large.png" }
+              .carousel.slide{role: 'carousel product-show-carousel'}
+                .carousel-inner
+                  - for i in [0..3]
+                    - if i == 0
+                      - item_class = 'active'
+                    - else
+                      - item_class = ''
+                    .products__show-item-image-block.item{class: "#{item_class}", role: 'product-show-image'}
+                      %img.products__show-item-image{ src: "images/product-square-large.png" }
+                .left.carousel-control{data: {target: '[role*="product-show-carousel"]', 'slide-to' => 'prev'} }
+                  %span.fa.fa-angle-left.carousel-control-icon
+                .right.carousel-control{data: {target: '[role*="product-show-carousel"]', 'slide-to' => 'next'} }
+                  %span.fa.fa-angle-right.carousel-control-icon
+
+              .products__show-images-list
+                - for i in [0..3]
+                  .products__show-image-thumb-block{data: {target: '[role*="product-show-carousel"]', 'slide-to' => i} }
+                    %img.products__show-image-thumb{:src => "images/product-square.png"}
             .col-sm-6
               .products__show-item-content
                 .products__show-item-category
@@ -47,8 +64,8 @@
                   .col-xs-6
                     %a.products__show-item-cart-btn{href: 'cart.html'}
                       В корзину
-                .row
-                  .products__show-item-details
+                .products__show-item-details
+                  .row
                     .col-md-8
                       .row
                         - details = [{'Серебро': '12 К'}, {'Цирконы': '10 К'}, {'Кристаллов': '1294'}, {'Вес': '3 гр' }]
@@ -60,7 +77,8 @@
                           - if i % 2
                             .row
                             %hr.mini
-
+                .products__show-item-description
+                  Make peace, not war! Настоящий блокбастер среди украшений - серебряная моносерьга в виде пули Wanna?Be! - попала в самое сердце столичных модниц. Инкрустированный цирконами аксессуар не оставил и знаменитую на весь мир икону стилю, Рианну. Известная дива не раз дополняла этим аксессуаром свои образы. Рекомендуем надевать кулон вместе с белыми майками, кружевными эспадрильями и джинсами бойфренда.
 
 
       .application-footer
@@ -79,3 +97,26 @@
                   %li
                     %a{href: '#'}= "#{l}"
               .clearfix
+
+    .modal.orders-modal.fade{"aria-hidden" => "true", "aria-labelledby" => "", :role => "product-modal", :tabindex => "-1"}
+      .modal-dialog
+        .modal-content{role: 'modal-content'}
+          .carousel.slide{role: 'carousel product-show-carousel'}
+            .carousel-inner
+              - for i in [0..3]
+                - if i == 0
+                  - item_class = 'active'
+                - else
+                  - item_class = ''
+                .item.products__show-item-image-block{class: "#{item_class}", role: 'product-show-image'}
+                  %img.products__show-item-image{ src: "images/product-square-large.png" }
+            .left.carousel-control{data: {target: '[role*="product-show-carousel"]', 'slide-to' => 'prev'} }
+              %span.fa.fa-angle-left.carousel-control-icon
+            .right.carousel-control{data: {target: '[role*="product-show-carousel"]', 'slide-to' => 'next'} }
+              %span.fa.fa-angle-right.carousel-control-icon
+
+            -#.products__show-images-list
+              - for i in [0..3]
+                .products__show-image-thumb-block{data: {target: '[role*="product-show-carousel"]', 'slide-to' => i} }
+                  %img.products__show-image-thumb{:src => "images/product-square.png"}
+
