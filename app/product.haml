@@ -56,29 +56,42 @@
                   Моно-серьга имитация тоннеля
                   серебряная золоченая с белыми
                   цирконами
-                  %nobr.products__show-item-articul Арт: 1687
+                .products__show-item-price
+                  8 900 руб.
                 .row
                   .col-xs-6
-                    .products__show-item-price
-                      8 900 руб.
+                    -#%select.plain-select__select--single
+                      -#%option{selected: 'selected'} Выберите размер
+                    .dropdown
+                      %a.dropdown-select-btn{href: '#', 'data-toggle' => 'dropdown'} Выберите размер
+                      %ul.dropdown-menu
+                        - sizes = ['15', '14', '13']
+                        - for s, i in sizes
+                          - if i == 1
+                            - li_class = 'disabled'
+                          - else
+                            - li_class = ''
+                          %li{class: "#{li_class}"}
+                            %a
+                              = "Размер #{s}"
+                              - if i == 1
+                                &ndash; нет в наличии
+
+
                   .col-xs-6
                     %a.products__show-item-cart-btn{href: 'cart.html'}
                       В корзину
-                .products__show-item-details
-                  .row
-                    .col-md-8
-                      .row
-                        - details = [{'Серебро': '12 К'}, {'Цирконы': '10 К'}, {'Кристаллов': '1294'}, {'Вес': '3 гр' }]
-                        - for obj, i in details
-                          .col-xs-6
-                            - for key of obj
-                              = key
-                              = obj[key]
-                          - if i % 2
-                            .row
-                            %hr.mini
                 .products__show-item-description
                   Make peace, not war! Настоящий блокбастер среди украшений - серебряная моносерьга в виде пули Wanna?Be! - попала в самое сердце столичных модниц. Инкрустированный цирконами аксессуар не оставил и знаменитую на весь мир икону стилю, Рианну. Известная дива не раз дополняла этим аксессуаром свои образы. Рекомендуем надевать кулон вместе с белыми майками, кружевными эспадрильями и джинсами бойфренда.
+                %ul.products__show-item-details
+                  - details = [{'Серебро': '12 К'}, {'Цирконы': '10 К'}, {'Кристаллов': '1294'}, {'Вес': '3 гр' }]
+                  - for obj, i in details
+                    - for key of obj
+                      %li
+                        = "#{key}:"
+                        = obj[key]
+                
+                %nobr.products__show-item-articul Арт: 1687
 
 
       .application-footer

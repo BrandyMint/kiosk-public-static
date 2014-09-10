@@ -8,6 +8,7 @@ $ ->
   $('@product-show-image').on 'click', () ->
     $('@product-modal').modal()
 
+
   $('@jump').on 'click', (e) ->
     href = $(this).data('href')
     if href != ''

@@ -1,8 +1,9 @@
 $plain-input-height: $block-padding*3
+$plain-input-color: $text-color
 
 %plain-input__block,
 .plain-input__block
-  color: $text-color-lighter
+  color: $plain-input-color
   position: relative
 
 
@@ -19,6 +20,7 @@ $plain-input-height: $block-padding*3
       left: none
       right: none
       bottom: 1px solid $line-color
+      color: $plain-input-color
     +box-shadow(none)
     border-radius: 0
     background: none
@@ -166,17 +168,23 @@ input[type="radio"]
 
 
 
-%plain-select__block
+%plain-select__block,
+.plain-select__block
   @extend %plain-input__block
 
-%plain-select__select
+%plain-select__select,
+.plain-select__select
   @extend %plain-input__input--full
   +appearance(none)
-  line-height: 1
+  line-height: $plain-input-height
   //padding: 0.7em 3em 0.7em 1em
-  padding: $block-padding
+  padding: 0 $block-padding
   cursor: pointer
+  display: inline-block
+  +transition(border 0.2s ease, color 0.2s ease)
   &, &:hover, &:focus
+    color: $plain-input-color
+    text-decoration: none
     border-bottom: 1px solid $line-color
     //border-radius: $border-radius-base
     border-radius: 0
@@ -189,7 +197,12 @@ input[type="radio"]
     outline: none
 
 %plain-select__select--single
-  border: 1px solid $line-color
+  &, &:focus, &:hover
+    border: 1px solid $line-color
+
+.plain-select__select--single
+  @extend %plain-select__select
+  @extend %plain-select__select--single
 
 input[type="search"]
   border-radius: 30px

@@ -44,8 +44,6 @@ $products-show-image-width: 477px
     size: 18px
   margin-top: 0.5em
 
-
-
 .products__show
   margin:
     top: $grid-gutter-width
@@ -110,11 +108,29 @@ $products-show-image-width: 477px
   font:
     size: 24px
     weight: bold
-  padding-top: 0.5em
+  padding:
+    top: 0.5em
+    bottom: 1em
 
 .products__show-item-details
-  font:
-    size: $font-size-base
+  display: block
+  font-size: 16px
+  line-height: 22px
+  margin:
+    top: $grid-gutter-width/2
+    bottom: $grid-gutter-width
+  padding-left: 0
+  li
+    list-style-type: none
+    padding:
+      top: 2px
+      bottom: 2px
+    &:before
+      content: '\b7\a0'
+
+.products__show-item-description
+  font-size: 16px
+  line-height: 22px
   margin:
     top: $grid-gutter-width*1.5
     bottom: $grid-gutter-width
