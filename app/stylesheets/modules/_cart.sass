@@ -3,9 +3,10 @@
   height: 59px
   padding: 18px 30px
   font-size: $font-size-base
-  +link-colors(#fff, #fff)
   background-color: $gray-darker
-  &:hover
+  &, &:hover, &:focus
+    color: #fff
+  &:hover, &:focus
     background-color: $link-color-hover
 
 %cart-btn-disabled

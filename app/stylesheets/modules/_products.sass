@@ -50,7 +50,17 @@ $products-show-image-width: 477px
     bottom: $grid-gutter-width*2
 
 .products__show-item-content
-  padding-top: $grid-gutter-width*3
+  padding-top: $grid-gutter-width
+  @media screen and (min-width: $screen-md-min)
+    padding-top: $grid-gutter-width*3
+
+.products__show-item-content-header
+  @media screen and (max-width: $screen-sm-max)
+    display: none
+
+.products__show-item-header
+  @media screen and (min-width: $screen-md-min)
+    display: none
 
 .products__show-item-image-block
   text-align: center
@@ -70,7 +80,8 @@ $products-show-image-width: 477px
     right: - $products-form-images-list-padding/2
 
 .products__show-image-thumb-block
-  @extend .col-xs-4
+  @extend .col-sm-4
+  @extend .col-xs-3
   padding: $products-form-images-list-padding/2
   cursor: pointer
   &:hover

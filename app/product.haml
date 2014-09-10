@@ -7,29 +7,49 @@
     .application-navbar
       .container
         .row
-          .col-sm-4
+          .col-sm-4.col-xs-8.col-xs-push-4.col-sm-push-0
             Магазин современных украшений
             %br
             = "+7 903 595 1737"
             %br
             = "+7 495 999 7939"
-          .col-sm-4
+          .col-sm-4.col-xs-4.col-xs-pull-8.col-sm-pull-0
             %a.navbar-brand-link{href: 'welcome.html'}
               %img.navbar-brand-image{src: 'images/logo.svg'}
-          .col-sm-4
-            %a.navbar-cart-btn.navbar-cart-btn-empty.pull-right
-              Корзина &mdash; пока пусто
-            .clearfix
+          .col-sm-4.col-xs-6.col-xs-push-6.col-sm-push-0
+            %a.navbar-cart-btn.navbar-cart-btn-empty
+              %span.navbar-cart-btn-caption
+                Корзина &mdash; пока пусто
+              %span.navbar-cart-btn-icon
+                %i.fa.fa-shopping-cart
+                .clearfix
+          .col-sm-12.col-xs-6.col-xs-pull-6.col-sm-pull-0
+            %button.navbar-categories-toggle-btn.collapsed{"data-target" => "[categories-nav]", "data-toggle" => "collapse", type: "button"}
+              %i.fa.fa-bars
+              %span.navbar-categories-toggle-btn-caption
+                Каталог
+        .collapse.navbar-collapse{'categories-nav': ''}
+          %ul.categories-nav
+            - categories = ['Классика', 'Как-карат', 'Рич', 'Поп', 'Браслеты–ниточки', 'Кольца-трансформеры' ]
+            - for c in categories
+              %li
+                %a{href: '#'}= "#{c}"
+
     .application-content
       .container
-        %ul.categories-nav
-          - categories = ['Классика', 'Как-карат', 'Рич', 'Поп', 'Браслеты–ниточки', 'Кольца-трансформеры' ]
-          - for c in categories
-            %li
-              %a{href: '#'}= "#{c}"
         .products__show
           .row
             .col-sm-6
+              .products__show-item-header
+                .products__show-item-category
+                  Поп
+                .products__show-item-title
+                  Моно-серьга имитация тоннеля
+                  серебряная золоченая с белыми
+                  цирконами
+                .products__show-item-price
+                  8 900 руб.
+
               .carousel.slide{role: 'carousel product-show-carousel'}
                 .carousel-inner
                   - for i in [0..3]
@@ -48,18 +68,20 @@
                 - for i in [0..3]
                   .products__show-image-thumb-block{data: {target: '[role*="product-show-carousel"]', 'slide-to' => i} }
                     %img.products__show-image-thumb{:src => "images/product-square.png"}
+              .clearfix
             .col-sm-6
               .products__show-item-content
-                .products__show-item-category
-                  Поп
-                .products__show-item-title
-                  Моно-серьга имитация тоннеля
-                  серебряная золоченая с белыми
-                  цирконами
-                .products__show-item-price
-                  8 900 руб.
+                .products__show-item-content-header
+                  .products__show-item-category
+                    Поп
+                  .products__show-item-title
+                    Моно-серьга имитация тоннеля
+                    серебряная золоченая с белыми
+                    цирконами
+                  .products__show-item-price
+                    8 900 руб.
                 .row
-                  .col-xs-6
+                  .col-sm-6
                     -#%select.plain-select__select--single
                       -#%option{selected: 'selected'} Выберите размер
                     .dropdown
@@ -76,9 +98,10 @@
                               = "Размер #{s}"
                               - if i == 1
                                 &ndash; нет в наличии
+                    %br
 
 
-                  .col-xs-6
+                  .col-sm-6
                     %a.products__show-item-cart-btn{href: 'cart.html'}
                       В корзину
                 .products__show-item-description
@@ -104,7 +127,7 @@
                   %li
                     %a{href: '#'}= "#{l}"
             .col-sm-4
-              %ul.footer-nav.pull-right
+              %ul.footer-nav
                 - footer_social = ['Instagram', 'Facebook']
                 - for l in footer_social
                   %li

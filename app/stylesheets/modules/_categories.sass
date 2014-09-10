@@ -1,14 +1,23 @@
 .categories-nav
   @extend .nav
-  text-align: justify
-  font-size: 0
-  &:after
-    content: ""
-    display: inline-block
-    width: 100%
+  display: block
+  margin:
+    top: $grid-gutter-width/2
+    bottom: $grid-gutter-width
+  @media screen and (min-width: $screen-md-min)
+    margin:
+      top: $grid-gutter-width*2
+      bottom: 0
+    text-align: justify
+    font-size: 0
+    &:after
+      content: ""
+      display: inline-block
+      width: 100%
   & > li
-    display: inline-block
-    text-align: left
+    @media screen and (min-width: $screen-md-min)
+      display: inline-block
+      text-align: left
     & > a
       font-size: 16px
       text-transform: uppercase
@@ -17,3 +26,6 @@
       +link-colors($categories-link-color, $link-color-hover)
       &:hover
         background: none
+      @media screen and (max-width: $screen-sm-max)
+        display: block
+        padding: 8px 0
