@@ -8,15 +8,17 @@
     .application-navbar
       .container
         .row
-          .col-sm-4.col-xs-8.col-xs-push-4.col-sm-push-0
-            Магазин современных украшений
-            %br
-            = "+7 903 595 1737"
-            %br
-            = "+7 495 999 7939"
-          .col-sm-4.col-xs-4.col-xs-pull-8.col-sm-pull-0
+          .col-sm-4.col-xs-6.col-xs-push-6.col-sm-push-0
+            .navbar-description
+              Магазин современных украшений
+              %br
+              = "+7 903 595 1737"
+              %br
+              = "+7 495 999 7939"
+          .col-sm-4.col-xs-6.col-xs-pull-6.col-sm-pull-0
             %a.navbar-brand-link{href: 'welcome.html'}
               %img.navbar-brand-image{src: 'images/logo.svg'}
+          .row.visible-xs
           .col-sm-4.col-xs-6.col-xs-push-6.col-sm-push-0
             %a.navbar-cart-btn.navbar-cart-btn-empty
               %span.navbar-cart-btn-caption
