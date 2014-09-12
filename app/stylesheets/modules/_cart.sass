@@ -38,8 +38,14 @@
   margin-bottom: 0.5em
 
 .cart__list-item-price
+  display: block
   @media screen and (min-width: $screen-md-min)
     text-align: right
+  @media screen and (max-width: $screen-sm-max)
+    margin-top: 0.5em
+    &.cart__list-item-price-total
+      margin-top: 0
+
 
 .cart__list-total
   margin: $grid-gutter-width 0
