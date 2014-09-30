@@ -1,12 +1,13 @@
 $products-list-item-image-width: 228px
-$products-list-item-height: 228px
+$products-list-item-height: 360px
 $products-form-images-list-padding: $grid-gutter-width
 $products-show-image-width: 477px
 
 %products__list-item
   margin:
     top: $grid-gutter-width/2
-    bottom: $grid-gutter-width*1.5
+    bottom: $grid-gutter-width/2
+  height: $products-list-item-height
   cursor: pointer
   +transition(color 0.2s ease)
   +antialiased
