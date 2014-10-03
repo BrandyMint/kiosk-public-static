@@ -67,7 +67,7 @@ options.sass =
 
 gulp.task "sass", ->
   gulp
-    .src("./app/stylesheets/app.sass")
+    .src("./app/stylesheets/app.scss")
     .pipe(sass(options.sass))
     .pipe(gulp.dest("dist/stylesheets"))
     .pipe($.connect.reload())
@@ -92,7 +92,7 @@ gulp.task "fonts", ->
 
 gulp.task "assets", ->
   gulp
-    .src("app/{api,stylesheets,includes,fonts}/**/*.{less,sass,css,json,html,haml,js,eot,svg,ttf,woff}")
+    .src("app/{api,stylesheets,includes,fonts}/**/*.{less,sass,scss,css,json,html,haml,js,eot,svg,ttf,woff}")
     .pipe gulp.dest("dist/")
 
 # HTML
@@ -212,6 +212,7 @@ gulp.task "watch", [
   gulp.watch "app/scripts/**/*.coffee", ["scripts"]
   gulp.watch "app/stylesheets/**/*.css", ["assets"]
   gulp.watch "app/stylesheets/**/*.sass", ["sass"]
+  gulp.watch "app/stylesheets/**/*.scss", ["sass"]
  
   # Watch .jsx files
   # gulp.watch('app/scripts/**/*.jsx', ['jsx', 'scripts']);
