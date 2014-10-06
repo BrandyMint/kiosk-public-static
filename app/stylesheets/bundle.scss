@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+@import "theme-basic"; //Базовая тема
+
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap/variables";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap/mixins";
 @import "settings/design";
@@ -40,3 +42,6 @@
 @import "modules/products";
 @import "modules/carousel";
 @import "modules/footer";
+
+
+
