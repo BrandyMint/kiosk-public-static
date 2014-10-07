@@ -53,7 +53,9 @@ $ ->
     counters: true
   })
 
+  navOpen = $('#navopen')  
+
   menuCopy.on 'opened.mm', ()->
-    $('#navopen').addClass('mmenu-open_active')
+    navOpen.addClass('mmenu-open_active')
   menuCopy.on 'closed.mm', ()->
-    $('#navopen').removeClass('mmenu-open_active')
+    navOpen.removeClass('mmenu-open_active')

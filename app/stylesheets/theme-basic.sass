@@ -166,7 +166,23 @@ $basicThemeCartBtnColor: #cbcbcb
         
     .dropdown
       &-toggle
-
+        position: relative
+        &:before
+          content: ''
+          background: url(../images/mobnav-cat-arrow.svg)
+          background-size: 18px 10px
+          width: 18px
+          height: 10px
+          position: absolute
+          top: 27px
+          left: 12px
+          transform: rotate(90deg)
+          transition: transform .2s ease
+        &:focus
+          text-decoration: none
+      &.open
+        .dropdown-toggle:before
+          transform: rotate(180deg)
 
       &-menu
         border: none
