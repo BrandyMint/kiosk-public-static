@@ -47,5 +47,15 @@ $ ->
         isRequest = false
 
   menuCopy = $('#nav').clone()
-  menuCopy.appendTo($('body')).removeClass('categories-nav').find('*').removeAttr('class')
-  menuCopy.mmenu()
+  menuCopy.appendTo($('body')).removeClass('categories-nav')
+  menuCopy.mmenu({
+    classes: "mm-slide",
+    counters: true
+  })
+
+  navOpen = $('#navopen')  
+
+  menuCopy.on 'opened.mm', ()->
+    navOpen.addClass('mmenu-open_active')
+  menuCopy.on 'closed.mm', ()->
+    navOpen.removeClass('mmenu-open_active')
