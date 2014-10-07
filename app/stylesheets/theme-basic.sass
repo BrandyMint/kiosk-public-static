@@ -1,4 +1,14 @@
 // Basic theme
+
+// ============= Settings =============
+$basicThemeCategoriesNavBorderColor: #e2e2e2
+$basicThemeCategoriesNavLinkColor: #131313
+$basicThemeCategoriesNavLinkColorHover: #cbcbcb
+
+$basicThemeCartBtnColor: #cbcbcb
+// ============= /Settings =============
+
+
 .theme-basic
 
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
@@ -23,7 +33,7 @@
   .categories-nav
     padding: 18px 0 15px
     margin-top: 43px
-    border: 1px solid #e2e2e2
+    border: 1px solid $basicThemeCategoriesNavBorderColor
     border-width: 1px 0
     text-align: center
     li
@@ -31,9 +41,9 @@
         text-transform: none
         font-weight: normal
         padding: 15px 20px
-        color: #131313
+        color: $basicThemeCategoriesNavLinkColor
         &:hover
-          color: #cbcbcb
+          color: $basicThemeCategoriesNavLinkColorHover
 
   %cart-btn
     height: auto
@@ -45,7 +55,7 @@
 
   .navbar-cart-btn
     .navbar-cart-btn-empty
-      background-color: #cbcbcb
+      background-color: $basicThemeCartBtnColor
     @media screen and (max-width: $screen-md-min)
       position: fixed
       right: 12px
@@ -54,8 +64,6 @@
       padding: 11px
       border-radius: 3px
       margin: 0
-
-  
 
   // Menu
   .categories-nav
@@ -139,7 +147,7 @@
     border: none
     padding-bottom: 0
     & > .container
-      border-top: 1px solid #e1e1e1
+      border-top: 1px solid $basicThemeCategoriesNavBorderColor
 
   .footer-nav
     margin: 19px 0
@@ -147,11 +155,31 @@
 
   .mm-menu
     list-style: none
+    overflow-y: auto
     li
-      padding: 10px
-      display: block
+      border-bottom: 1px solid #393939
       a
         color: #fff
+        padding: 22px 40px
+        font-size: 16px
+        display: block
+        
+    .dropdown
+      &-toggle
+
+
+      &-menu
+        border: none
+        margin: 0
+        position: relative
+        background: none
+        a
+          text-align: left
+          border: none
+          background: #434343
+          &:hover
+            background: none        
+
 
   .mmenu-open
     display: none
@@ -161,8 +189,32 @@
     left: 12px
     width: 49px
     height: 44px
-    background: #000 url(../images/mmenu-icon.gif) 50% 50% no-repeat
+    background: #000
     border-radius: 3px
+    &__tick
+      height: 2px
+      position: absolute
+      left: 13px
+      right: 13px
+      top: 50%
+      background-color: #fff
+      margin-top: -6px
+      transition: transform .2s ease, margin-top .2s ease, opacity .2s ease
+      &_s
+        margin-top: -1px
+      &_t
+        margin-top: 4px
+    &_active
+      .mmenu-open
+        &__tick
+          &_f
+            margin-top: 0
+            transform: rotateZ(45deg)
+          &_s
+            opacity: 0
+          &_t
+            margin-top: 0
+            transform: rotateZ(-45deg)
 
   html.mm-opened .mm-page
     box-shadow: none
