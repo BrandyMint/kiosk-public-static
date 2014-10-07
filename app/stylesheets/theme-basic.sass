@@ -128,16 +128,16 @@ $basicThemeCartBtnColor: #cbcbcb
         width: 100%
 
   .products__list
-    &__title
+    .products_list__title
       text-align: center
       font-size: 53px
       margin: 17px 0 16px
-    &-item
+    .products_list-item
       height: 410px
-      &-title
+      .products_list-title
         font-size: 16px
         margin: 10px 0 0
-      &-price
+      .products_list-price
         font-weight: normal
         font-size: 16px
         margin: 0
@@ -165,7 +165,7 @@ $basicThemeCartBtnColor: #cbcbcb
         display: block
         
     .dropdown
-      &-toggle
+      .dropdown-toggle
         position: relative
         &:before
           content: ''
@@ -184,7 +184,7 @@ $basicThemeCartBtnColor: #cbcbcb
         .dropdown-toggle:before
           transform: rotate(180deg)
 
-      &-menu
+      .dropdown-menu
         border: none
         margin: 0
         position: relative
@@ -207,7 +207,7 @@ $basicThemeCartBtnColor: #cbcbcb
     height: 44px
     background: #000
     border-radius: 3px
-    &__tick
+    .mmenu-open__tick
       height: 2px
       position: absolute
       left: 13px
@@ -216,19 +216,19 @@ $basicThemeCartBtnColor: #cbcbcb
       background-color: #fff
       margin-top: -6px
       transition: transform .2s ease, margin-top .2s ease, opacity .2s ease
-      &_s
+      .mmenu-open_s
         margin-top: -1px
-      &_t
+      .mmenu-open_t
         margin-top: 4px
-    &_active
+    .mmenu-open_active
       .mmenu-open
-        &__tick
-          &_f
+        .mmenu-open__tick
+          .mmenu-open_f
             margin-top: 0
             transform: rotateZ(45deg)
-          &_s
+          .mmenu-open_s
             opacity: 0
-          &_t
+          .mmenu-open_t
             margin-top: 0
             transform: rotateZ(-45deg)
 
