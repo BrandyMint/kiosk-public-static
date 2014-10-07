@@ -46,3 +46,6 @@ $ ->
       .always (resp)->
         isRequest = false
 
+  menuCopy = $('#nav').clone()
+  menuCopy.appendTo($('body')).removeClass('categories-nav').find('*').removeAttr('class')
+  menuCopy.mmenu()

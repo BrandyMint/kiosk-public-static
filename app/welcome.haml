@@ -2,59 +2,61 @@
 %html
   %head
     @@include('./shared/_head.haml')
-  %body
+  %body.theme-basic
     %script{src: 'scripts/bundle.js'}
 
     .application-navbar
       .container
         .row
-          .col-sm-4.col-xs-6.col-xs-push-6.col-sm-push-0
+          .col-sm-12.col-md-4
             .navbar-description
-              Магазин современных украшений
+              Магазин мебели ручной работы
               %br
               = "+7 903 595 1737"
-              %br
-              = "+7 495 999 7939"
-          .col-sm-4.col-xs-6.col-xs-pull-6.col-sm-pull-0
+          .col-md-4.col-sm-12.col-xs-12.col-sm-pull-0
             %a.navbar-brand-link{href: 'welcome.html'}
-              %img.navbar-brand-image{src: 'images/logo.svg'}
+              %img.navbar-brand-image{src: 'images/logo.png', alt:'field & rage'}
           .row.visible-xs
-          .col-sm-4.col-xs-6.col-xs-push-6.col-sm-push-0
+          .col-sm-4
             %a.navbar-cart-btn.navbar-cart-btn-empty
               %span.navbar-cart-btn-caption
                 Корзина &mdash; пока пусто
               %span.navbar-cart-btn-icon
                 %i.fa.fa-shopping-cart
                 .clearfix
-          .col-sm-12.col-xs-6.col-xs-pull-6.col-sm-pull-0
+          .col-sm-12.col-xs-6.col-xs-pull-6.col-sm-pull-0.hidden-sm.hidden-xs
             %button.navbar-categories-toggle-btn.collapsed{"data-target" => "[categories-nav]", "data-toggle" => "collapse", type: "button"}
               %i.fa.fa-bars
               %span.navbar-categories-toggle-btn-caption
                 Каталог
         .collapse.navbar-collapse{'categories-nav': ''}
-          %ul.categories-nav
-            - categories = ['Классика', 'Как-карат', 'Рич', 'Поп', 'Браслеты–ниточки', 'Кольца-трансформеры' ]
+          %ul.categories-nav#nav
+            - categories = ['Столы', 'Стулья', 'Свет', 'Декор' ]
             - for c in categories
               %li
                 %a{href: '#'}= "#{c}"
+            %li.dropdown
+              %a.dropdown-toggle{href: '#', data-toggle: "dropdown"} Аксессуары
+              %ul.dropdown-menu
+                %li
+                  %a{href: '#', data-count:'45'} Категория
+                %li
+                  %a{href: '#', data-count:'1'} Категория
+                %li
+                  %a{href: '#', data-count:'6'} Категория
+                %li
+                  %a{href: '#', data-count:'12'} Категория
+                %li
+                  %a{href: '#', data-count:'4'} Категория
+                %li
+                  %a{href: '#', data-count:'9'} Категория
+        %a.mmenu-open.visible-sm.visible-xs{href: "#nav"}
+
+
     .application-content
       .container
-        .welcome-carousel
-          .carousel.slide
-            .carousel-inner.welcome-carousel__inner
-              %div.welcome-carousel__item.item.active.welcome-carousel__item-bg{ style: "background-image: url('images/product-cover.jpg')"}
-                .container
-                  .row
-                    .col-sm-5.col-sm-offset-7
-                      .welcome-carousel__item-container
-                        .welcome-carousel__item-content
-                          .welcome-carousel__item-title
-                            Моно-серьга
-                          .welcome-carousel__item-text
-                            имитация тоннеля серебряная черненая с черными цирконами
-                          .welcome-carousel__item-price 8 900 р.
-
         .products__list
+          %h1.products__list__title Табуретки
           .row
             - for i in [1..5]
               .col-md-4.col-sm-6
@@ -62,29 +64,29 @@
                   - if i == 1
                     .products__list-item-notification
                   .products__list-item-image-block
-                    %img.products__list-item-image{ src: "images/product-square.png" }
+                    %img.products__list-item-image{ src: "images/product-square.jpg" }
                   .products__list-item-title
                     Моно-серьга имитация тоннеля серебряная с белыми цирконами
                   .products__list-item-price
                     8 900 руб.
-            .col-md-4.col-sm-6
-              .products__list-item
-                .products__list-item-image-block
-                  %img.products__list-item-image{src: 'images/product-more.svg'}
+            / .col-md-4.col-sm-6
+            /   .products__list-item
+            /     .products__list-item-image-block
+            /       %img.products__list-item-image{src: 'images/product-more.svg'}
 
       .application-footer
         .container
           .row
             .col-sm-8
               %ul.footer-nav
-                - footer_links = ['Доставка', 'Форма оплаты', 'Контакты', 'О нас', 'Новости']
+                - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
                 - for l in footer_links
                   %li
                     %a{href: '#'}= "#{l}"
-            .col-sm-4
-              %ul.footer-nav.footer-nav-social
-                - footer_social = ['Instagram', 'Facebook']
-                - for l in footer_social
-                  %li
-                    %a{href: '#'}= "#{l}"
-              .clearfix
+            / .col-sm-4
+            /   %ul.footer-nav.footer-nav-social
+            /     - footer_social = ['Instagram', 'Facebook']
+            /     - for l in footer_social
+            /       %li
+            /         %a{href: '#'}= "#{l}"
+            /   .clearfix

@@ -1,0 +1,170 @@
+// Basic theme
+.theme-basic
+
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+
+  .navbar-brand-image
+    @media screen and (max-width: $screen-md-min)
+      max-height: 100%
+
+  .application-navbar
+    padding-top: 71px
+    margin-bottom: 40px
+    .container
+      position: relative
+    @media screen and (max-width: $screen-md-min)
+      padding-top: 20px
+
+  .navbar-description
+    @media screen and (max-width: $screen-md-min)
+      text-align: center
+      padding: 0 0 20px
+
+  .categories-nav
+    padding: 18px 0 15px
+    margin-top: 43px
+    border: 1px solid #e2e2e2
+    border-width: 1px 0
+    text-align: center
+    li
+      a
+        text-transform: none
+        font-weight: normal
+        padding: 15px 20px
+        color: #131313
+        &:hover
+          color: #cbcbcb
+
+  %cart-btn
+    height: auto
+    padding: 11px 44px 9px
+    
+  .navbar-categories-toggle-btn
+    padding-top: 8px
+    padding-bottom: 8px
+
+  .navbar-cart-btn
+    .navbar-cart-btn-empty
+      background-color: #cbcbcb
+    @media screen and (max-width: $screen-md-min)
+      position: fixed
+      right: 12px
+      top: 13px
+      width: 49px
+      padding: 11px
+      border-radius: 3px
+      margin: 0
+
+  
+
+  // Menu
+  .categories-nav
+    .dropdown-toggle:focus
+      text-decoration: none
+    .dropdown-menu
+      border: none
+      border-radius: 2px
+      margin-top: 12px
+      width: 306px
+      left: 50%
+      margin-left: -153px
+      background-color: rgba(0,0,0,.5)
+      padding: 21px 0 19px
+      font-size: 15px
+      &:after
+        content: ''
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: 0 6px 6px 6px
+        border-color: transparent transparent #000 transparent
+        opacity: .5
+        position: absolute
+        bottom: 100%
+        left: 50%
+        margin: 0 0 0 -6px
+      &:before
+        content: ''
+        position: absolute
+        top: 3px
+        left: 0
+        right: 0
+        height: 1px
+        background-color: #191919
+      
+
+      li
+        float: left
+        width: 50%
+        color: #6c6c6c
+        border: none
+        margin-bottom: 3px
+        
+        a
+          display: block
+          padding: 3px 0 3px 32px
+          text-align: left
+          color: #fff
+          border: none
+          &:after
+            content: attr(data-count)
+            color: #5d5d5d
+            padding-left: 6px
+          &:hover
+            background: #cbcbcb
+
+      @media screen and (max-width: $screen-md-min)
+        position: relative
+        margin: 0
+        left: 0
+        width: 100%
+
+  .products__list
+    &__title
+      text-align: center
+      font-size: 53px
+      margin: 17px 0 16px
+    &-item
+      height: 410px
+      &-title
+        font-size: 16px
+        margin: 10px 0 0
+      &-price
+        font-weight: normal
+        font-size: 16px
+        margin: 0
+
+  //Footer
+  .application-footer
+    border: none
+    padding-bottom: 0
+    & > .container
+      border-top: 1px solid #e1e1e1
+
+  .footer-nav
+    margin: 19px 0
+
+
+  .mm-menu
+    list-style: none
+    li
+      padding: 10px
+      display: block
+      a
+        color: #fff
+
+  .mmenu-open
+    display: none
+    position: fixed
+    z-index: 10
+    top: 13px
+    left: 12px
+    width: 49px
+    height: 44px
+    background: #000 url(../images/mmenu-icon.gif) 50% 50% no-repeat
+    border-radius: 3px
+
+  html.mm-opened .mm-page
+    box-shadow: none
+
+
