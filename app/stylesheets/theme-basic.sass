@@ -6,6 +6,8 @@ $basicThemeMainColor: #121212 //basic text color
 $basicThemeCategoriesNavBorderColor: #e2e2e2 //menu border color
 $basicThemeCategoriesNavLinkColor: #121212 //link color
 $basicThemeCategoriesNavLinkColorHover: #cbcbcb //link hover color, cart color
+
+$basicThemeDropdownMenuLink: #434343
 // ============= /Settings =============
 
 
@@ -30,7 +32,7 @@ $basicThemeCategoriesNavLinkColorHover: #cbcbcb //link hover color, cart color
   .navbar-description
     @media screen and (max-width: $screen-md-min)
       text-align: center
-      padding: 0 0 20px
+      padding: 50px 0 20px
 
   .navbar-collapse
     padding: 0
@@ -79,6 +81,7 @@ $basicThemeCategoriesNavLinkColorHover: #cbcbcb //link hover color, cart color
       box-shadow: none
     @media screen and (max-width: $screen-md-min)
       position: fixed
+      z-index: 10
       right: 12px
       top: 13px
       width: 49px
@@ -236,9 +239,9 @@ $basicThemeCategoriesNavLinkColorHover: #cbcbcb //link hover color, cart color
         a
           text-align: left
           border: none
-          background: #434343
+          background: $basicThemeDropdownMenuLink
           &:hover
-            background: none        
+            background: $basicThemeDropdownMenuLink      
 
 
   .mmenu-open
