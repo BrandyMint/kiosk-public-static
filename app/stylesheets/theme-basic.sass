@@ -1,15 +1,17 @@
 // Basic theme
 
 // ============= Settings =============
-$basicThemeCategoriesNavBorderColor: #e2e2e2
-$basicThemeCategoriesNavLinkColor: #131313
-$basicThemeCategoriesNavLinkColorHover: #cbcbcb
+$basicThemeMainColor: #121212 //basic text color
 
-$basicThemeCartBtnColor: #cbcbcb
+$basicThemeCategoriesNavBorderColor: #e2e2e2 //menu border color
+$basicThemeCategoriesNavLinkColor: #121212 //link color
+$basicThemeCategoriesNavLinkColorHover: #cbcbcb //link hover color, cart color
 // ============= /Settings =============
 
 
 .theme-basic
+
+  color: $basicThemeMainColor
 
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
 
@@ -18,8 +20,8 @@ $basicThemeCartBtnColor: #cbcbcb
       max-height: 100%
 
   .application-navbar
-    padding-top: 71px
-    margin-bottom: 40px
+    padding-top: 30px
+    margin-bottom: 25px
     .container
       position: relative
     @media screen and (max-width: $screen-md-min)
@@ -29,6 +31,9 @@ $basicThemeCartBtnColor: #cbcbcb
     @media screen and (max-width: $screen-md-min)
       text-align: center
       padding: 0 0 20px
+
+  .navbar-collapse
+    padding: 0
 
   .categories-nav
     padding: 18px 0 15px
@@ -44,10 +49,22 @@ $basicThemeCartBtnColor: #cbcbcb
         color: $basicThemeCategoriesNavLinkColor
         &:hover
           color: $basicThemeCategoriesNavLinkColorHover
+    .dropdown
+      &:hover
+        .dropdown-menu
+          display: block
 
   %cart-btn
     height: auto
-    padding: 11px 44px 9px
+    padding: 11px 17px 9px
+
+  .navbar-cart-btn-icon
+    display: inline-block
+    vertical-align: middle
+    width: 26px
+    height: 23px
+    background: url(../images/cart.svg)
+    margin: -5px 9px 0 0
     
   .navbar-categories-toggle-btn
     padding-top: 8px
@@ -55,15 +72,21 @@ $basicThemeCartBtnColor: #cbcbcb
 
   .navbar-cart-btn
     .navbar-cart-btn-empty
-      background-color: $basicThemeCartBtnColor
+      background-color: $basicThemeCategoriesNavLinkColorHover
+    &:hover
+      background-color: $basicThemeCategoriesNavLinkColorHover
+    &:active
+      box-shadow: none
     @media screen and (max-width: $screen-md-min)
       position: fixed
       right: 12px
       top: 13px
       width: 49px
-      padding: 11px
+      padding: 10px 0 9px
       border-radius: 3px
       margin: 0
+      .navbar-cart-btn-icon
+        margin: 0
 
   // Menu
   .categories-nav
@@ -76,7 +99,7 @@ $basicThemeCartBtnColor: #cbcbcb
       width: 306px
       left: 50%
       margin-left: -153px
-      background-color: rgba(0,0,0,.5)
+      background-color: rgba(0,0,0,.9)
       padding: 21px 0 19px
       font-size: 15px
       &:after
@@ -86,7 +109,7 @@ $basicThemeCartBtnColor: #cbcbcb
         border-style: solid
         border-width: 0 6px 6px 6px
         border-color: transparent transparent #000 transparent
-        opacity: .5
+        opacity: .9
         position: absolute
         bottom: 100%
         left: 50%
@@ -119,7 +142,8 @@ $basicThemeCartBtnColor: #cbcbcb
             color: #5d5d5d
             padding-left: 6px
           &:hover
-            background: #cbcbcb
+            background: none
+            color: $basicThemeCategoriesNavLinkColorHover
 
       @media screen and (max-width: $screen-md-min)
         position: relative
@@ -127,31 +151,51 @@ $basicThemeCartBtnColor: #cbcbcb
         left: 0
         width: 100%
 
-  .products__list
-    .products_list__title
-      text-align: center
-      font-size: 53px
-      margin: 17px 0 16px
-    .products_list-item
-      height: 410px
-      .products_list-title
-        font-size: 16px
-        margin: 10px 0 0
-      .products_list-price
-        font-weight: normal
-        font-size: 16px
-        margin: 0
+  .products__list__title
+    text-align: center
+    font-size: 53px
+    margin: 17px 0 16px
+
+  .products__list-item-title
+    font-size: 16px
+  
+  .products__list-item
+    height: 410px
+    &:hover
+      color: $basicThemeCategoriesNavLinkColorHover
+
+  .products__list-item-image
+    backface-visibility: hidden
+  
+  .products_list-title
+    font-size: 16px
+    margin: 10px 0 0
+  
+  .products__list-item-price
+    font-size: 16px
+    margin: .5em 0 0
 
   //Footer
   .application-footer
     border: none
-    padding-bottom: 0
-    & > .container
-      border-top: 1px solid $basicThemeCategoriesNavBorderColor
+    padding-bottom: 0      
+
+  .application-footer__inner
+    padding: 0 15px
+    // border-top: 1px solid $basicThemeCategoriesNavBorderColor
 
   .footer-nav
     margin: 19px 0
-
+    li
+      &:first-child
+        margin-left: -15px
+    a
+      padding: 6px 0
+      font-size: 16px
+      margin-right: 25px
+      color: $basicThemeCategoriesNavLinkColor
+      &:hover
+        color: $basicThemeCategoriesNavLinkColorHover
 
   .mm-menu
     list-style: none
@@ -207,30 +251,31 @@ $basicThemeCartBtnColor: #cbcbcb
     height: 44px
     background: #000
     border-radius: 3px
-    .mmenu-open__tick
-      height: 2px
-      position: absolute
-      left: 13px
-      right: 13px
-      top: 50%
-      background-color: #fff
-      margin-top: -6px
-      transition: transform .2s ease, margin-top .2s ease, opacity .2s ease
-      .mmenu-open_s
-        margin-top: -1px
-      .mmenu-open_t
-        margin-top: 4px
-    .mmenu-open_active
-      .mmenu-open
-        .mmenu-open__tick
-          .mmenu-open_f
-            margin-top: 0
-            transform: rotateZ(45deg)
-          .mmenu-open_s
-            opacity: 0
-          .mmenu-open_t
-            margin-top: 0
-            transform: rotateZ(-45deg)
+  .mmenu-open__tick
+    height: 2px
+    position: absolute
+    left: 13px
+    right: 13px
+    top: 50%
+    background-color: #fff
+    margin-top: -6px
+    transition: transform .2s ease, margin-top .2s ease, opacity .2s ease
+  .mmenu-open__tick_s
+    margin-top: -1px
+  .mmenu-open__tick_t
+    margin-top: 4px
+  .mmenu-open_active
+    .mmenu-open__tick_f
+      margin-top: 0
+      transform: rotateZ(45deg)
+    .mmenu-open__tick_s
+      opacity: 0
+    .mmenu-open__tick_t
+      margin-top: 0
+      transform: rotateZ(-45deg)
+
+  .mm-page
+    overflow-x: hidden
 
   html.mm-opened .mm-page
     box-shadow: none

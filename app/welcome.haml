@@ -19,11 +19,9 @@
           .row.visible-xs
           .col-sm-4
             %a.navbar-cart-btn.navbar-cart-btn-empty
-              %span.navbar-cart-btn-caption
-                Корзина &mdash; пока пусто
               %span.navbar-cart-btn-icon
-                %i.fa.fa-shopping-cart
-                .clearfix
+              %span.navbar-cart-btn-caption
+                Корзина
           .col-sm-12.col-xs-6.col-xs-pull-6.col-sm-pull-0.hidden-sm.hidden-xs
             %button.navbar-categories-toggle-btn.collapsed{"data-target" => "[categories-nav]", "data-toggle" => "collapse", type: "button"}
               %i.fa.fa-bars
@@ -79,17 +77,18 @@
 
       .application-footer
         .container
-          .row
-            .col-sm-8
-              %ul.footer-nav
-                - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
-                - for l in footer_links
-                  %li
-                    %a{href: '#'}= "#{l}"
-            / .col-sm-4
-            /   %ul.footer-nav.footer-nav-social
-            /     - footer_social = ['Instagram', 'Facebook']
-            /     - for l in footer_social
-            /       %li
-            /         %a{href: '#'}= "#{l}"
-            /   .clearfix
+          .application-footer__inner
+            .row
+              .col-sm-8
+                %ul.footer-nav
+                  - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
+                  - for l in footer_links
+                    %li
+                      %a{href: '#'}= "#{l}"
+              / .col-sm-4
+              /   %ul.footer-nav.footer-nav-social
+              /     - footer_social = ['Instagram', 'Facebook']
+              /     - for l in footer_social
+              /       %li
+              /         %a{href: '#'}= "#{l}"
+              /   .clearfix
