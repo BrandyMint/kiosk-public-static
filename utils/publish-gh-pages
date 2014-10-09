@@ -11,4 +11,4 @@ mv dist/* ./
 git add .
 git commit -am 'build gh-pages'
 git push -u -f origin gh-pages:gh-pages
-
+git checkout master
