@@ -165,6 +165,11 @@ $basicThemeDropdownMenuLink: #434343
 
   .products__list-item-title
     font-size: 16px
+
+  .products__list-item-wrap //change grid here
+    @extend .col-md-4
+    @extend .col-sm-6
+    @extend .col-xs-12
   
   .products__list-item
     height: 410px
@@ -190,7 +195,6 @@ $basicThemeDropdownMenuLink: #434343
 
   .application-footer__inner
     padding: 0 15px
-    // border-top: 1px solid $basicThemeCategoriesNavBorderColor
 
   .footer-nav
     margin: 19px 0
@@ -267,7 +271,7 @@ $basicThemeDropdownMenuLink: #434343
     top: 50%
     background-color: #fff
     margin-top: -6px
-    transition: transform .2s ease, margin-top .2s ease, opacity .2s ease
+    @include transition( transform .2s ease, margin-top .2s ease, opacity .2s ease )
   .mmenu-open__tick_s
     margin-top: -1px
   .mmenu-open__tick_t
@@ -275,12 +279,12 @@ $basicThemeDropdownMenuLink: #434343
   .mmenu-open_active
     .mmenu-open__tick_f
       margin-top: 0
-      transform: rotateZ(45deg)
+      transform: rotate(45deg)
     .mmenu-open__tick_s
       opacity: 0
     .mmenu-open__tick_t
       margin-top: 0
-      transform: rotateZ(-45deg)
+      transform: rotate(-45deg)
 
   .mm-page
     overflow-x: hidden
