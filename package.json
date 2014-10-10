@@ -52,7 +52,7 @@
     "gulp-haml-coffee": "saschagehlich/gulp-haml-coffee",
     "gulp-flatten": "0.0.2",
     "gulp-file-include": "^0.4.2"
-    "gulp-file-include": "expressjs/serve-static"
+    "serve-static": "expressjs/serve-static"
   },
   "engines": {
     "node": ">=0.10.0"
