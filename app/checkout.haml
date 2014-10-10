@@ -62,65 +62,75 @@
                 Каталог
 
 
+
     .application-content
       .container-fluid
         .products__show
-          %h1.page-title Корзина
+          %h1.page-title
+            Оформление заказа.
+            %strong 5 товаров
+            на сумму
+            %strong 16 000 руб.
           
-          .cart__list
-            - for i in [1..5]
-              .cart__list-item
-                .row
-                  .col-lg-2.col-sm-2.col-xs-6
-                    %img{ src: "http://placehold.it/92x92", alt: 'cart item', width: '100%'}
-                  .col-lg-3.col-sm-4.col-xs-6
-                    .cart__list-item-title
-                      Моно-серьга имитация тоннеля серебряная с белыми цирконами
-                    .cart__list-item-option
-                      Размер 16
-                    .cart__list-item-option
-                      Арт. 123456
-                    .cart__list-item-price.visible-xs
-                      12 000 руб.
-                  .col-lg-3.col-sm-3.col-xs-12
-                    .cart__list-item-quantity.hidden-sm.hidden-xs
-                      %span.cart__list-item-quantity__text
-                        Количество
-                      %input.cart__list-item-quantity__field{ value: 1, type: 'text'}
-                      .cart__list-item-quantity__control
-                        %span.cart__list-item-quantity__control__up
-                        %span.cart__list-item-quantity__control__down
-                    .cart__list-item-quantity-select.visible-sm-block.visible-xs-block
-                      %select
-                        %option Удалить из корзины
-                        %option 1
-                        %option{selected} 2
-                        %option 3
-                        %option 4
-                        %option 5
-                        %option 6
-                        %option 7
-                        %option 8
-                        %option 9
-                        %option 10
-                  .col-lg-3.col-sm-3.hidden-xs
-                    .cart__list-item-price
-                      12 000 руб.
-                  .col-lg-1.visible-lg
-                    %span.cart__list-item-remove
+          .cart__form
+            .cart__form__row
+              .cart__form__row__num 1
+              .cart__form__row__content
+                .cart__form__row__title
+                  Выберите тип доставки. Ваш город
+                  %strong Москва
+                %label.cart__form__radio
+                  %input{type: 'radio', name: 'delivery-radio-stack'}
+                  %span.cart__form__radio__name
+                    Вариант 1
+                  %span.cart__form__radio__val
+                    360 руб.
+                %label.cart__form__radio
+                  %input{type: 'radio', name: 'delivery-radio-stack'}
+                  %span.cart__form__radio__name
+                    Вариант 2 пусть тут будет что-нибудь написано (и тут тоже)
+                  %span.cart__form__radio__val
+                    Бесплатно
+
+            .cart__form__row
+              .cart__form__row__num 2
+              .cart__form__row__content
+                .cart__form__row__title
+                  Введите данные
+                .cart__form__widget
+                  %label.cart__form__widget__name{for: 'phone'} Телефон
+                  %input#phone.cart__form__widget__field.cart__field{type: 'text', placeholder: 'Прим.: +7 913 123 32 10'}
+                
+                .cart__form__widget
+                  %label.cart__form__widget__name{for: 'name'} Как к вам обращаться?
+                  %input#name.cart__form__widget__field.cart__field{type: 'text', placeholder: 'Как к вам обращаться'}
+                
+                .cart__form__widget
+                  %label.cart__form__widget__name{for: 'text'} Адрес доставки
+                  %textarea#text.cart__form__widget__field.cart__field{rows: 3, placeholder: 'Акедемика Вавилова 12-10'}
+            
+            .cart__form__row
+              .cart__form__row__num 3
+              .cart__form__row__content
+                .cart__form__row__title
+                  Способы оплаты
+                %label.cart__form__radio
+                  %input{type: 'radio', name: 'delivery-radio-stack2'}
+                  %span.cart__form__radio__name
+                    Способ 1
+                %label.cart__form__radio
+                  %input{type: 'radio', name: 'delivery-radio-stack2'}
+                  %span.cart__form__radio__name
+                    Способ 2 пусть тут будет что-нибудь написано (и тут тоже)
 
           .cart__list-actions
             .row
-              .col-lg-3.col-md-4.hidden-sm.hidden-xs
-                %a.cart-btn.cart-btn_clear.cart__list-actions-btn{href: 'welcome.html'}
-                  Очистить корзину
-              .col-lg-6.col-lg-offset-3.col-md-6.col-md-offset-2.col-sm-12
-                .row
-                  .col-md-6.col-sm-6.col-xs-12
-                    %input.cart__list-actions-code{type: 'text', placeholder: 'Промо-код (если есть)'}
-                  .col-md-6.col-sm-6.col-xs-12
-                    %a.cart-btn-checkout.cart__list-actions-btn{href: 'checkout.html'}
-                      Оформить заказ
+              .col-md-3.col-sm-6
+                %a.cart-btn.cart-btn_clear.cart__list-actions-btn{href: 'cart.html'}
+                  Вернуться назад
+              .col-md-3.col-md-offset-4.col-sm-6
+                %a.cart-btn-checkout.cart__list-actions-btn{href: 'complete.html'}
+                  Продолжить
 
 
     .application-footer
