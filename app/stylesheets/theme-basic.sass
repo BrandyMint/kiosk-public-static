@@ -63,6 +63,13 @@ $basicThemeDropdownMenuLink: #434343
   %cart-btn
     height: auto
     padding: 11px 17px 9px
+    &:active
+      box-shadow: none
+
+  .cart-btn_clear
+    background: none
+    border: 1px solid $basicThemeCategoriesNavBorderColor
+    color: $basicThemeMainColor
 
   .navbar-cart-btn-icon
     display: inline-block
@@ -77,23 +84,43 @@ $basicThemeDropdownMenuLink: #434343
     padding-bottom: 8px
 
   .navbar-cart-btn
-    .navbar-cart-btn-empty
-      background-color: $basicThemeCategoriesNavLinkColorHover
-    &:hover
-      background-color: $basicThemeCategoriesNavLinkColorHover
-    &:active
-      box-shadow: none
+    position: relative
     @media screen and (max-width: $screen-md-min)
       position: fixed
       z-index: 10
-      right: 12px
-      top: 13px
+      right: 20px
+      top: 20px
       width: 49px
       padding: 10px 0 9px
       border-radius: 3px
       margin: 0
       .navbar-cart-btn-icon
         margin: 0
+
+  .navbar-cart-btn-empty,
+  .navbar-cart-btn-full
+    background-color: $basicThemeCategoriesNavLinkColorHover
+    &:hover
+      background-color: $basicThemeCategoriesNavLinkColorHover
+    &:active
+      box-shadow: none
+
+  .navbar-cart-btn-full
+    
+    background-color: $basicThemeMainColor
+    color: #fff
+    &:before
+      content: attr(data-cart)
+      position: absolute
+      bottom: 100%
+      left: 100%
+      background: #00AEFF
+      width: 30px
+      height: 30px
+      margin: 0 0 -15px -15px
+      text-align: center
+      line-height: 30px
+      border-radius: 50%
 
   // Menu
   .categories-nav
@@ -162,6 +189,8 @@ $basicThemeDropdownMenuLink: #434343
     text-align: center
     font-size: 53px
     margin: 17px 0 16px
+    @media screen and (max-width: $screen-sm-min)
+      font-size: 36px
 
   .products__list-item-title
     font-size: 16px
@@ -172,13 +201,13 @@ $basicThemeDropdownMenuLink: #434343
     @extend .col-xs-12
   
   .products__list-item
-    height: 410px
+    height: auto
     &:hover
       color: $basicThemeCategoriesNavLinkColorHover
 
   .products__list-item-image
     backface-visibility: hidden
-    // width: 100%
+    width: 100%
   
   .products_list-title
     font-size: 16px
@@ -208,6 +237,87 @@ $basicThemeDropdownMenuLink: #434343
       color: $basicThemeCategoriesNavLinkColor
       &:hover
         color: $basicThemeCategoriesNavLinkColorHover
+
+  .cart__list-item
+    padding: 0 60px 0 100px
+    border: none
+    font-size: 16px
+
+  .cart__list-item-remove
+    display: block
+    border-radius: 16px
+    width: 34px
+    height: 34px
+    background-color: #bcbcbc
+    cursor: pointer
+
+  .cart__list-item-title
+    font-weight: bold 
+    margin: 0
+
+  .cart__list-item-option
+    margin: 0 0 3px
+
+  .cart__list-item-quantity__field
+    margin: -4px 3px 0
+    width: 32px
+    height: 32px
+    line-height: 32px
+    text-align: center
+    color: $basicThemeMainColor
+    border: 1px solid $basicThemeCategoriesNavBorderColor
+    border-radius: 2px
+
+  .cart__list-item-quantity__control
+    display: inline-block
+    vertical-align: middle
+    width: 11px
+    height: 32px
+    background: url(../images/updown.png)
+
+  .cart__list-item-quantity__control__up,
+  .cart__list-item-quantity__control__down
+    height: 16px
+    display: block
+    cursor: pointer
+    background-color: #fff
+    opacity: 0
+    &:hover
+      opacity: .5
+
+  .cart__list-item-price
+    font-size: 30px
+    margin-top: -3px
+
+  .cart__list-actions
+    margin: 0 60px 0 100px
+
+
+  .cart__list-actions-code
+    display: inline-block
+    vertical-align: top
+    width: 190px
+    border: 1px solid $basicThemeCategoriesNavBorderColor
+    padding: 11px 17px 9px
+    @include placeholder($basicThemeCategoriesNavBorderColor)
+
+  .cart-btn-checkout
+    display: inline-block
+    vertical-align: top
+    padding: 9px 30px
+    background-color: $basicThemeMainColor
+    color: #fff
+    margin-left: 16px
+
+  .page-title
+    padding: 19px 0 13px
+    border: 1px solid $basicThemeCategoriesNavBorderColor
+    border-width: 1px 0
+    margin: 0 0 47px
+    text-align: center
+    font-weight: normal
+    font-size: 18px
+    text-transform: none
 
   .mm-menu
     list-style: none
@@ -257,8 +367,8 @@ $basicThemeDropdownMenuLink: #434343
     display: none
     position: fixed
     z-index: 10
-    top: 13px
-    left: 12px
+    top: 20px
+    left: 20px
     width: 49px
     height: 44px
     background: #000
@@ -291,5 +401,7 @@ $basicThemeDropdownMenuLink: #434343
 
   html.mm-opened .mm-page
     box-shadow: none
+  
+
 
 
