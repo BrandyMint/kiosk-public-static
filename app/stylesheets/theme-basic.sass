@@ -7,6 +7,8 @@ $basicThemeCategoriesNavBorderColor: #e2e2e2 //menu border color
 $basicThemeCategoriesNavLinkColor: #121212 //link color
 $basicThemeCategoriesNavLinkColorHover: #cbcbcb //link hover color, cart color
 
+$basicThemeDotsColor: #9e9e9e //dots in slider
+
 $basicThemeDropdownMenuLink: #434343
 // ============= /Settings =============
 
@@ -16,6 +18,9 @@ $basicThemeDropdownMenuLink: #434343
   color: $basicThemeMainColor
 
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+
+  .application-content
+    overflow-x: hidden
 
   .container-fluid
     max-width: 1032px
@@ -217,6 +222,101 @@ $basicThemeDropdownMenuLink: #434343
   .products__list-item-price
     font-size: 16px
     margin: .5em 0 0
+
+  .product__show__thumbs__slide,
+  .product__show__slider__slide
+    img
+      width: 100%
+
+  .product__show__thumbs__slide
+    margin-right: 15px
+    cursor: pointer
+
+  .product__show__thumbs
+    @media screen and (max-width: $screen-md-min)
+      visibility: hidden
+      height: 0
+
+  .products__show-item-content
+    padding-top: 5px
+
+  .products__show-item-category
+    font-weight: normal
+    text-transform: none
+
+  .products__show-item-title
+    font-size: 38px
+    margin: 3px 0 0
+
+  .products__show-item-price
+    font-weight: normal
+    padding: 0
+    margin: 0 0 10px
+    font-size: 38px
+
+  .plain-select__select--single
+    height: 41px
+    line-height: 1
+    padding: 0 15px
+    @media screen and (max-width: $screen-md-min)
+      margin-bottom: 10px
+
+  .products__show-item__subtitle
+    font-weight: bold
+    margin: 17px 0 5px
+    font-size: 14px
+
+  .products__show-item-description
+    margin: 0 0 30px
+    line-height: 24px
+
+  .products__show-item-details
+    margin: 0
+    li 
+      padding: 0 0 3px
+
+  .products__show-item-cart-btn
+    &:hover
+      background-color: $basicThemeCategoriesNavLinkColorHover
+
+  .product__show__slider
+    margin-bottom: 14px
+    .owl-controls
+      visibility: hidden
+      position: absolute
+      z-index: 2
+      bottom: 0
+      left: 0
+      right: 0
+      @media screen and (max-width: $screen-md-min)
+        visibility: visible
+
+  .product__show__slider .owl-pagination
+    display: inline-block
+    vertical-align: top
+    background-color: $basicThemeDotsColor
+    border-radius: 20px
+    padding: 0 10px
+    margin-bottom: 22px
+    .owl-page span
+      box-sizing: content-box
+      display: block
+      opacity: 1
+      border-radius: 50%
+      width: 8px
+      height: 8px
+      background: #fff
+      border: 6px solid $basicThemeDotsColor
+      margin: 11px 3px
+      border-radius 50%
+    .owl-page.active span
+      border-color: #fff
+
+  .product__show__thumbs
+    .owl-item
+      transition: opacity .2s ease
+      &.synced
+        opacity: .8
 
   //Footer
   .application-footer

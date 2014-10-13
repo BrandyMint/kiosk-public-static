@@ -47,117 +47,121 @@
               = "+7 903 595 1737"
           .col-md-4.col-sm-12.col-xs-12.col-sm-pull-0
             %a.navbar-brand-link{href: 'welcome.html'}
-              %img.navbar-brand-image{src: 'images/logo.png', alt:'field & rage'}
+              %img.navbar-brand-image{src: 'images/wannabe/logo.png', alt:'field & rage'}
           .row.visible-xs
           .col-sm-4
-            %a.navbar-cart-btn.navbar-cart-btn-full{data-cart: '5'}
+            %a.navbar-cart-btn.navbar-cart-btn-empty
               %span.navbar-cart-btn-icon
               %span.navbar-cart-btn-caption
-                Корзина — 13 000 Р
+                Корзина
           .col-sm-12.col-xs-6.col-xs-pull-6.col-sm-pull-0.hidden-sm.hidden-xs
             %button.navbar-categories-toggle-btn.collapsed{"data-target" => "[categories-nav]", "data-toggle" => "collapse", type: "button"}
               %i.fa.fa-bars
               %span.navbar-categories-toggle-btn-caption
                 Каталог
+        .collapse.navbar-collapse{'categories-nav': ''}
+          %ul.categories-nav#nav
+            - categories = ['Столы', 'Стулья', 'Свет', 'Декор' ]
+            - for c in categories
+              %li
+                %a{href: '#'}= "#{c}"
+            %li.dropdown
+              %a.dropdown-toggle{href: '#', data-toggle: "dropdown"} Аксессуары
+              %ul.dropdown-menu
+                %li
+                  %a{href: '#', data-count:'45'} Категория
+                %li
+                  %a{href: '#', data-count:'1'} Категория
+                %li
+                  %a{href: '#', data-count:'6'} Категория
+                %li
+                  %a{href: '#', data-count:'12'} Категория
+                %li
+                  %a{href: '#', data-count:'4'} Категория
+                %li
+                  %a{href: '#', data-count:'9'} Категория
+        %a#navopen.mmenu-open.visible-sm.visible-xs{href: "#nav"}
+          %span.mmenu-open__tick.mmenu-open__tick_f
+          %span.mmenu-open__tick.mmenu-open__tick_s
+          %span.mmenu-open__tick.mmenu-open__tick_t
+
+
 
     .application-content
-      .container
+      .container-fluid
         .products__show
+          .products__show-item-header
+            .products__show-item-category
+              Столы / Маленькие столы
+            %h1.products__show-item-title
+              Моно-серьга лалала
+            .products__show-item-price
+              12 000.-
           .row
-            .col-sm-6
-              .products__show-item-header
-                .products__show-item-category
-                  Поп
-                .products__show-item-title
-                  Моно-серьга имитация тоннеля
-                  серебряная золоченая с белыми
-                  цирконами
-                .products__show-item-price
-                  8 900 руб.
+            .col-md-6.col-sm-12.col-xs-12
+              .owl-carousel.product__show__slider#product-slider
+                - for i in [0..6]
+                  .product__show__slider__slide
+                    %img{src: 'http://placekitten.com/490/490', alt: ''}
 
-              .carousel.slide{role: 'carousel product-show-carousel'}
-                .carousel-inner
-                  - for i in [0..3]
-                    - if i == 0
-                      - item_class = 'active'
-                    - else
-                      - item_class = ''
-                    .products__show-item-image-block.item{class: "#{item_class}", role: 'product-show-image'}
-                      %img.products__show-item-image{ src: "images/product-square-large.png" }
-                .left.carousel-control{data: {target: '[role*="product-show-carousel"]', 'slide-to' => 'prev'} }
-                  %span.fa.fa-angle-left.carousel-control-icon
-                .right.carousel-control{data: {target: '[role*="product-show-carousel"]', 'slide-to' => 'next'} }
-                  %span.fa.fa-angle-right.carousel-control-icon
+              .product__show__thumbs#product-thumbs
+                - for i in [0..6]
+                  .product__show__thumbs__slide
+                    %img{src: 'http://placekitten.com/490/490', alt: ''}
 
-              .products__show-images-list
-                - for i in [0..3]
-                  .products__show-image-thumb-block{data: {target: '[role*="product-show-carousel"]', 'slide-to' => i} }
-                    %img.products__show-image-thumb{:src => "images/product-square.png"}
-              .clearfix
-            .col-sm-6
+            .col-md-6.col-sm-12.col-xs-12
               .products__show-item-content
                 .products__show-item-content-header
                   .products__show-item-category
-                    Поп
-                  .products__show-item-title
-                    Моно-серьга имитация тоннеля
-                    серебряная золоченая с белыми
-                    цирконами
+                    Столы / Маленькие столы
+                  %h1.products__show-item-title
+                    Моно-серьга лалала
                   .products__show-item-price
-                    8 900 руб.
-                .row
-                  .col-sm-6
-                    -#%select.plain-select__select--single
-                      -#%option{selected: 'selected'} Выберите размер
-                    .dropdown
-                      %a.dropdown-select-btn{href: '#', 'data-toggle' => 'dropdown'} Выберите размер
-                      %ul.dropdown-menu
-                        - sizes = ['15', '14', '13']
-                        - for s, i in sizes
-                          - if i == 1
-                            - li_class = 'disabled'
-                          - else
-                            - li_class = ''
-                          %li{class: "#{li_class}"}
-                            %a
-                              = "Размер #{s}"
-                              - if i == 1
-                                &ndash; нет в наличии
-                    %br
+                    12 000.-
+              .row
+                .col-sm-6.col-xs-12
+                  %select.plain-select__select--single
+                    %option{selected: 'selected'} Выберите размер
+                    %option Размер 15
+                    %option Размер 14
+                    %option{disabled} Размер 11 — нет в наличии
+
+                .col-md-5.col-sm-6.col-xs-12
+                  %a.products__show-item-cart-btn{href: 'cart.html'}
+                    В корзину
+
+              %h2.products__show-item__subtitle Описание
+              .products__show-item-description
+                Make peace, not war! Настоящий блокбастер среди украшений - серебряная моносерьга в виде пули Wanna?Be! - попала в самое сердце столичных модниц. Инкрустированный цирконами аксессуар не оставил и знаменитую на весь мир икону стилю, Рианну. Известная дива не раз дополняла этим аксессуаром свои образы. Рекомендуем надевать кулон вместе с белыми майками, кружевными эспадрильями и джинсами бойфренда.
+
+              %h3.products__show-item__subtitle Характеристики
+              %ul.products__show-item-details
+                - details = [{'Серебро': '12 К'}, {'Цирконы': '10 К'}, {'Кристаллов': '1294'}, {'Вес': '3 гр' }]
+                - for obj, i in details
+                  - for key of obj
+                    %li
+                      = "#{key}:"
+                      = obj[key]
 
 
-                  .col-sm-6
-                    %a.products__show-item-cart-btn{href: 'cart.html'}
-                      В корзину
-                .products__show-item-description
-                  Make peace, not war! Настоящий блокбастер среди украшений - серебряная моносерьга в виде пули Wanna?Be! - попала в самое сердце столичных модниц. Инкрустированный цирконами аксессуар не оставил и знаменитую на весь мир икону стилю, Рианну. Известная дива не раз дополняла этим аксессуаром свои образы. Рекомендуем надевать кулон вместе с белыми майками, кружевными эспадрильями и джинсами бойфренда.
-                %ul.products__show-item-details
-                  - details = [{'Серебро': '12 К'}, {'Цирконы': '10 К'}, {'Кристаллов': '1294'}, {'Вес': '3 гр' }]
-                  - for obj, i in details
-                    - for key of obj
-                      %li
-                        = "#{key}:"
-                        = obj[key]
-                
-                %nobr.products__show-item-articul Арт: 1687
-
-
-      .application-footer
-        .container
+    .application-footer
+      .container-fluid
+        .application-footer__inner
           .row
             .col-sm-8
               %ul.footer-nav
-                - footer_links = ['Доставка', 'Форма оплаты', 'Контакты', 'О нас', 'Новости']
+                - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
                 - for l in footer_links
                   %li
                     %a{href: '#'}= "#{l}"
-            .col-sm-4
-              %ul.footer-nav
-                - footer_social = ['Instagram', 'Facebook']
-                - for l in footer_social
-                  %li
-                    %a{href: '#'}= "#{l}"
-              .clearfix
+            / .col-sm-4
+            /   %ul.footer-nav.footer-nav-social
+            /     - footer_social = ['Instagram', 'Facebook']
+            /     - for l in footer_social
+            /       %li
+            /         %a{href: '#'}= "#{l}"
+            /   .clearfix
+
 
     .modal.orders-modal.fade{"aria-hidden" => "true", "aria-labelledby" => "", :role => "product-modal", :tabindex => "-1"}
       .modal-dialog
