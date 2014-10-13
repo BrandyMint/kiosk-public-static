@@ -4,7 +4,7 @@
   "description": "js application for taaasty.ru",
   "repository": {
     "type": "git",
-    "url": "git@github.com:BrandyMint/mmm-tasty-static.git"
+    "url": "https://github.com/BrandyMint/mmm-tasty-static.git"
   },
   "dependencies": {
     "blueimp-file-upload": "~9.5.8",
@@ -32,7 +32,7 @@
     "gulp-jade": "~0.4.2",
     "gulp-useref": "^0.4.4",
     "gulp-coffee": "~1.4.1",
-    "gulp-bundle": "git+ssh://git@github.com:bleech/gulp-bundle.git",
+    "gulp-bundle": "bleech/gulp-bundle",
     "gulp-browserify": "~0.4.6",
     "reactify": "~0.10.0",
     "through2": "latest",
@@ -47,11 +47,12 @@
     "less": "~1.7.3",
     "gulp-sass": "^0.7.3",
     "node-sass": "^0.9.3",
-    "gulp-hamlc": "git+ssh://git@github.com:smithclay/gulp-hamlc.git",
+    "gulp-hamlc": "smithclay/gulp-hamlc",
     "haml-coffee": "^1.14.1",
-    "gulp-haml-coffee": "git+ssh://git@github.com:saschagehlich/gulp-haml-coffee.git",
+    "gulp-haml-coffee": "saschagehlich/gulp-haml-coffee",
     "gulp-flatten": "0.0.2",
-    "gulp-file-include": "^0.4.2"
+    "gulp-file-include": "^0.4.2",
+    "serve-static": "expressjs/serve-static"
   },
   "engines": {
     "node": ">=0.10.0"
