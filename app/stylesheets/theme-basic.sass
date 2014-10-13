@@ -1,25 +1,33 @@
 // Basic theme
 
 // ============= Settings =============
-$basicThemeCategoriesNavBorderColor: #e2e2e2
-$basicThemeCategoriesNavLinkColor: #131313
-$basicThemeCategoriesNavLinkColorHover: #cbcbcb
+$basicThemeMainColor: #121212 //basic text color
 
-$basicThemeCartBtnColor: #cbcbcb
+$basicThemeCategoriesNavBorderColor: #e2e2e2 //menu border color
+$basicThemeCategoriesNavLinkColor: #121212 //link color
+$basicThemeCategoriesNavLinkColorHover: #cbcbcb //link hover color, cart color
+
+$basicThemeDropdownMenuLink: #434343
 // ============= /Settings =============
 
 
 .theme-basic
 
+  color: $basicThemeMainColor
+
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+
+  .container-fluid
+    max-width: 1032px
+    margin: 0 auto
 
   .navbar-brand-image
     @media screen and (max-width: $screen-md-min)
       max-height: 100%
 
   .application-navbar
-    padding-top: 71px
-    margin-bottom: 40px
+    padding-top: 30px
+    margin-bottom: 25px
     .container
       position: relative
     @media screen and (max-width: $screen-md-min)
@@ -28,7 +36,10 @@ $basicThemeCartBtnColor: #cbcbcb
   .navbar-description
     @media screen and (max-width: $screen-md-min)
       text-align: center
-      padding: 0 0 20px
+      padding: 50px 0 20px
+
+  .navbar-collapse
+    padding: 0
 
   .categories-nav
     padding: 18px 0 15px
@@ -44,26 +55,72 @@ $basicThemeCartBtnColor: #cbcbcb
         color: $basicThemeCategoriesNavLinkColor
         &:hover
           color: $basicThemeCategoriesNavLinkColorHover
+    .dropdown
+      &:hover
+        .dropdown-menu
+          display: block
 
   %cart-btn
     height: auto
-    padding: 11px 44px 9px
+    padding: 11px 17px 9px
+    &:active
+      box-shadow: none
+
+  .cart-btn_clear
+    background: none
+    border: 1px solid $basicThemeCategoriesNavBorderColor
+    color: $basicThemeMainColor
+
+  .navbar-cart-btn-icon
+    display: inline-block
+    vertical-align: middle
+    width: 26px
+    height: 23px
+    background: url(../images/cart.svg)
+    margin: -5px 9px 0 0
     
   .navbar-categories-toggle-btn
     padding-top: 8px
     padding-bottom: 8px
 
   .navbar-cart-btn
-    .navbar-cart-btn-empty
-      background-color: $basicThemeCartBtnColor
+    position: relative
     @media screen and (max-width: $screen-md-min)
       position: fixed
-      right: 12px
-      top: 13px
+      z-index: 10
+      right: 20px
+      top: 20px
       width: 49px
-      padding: 11px
+      padding: 10px 0 9px
       border-radius: 3px
       margin: 0
+      .navbar-cart-btn-icon
+        margin: 0
+
+  .navbar-cart-btn-empty,
+  .navbar-cart-btn-full
+    background-color: $basicThemeCategoriesNavLinkColorHover
+    &:hover
+      background-color: $basicThemeCategoriesNavLinkColorHover
+    &:active
+      box-shadow: none
+
+  .navbar-cart-btn-full
+    
+    background-color: $basicThemeMainColor
+    color: #fff
+    &:before
+      content: attr(data-cart)
+      position: absolute
+      bottom: 100%
+      left: 100%
+      background: #00AEFF
+      width: 30px
+      height: 30px
+      margin: 0 0 -15px -15px
+      text-align: center
+      line-height: 30px
+      border-radius: 50%
 
   // Menu
   .categories-nav
@@ -76,7 +133,7 @@ $basicThemeCartBtnColor: #cbcbcb
       width: 306px
       left: 50%
       margin-left: -153px
-      background-color: rgba(0,0,0,.5)
+      background-color: rgba(0,0,0,.9)
       padding: 21px 0 19px
       font-size: 15px
       &:after
@@ -86,7 +143,7 @@ $basicThemeCartBtnColor: #cbcbcb
         border-style: solid
         border-width: 0 6px 6px 6px
         border-color: transparent transparent #000 transparent
-        opacity: .5
+        opacity: .9
         position: absolute
         bottom: 100%
         left: 50%
@@ -119,7 +176,8 @@ $basicThemeCartBtnColor: #cbcbcb
             color: #5d5d5d
             padding-left: 6px
           &:hover
-            background: #cbcbcb
+            background: none
+            color: $basicThemeCategoriesNavLinkColorHover
 
       @media screen and (max-width: $screen-md-min)
         position: relative
@@ -127,31 +185,239 @@ $basicThemeCartBtnColor: #cbcbcb
         left: 0
         width: 100%
 
-  .products__list
-    .products_list__title
-      text-align: center
-      font-size: 53px
-      margin: 17px 0 16px
-    .products_list-item
-      height: 410px
-      .products_list-title
-        font-size: 16px
-        margin: 10px 0 0
-      .products_list-price
-        font-weight: normal
-        font-size: 16px
-        margin: 0
+  .products__list__title
+    text-align: center
+    font-size: 53px
+    margin: 17px 0 16px
+    @media screen and (max-width: $screen-sm-min)
+      font-size: 36px
+
+  .products__list-item-title
+    font-size: 16px
+
+  .products__list-item-wrap //change grid here
+    @extend .col-md-4
+    @extend .col-sm-6
+    @extend .col-xs-12
+  
+  .products__list-item
+    height: auto
+    &:hover
+      color: $basicThemeCategoriesNavLinkColorHover
+
+  .products__list-item-image
+    backface-visibility: hidden
+    width: 100%
+  
+  .products_list-title
+    font-size: 16px
+    margin: 10px 0 0
+  
+  .products__list-item-price
+    font-size: 16px
+    margin: .5em 0 0
 
   //Footer
   .application-footer
     border: none
-    padding-bottom: 0
-    & > .container
-      border-top: 1px solid $basicThemeCategoriesNavBorderColor
+    padding-bottom: 0      
+
+  .application-footer__inner
+    padding: 0 15px
 
   .footer-nav
     margin: 19px 0
+    li
+      &:first-child
+        margin-left: -15px
+    a
+      padding: 6px 0
+      font-size: 16px
+      margin-right: 25px
+      color: $basicThemeCategoriesNavLinkColor
+      &:hover
+        color: $basicThemeCategoriesNavLinkColorHover
 
+  .cart__list-item
+    border: none
+    font-size: 16px
+    padding: 0 0 26px
+
+  .cart__list-actions,
+  .cart__list-item,
+  .cart__form
+    margin: 0 60px 0 100px
+    @media screen and (max-width: $screen-md-min)
+      margin: 0
+
+  .cart__form
+    padding-top: 10px
+    padding-bottom: 50px
+
+  .cart__list-item-remove
+    display: block
+    border-radius: 16px
+    width: 34px
+    height: 34px
+    background-color: #bcbcbc
+    cursor: pointer
+
+  .cart__list-item-title
+    font-weight: bold 
+    margin: 0
+
+  .cart__list-item-option
+    margin: 0 0 3px
+
+  .cart__list-item-quantity__field
+    margin: -4px 3px 0
+    width: 32px
+    height: 32px
+    line-height: 32px
+    text-align: center
+    color: $basicThemeMainColor
+    border: 1px solid $basicThemeCategoriesNavBorderColor
+    border-radius: 2px
+
+  .cart__list-item-quantity__control
+    display: inline-block
+    vertical-align: middle
+    width: 11px
+    height: 32px
+    background: url(../images/updown.png)
+
+  .cart__list-item-quantity__control__up,
+  .cart__list-item-quantity__control__down
+    height: 16px
+    display: block
+    cursor: pointer
+    background-color: #fff
+    opacity: 0
+    &:hover
+      opacity: .5
+
+  .cart__list-item-price
+    font-size: 30px
+    margin-top: -3px
+
+  
+  .cart__list-item-quantity-select
+    select
+      width: 100%
+      padding: 5px
+    @media screen and (max-width: $screen-md-min)
+      margin-top: 10
+
+  .cart__list-actions-code
+    display: inline-block
+    vertical-align: top
+    width: 190px
+    border: 1px solid $basicThemeCategoriesNavBorderColor
+    padding: 11px 17px 9px
+    @include placeholder($basicThemeCategoriesNavBorderColor)
+
+  .cart-btn-checkout
+    display: inline-block
+    vertical-align: top
+    padding: 9px 30px
+    background-color: $basicThemeMainColor
+    color: #fff
+
+  .cart__list-actions-code,
+  .cart-btn-checkout
+    width: 100%
+    margin: 0 0 10px
+
+  .cart__form__row
+    @include clearfix()
+    margin: 0 0 20px
+
+  .cart__form__row__num
+    float: left
+    height: 44px
+    width: 44px
+    text-align: center
+    line-height: 44px
+    background-color: $basicThemeMainColor
+    color: #fff
+    font-size: 22px
+    border-radius: 50%
+
+  .cart__form__row__content
+    margin-left: 62px
+    .cart__field
+      max-resolution: 510px
+
+  .cart__form__row__title
+    font-size: 22px
+    margin: 6px 0 28px
+
+  .cart__form__radio
+    display: block
+    position: relative
+    padding: 0 0 0 25px
+    max-width: 555px
+    margin: 0 0 30px
+    font-weight: normal
+    input
+      display: block
+      position: absolute
+      margin: 0
+      top: 0
+      left: 0
+
+  .cart__form__radio__name,
+  .cart__form__radio__val
+    display: inline-block
+    vertical-align: top
+    width: 46%
+    @media screen and (max-width: $screen-xs-min)
+      display: block
+      width: 100%
+      margin-bottom: 10px
+
+  .cart__complete
+    padding: 38px 15px
+    font-size: 36px
+    text-align: center
+    p
+      margin: 0 0 100px
+    a
+      border: none
+      padding-bottom: 6px
+      color: $basicThemeMainColor
+      border-bottom: 1px solid $basicThemeCategoriesNavBorderColor
+      &:hover
+        border-bottom-color: $basicThemeCategoriesNavLinkColor
+
+
+  .cart__form__widget
+    margin: 25px 0 0
+
+  .cart__form__widget__name
+    display: block
+    font-weight: normal
+    margin: 0 0 7px
+
+  .cart__field
+    border-radius: 2px
+    border: 1px solid $basicThemeCategoriesNavLinkColorHover
+    padding: 14px
+    width: 100%
+    @include placeholder($basicThemeCategoriesNavLinkColorHover)
+    &:focus
+      border-color: $basicThemeCategoriesNavLinkColor
+      outline: none
+
+  .page-title
+    padding: 19px 0 13px
+    border: 1px solid $basicThemeCategoriesNavBorderColor
+    border-width: 1px 0
+    margin: -30px 0 47px
+    text-align: center
+    font-weight: normal
+    font-size: 18px
+    text-transform: none
 
   .mm-menu
     list-style: none
@@ -192,47 +458,50 @@ $basicThemeCartBtnColor: #cbcbcb
         a
           text-align: left
           border: none
-          background: #434343
+          background: $basicThemeDropdownMenuLink
           &:hover
-            background: none        
+            background: $basicThemeDropdownMenuLink      
 
 
   .mmenu-open
     display: none
     position: fixed
     z-index: 10
-    top: 13px
-    left: 12px
+    top: 20px
+    left: 20px
     width: 49px
     height: 44px
     background: #000
     border-radius: 3px
-    .mmenu-open__tick
-      height: 2px
-      position: absolute
-      left: 13px
-      right: 13px
-      top: 50%
-      background-color: #fff
-      margin-top: -6px
-      transition: transform .2s ease, margin-top .2s ease, opacity .2s ease
-      .mmenu-open_s
-        margin-top: -1px
-      .mmenu-open_t
-        margin-top: 4px
-    .mmenu-open_active
-      .mmenu-open
-        .mmenu-open__tick
-          .mmenu-open_f
-            margin-top: 0
-            transform: rotateZ(45deg)
-          .mmenu-open_s
-            opacity: 0
-          .mmenu-open_t
-            margin-top: 0
-            transform: rotateZ(-45deg)
+  .mmenu-open__tick
+    height: 2px
+    position: absolute
+    left: 13px
+    right: 13px
+    top: 50%
+    background-color: #fff
+    margin-top: -6px
+    @include transition( transform .2s ease, margin-top .2s ease, opacity .2s ease )
+  .mmenu-open__tick_s
+    margin-top: -1px
+  .mmenu-open__tick_t
+    margin-top: 4px
+  .mmenu-open_active
+    .mmenu-open__tick_f
+      margin-top: 0
+      transform: rotate(45deg)
+    .mmenu-open__tick_s
+      opacity: 0
+    .mmenu-open__tick_t
+      margin-top: 0
+      transform: rotate(-45deg)
+
+  .mm-page
+    overflow-x: hidden
 
   html.mm-opened .mm-page
     box-shadow: none
+  
+
 
 

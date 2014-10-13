@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+$screen-sm: 508px !default; //bootstrap override
+
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap/variables";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap/mixins";
 @import "settings/design";
