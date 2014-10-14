@@ -1,4 +1,10 @@
 $ ->
+  # Touch detect
+  if 'ontouchstart' of document
+    $("html").addClass "feature_touch"
+  else
+    $("html").addClass "feature_no-touch"
+
   $('@carousel').carousel()
   $('[data-slide-to]').on 'click', () ->
     slide = $(@).data('slide-to')

@@ -19,8 +19,9 @@ $basicThemeDropdownMenuLink: #434343
 
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
 
-  .application-content
-    overflow-x: hidden
+  // .application-content
+  // .application-navbar
+  //   overflow-x: hidden
 
   .container-fluid
     max-width: 1032px
@@ -41,7 +42,7 @@ $basicThemeDropdownMenuLink: #434343
   .navbar-description
     @media screen and (max-width: $screen-md-min)
       text-align: center
-      padding: 50px 0 20px
+      padding: 0 60px 20px
 
   .navbar-collapse
     padding: 0
@@ -223,6 +224,10 @@ $basicThemeDropdownMenuLink: #434343
     font-size: 16px
     margin: .5em 0 0
 
+  .products__show
+    @media screen and (max-width: $screen-md-min)
+      margin-bottom: 30px
+
   .product__show__thumbs__slide,
   .product__show__slider__slide
     img
@@ -247,6 +252,7 @@ $basicThemeDropdownMenuLink: #434343
   .products__show-item-title
     font-size: 38px
     margin: 3px 0 0
+    color: $basicThemeMainColor
 
   .products__show-item-price
     font-weight: normal
@@ -255,11 +261,14 @@ $basicThemeDropdownMenuLink: #434343
     font-size: 38px
 
   .plain-select__select--single
-    height: 41px
+    height: 43px
     line-height: 1
     padding: 0 15px
     @media screen and (max-width: $screen-md-min)
       margin-bottom: 10px
+
+  .products__show-item__actions
+    margin: 10px 0 17px
 
   .products__show-item__subtitle
     font-weight: bold
@@ -321,7 +330,10 @@ $basicThemeDropdownMenuLink: #434343
   //Footer
   .application-footer
     border: none
-    padding-bottom: 0      
+    padding-bottom: 0
+    margin-top: 30px
+    @media screen and (max-width: $screen-sm-min)
+      margin-top: 10px      
 
   .application-footer__inner
     padding: 0 15px
@@ -329,8 +341,15 @@ $basicThemeDropdownMenuLink: #434343
   .footer-nav
     margin: 19px 0
     li
-      &:first-child
-        margin-left: -15px
+      @media screen and (min-width: $screen-xs-min)
+        &:first-child
+          margin-left: -15px
+      @media screen and (max-width: $screen-xs-min)
+        display: block
+        float: left
+        width: 50%
+        margin: 0
+        text-align: center
     a
       padding: 6px 0
       font-size: 16px
@@ -355,13 +374,25 @@ $basicThemeDropdownMenuLink: #434343
     padding-top: 10px
     padding-bottom: 50px
 
+  .cart__list-actions_after-form,
+  .cart__form
+    margin: 0 0 0 205px
+    max-width: 580px
+    @media screen and (max-width: $screen-md-min)
+      margin: 0 auto
+
   .cart__list-item-remove
     display: block
-    border-radius: 16px
+    border-radius: 17px
     width: 34px
     height: 34px
     background-color: #bcbcbc
     cursor: pointer
+    transition: background-color .2s ease
+    img
+      width: 100%
+    &:hover
+      background-color: $basicThemeCategoriesNavLinkColorHover
 
   .cart__list-item-title
     font-weight: bold 
@@ -369,6 +400,9 @@ $basicThemeDropdownMenuLink: #434343
 
   .cart__list-item-option
     margin: 0 0 3px
+
+  .cart__list-item-quantity
+    font-size: 14px
 
   .cart__list-item-quantity__field
     margin: -4px 3px 0
@@ -398,7 +432,7 @@ $basicThemeDropdownMenuLink: #434343
       opacity: .5
 
   .cart__list-item-price
-    font-size: 30px
+    font-size: 22px
     margin-top: -3px
 
   
@@ -406,7 +440,7 @@ $basicThemeDropdownMenuLink: #434343
     select
       width: 100%
       padding: 5px
-    @media screen and (max-width: $screen-md-min)
+    @media screen and (max-width: $screen-sm-min)
       margin-top: 10
 
   .cart__list-actions-code
@@ -414,13 +448,13 @@ $basicThemeDropdownMenuLink: #434343
     vertical-align: top
     width: 190px
     border: 1px solid $basicThemeCategoriesNavBorderColor
-    padding: 11px 17px 9px
+    padding: 12px 17px 10px
     @include placeholder($basicThemeCategoriesNavBorderColor)
 
   .cart-btn-checkout
     display: inline-block
     vertical-align: top
-    padding: 9px 30px
+    padding: 10px 30px
     background-color: $basicThemeMainColor
     color: #fff
 
@@ -478,8 +512,10 @@ $basicThemeDropdownMenuLink: #434343
       margin-bottom: 10px
 
   .cart__complete
-    padding: 38px 15px
-    font-size: 36px
+    padding: 38px 0
+    font-size: 22px
+    max-width: 800px
+    margin: 0 auto
     text-align: center
     p
       margin: 0 0 100px
@@ -490,6 +526,8 @@ $basicThemeDropdownMenuLink: #434343
       border-bottom: 1px solid $basicThemeCategoriesNavBorderColor
       &:hover
         border-bottom-color: $basicThemeCategoriesNavLinkColor
+    @media screen and (max-width: $screen-xs-min)
+      font-size: 22px
 
 
   .cart__form__widget
@@ -604,7 +642,11 @@ $basicThemeDropdownMenuLink: #434343
     box-shadow: none
   
 
-
+.cart__list-item-sum
+  font-size: 30px
+  text-align: right
+  @media screen and (max-width: $screen-xs-min)
+    text-align: center
 
 .text
   h1,

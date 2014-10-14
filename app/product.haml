@@ -118,23 +118,24 @@
                     Моно-серьга лалала
                   .products__show-item-price
                     12 000.-
-              .row
-                .col-sm-6.col-xs-12
-                  %select.plain-select__select--single
-                    %option{selected: 'selected'} Выберите размер
-                    %option Размер 15
-                    %option Размер 14
-                    %option{disabled} Размер 11 — нет в наличии
+              .products__show-item__actions
+                .row
+                  .col-sm-6.col-xs-12
+                    %select.plain-select__select--single
+                      %option{selected: 'selected'} Выберите размер
+                      %option Размер 15
+                      %option Размер 14
+                      %option{disabled} Размер 11 — нет в наличии
 
-                .col-md-5.col-sm-6.col-xs-12
-                  %a.products__show-item-cart-btn{href: 'cart.html'}
-                    В корзину
+                  .col-md-5.col-sm-6.col-xs-12
+                    %a.products__show-item-cart-btn{href: 'cart.html'}
+                      В корзину
 
-              %h2.products__show-item__subtitle Описание
+              / %h2.products__show-item__subtitle Описание
               .products__show-item-description
                 Make peace, not war! Настоящий блокбастер среди украшений - серебряная моносерьга в виде пули Wanna?Be! - попала в самое сердце столичных модниц. Инкрустированный цирконами аксессуар не оставил и знаменитую на весь мир икону стилю, Рианну. Известная дива не раз дополняла этим аксессуаром свои образы. Рекомендуем надевать кулон вместе с белыми майками, кружевными эспадрильями и джинсами бойфренда.
 
-              %h3.products__show-item__subtitle Характеристики
+              / %h3.products__show-item__subtitle Характеристики
               %ul.products__show-item-details
                 - details = [{'Серебро': '12 К'}, {'Цирконы': '10 К'}, {'Кристаллов': '1294'}, {'Вес': '3 гр' }]
                 - for obj, i in details
@@ -147,21 +148,11 @@
     .application-footer
       .container-fluid
         .application-footer__inner
-          .row
-            .col-sm-8
-              %ul.footer-nav
-                - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
-                - for l in footer_links
-                  %li
-                    %a{href: '#'}= "#{l}"
-            / .col-sm-4
-            /   %ul.footer-nav.footer-nav-social
-            /     - footer_social = ['Instagram', 'Facebook']
-            /     - for l in footer_social
-            /       %li
-            /         %a{href: '#'}= "#{l}"
-            /   .clearfix
-
+          %ul.footer-nav
+            - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
+            - for l in footer_links
+              %li
+                %a{href: '#'}= "#{l}"
 
     .modal.orders-modal.fade{"aria-hidden" => "true", "aria-labelledby" => "", :role => "product-modal", :tabindex => "-1"}
       .modal-dialog
