@@ -36,123 +36,123 @@
 
   %body.theme-basic
     %script{src: 'scripts/bundle.js'}
-
-    .application-navbar
-      .container-fluid
-        .row
-          .col-sm-12.col-md-4
-            .navbar-description
-              Магазин мебели ручной работы
-              %br
-              = "+7 903 595 1737"
-          .col-md-4.col-sm-12.col-xs-12.col-sm-pull-0
-            %a.navbar-brand-link{href: 'welcome.html'}
-              %img.navbar-brand-image{src: 'images/wannabe/logo.png', alt:'field & rage'}
-          .row.visible-xs
-          .col-sm-4
-            %a.navbar-cart-btn.navbar-cart-btn-empty
-              %span.navbar-cart-btn-icon
-              %span.navbar-cart-btn-caption
-                Корзина
-          .col-sm-12.col-xs-6.col-xs-pull-6.col-sm-pull-0.hidden-sm.hidden-xs
-            %button.navbar-categories-toggle-btn.collapsed{"data-target" => "[categories-nav]", "data-toggle" => "collapse", type: "button"}
-              %i.fa.fa-bars
-              %span.navbar-categories-toggle-btn-caption
-                Каталог
-        .collapse.navbar-collapse{'categories-nav': ''}
-          %ul.categories-nav#nav
-            - categories = ['Столы', 'Стулья', 'Свет', 'Декор' ]
-            - for c in categories
-              %li
-                %a{href: '#'}= "#{c}"
-            %li.dropdown
-              %a.dropdown-toggle{href: '#', data-toggle: "dropdown"} Аксессуары
-              %ul.dropdown-menu
-                %li
-                  %a{href: '#', data-count:'45'} Категория
-                %li
-                  %a{href: '#', data-count:'1'} Категория
-                %li
-                  %a{href: '#', data-count:'6'} Категория
-                %li
-                  %a{href: '#', data-count:'12'} Категория
-                %li
-                  %a{href: '#', data-count:'4'} Категория
-                %li
-                  %a{href: '#', data-count:'9'} Категория
-        %a#navopen.mmenu-open.visible-sm.visible-xs{href: "#nav"}
-          %span.mmenu-open__tick.mmenu-open__tick_f
-          %span.mmenu-open__tick.mmenu-open__tick_s
-          %span.mmenu-open__tick.mmenu-open__tick_t
-
-
-
-    .application-content
-      .container-fluid
-        .products__show
-          .products__show-item-header
-            .products__show-item-category
-              Столы / Маленькие столы
-            %h1.products__show-item-title
-              Моно-серьга лалала
-            .products__show-item-price
-              12 000.-
+    .application
+      .application-navbar
+        .container-fluid
           .row
-            .col-md-6.col-sm-12.col-xs-12
-              .owl-carousel.product__show__slider#product-slider
-                - for i in [0..6]
-                  .product__show__slider__slide
-                    %img{src: 'http://placekitten.com/490/490', alt: ''}
+            .col-sm-12.col-md-4
+              .navbar-description
+                Магазин мебели ручной работы
+                %br
+                = "+7 903 595 1737"
+            .col-md-4.col-sm-12.col-xs-12.col-sm-pull-0
+              %a.navbar-brand-link{href: 'welcome.html'}
+                %img.navbar-brand-image{src: 'images/wannabe/logo.png', alt:'field & rage'}
+            .row.visible-xs
+            .col-sm-4
+              %a.navbar-cart-btn.navbar-cart-btn-empty
+                %span.navbar-cart-btn-icon
+                %span.navbar-cart-btn-caption
+                  Корзина
+            .col-sm-12.col-xs-6.col-xs-pull-6.col-sm-pull-0.hidden-sm.hidden-xs
+              %button.navbar-categories-toggle-btn.collapsed{"data-target" => "[categories-nav]", "data-toggle" => "collapse", type: "button"}
+                %i.fa.fa-bars
+                %span.navbar-categories-toggle-btn-caption
+                  Каталог
+          .collapse.navbar-collapse{'categories-nav': ''}
+            %ul.categories-nav#nav
+              - categories = ['Столы', 'Стулья', 'Свет', 'Декор' ]
+              - for c in categories
+                %li
+                  %a{href: '#'}= "#{c}"
+              %li.dropdown
+                %a.dropdown-toggle{href: '#', data-toggle: "dropdown"} Аксессуары
+                %ul.dropdown-menu
+                  %li
+                    %a{href: '#', data-count:'45'} Категория
+                  %li
+                    %a{href: '#', data-count:'1'} Категория
+                  %li
+                    %a{href: '#', data-count:'6'} Категория
+                  %li
+                    %a{href: '#', data-count:'12'} Категория
+                  %li
+                    %a{href: '#', data-count:'4'} Категория
+                  %li
+                    %a{href: '#', data-count:'9'} Категория
+          %a#navopen.mmenu-open.visible-sm.visible-xs{href: "#nav"}
+            %span.mmenu-open__tick.mmenu-open__tick_f
+            %span.mmenu-open__tick.mmenu-open__tick_s
+            %span.mmenu-open__tick.mmenu-open__tick_t
 
-              .product__show__thumbs#product-thumbs
-                - for i in [0..6]
-                  .product__show__thumbs__slide
-                    %img{src: 'http://placekitten.com/490/490', alt: ''}
-
-            .col-md-6.col-sm-12.col-xs-12
-              .products__show-item-content
-                .products__show-item-content-header
-                  .products__show-item-category
-                    Столы / Маленькие столы
-                  %h1.products__show-item-title
-                    Моно-серьга лалала
-                  .products__show-item-price
-                    12 000.-
-              .products__show-item__actions
-                .row
-                  .col-sm-6.col-xs-12
-                    %select.plain-select__select--single
-                      %option{selected: 'selected'} Выберите размер
-                      %option Размер 15
-                      %option Размер 14
-                      %option{disabled} Размер 11 — нет в наличии
-
-                  .col-md-5.col-sm-6.col-xs-12
-                    %a.products__show-item-cart-btn{href: 'cart.html'}
-                      В корзину
-
-              / %h2.products__show-item__subtitle Описание
-              .products__show-item-description
-                Make peace, not war! Настоящий блокбастер среди украшений - серебряная моносерьга в виде пули Wanna?Be! - попала в самое сердце столичных модниц. Инкрустированный цирконами аксессуар не оставил и знаменитую на весь мир икону стилю, Рианну. Известная дива не раз дополняла этим аксессуаром свои образы. Рекомендуем надевать кулон вместе с белыми майками, кружевными эспадрильями и джинсами бойфренда.
-
-              / %h3.products__show-item__subtitle Характеристики
-              %ul.products__show-item-details
-                - details = [{'Серебро': '12 К'}, {'Цирконы': '10 К'}, {'Кристаллов': '1294'}, {'Вес': '3 гр' }]
-                - for obj, i in details
-                  - for key of obj
-                    %li
-                      = "#{key}:"
-                      = obj[key]
 
 
-    .application-footer
-      .container-fluid
-        .application-footer__inner
-          %ul.footer-nav
-            - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
-            - for l in footer_links
-              %li
-                %a{href: '#'}= "#{l}"
+      .application-content
+        .container-fluid
+          .products__show
+            .products__show-item-header
+              .products__show-item-category
+                Столы / Маленькие столы
+              %h1.products__show-item-title
+                Моно-серьга лалала
+              .products__show-item-price
+                12 000.-
+            .row
+              .col-md-6.col-sm-12.col-xs-12
+                .owl-carousel.product__show__slider#product-slider
+                  - for i in [0..6]
+                    %a.product__show__slider__slide.js-lightbox{href: 'images/product-3-square.png'}
+                      %img{src: 'http://placekitten.com/490/490', alt: ''}
+
+                .product__show__thumbs#product-thumbs
+                  - for i in [0..6]
+                    .product__show__thumbs__slide
+                      %img{src: 'http://placekitten.com/490/490', alt: ''}
+
+              .col-md-6.col-sm-12.col-xs-12
+                .products__show-item-content
+                  .products__show-item-content-header
+                    .products__show-item-category
+                      Столы / Маленькие столы
+                    %h1.products__show-item-title
+                      Моно-серьга лалала
+                    .products__show-item-price
+                      12 000.-
+                .products__show-item__actions
+                  .row
+                    .col-sm-6.col-xs-12
+                      %select.plain-select__select--single
+                        %option{selected: 'selected'} Выберите размер
+                        %option Размер 15
+                        %option Размер 14
+                        %option{disabled} Размер 11 — нет в наличии
+
+                    .col-md-5.col-sm-6.col-xs-12
+                      %a.products__show-item-cart-btn{href: 'cart.html'}
+                        В корзину
+
+                / %h2.products__show-item__subtitle Описание
+                .products__show-item-description
+                  Make peace, not war! Настоящий блокбастер среди украшений - серебряная моносерьга в виде пули Wanna?Be! - попала в самое сердце столичных модниц. Инкрустированный цирконами аксессуар не оставил и знаменитую на весь мир икону стилю, Рианну. Известная дива не раз дополняла этим аксессуаром свои образы. Рекомендуем надевать кулон вместе с белыми майками, кружевными эспадрильями и джинсами бойфренда.
+
+                / %h3.products__show-item__subtitle Характеристики
+                %ul.products__show-item-details
+                  - details = [{'Серебро': '12 К'}, {'Цирконы': '10 К'}, {'Кристаллов': '1294'}, {'Вес': '3 гр' }]
+                  - for obj, i in details
+                    - for key of obj
+                      %li
+                        = "#{key}:"
+                        = obj[key]
+
+
+      .application-footer
+        .container-fluid
+          .application-footer__inner
+            %ul.footer-nav
+              - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
+              - for l in footer_links
+                %li
+                  %a{href: '#'}= "#{l}"
 
     .modal.orders-modal.fade{"aria-hidden" => "true", "aria-labelledby" => "", :role => "product-modal", :tabindex => "-1"}
       .modal-dialog

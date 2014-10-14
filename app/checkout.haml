@@ -37,110 +37,110 @@
 
   %body.theme-basic
     %script{src: 'scripts/bundle.js'}
-
-    .application-navbar
-      .container-fluid
-        .row
-          .col-sm-12.col-md-4
-            .navbar-description
-              Магазин мебели ручной работы
-              %br
-              = "+7 903 595 1737"
-          .col-md-4.col-sm-12.col-xs-12.col-sm-pull-0
-            %a.navbar-brand-link{href: 'welcome.html'}
-              %img.navbar-brand-image{src: 'images/logo.png', alt:'field & rage'}
-          .row.visible-xs
-          .col-sm-4
-            %a.navbar-cart-btn.navbar-cart-btn-full{data-cart: '5'}
-              %span.navbar-cart-btn-icon
-              %span.navbar-cart-btn-caption
-                Корзина — 13 000 Р
-          .col-sm-12.col-xs-6.col-xs-pull-6.col-sm-pull-0.hidden-sm.hidden-xs
-            %button.navbar-categories-toggle-btn.collapsed{"data-target" => "[categories-nav]", "data-toggle" => "collapse", type: "button"}
-              %i.fa.fa-bars
-              %span.navbar-categories-toggle-btn-caption
-                Каталог
-
-
-
-    .application-content
-      .container-fluid
-        .products__show
-          %h1.page-title
-            Оформление заказа.
-            %strong 5 товаров
-            на сумму
-            %strong 16 000 руб.
-          %form{action: 'complete.html'}
-            .cart__form
-              .cart__form__row
-                .cart__form__row__num 1
-                .cart__form__row__content
-                  .cart__form__row__title
-                    Выберите тип доставки. Ваш город
-                    %strong Москва
-                  %label.cart__form__radio
-                    %input{type: 'radio', name: 'delivery-radio-stack'}
-                    %span.cart__form__radio__name
-                      Вариант 1
-                    %span.cart__form__radio__val
-                      360 руб.
-                  %label.cart__form__radio
-                    %input{type: 'radio', name: 'delivery-radio-stack'}
-                    %span.cart__form__radio__name
-                      Вариант 2 пусть тут будет что-нибудь написано (и тут тоже)
-                    %span.cart__form__radio__val
-                      Бесплатно
-
-              .cart__form__row
-                .cart__form__row__num 2
-                .cart__form__row__content
-                  .cart__form__row__title
-                    Введите данные
-                  .cart__form__widget
-                    %label.cart__form__widget__name{for: 'phone'} Телефон
-                    %input#phone.cart__form__widget__field.cart__field{type: 'text', placeholder: 'Прим.: +7 913 123 32 10'}
-                  
-                  .cart__form__widget
-                    %label.cart__form__widget__name{for: 'name'} Как к вам обращаться?
-                    %input#name.cart__form__widget__field.cart__field{type: 'text', placeholder: 'Как к вам обращаться'}
-                  
-                  .cart__form__widget
-                    %label.cart__form__widget__name{for: 'text'} Адрес доставки
-                    %textarea#text.cart__form__widget__field.cart__field{rows: 3, placeholder: 'Акедемика Вавилова 12-10'}
-              
-              .cart__form__row
-                .cart__form__row__num 3
-                .cart__form__row__content
-                  .cart__form__row__title
-                    Способы оплаты
-                  %label.cart__form__radio
-                    %input{type: 'radio', name: 'delivery-radio-stack2'}
-                    %span.cart__form__radio__name
-                      Способ 1
-                  %label.cart__form__radio
-                    %input{type: 'radio', name: 'delivery-radio-stack2'}
-                    %span.cart__form__radio__name
-                      Способ 2 пусть тут будет что-нибудь написано (и тут тоже)
-
-            .cart__list-actions.cart__list-actions_after-form
-              .row
-                .col-md-5.col-sm-6.hidden-xs
-                  %a.cart-btn.cart-btn_clear.cart__list-actions-btn{href: 'cart.html'}
-                    Вернуться назад
-                .col-md-5.col-md-offset-1.col-sm-6
-                  %button.cart-btn-checkout.cart__list-actions-btn{type: 'submit'}
-                    Продолжить
-                .col-md-5.col-sm-6.visible-xs
-                  %a.cart-btn.cart-btn_clear.cart__list-actions-btn{href: 'cart.html'}
-                    Вернуться назад
+    .application
+      .application-navbar
+        .container-fluid
+          .row
+            .col-sm-12.col-md-4
+              .navbar-description
+                Магазин мебели ручной работы
+                %br
+                = "+7 903 595 1737"
+            .col-md-4.col-sm-12.col-xs-12.col-sm-pull-0
+              %a.navbar-brand-link{href: 'welcome.html'}
+                %img.navbar-brand-image{src: 'images/logo.png', alt:'field & rage'}
+            .row.visible-xs
+            .col-sm-4
+              %a.navbar-cart-btn.navbar-cart-btn-full{data-cart: '5'}
+                %span.navbar-cart-btn-icon
+                %span.navbar-cart-btn-caption
+                  Корзина — 13 000 Р
+            .col-sm-12.col-xs-6.col-xs-pull-6.col-sm-pull-0.hidden-sm.hidden-xs
+              %button.navbar-categories-toggle-btn.collapsed{"data-target" => "[categories-nav]", "data-toggle" => "collapse", type: "button"}
+                %i.fa.fa-bars
+                %span.navbar-categories-toggle-btn-caption
+                  Каталог
 
 
-    .application-footer
-      .container-fluid
-        .application-footer__inner
-          %ul.footer-nav
-            - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
-            - for l in footer_links
-              %li
-                %a{href: '#'}= "#{l}"
+
+      .application-content
+        .container-fluid
+          .products__show
+            %h1.page-title
+              Оформление заказа.
+              %strong 5 товаров
+              на сумму
+              %strong 16 000 руб.
+            %form{action: 'complete.html'}
+              .cart__form
+                .cart__form__row
+                  .cart__form__row__num 1
+                  .cart__form__row__content
+                    .cart__form__row__title
+                      Выберите тип доставки. Ваш город
+                      %strong Москва
+                    %label.cart__form__radio
+                      %input{type: 'radio', name: 'delivery-radio-stack'}
+                      %span.cart__form__radio__name
+                        Вариант 1
+                      %span.cart__form__radio__val
+                        360 руб.
+                    %label.cart__form__radio
+                      %input{type: 'radio', name: 'delivery-radio-stack'}
+                      %span.cart__form__radio__name
+                        Вариант 2 пусть тут будет что-нибудь написано (и тут тоже)
+                      %span.cart__form__radio__val
+                        Бесплатно
+
+                .cart__form__row
+                  .cart__form__row__num 2
+                  .cart__form__row__content
+                    .cart__form__row__title
+                      Введите данные
+                    .cart__form__widget
+                      %label.cart__form__widget__name{for: 'phone'} Телефон
+                      %input#phone.cart__form__widget__field.cart__field{type: 'text', placeholder: 'Прим.: +7 913 123 32 10'}
+                    
+                    .cart__form__widget
+                      %label.cart__form__widget__name{for: 'name'} Как к вам обращаться?
+                      %input#name.cart__form__widget__field.cart__field{type: 'text', placeholder: 'Как к вам обращаться'}
+                    
+                    .cart__form__widget
+                      %label.cart__form__widget__name{for: 'text'} Адрес доставки
+                      %textarea#text.cart__form__widget__field.cart__field{rows: 3, placeholder: 'Акедемика Вавилова 12-10'}
+                
+                .cart__form__row
+                  .cart__form__row__num 3
+                  .cart__form__row__content
+                    .cart__form__row__title
+                      Способы оплаты
+                    %label.cart__form__radio
+                      %input{type: 'radio', name: 'delivery-radio-stack2'}
+                      %span.cart__form__radio__name
+                        Способ 1
+                    %label.cart__form__radio
+                      %input{type: 'radio', name: 'delivery-radio-stack2'}
+                      %span.cart__form__radio__name
+                        Способ 2 пусть тут будет что-нибудь написано (и тут тоже)
+
+              .cart__list-actions.cart__list-actions_after-form
+                .row
+                  .col-md-5.col-sm-6.hidden-xs
+                    %a.cart-btn.cart-btn_clear.cart__list-actions-btn{href: 'cart.html'}
+                      Вернуться назад
+                  .col-md-5.col-md-offset-1.col-sm-6
+                    %button.cart-btn-checkout.cart__list-actions-btn{type: 'submit'}
+                      Продолжить
+                  .col-md-5.col-sm-6.visible-xs
+                    %a.cart-btn.cart-btn_clear.cart__list-actions-btn{href: 'cart.html'}
+                      Вернуться назад
+
+
+      .application-footer
+        .container-fluid
+          .application-footer__inner
+            %ul.footer-nav
+              - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
+              - for l in footer_links
+                %li
+                  %a{href: '#'}= "#{l}"
