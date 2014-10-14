@@ -19,6 +19,12 @@ http://livereload.com/ в помощь!
     > ./build
 
 
+Публикация
+----------
+
+   > ./publicate
+
+
 Процесс gulp
 ------------
 
