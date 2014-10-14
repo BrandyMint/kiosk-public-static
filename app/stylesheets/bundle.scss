@@ -31,7 +31,9 @@ $screen-sm: 508px !default; //bootstrap override
 
 @import "settings/forms";
 
-@import "modules/_owlcarousel";
+@import "modules/owlcarousel";
+@import "modules/imagelightbox";
+
 @import "modules/buttons";
 @import "modules/modal";
 @import "modules/dropdown";

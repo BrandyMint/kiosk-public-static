@@ -23,6 +23,9 @@ $basicThemeDropdownMenuLink: #434343
   // .application-navbar
   //   overflow-x: hidden
 
+  .application
+    overflow: hidden
+
   .container-fluid
     max-width: 1032px
     margin: 0 auto
@@ -102,17 +105,17 @@ $basicThemeDropdownMenuLink: #434343
       margin: 0
       .navbar-cart-btn-icon
         margin: 0
-
-  .navbar-cart-btn-empty,
-  .navbar-cart-btn-full
-    background-color: $basicThemeCategoriesNavLinkColorHover
-    &:hover
+  
+  .feature-touch
+    .navbar-cart-btn-empty,
+    .navbar-cart-btn-full
       background-color: $basicThemeCategoriesNavLinkColorHover
-    &:active
-      box-shadow: none
+      &:hover
+        background-color: $basicThemeCategoriesNavLinkColorHover
+      &:active
+        box-shadow: none
 
   .navbar-cart-btn-full
-    
     background-color: $basicThemeMainColor
     color: #fff
     &:before
@@ -433,6 +436,8 @@ $basicThemeDropdownMenuLink: #434343
   .cart__list-item-price
     font-size: 22px
     margin-top: -3px
+    @media screen and (max-width: $screen-sm-min)
+      font-size: 18px
 
   
   .cart__list-item-quantity-select
@@ -457,6 +462,13 @@ $basicThemeDropdownMenuLink: #434343
     background-color: $basicThemeMainColor
     color: #fff
 
+  .cart-btn-checkout-wrap
+    @media screen and (max-width: $screen-sm-min)
+      position: fixed
+      bottom: 0
+      left: 15px
+      right: 15px
+
   .cart__list-actions-code,
   .cart-btn-checkout
     width: 100%
@@ -476,9 +488,14 @@ $basicThemeDropdownMenuLink: #434343
     color: #fff
     font-size: 22px
     border-radius: 22px
+    @media screen and (max-width: $screen-sm-min)
+      float: none
+      margin: 0 auto 20px
 
   .cart__form__row__content
     margin-left: 62px
+    @media screen and (max-width: $screen-sm-min)
+      margin-left: 0
     .cart__field
       max-resolution: 510px
 
