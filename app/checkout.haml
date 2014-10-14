@@ -71,82 +71,76 @@
             %strong 5 товаров
             на сумму
             %strong 16 000 руб.
-          
-          .cart__form
-            .cart__form__row
-              .cart__form__row__num 1
-              .cart__form__row__content
-                .cart__form__row__title
-                  Выберите тип доставки. Ваш город
-                  %strong Москва
-                %label.cart__form__radio
-                  %input{type: 'radio', name: 'delivery-radio-stack'}
-                  %span.cart__form__radio__name
-                    Вариант 1
-                  %span.cart__form__radio__val
-                    360 руб.
-                %label.cart__form__radio
-                  %input{type: 'radio', name: 'delivery-radio-stack'}
-                  %span.cart__form__radio__name
-                    Вариант 2 пусть тут будет что-нибудь написано (и тут тоже)
-                  %span.cart__form__radio__val
-                    Бесплатно
+          %form{action: 'complete.html'}
+            .cart__form
+              .cart__form__row
+                .cart__form__row__num 1
+                .cart__form__row__content
+                  .cart__form__row__title
+                    Выберите тип доставки. Ваш город
+                    %strong Москва
+                  %label.cart__form__radio
+                    %input{type: 'radio', name: 'delivery-radio-stack'}
+                    %span.cart__form__radio__name
+                      Вариант 1
+                    %span.cart__form__radio__val
+                      360 руб.
+                  %label.cart__form__radio
+                    %input{type: 'radio', name: 'delivery-radio-stack'}
+                    %span.cart__form__radio__name
+                      Вариант 2 пусть тут будет что-нибудь написано (и тут тоже)
+                    %span.cart__form__radio__val
+                      Бесплатно
 
-            .cart__form__row
-              .cart__form__row__num 2
-              .cart__form__row__content
-                .cart__form__row__title
-                  Введите данные
-                .cart__form__widget
-                  %label.cart__form__widget__name{for: 'phone'} Телефон
-                  %input#phone.cart__form__widget__field.cart__field{type: 'text', placeholder: 'Прим.: +7 913 123 32 10'}
-                
-                .cart__form__widget
-                  %label.cart__form__widget__name{for: 'name'} Как к вам обращаться?
-                  %input#name.cart__form__widget__field.cart__field{type: 'text', placeholder: 'Как к вам обращаться'}
-                
-                .cart__form__widget
-                  %label.cart__form__widget__name{for: 'text'} Адрес доставки
-                  %textarea#text.cart__form__widget__field.cart__field{rows: 3, placeholder: 'Акедемика Вавилова 12-10'}
-            
-            .cart__form__row
-              .cart__form__row__num 3
-              .cart__form__row__content
-                .cart__form__row__title
-                  Способы оплаты
-                %label.cart__form__radio
-                  %input{type: 'radio', name: 'delivery-radio-stack2'}
-                  %span.cart__form__radio__name
-                    Способ 1
-                %label.cart__form__radio
-                  %input{type: 'radio', name: 'delivery-radio-stack2'}
-                  %span.cart__form__radio__name
-                    Способ 2 пусть тут будет что-нибудь написано (и тут тоже)
+              .cart__form__row
+                .cart__form__row__num 2
+                .cart__form__row__content
+                  .cart__form__row__title
+                    Введите данные
+                  .cart__form__widget
+                    %label.cart__form__widget__name{for: 'phone'} Телефон
+                    %input#phone.cart__form__widget__field.cart__field{type: 'text', placeholder: 'Прим.: +7 913 123 32 10'}
+                  
+                  .cart__form__widget
+                    %label.cart__form__widget__name{for: 'name'} Как к вам обращаться?
+                    %input#name.cart__form__widget__field.cart__field{type: 'text', placeholder: 'Как к вам обращаться'}
+                  
+                  .cart__form__widget
+                    %label.cart__form__widget__name{for: 'text'} Адрес доставки
+                    %textarea#text.cart__form__widget__field.cart__field{rows: 3, placeholder: 'Акедемика Вавилова 12-10'}
+              
+              .cart__form__row
+                .cart__form__row__num 3
+                .cart__form__row__content
+                  .cart__form__row__title
+                    Способы оплаты
+                  %label.cart__form__radio
+                    %input{type: 'radio', name: 'delivery-radio-stack2'}
+                    %span.cart__form__radio__name
+                      Способ 1
+                  %label.cart__form__radio
+                    %input{type: 'radio', name: 'delivery-radio-stack2'}
+                    %span.cart__form__radio__name
+                      Способ 2 пусть тут будет что-нибудь написано (и тут тоже)
 
-          .cart__list-actions
-            .row
-              .col-md-3.col-sm-6
-                %a.cart-btn.cart-btn_clear.cart__list-actions-btn{href: 'cart.html'}
-                  Вернуться назад
-              .col-md-3.col-md-offset-4.col-sm-6
-                %a.cart-btn-checkout.cart__list-actions-btn{href: 'complete.html'}
-                  Продолжить
+            .cart__list-actions.cart__list-actions_after-form
+              .row
+                .col-md-5.col-sm-6.hidden-xs
+                  %a.cart-btn.cart-btn_clear.cart__list-actions-btn{href: 'cart.html'}
+                    Вернуться назад
+                .col-md-5.col-md-offset-1.col-sm-6
+                  %button.cart-btn-checkout.cart__list-actions-btn{type: 'submit'}
+                    Продолжить
+                .col-md-5.col-sm-6.visible-xs
+                  %a.cart-btn.cart-btn_clear.cart__list-actions-btn{href: 'cart.html'}
+                    Вернуться назад
 
 
     .application-footer
       .container-fluid
         .application-footer__inner
-          .row
-            .col-sm-8
-              %ul.footer-nav
-                - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
-                - for l in footer_links
-                  %li
-                    %a{href: '#'}= "#{l}"
-            / .col-sm-4
-            /   %ul.footer-nav.footer-nav-social
-            /     - footer_social = ['Instagram', 'Facebook']
-            /     - for l in footer_social
-            /       %li
-            /         %a{href: '#'}= "#{l}"
-            /   .clearfix
+          %ul.footer-nav
+            - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
+            - for l in footer_links
+              %li
+                %a{href: '#'}= "#{l}"

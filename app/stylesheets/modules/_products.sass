@@ -15,10 +15,13 @@ $products-show-image-width: 477px
 .products__list-item
   @extend %products__list-item
   position: relative
-  &:hover
-    color: $link-hover-color-dark
-    .products__list-item-image
-      +opacity(0.8)
+
+.feature_no-touch
+  .products__list-item
+    &:hover
+      color: $link-hover-color-dark
+      .products__list-item-image
+        +opacity(0.8)
 
 .products__list-item-block
   text-align: center

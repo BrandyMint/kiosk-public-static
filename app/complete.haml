@@ -80,17 +80,8 @@
     .application-footer
       .container-fluid
         .application-footer__inner
-          .row
-            .col-sm-8
-              %ul.footer-nav
-                - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
-                - for l in footer_links
-                  %li
-                    %a{href: '#'}= "#{l}"
-            / .col-sm-4
-            /   %ul.footer-nav.footer-nav-social
-            /     - footer_social = ['Instagram', 'Facebook']
-            /     - for l in footer_social
-            /       %li
-            /         %a{href: '#'}= "#{l}"
-            /   .clearfix
+          %ul.footer-nav
+            - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
+            - for l in footer_links
+              %li
+                %a{href: '#'}= "#{l}"
