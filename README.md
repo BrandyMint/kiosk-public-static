@@ -1,9 +1,7 @@
 Установка и настройка
 ---------------------
 
-    > npm install
-    > bower install
-
+    > ./install
 
 Запуск
 ------
@@ -13,6 +11,12 @@
 Дальше открываем браузер http://localhost:9000
 
 http://livereload.com/ в помощь!
+
+
+Билд
+----
+
+    > ./build
 
 
 Процесс gulp
@@ -65,5 +69,3 @@ https://github.com/blueimp/jQuery-File-Upload/wiki/Browser-support
 ## HTML5 FileReader
 
 * Firefox 3.6+, IE10+, and Opera 12+.
-
-test
