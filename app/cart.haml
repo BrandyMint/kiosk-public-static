@@ -82,31 +82,28 @@
                           Арт. 123456
                         .cart__list-item-price.visible-xs
                           12 000 руб.
+                        %span.cart__list-item-remove.cart__list-item-remove_xs.visible-xs
+                          %img{src: 'images/cross_white.svg', alt: ''}
                       .col-lg-3.col-md-3.col-sm-3.col-xs-12
-                        .cart__list-item-quantity.hidden-sm.hidden-xs
+                        .cart__list-item-quantity
                           %span.cart__list-item-quantity__text
                             Количество
-                          %input.cart__list-item-quantity__field{ value: 1, type: 'text'}
-                          .cart__list-item-quantity__control
-                            %span.cart__list-item-quantity__control__up
-                            %span.cart__list-item-quantity__control__down
-                        .cart__list-item-quantity-select.visible-sm-block.visible-xs-block
-                          %select
-                            %option Удалить из корзины
-                            %option 1
-                            %option{selected} 2
-                            %option 3
-                            %option 4
-                            %option 5
-                            %option 6
-                            %option 7
-                            %option 8
-                            %option 9
-                            %option 10
-                      .col-lg-3.col-md-3.col-sm-3.hidden-xs
+                          .cart__list-item-quantity-select
+                            %select
+                              %option 1
+                              %option{selected} 2
+                              %option 3
+                              %option 4
+                              %option 5
+                              %option 6
+                              %option 7
+                              %option 8
+                              %option 9
+                              %option 10
+                      .col-lg-3.col-md-3.col-sm-2.hidden-xs
                         .cart__list-item-price
                           12 000 руб.
-                      .col-lg-1.col-md-1.visible-lg.visible-md
+                      .col-lg-1.col-md-1.col-sm-1.hidden-xs
                         %span.cart__list-item-remove
                           %img{src: 'images/cross_white.svg', alt: ''}
                 .cart__list-item.cart__list-item_sum

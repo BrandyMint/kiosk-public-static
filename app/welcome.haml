@@ -61,7 +61,7 @@
                 %span.navbar-categories-toggle-btn-caption
                   Каталог
           .collapse.navbar-collapse{'categories-nav': ''}
-            %ul.categories-nav#nav
+            %ul.categories-nav
               - categories = ['Столы', 'Стулья', 'Свет', 'Декор' ]
               - for c in categories
                 %li
@@ -81,6 +81,28 @@
                     %a{href: '#', data-count:'4'} Категория
                   %li
                     %a{href: '#', data-count:'9'} Категория
+            #nav
+              %ul
+                - categories = ['Столы', 'Стулья', 'Свет', 'Декор' ]
+                - for c in categories
+                  %li
+                    %a{href: '#'}= "#{c}"
+                %li
+                  %span Аксессуары
+                  %ul
+                    %li
+                      %a{href: '#', data-count:'45'} Категория
+                    %li
+                      %a{href: '#', data-count:'1'} Категория
+                    %li
+                      %a{href: '#', data-count:'6'} Категория
+                    %li
+                      %a{href: '#', data-count:'12'} Категория
+                    %li
+                      %a{href: '#', data-count:'4'} Категория
+                    %li
+                      %a{href: '#', data-count:'9'} Категория
+          
           %a#navopen.mmenu-open.visible-sm.visible-xs{href: "#nav"}
             %span.mmenu-open__tick.mmenu-open__tick_f
             %span.mmenu-open__tick.mmenu-open__tick_s

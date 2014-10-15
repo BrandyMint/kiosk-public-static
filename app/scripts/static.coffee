@@ -117,8 +117,7 @@ $ ->
 
   # mobile navigation
 
-  menuCopy = $('#nav').clone()
-  menuCopy.appendTo($('body')).removeClass('categories-nav')
+  menuCopy = $('#nav')
   menuCopy.mmenu({
     classes: "mm-slide",
     counters: true
