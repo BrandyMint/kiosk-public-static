@@ -52,6 +52,23 @@ $ ->
       .always (resp)->
         isRequest = false
 
+  # Lightbox
+
+  $('.js-lightbox').fancybox({
+    padding: 0
+    helpers: {
+      thumbs: {
+        width: 50
+        height: 50
+      }
+    }
+    tpl: {
+      closeBtn: '<a title="Close" class="fancybox-item fancybox-close" href="javascript:;"><img src="images/cross.svg" alt=""></a>'
+      prev: '<a title="Next" class="fancybox-nav fancybox-next" href="javascript:;"><img src="images/ar_right.svg" alt=""></a>'
+      next: '<a title="Previous" class="fancybox-nav fancybox-prev" href="javascript:;"><img src="images/ar_left.svg" alt=""></a>'
+    }
+  })
+
   # Product carousel (http://owlgraphic.com/owlcarousel)
 
   productSlider = $('#product-slider')

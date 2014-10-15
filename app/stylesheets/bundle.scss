@@ -32,7 +32,6 @@ $screen-sm: 508px !default; //bootstrap override
 @import "settings/forms";
 
 @import "modules/owlcarousel";
-@import "modules/imagelightbox";
 
 @import "modules/buttons";
 @import "modules/modal";
@@ -48,6 +47,6 @@ $screen-sm: 508px !default; //bootstrap override
 @import "modules/carousel";
 @import "modules/footer";
 
-
+@import "modules/fancybox";
 
 @import "theme-basic"; //Базовая тема
