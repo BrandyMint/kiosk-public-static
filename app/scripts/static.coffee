@@ -63,9 +63,9 @@ $ ->
       }
     }
     tpl: {
-      closeBtn: '<a title="Close" class="fancybox-item fancybox-close" href="javascript:;"><img src="images/cross.svg" alt=""></a>'
-      prev: '<a title="Next" class="fancybox-nav fancybox-next" href="javascript:;"><img src="images/ar_right.svg" alt=""></a>'
-      next: '<a title="Previous" class="fancybox-nav fancybox-prev" href="javascript:;"><img src="images/ar_left.svg" alt=""></a>'
+      closeBtn: '<a title="Close" class="fancybox-item fancybox-close" href="javascript:;"><i></i></a>'
+      prev: '<a title="Next" class="fancybox-nav fancybox-next" href="javascript:;"><i></i></a>'
+      next: '<a title="Previous" class="fancybox-nav fancybox-prev" href="javascript:;"><i></i></a>'
     }
   })
 

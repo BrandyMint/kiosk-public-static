@@ -97,8 +97,11 @@
   height: 68px
   cursor: pointer
   z-index: 8040
-  img
-    width: 100%
+  i
+    display: block
+    height: 68px
+    background: url(../images/cross.svg) no-repeat
+    background-size: 68px 68px
   &:hover
     opacity: .8
 
@@ -111,15 +114,19 @@
   text-decoration: none
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
   z-index: 8040
+  &:hover
+    opacity: .8
   @media screen and (max-width: $screen-sm-min)
     display: none
-  img
+  i
     position: absolute
     top: 50%
     height: 80px
     margin-top: -40px
     left: 0
     width: 100%
+    background: url(../images/ar_left.svg) no-repeat
+    background-size: 100px 80px
 
 
 .fancybox-prev
@@ -127,8 +134,9 @@
 
 .fancybox-next
   right: 100%
-  img
+  i
     right: 0
+    background-image: url(../images/ar_right.svg)
 
 .fancybox-tmp
   position: absolute
