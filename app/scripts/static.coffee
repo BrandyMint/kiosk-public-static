@@ -69,6 +69,15 @@ $ ->
     }
   })
 
+  # Welcome slider
+
+  $('.application-slider__inner').owlCarousel({
+    singleItem: true
+    pagination: false
+    responsiveBaseWidth: $('.application-slider'),
+    autoPlay: 5000
+  })
+
   # Product carousel (http://owlgraphic.com/owlcarousel)
 
   productSlider = $('#product-slider')
@@ -120,7 +129,7 @@ $ ->
   menuCopy = $('#nav')
   menuCopy.mmenu({
     classes: "mm-slide",
-    counters: true
+    counters: false
   })
 
   navOpen = $('#navopen')  

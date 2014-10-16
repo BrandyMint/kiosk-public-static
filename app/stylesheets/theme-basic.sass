@@ -397,7 +397,7 @@ $basicThemeDropdownMenuLink: #434343
 
   .cart__list-item-remove_xs
     position: absolute
-    bottom: 0
+    bottom: 34px
     right: 17px
 
   .cart__list-item-title
@@ -447,6 +447,7 @@ $basicThemeDropdownMenuLink: #434343
     margin-top: -3px
     @media screen and (max-width: $screen-sm-min)
       font-size: 18px
+      margin: 5px 0
 
   
   .cart__list-item-quantity-select
@@ -457,6 +458,15 @@ $basicThemeDropdownMenuLink: #434343
     select
       width: 100%
       padding: 5px
+
+  .cart__list-item-quantity_xs
+    @include clearfix()
+    .cart__list-item-quantity__text
+      width: 85px
+    .cart__list-item-quantity-select
+      @media screen and (max-width: $screen-md-min)
+          margin: 0 40px 0 85px
+          clear: none
 
   .cart__list-actions-code
     display: inline-block
@@ -626,16 +636,25 @@ $basicThemeDropdownMenuLink: #434343
   .mm-list > li > a,
   .mm-list > li > span
     color: #fff
-    padding: 22px 40px
-    font-size: 16px
+    padding: 23px 16px
+    font-size: 14px
     display: block
     line-height: 1.3
     font-weight: normal
-  
+
+  .mm-list a.mm-subopen
+    &:after
+      right: 10px
+    & + a,
+    & + span
+      margin-right: 0
+
   .mm-menu
     list-style: none
     overflow-y: auto
     background-color: #252525
+    max-width: 140px
+    min-width: 130px
     .mm-counter
       color: #fff
     .mm-subclose
@@ -643,6 +662,7 @@ $basicThemeDropdownMenuLink: #434343
       margin: 0
       &:before
         margin-bottom: -4px
+        left: 6px
     li
       border-bottom: 2px solid #2d2d2d
       &:after
@@ -698,6 +718,10 @@ $basicThemeDropdownMenuLink: #434343
 html.mm-opened .mm-page
   box-shadow: none
 
+html.mm-opening .mm-page,
+html.mm-opening #mm-blocker
+  -webkit-transform: translate(200px, 0)
+  transform: translate(200px, 0)
 
 .cart__list-item-sum
   font-size: 30px
@@ -754,5 +778,17 @@ html.mm-opened .mm-page
   width: 100%
   height: 400px
   overflow: hidden
+  img
+    width: 100%
+
+.application-slider
+  max-width: 1000px
+  width: 100%
+  margin: -40px auto 5px
+  background: url(../images/loader.gif) 50% 50% no-repeat
+  @media screen and (max-width: $screen-md-min)
+    margin-top: 0
+
+.application-slider__slide
   img
     width: 100%

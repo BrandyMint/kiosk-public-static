@@ -108,10 +108,16 @@
             %span.mmenu-open__tick.mmenu-open__tick_s
             %span.mmenu-open__tick.mmenu-open__tick_t
 
+      .application-slider
+        .application-slider__inner
+          .application-slider__slide
+            %img{src: 'images/slidertest.jpg', alt: ''}
+          .application-slider__slide
+            %img{src: 'images/slidertest.jpg', alt: ''}
+
       .application-content
         .container-fluid
           .products__list
-            %h1.products__list__title Табуретки
             .row
               - for i in [1..5]
                 .products__list-item-wrap
