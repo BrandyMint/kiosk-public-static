@@ -72,6 +72,8 @@ $basicThemeDropdownMenuLink: #434343
   %cart-btn
     height: auto
     padding: 11px 17px 9px
+    &:hover
+      background-color: $basicThemeCategoriesNavLinkColorHover
     &:active
       box-shadow: none
 
@@ -588,6 +590,12 @@ $basicThemeDropdownMenuLink: #434343
 
   .cart__field_select
     height: 49px
+
+  .float-cart__item__name,
+  .float-cart__clear
+    color: $basicThemeMainColor
+    &:hover
+      color: $basicThemeCategoriesNavLinkColorHover
 
   .page-title
     padding: 19px 0 13px
