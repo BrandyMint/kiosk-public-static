@@ -135,6 +135,18 @@ $ ->
   navOpen = $('#navopen')  
 
   menuCopy.on 'opened.mm', ()->
-    navOpen.addClass('mmenu-open_active')
+    navOpen.addClass 'mmenu-open_active'
   menuCopy.on 'closed.mm', ()->
-    navOpen.removeClass('mmenu-open_active')
+    navOpen.removeClass 'mmenu-open_active'
+
+  #floating cart
+  
+  floatCart = $('.float-cart')
+  floatCartStatus = false
+  floatCartPosition = floatCart.offset().top
+
+  $(window).on "scroll", (e) ->
+    if $(@).scrollTop() >= floatCartPosition
+      floatCart.addClass "float-cart_locked"
+    else
+      floatCart.removeClass "float-cart_locked"
