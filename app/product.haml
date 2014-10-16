@@ -50,17 +50,55 @@
                 %img.navbar-brand-image{src: 'images/wannabe/logo.png', alt:'field & rage'}
             .row.visible-xs
             .col-sm-4
-              %a.navbar-cart-btn.navbar-cart-btn-empty
+              %a.navbar-cart-btn.navbar-cart-btn-empty{href: 'cart.html'}
                 %span.navbar-cart-btn-icon
                 %span.navbar-cart-btn-caption
                   Корзина
+              .float-cart
+                .float-cart__content
+                  .float-cart__item
+                    .row
+                      .col-md-3
+                        %a.float-cart__item__img{href: 'product.html'}
+                          %img{src: 'http://cdn.sparkfun.com/r/92-92/assets/parts/1/0/2/2/7/13146-01.jpg', alt: ''}
+                      .col-md-5
+                        .float-cart__item__nfo
+                          %a.float-cart__item__name{href: 'product.html'} Я в корзине
+                          .float-cart__item__param Размер 1
+                          .float-cart__item__param Арт. 12345
+                      .col-md-1
+                        .float-cart__item__q
+                          6
+                      .col-md-3
+                        .float-cart__item__price
+                          18 000 руб.
+                  .float-cart__item
+                    .row
+                      .col-md-3
+                        %a.float-cart__item__img{href: 'product.html'}
+                          %img{src: 'http://cdn.sparkfun.com/r/92-92/assets/parts/1/0/2/2/7/13146-01.jpg', alt: ''}
+                      .col-md-5
+                        .float-cart__item__nfo
+                          %a.float-cart__item__name{href: 'product.html'} и я тоже
+                          .float-cart__item__param Арт. 12345
+                      .col-md-1
+                        .float-cart__item__q
+                          6
+                      .col-md-3
+                        .float-cart__item__price
+                          18 000 руб.
+
+                  .float-cart__control
+                    %a.float-cart__link.cart-btn{href: 'cart.html'} Перейти в корзину
+                    %a.float-cart__clear{href: '#'} Очистить корзину
+
             .col-sm-12.col-xs-6.col-xs-pull-6.col-sm-pull-0.hidden-sm.hidden-xs
               %button.navbar-categories-toggle-btn.collapsed{"data-target" => "[categories-nav]", "data-toggle" => "collapse", type: "button"}
                 %i.fa.fa-bars
                 %span.navbar-categories-toggle-btn-caption
                   Каталог
           .collapse.navbar-collapse{'categories-nav': ''}
-            %ul.categories-nav#nav
+            %ul.categories-nav
               - categories = ['Столы', 'Стулья', 'Свет', 'Декор' ]
               - for c in categories
                 %li
@@ -80,6 +118,27 @@
                     %a{href: '#', data-count:'4'} Категория
                   %li
                     %a{href: '#', data-count:'9'} Категория
+            #nav
+              %ul
+                - categories = ['Столы', 'Стулья', 'Свет', 'Декор' ]
+                - for c in categories
+                  %li
+                    %a{href: '#'}= "#{c}"
+                %li
+                  %span Аксессуары
+                  %ul
+                    %li
+                      %a{href: '#', data-count:'45'} Категория
+                    %li
+                      %a{href: '#', data-count:'1'} Категория
+                    %li
+                      %a{href: '#', data-count:'6'} Категория
+                    %li
+                      %a{href: '#', data-count:'12'} Категория
+                    %li
+                      %a{href: '#', data-count:'4'} Категория
+                    %li
+                      %a{href: '#', data-count:'9'} Категория
           %a#navopen.mmenu-open.visible-sm.visible-xs{href: "#nav"}
             %span.mmenu-open__tick.mmenu-open__tick_f
             %span.mmenu-open__tick.mmenu-open__tick_s
@@ -100,14 +159,28 @@
             .row
               .col-md-6.col-sm-12.col-xs-12
                 .owl-carousel.product__show__slider#product-slider
-                  - for i in [0..6]
-                    %a.product__show__slider__slide.js-lightbox{href: 'images/product-3-square.png'}
-                      %img{src: 'http://placekitten.com/490/490', alt: ''}
+                  %a.product__show__slider__slide.js-lightbox{href: 'http://images.gear4music.com/media/87068/600/preview.jpg', rel: 'photo-stack'}
+                    %img{src: 'http://images.gear4music.com/media/87068/600/preview.jpg', alt: ''}
+                  %a.product__show__slider__slide.js-lightbox{href: 'http://www.plasticsounds.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/m/o/moog_minitaur.jpg', rel: 'photo-stack'}
+                    %img{src: 'http://www.mesi.fr/product_img/moog_minitaur_front_b.jpg', alt: ''}
+                  %a.product__show__slider__slide.js-lightbox{href: 'http://www.1905.ru/upload/iblock/885/moog-etherwave-theremin-kit.jpg', rel: 'photo-stack'}
+                    %img{src: 'http://www.1905.ru/upload/iblock/885/moog-etherwave-theremin-kit.jpg', alt: ''}
+                  %a.product__show__slider__slide.js-lightbox{href: 'http://galleryplus.ebayimg.com/ws/web/121020506330_1_0_1/1000x1000.jpg', rel: 'photo-stack'}
+                    %img{src: 'http://galleryplus.ebayimg.com/ws/web/121020506330_1_0_1/1000x1000.jpg', alt: ''}
+                  %a.product__show__slider__slide.js-lightbox{href: 'http://rekkerd.org/img/201210/moog_mooganalogdelay.jpg', rel: 'photo-stack'}
+                    %img{src: 'http://rekkerd.org/img/201210/moog_mooganalogdelay.jpg', alt: ''}
 
                 .product__show__thumbs#product-thumbs
-                  - for i in [0..6]
-                    .product__show__thumbs__slide
-                      %img{src: 'http://placekitten.com/490/490', alt: ''}
+                  .product__show__thumbs__slide
+                    %img{src: 'http://images.gear4music.com/media/87068/600/preview.jpg', alt: ''}
+                  .product__show__thumbs__slide
+                    %img{src: 'http://www.mesi.fr/product_img/moog_minitaur_front_b.jpg', alt: ''}
+                  .product__show__thumbs__slide
+                    %img{src: 'http://www.1905.ru/upload/iblock/885/moog-etherwave-theremin-kit.jpg', alt: ''}
+                  .product__show__thumbs__slide
+                    %img{src: 'http://galleryplus.ebayimg.com/ws/web/121020506330_1_0_1/1000x1000.jpg', alt: ''}
+                  .product__show__thumbs__slide
+                    %img{src: 'http://rekkerd.org/img/201210/moog_mooganalogdelay.jpg', alt: ''}
 
               .col-md-6.col-sm-12.col-xs-12
                 .products__show-item-content

@@ -1,0 +1,33 @@
+.float-cart
+  position: absolute
+  z-index: 5
+  background-color: #fff
+  top: 43px
+  right: 0
+  width: 470px
+  padding: 18px
+  box-shadow: 0 0 5px rgba(0,0,0,.5)
+  margin: $grid-gutter-width/2
+  border-radius: 3px
+
+.float-cart__item__img
+  display: block
+  img
+    width: 100%
+
+.float-cart__item__name
+  font-weight: bold
+  text-decoration: none
+
+.float-cart__item__price
+  text-align: right
+
+.float-cart__control
+  @include clearfix()
+
+.float-cart__link
+  float: right
+
+.float-cart__clear
+  padding: 13px 0 11px
+  float: left

@@ -106,9 +106,19 @@
                       %input#name.cart__form__widget__field.cart__field{type: 'text', placeholder: 'Как к вам обращаться'}
                     
                     .cart__form__widget
+                      %label.cart__form__widget__name{for: 'city'} Город доставки
+                      %select#city.cart__form__widget__field.cart__field.cart__field_select
+                        %option Москва
+                    
+                    .cart__form__widget
                       %label.cart__form__widget__name{for: 'text'} Адрес доставки
                       %textarea#text.cart__form__widget__field.cart__field{rows: 3, placeholder: 'Акедемика Вавилова 12-10'}
-                
+                    
+                    .cart__form__widget
+                      %label.cart__form__widget__name{for: 'comment'} Комментарий
+                      %textarea#comment.cart__form__widget__field.cart__field{rows: 3, placeholder: 'Ваш комментарий'}
+                        Оставьте у поребрика
+
                 .cart__form__row
                   .cart__form__row__num 3
                   .cart__form__row__content
@@ -122,6 +132,7 @@
                       %input{type: 'radio', name: 'delivery-radio-stack2'}
                       %span.cart__form__radio__name
                         Способ 2 пусть тут будет что-нибудь написано (и тут тоже)
+
 
               .cart__list-actions.cart__list-actions_after-form
                 .row

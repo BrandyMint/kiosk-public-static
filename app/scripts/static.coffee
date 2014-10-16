@@ -52,6 +52,32 @@ $ ->
       .always (resp)->
         isRequest = false
 
+  # Lightbox
+
+  $('.js-lightbox').fancybox({
+    padding: 0
+    helpers: {
+      thumbs: {
+        width: 50
+        height: 50
+      }
+    }
+    tpl: {
+      closeBtn: '<a title="Close" class="fancybox-item fancybox-close" href="javascript:;"><i></i></a>'
+      prev: '<a title="Next" class="fancybox-nav fancybox-next" href="javascript:;"><i></i></a>'
+      next: '<a title="Previous" class="fancybox-nav fancybox-prev" href="javascript:;"><i></i></a>'
+    }
+  })
+
+  # Welcome slider
+
+  $('.application-slider__inner').owlCarousel({
+    singleItem: true
+    pagination: false
+    responsiveBaseWidth: $('.application-slider'),
+    autoPlay: 5000
+  })
+
   # Product carousel (http://owlgraphic.com/owlcarousel)
 
   productSlider = $('#product-slider')
@@ -100,11 +126,10 @@ $ ->
 
   # mobile navigation
 
-  menuCopy = $('#nav').clone()
-  menuCopy.appendTo($('body')).removeClass('categories-nav')
+  menuCopy = $('#nav')
   menuCopy.mmenu({
     classes: "mm-slide",
-    counters: true
+    counters: false
   })
 
   navOpen = $('#navopen')  

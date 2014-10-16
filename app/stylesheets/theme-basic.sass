@@ -72,6 +72,16 @@ $basicThemeDropdownMenuLink: #434343
   %cart-btn
     height: auto
     padding: 11px 17px 9px
+    &:hover
+      background-color: $basicThemeCategoriesNavLinkColorHover
+    &:active
+      box-shadow: none
+
+  .navbar-cart-btn-empty,
+  .navbar-cart-btn-full
+    background-color: $basicThemeCategoriesNavLinkColorHover
+    &:hover
+      background-color: $basicThemeCategoriesNavLinkColorHover
     &:active
       box-shadow: none
 
@@ -106,15 +116,6 @@ $basicThemeDropdownMenuLink: #434343
       .navbar-cart-btn-icon
         margin: 0
   
-  .feature-touch
-    .navbar-cart-btn-empty,
-    .navbar-cart-btn-full
-      background-color: $basicThemeCategoriesNavLinkColorHover
-      &:hover
-        background-color: $basicThemeCategoriesNavLinkColorHover
-      &:active
-        box-shadow: none
-
   .navbar-cart-btn-full
     background-color: $basicThemeMainColor
     color: #fff
@@ -307,6 +308,7 @@ $basicThemeDropdownMenuLink: #434343
     display: inline-block
     vertical-align: top
     background-color: $basicThemeDotsColor
+    background-color: rgba(0,0,0,.6)
     border-radius: 20px
     padding: 0 10px
     margin-bottom: 22px
@@ -314,14 +316,14 @@ $basicThemeDropdownMenuLink: #434343
       box-sizing: content-box
       display: block
       opacity: 1
-      width: 8px
-      height: 8px
+      width: 4px
+      height: 4px
       background: #fff
-      border: 6px solid $basicThemeDotsColor
-      margin: 11px 3px
+      margin: 11px 6px
       border-radius: 10px
     .owl-page.active span
       border-color: #fff
+      box-shadow: 0 0 0 3px #fff
 
   .product__show__thumbs
     .owl-item
@@ -396,6 +398,11 @@ $basicThemeDropdownMenuLink: #434343
     &:hover
       background-color: $basicThemeCategoriesNavLinkColorHover
 
+  .cart__list-item-remove_xs
+    position: absolute
+    bottom: 34px
+    right: 17px
+
   .cart__list-item-title
     font-weight: bold 
     margin: 0
@@ -405,6 +412,11 @@ $basicThemeDropdownMenuLink: #434343
 
   .cart__list-item-quantity
     font-size: 14px
+
+  .cart__list-item-quantity__text
+    float: left
+    width: 90px
+    padding: 5px 0 5px
 
   .cart__list-item-quantity__field
     margin: -4px 3px 0
@@ -438,14 +450,26 @@ $basicThemeDropdownMenuLink: #434343
     margin-top: -3px
     @media screen and (max-width: $screen-sm-min)
       font-size: 18px
+      margin: 5px 0
 
   
   .cart__list-item-quantity-select
+    margin-left: 90px
+    @media screen and (max-width: $screen-md-min)
+      margin: 10px 0 0
+      clear: both
     select
       width: 100%
       padding: 5px
-    @media screen and (max-width: $screen-sm-min)
-      margin-top: 10
+
+  .cart__list-item-quantity_xs
+    @include clearfix()
+    .cart__list-item-quantity__text
+      width: 85px
+    .cart__list-item-quantity-select
+      @media screen and (max-width: $screen-md-min)
+        margin: 0 40px 0 85px
+        clear: none
 
   .cart__list-actions-code
     display: inline-block
@@ -497,7 +521,7 @@ $basicThemeDropdownMenuLink: #434343
     @media screen and (max-width: $screen-sm-min)
       margin-left: 0
     .cart__field
-      max-resolution: 510px
+      resize: none
 
   .cart__form__row__title
     font-size: 22px
@@ -564,6 +588,15 @@ $basicThemeDropdownMenuLink: #434343
       border-color: $basicThemeCategoriesNavLinkColor
       outline: none
 
+  .cart__field_select
+    height: 49px
+
+  .float-cart__item__name,
+  .float-cart__clear
+    color: $basicThemeMainColor
+    &:hover
+      color: $basicThemeCategoriesNavLinkColorHover
+
   .page-title
     padding: 19px 0 13px
     border: 1px solid $basicThemeCategoriesNavBorderColor
@@ -573,17 +606,6 @@ $basicThemeDropdownMenuLink: #434343
     font-weight: normal
     font-size: 18px
     text-transform: none
-
-  .mm-menu
-    list-style: none
-    overflow-y: auto
-    li
-      border-bottom: 1px solid #393939
-      a
-        color: #fff
-        padding: 22px 40px
-        font-size: 16px
-        display: block
         
     .dropdown
       .dropdown-toggle
@@ -615,8 +637,56 @@ $basicThemeDropdownMenuLink: #434343
           border: none
           background: $basicThemeDropdownMenuLink
           &:hover
-            background: $basicThemeDropdownMenuLink      
+            background: $basicThemeDropdownMenuLink
 
+  .mm-page
+    overflow: hidden    
+
+  .mm-list > li > a,
+  .mm-list > li > span
+    color: #fff
+    padding: 23px 16px
+    font-size: 14px
+    display: block
+    line-height: 1.3
+    font-weight: normal
+
+  .mm-list a.mm-subopen
+    &:after
+      right: 10px
+    & + a,
+    & + span
+      margin-right: 0
+
+  .mm-menu
+    list-style: none
+    overflow-y: auto
+    background-color: #252525
+    max-width: 140px
+    min-width: 130px
+    .mm-counter
+      color: #fff
+    .mm-subclose
+      text-indent: 0
+      margin: 0
+      &:before
+        margin-bottom: -4px
+        left: 6px
+    li
+      border-bottom: 2px solid #2d2d2d
+      &:after
+        display: none !important
+
+  .mm-list
+    padding: 0
+
+  .mm-menu .mm-list > li > a.mm-subopen:after,
+  .mm-menu .mm-list > li > a.mm-subclose:before
+    border-color: #fff
+
+  .mm-menu .mm-list > li > a.mm-subclose
+    background-color: #5f5f5f
+    color: #fff
 
   .mmenu-open
     display: none
@@ -651,12 +721,16 @@ $basicThemeDropdownMenuLink: #434343
       margin-top: 0
       transform: rotate(-45deg)
 
-  .mm-page
-    overflow-x: hidden
+// .mm-page
+//   overflow-x: hidden
 
-  html.mm-opened .mm-page
-    box-shadow: none
-  
+html.mm-opened .mm-page
+  box-shadow: none
+
+html.mm-opening .mm-page,
+html.mm-opening #mm-blocker
+  -webkit-transform: translate(200px, 0)
+  transform: translate(200px, 0)
 
 .cart__list-item-sum
   font-size: 30px
@@ -713,5 +787,17 @@ $basicThemeDropdownMenuLink: #434343
   width: 100%
   height: 400px
   overflow: hidden
+  img
+    width: 100%
+
+.application-slider
+  max-width: 1000px
+  width: 100%
+  margin: -40px auto 5px
+  background: url(../images/loader.gif) 50% 50% no-repeat
+  @media screen and (max-width: $screen-md-min)
+    margin-top: 0
+
+.application-slider__slide
   img
     width: 100%
