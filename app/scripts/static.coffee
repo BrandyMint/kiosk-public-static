@@ -142,26 +142,28 @@ $ ->
   #floating cart
   
   floatCart = $('.float-cart')
-  floatCartLockedClass = 'float-cart_locked'
-  floatCartPosition = floatCart.offset().top
-  navbarCollapse = $('.navbar-collapse')
+  
+  if floatCart.length
+    floatCartLockedClass = 'float-cart_locked'
+    floatCartPosition = floatCart.offset().top
+    navbarCollapse = $('.navbar-collapse')
 
-  getRightOffset = (el) ->
-    rt = $(window).width() - el.width()
-    return rt/2 - 15
+    getRightOffset = (el) ->
+      rt = $(window).width() - el.width()
+      return rt/2 - 15
 
-  recalcFloatCartPosition = () ->
-    floatCart.css {right: getRightOffset navbarCollapse}
+    recalcFloatCartPosition = () ->
+      floatCart.css {right: getRightOffset navbarCollapse}
 
-  $(window).on "scroll", (e) ->
-    if $(@).scrollTop() >= floatCartPosition
-      floatCart.addClass floatCartLockedClass
-      recalcFloatCartPosition()
-    else
-      floatCart.removeClass floatCartLockedClass
-      floatCart.css {right: 0 }
+    $(window).on "scroll", (e) ->
+      if $(@).scrollTop() >= floatCartPosition
+        floatCart.addClass floatCartLockedClass
+        recalcFloatCartPosition()
+      else
+        floatCart.removeClass floatCartLockedClass
+        floatCart.css {right: 0 }
 
-  $(window).on "resize", (e) ->
-    if floatCart.hasClass floatCartLockedClass
-      recalcFloatCartPosition()
-    
+    $(window).on "resize", (e) ->
+      if floatCart.hasClass floatCartLockedClass
+        recalcFloatCartPosition()
+      
