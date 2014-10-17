@@ -4,13 +4,23 @@
   background-color: #fff
   top: 43px
   right: 0
+  // right: 0 !important
   width: 470px
   padding: 18px
   box-shadow: 0 0 5px rgba(0,0,0,.5)
   margin: $grid-gutter-width/2
   border-radius: 3px
+  @media screen and (max-width: $screen-md-min)
+    position: fixed
+    top: 60px !important
+    right: 5px !important
+  @media screen and (max-width: $floatCart-min-res)
+    display: none !important
 
-// .float-cart_locked
+.float-cart_locked
+  position: fixed
+  top: 0
+  right: 0
 
 .float-cart__item-wrap
   max-height: 280px
