@@ -400,12 +400,14 @@ $basicThemeDropdownMenuLink: #434343
 
   .cart__list-item-remove_xs
     position: absolute
-    bottom: 34px
+    top: 0
     right: 17px
 
   .cart__list-item-title
     font-weight: bold 
     margin: 0
+    @media screen and (max-width: $screen-sm-min)
+      padding-right: 40px
 
   .cart__list-item-option
     margin: 0 0 3px
@@ -468,7 +470,7 @@ $basicThemeDropdownMenuLink: #434343
       width: 85px
     .cart__list-item-quantity-select
       @media screen and (max-width: $screen-md-min)
-        margin: 0 40px 0 85px
+        margin: 0 0 0 85px
         clear: none
 
   .cart__list-actions-code
