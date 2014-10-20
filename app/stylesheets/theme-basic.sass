@@ -177,14 +177,21 @@ $basicThemeDropdownMenuLink: #434343
         
         a
           display: block
-          padding: 3px 0 3px 32px
+          padding: 3px 15px
+          margin-right: 4px
+          overflow: hidden
+          text-overflow: ellipsis
+          white-space: nowrap
           text-align: left
+          position: relative
           color: #fff
           border: none
           &:after
             content: attr(data-count)
             color: #5d5d5d
-            padding-left: 6px
+            position: absolute
+            right: 0
+            top: 3px
           &:hover
             background: none
             color: $basicThemeCategoriesNavLinkColorHover
@@ -803,3 +810,9 @@ html.mm-opening #mm-blocker
 .application-slider__slide
   img
     width: 100%
+
+#nav
+  height: 0
+  overflow: hidden
+  &.mm-menu
+    height: 100%

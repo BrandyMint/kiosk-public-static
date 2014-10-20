@@ -84,9 +84,10 @@
   cursor: pointer
   z-index: 8060
   div
-    width: 20px
-    height: 20px
-    background: url('#{$images-path}/loader.gif') center center no-repeat
+    width: 40px
+    height: 40px
+    background: #fff url('#{$images-path}/loader.gif') center center no-repeat
+    border-radius: 10px
     background-size: 20px 20px
 
 .fancybox-close
@@ -114,29 +115,41 @@
   text-decoration: none
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
   z-index: 8040
-  &:hover
-    opacity: .8
-  @media screen and (max-width: $screen-sm-min)
-    display: none
-  i
-    position: absolute
-    top: 50%
-    height: 80px
-    margin-top: -40px
-    left: 0
-    width: 100%
-    background: url(#{$images-path}/ar_left.svg) no-repeat
-    background-size: 100px 80px
 
+.fancybox-prev,
+.fancybox-next
+  width: 40%
 
 .fancybox-prev
-  left: 100%
+  left: 0
 
 .fancybox-next
-  right: 100%
-  i
-    right: 0
-    background-image: url(#{$images-path}/ar_right.svg)
+  right: 0
+
+// Стрелочки. Вдруг понадобятся :E
+//   &:hover
+//     opacity: .8
+//   @media screen and (max-width: $screen-sm-min)
+//     display: none
+//   i
+//     position: absolute
+//     top: 50%
+//     height: 80px
+//     margin-top: -40px
+//     left: 0
+//     width: 100%
+//     background: url(#{$images-path}/ar_left.svg) no-repeat
+//     background-size: 100px 80px
+
+
+// .fancybox-prev
+//   left: 100%
+
+// .fancybox-next
+//   right: 100%
+//   i
+//     right: 0
+//     background-image: url(#{$images-path}/ar_right.svg)
 
 .fancybox-tmp
   position: absolute
