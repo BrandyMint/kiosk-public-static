@@ -64,8 +64,8 @@ $ ->
     }
     tpl: {
       closeBtn: '<a title="Close" class="fancybox-item fancybox-close" href="javascript:;"><i></i></a>'
-      prev: '<a title="Next" class="fancybox-nav fancybox-next" href="javascript:;"><i></i></a>'
-      next: '<a title="Previous" class="fancybox-nav fancybox-prev" href="javascript:;"><i></i></a>'
+      next: '<a title="Next" class="fancybox-nav fancybox-next" href="javascript:;"><i></i></a>'
+      prev: '<a title="Previous" class="fancybox-nav fancybox-prev" href="javascript:;"><i></i></a>'
     }
   })
 
@@ -150,7 +150,7 @@ $ ->
 
     getRightOffset = (el) ->
       rt = $(window).width() - el.width()
-      return rt/2 - 15
+      return rt/2 - 14
 
     recalcFloatCartPosition = () ->
       floatCart.css {right: getRightOffset navbarCollapse}
