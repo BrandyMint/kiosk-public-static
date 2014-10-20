@@ -132,7 +132,7 @@ $ ->
     counters: false
   })
 
-  navOpen = $('#navopen')  
+  navOpen = $('#navopen')
 
   menuCopy.on 'opened.mm', ()->
     navOpen.addClass 'mmenu-open_active'
