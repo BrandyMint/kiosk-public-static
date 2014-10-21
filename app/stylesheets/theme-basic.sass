@@ -411,6 +411,13 @@ $basicThemeDropdownMenuLink: #434343
       width: 100%
       box-shadow: none
       height: auto
+    
+    select
+      height: 49px
+      padding: 14px 0 14px
+      text-indent: 14px
+      line-height: 43px
+
 
   .cart__list-actions_after-form,
   .cart__form
@@ -818,6 +825,12 @@ html.mm-opening #mm-blocker
     width: 100%
     margin: 10px 0
 
+.cart__form__delivery-name,
+.cart__form__delivery-price
+  display: inline-block
+  vertical-align: top
+  width: 40%
+
 .map-embed
   margin: 40px auto
   width: 100%
@@ -843,3 +856,9 @@ html.mm-opening #mm-blocker
   overflow: hidden
   &.mm-menu
     height: 100%
+
+
+@-moz-document url-prefix()
+  .theme-basic .cart__form select
+    text-indent: 0
+    padding-left: 14px
