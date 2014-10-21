@@ -1,65 +1,12 @@
 <!DOCTYPE html>
 %html
   %head
-    %meta{:charset => "utf-8"}
-    %title Wanna?Be!
-    %meta{:content => "", :name => "description"}
-    %meta{:content => "width=device-width, initial-scale=1, user-scalable=no", :name => "viewport"}
-
-    %link{:href => "stylesheets/app.css", :rel => "stylesheet"}
-    %link{:href => "images/favicon/favicon.ico", :rel => "shortcut icon"}
-    %link{:href => "images/touch-icon-57.png", :rel => "apple-touch-icon", :sizes => "57x57"}
-    %link{:href => "images/touch-icon-72.png", :rel => "apple-touch-icon", :sizes => "72x72"}
-    %link{:href => "images/touch-icon-76.png", :rel => "apple-touch-icon", :sizes => "76x76"}
-    %link{:href => "images/touch-icon-114.png", :rel => "apple-touch-icon", :sizes => "114x114"}
-    %link{:href => "images/touch-icon-120.png", :rel => "apple-touch-icon", :sizes => "120x120"}
-    %link{:href => "images/touch-icon-144.png", :rel => "apple-touch-icon", :sizes => "144x144"}
-    %link{:href => "images/touch-icon-152.png", :rel => "apple-touch-icon", :sizes => "152x152"}
-    / Windows 8 Tiles
-    %meta{:content => "images/touch-icon-144.png", :name => "msapplication-TileImage"}
-    %meta{:content => "#38b0aa", :name => "msapplication-TileColor"}
-    %meta{:content => "The MatriXFiles", :name => "application-name"}
-    / Internet Explorer 11 Tiles
-    %meta{:content => "images/tile-70.png", :name => "msapplication-square70x70logo"}
-    %meta{:content => "images/tile-150.png", :name => "msapplication-square150x150logo"}
-    %meta{:content => "images/tile-310.png", :name => "msapplication-wide310x150logo"}
-    %meta{:content => "images/tile-310.png", :name => "msapplication-square310x310logo"}
-    / For iPad landscape splash screen
-    %link{:href => "images/apple-splash-screen-1024x748.png", :rel => "apple-touch-startup-image", :sizes => "1024x748"}
-    / For iPad portriat splash screen
-    %link{:href => "images/apple-splash-screen-768x1004.png", :rel => "apple-touch-startup-image", :sizes => "768x1004"}
-    / For iPhone, iPod high resolution portriat splash screen
-    %link{:href => "images/apple-splash-screen-640x960.png", :rel => "apple-touch-startup-image", :sizes => "640x960"}
-    / For iPhone, iPod standard resolution portriat splash screen
-    %link{:href => "images/apple-splash-screen-320x480.png", :rel => "apple-touch-startup-image", :sizes => "320x480"}
-
+    +include 'app/shared/_head.haml'
 
   %body.theme-basic
     %script{src: 'scripts/bundle.js'}
     .application
-      .application-navbar
-        .container-fluid
-          .row
-            .col-sm-12.col-md-4
-              .navbar-description
-                Магазин мебели ручной работы
-                %br
-                = "+7 903 595 1737"
-            .col-md-4.col-sm-12.col-xs-12.col-sm-pull-0
-              %a.navbar-brand-link{href: 'welcome.html'}
-                %img.navbar-brand-image{src: 'images/wannabe/logo.png', alt:'field & rage'}
-            .row.visible-xs
-            -#.col-sm-4
-              -#%a.navbar-cart-btn.navbar-cart-btn-full{cart-badge: true, data-cart: '6', href: 'cart.html'}
-                -#%span.navbar-cart-btn-icon
-                -#%span.navbar-cart-btn-caption
-                  -#Корзина — 13 000 Р
-            .col-sm-12.col-xs-6.col-xs-pull-6.col-sm-pull-0.hidden-sm.hidden-xs
-              %button.navbar-categories-toggle-btn.collapsed{"data-target" => "[categories-nav]", "data-toggle" => "collapse", type: "button"}
-                %i.fa.fa-bars
-                %span.navbar-categories-toggle-btn-caption
-                  Каталог
-
+      +include 'app/shared/_navbar_empty.haml'
 
       .application-content
         .container-fluid
@@ -140,11 +87,4 @@
                             Оформить заказ
 
 
-      .application-footer
-        .container-fluid
-          .application-footer__inner
-            %ul.footer-nav
-              - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
-              - for l in footer_links
-                %li
-                  %a{href: '#'}= "#{l}"
+      +include 'app/shared/_footer.haml'

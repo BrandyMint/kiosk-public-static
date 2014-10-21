@@ -1,0 +1,8 @@
+.application-footer
+  .container-fluid
+    .application-footer__inner
+      %ul.footer-nav
+        - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
+        - for l in footer_links
+          %li
+            %a{href: '#'}= "#{l}"
