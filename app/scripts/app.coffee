@@ -1,2 +1,3 @@
 require './libs'
-require './static'
+require './shared/app'
+require './shared/cart'
