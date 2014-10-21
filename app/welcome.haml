@@ -1,111 +1,17 @@
 <!DOCTYPE html>
 %html
   %head
-    %meta{:charset => "utf-8"}
-    %title Wanna?Be!
-    %meta{:content => "", :name => "description"}
-    %meta{:content => "width=device-width, initial-scale=1, user-scalable=no", :name => "viewport"}
-
-    %link{:href => "stylesheets/app.css", :rel => "stylesheet"}
-    %link{:href => "images/favicon/favicon.ico", :rel => "shortcut icon"}
-    %link{:href => "images/touch-icon-57.png", :rel => "apple-touch-icon", :sizes => "57x57"}
-    %link{:href => "images/touch-icon-72.png", :rel => "apple-touch-icon", :sizes => "72x72"}
-    %link{:href => "images/touch-icon-76.png", :rel => "apple-touch-icon", :sizes => "76x76"}
-    %link{:href => "images/touch-icon-114.png", :rel => "apple-touch-icon", :sizes => "114x114"}
-    %link{:href => "images/touch-icon-120.png", :rel => "apple-touch-icon", :sizes => "120x120"}
-    %link{:href => "images/touch-icon-144.png", :rel => "apple-touch-icon", :sizes => "144x144"}
-    %link{:href => "images/touch-icon-152.png", :rel => "apple-touch-icon", :sizes => "152x152"}
-    / Windows 8 Tiles
-    %meta{:content => "images/touch-icon-144.png", :name => "msapplication-TileImage"}
-    %meta{:content => "#38b0aa", :name => "msapplication-TileColor"}
-    %meta{:content => "The MatriXFiles", :name => "application-name"}
-    / Internet Explorer 11 Tiles
-    %meta{:content => "images/tile-70.png", :name => "msapplication-square70x70logo"}
-    %meta{:content => "images/tile-150.png", :name => "msapplication-square150x150logo"}
-    %meta{:content => "images/tile-310.png", :name => "msapplication-wide310x150logo"}
-    %meta{:content => "images/tile-310.png", :name => "msapplication-square310x310logo"}
-    / For iPad landscape splash screen
-    %link{:href => "images/apple-splash-screen-1024x748.png", :rel => "apple-touch-startup-image", :sizes => "1024x748"}
-    / For iPad portriat splash screen
-    %link{:href => "images/apple-splash-screen-768x1004.png", :rel => "apple-touch-startup-image", :sizes => "768x1004"}
-    / For iPhone, iPod high resolution portriat splash screen
-    %link{:href => "images/apple-splash-screen-640x960.png", :rel => "apple-touch-startup-image", :sizes => "640x960"}
-    / For iPhone, iPod standard resolution portriat splash screen
-    %link{:href => "images/apple-splash-screen-320x480.png", :rel => "apple-touch-startup-image", :sizes => "320x480"}
-
-
+    +include 'app/shared/_head.haml'
   %body.theme-basic
     %script{src: 'scripts/bundle.js'}
+
+    .b-theme-switch
+      .b-theme-switch__item{data-classlist: "theme-basic"} Basic
+      .b-theme-switch__item{data-classlist: "theme-basic style-wannabe"} Wannabe
+      .b-theme-switch__item{data-classlist: "theme-basic style-sugar"} Sugar
+    
     .application
-      .application-navbar
-        .container-fluid
-          .row
-            .col-sm-12.col-md-4
-              .navbar-description
-                Магазин мебели ручной работы
-                %br
-                = "+7 903 595 1737"
-            .col-md-4.col-sm-12.col-xs-12.col-sm-pull-0
-              %a.navbar-brand-link{href: 'welcome.html'}
-                %img.navbar-brand-image{src: 'images/wannabe/logo.png', alt:'field & rage'}
-            .row.visible-xs
-            .col-sm-4
-              %a.navbar-cart-btn.navbar-cart-btn-empty
-                %span.navbar-cart-btn-icon
-                %span.navbar-cart-btn-caption
-                  Корзина
-            .col-sm-12.col-xs-6.col-xs-pull-6.col-sm-pull-0.hidden-sm.hidden-xs
-              %button.navbar-categories-toggle-btn.collapsed{"data-target" => "[categories-nav]", "data-toggle" => "collapse", type: "button"}
-                %i.fa.fa-bars
-                %span.navbar-categories-toggle-btn-caption
-                  Каталог
-          .collapse.navbar-collapse{'categories-nav': ''}
-            %ul.categories-nav
-              - categories = ['Столы', 'Стулья', 'Свет', 'Декор' ]
-              - for c in categories
-                %li
-                  %a{href: '#'}= "#{c}"
-              %li.dropdown
-                %a.dropdown-toggle{href: '#', data-toggle: "dropdown"} Аксессуары
-                %ul.dropdown-menu
-                  %li
-                    %a{href: '#', data-count:'45'} Категорияedscdfsdfsdf
-                  %li
-                    %a{href: '#', data-count:'1'} Категорияsdfsdfdsfsdfs
-                  %li
-                    %a{href: '#', data-count:'6'} Категорияdfsdfsdfsdf
-                  %li
-                    %a{href: '#', data-count:'12'} Категорияsfsdfsdfsdfs
-                  %li
-                    %a{href: '#', data-count:'4'} Категория
-                  %li
-                    %a{href: '#', data-count:'9'} Категория
-            #nav
-              %ul
-                - categories = ['Столы', 'Стулья', 'Свет', 'Декор' ]
-                - for c in categories
-                  %li
-                    %a{href: '#'}= "#{c}"
-                %li
-                  %span Аксессуары
-                  %ul
-                    %li
-                      %a{href: '#', data-count:'45'} Категория
-                    %li
-                      %a{href: '#', data-count:'1'} Категория
-                    %li
-                      %a{href: '#', data-count:'6'} Категория
-                    %li
-                      %a{href: '#', data-count:'12'} Категория
-                    %li
-                      %a{href: '#', data-count:'4'} Категория
-                    %li
-                      %a{href: '#', data-count:'9'} Категория
-          
-          %a#navopen.mmenu-open.visible-sm.visible-xs{href: "#nav"}
-            %span.mmenu-open__tick.mmenu-open__tick_f
-            %span.mmenu-open__tick.mmenu-open__tick_s
-            %span.mmenu-open__tick.mmenu-open__tick_t
+      +include 'app/shared/_navbar.haml'
 
       .application-content
         .container-fluid
@@ -123,12 +29,5 @@
                       Моно-серьга имитация тоннеля серебряная с белыми цирконами
                     .products__list-item-price
                       8 900 руб.
-
-      .application-footer
-        .container-fluid
-          .application-footer__inner
-            %ul.footer-nav
-              - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
-              - for l in footer_links
-                %li
-                  %a{href: '#'}= "#{l}"
+      +include 'app/shared/_footer.haml'
+      

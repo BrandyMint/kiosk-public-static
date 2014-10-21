@@ -1,0 +1,22 @@
+.application-navbar
+  .container-fluid
+    .row
+      .col-sm-12.col-md-4
+        .navbar-description
+          Магазин мебели ручной работы
+          %br
+          = "+7 903 595 1737"
+      .col-md-4.col-sm-12.col-xs-12.col-sm-pull-0
+        %a.navbar-brand-link{href: 'welcome.html'}
+          %img.navbar-brand-image{src: 'images/logo.png', alt:'field & rage'}
+      .row.visible-xs
+      .col-sm-4
+        %a.navbar-cart-btn.navbar-cart-btn-full{data-cart: '5'}
+          %span.navbar-cart-btn-icon
+          %span.navbar-cart-btn-caption
+            Корзина — 13 000 Р
+      .col-sm-12.col-xs-6.col-xs-pull-6.col-sm-pull-0.hidden-sm.hidden-xs
+        %button.navbar-categories-toggle-btn.collapsed{"data-target" => "[categories-nav]", "data-toggle" => "collapse", type: "button"}
+          %i.fa.fa-bars
+          %span.navbar-categories-toggle-btn-caption
+            Каталог

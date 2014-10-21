@@ -1,64 +1,12 @@
 <!DOCTYPE html>
 %html
   %head
-    %meta{:charset => "utf-8"}
-    %title Wanna?Be!
-    %meta{:content => "", :name => "description"}
-    %meta{:content => "width=device-width, initial-scale=1, user-scalable=no", :name => "viewport"}
-
-    %link{:href => "stylesheets/app.css", :rel => "stylesheet"}
-    %link{:href => "images/favicon/favicon.ico", :rel => "shortcut icon"}
-    %link{:href => "images/touch-icon-57.png", :rel => "apple-touch-icon", :sizes => "57x57"}
-    %link{:href => "images/touch-icon-72.png", :rel => "apple-touch-icon", :sizes => "72x72"}
-    %link{:href => "images/touch-icon-76.png", :rel => "apple-touch-icon", :sizes => "76x76"}
-    %link{:href => "images/touch-icon-114.png", :rel => "apple-touch-icon", :sizes => "114x114"}
-    %link{:href => "images/touch-icon-120.png", :rel => "apple-touch-icon", :sizes => "120x120"}
-    %link{:href => "images/touch-icon-144.png", :rel => "apple-touch-icon", :sizes => "144x144"}
-    %link{:href => "images/touch-icon-152.png", :rel => "apple-touch-icon", :sizes => "152x152"}
-    / Windows 8 Tiles
-    %meta{:content => "images/touch-icon-144.png", :name => "msapplication-TileImage"}
-    %meta{:content => "#38b0aa", :name => "msapplication-TileColor"}
-    %meta{:content => "The MatriXFiles", :name => "application-name"}
-    / Internet Explorer 11 Tiles
-    %meta{:content => "images/tile-70.png", :name => "msapplication-square70x70logo"}
-    %meta{:content => "images/tile-150.png", :name => "msapplication-square150x150logo"}
-    %meta{:content => "images/tile-310.png", :name => "msapplication-wide310x150logo"}
-    %meta{:content => "images/tile-310.png", :name => "msapplication-square310x310logo"}
-    / For iPad landscape splash screen
-    %link{:href => "images/apple-splash-screen-1024x748.png", :rel => "apple-touch-startup-image", :sizes => "1024x748"}
-    / For iPad portriat splash screen
-    %link{:href => "images/apple-splash-screen-768x1004.png", :rel => "apple-touch-startup-image", :sizes => "768x1004"}
-    / For iPhone, iPod high resolution portriat splash screen
-    %link{:href => "images/apple-splash-screen-640x960.png", :rel => "apple-touch-startup-image", :sizes => "640x960"}
-    / For iPhone, iPod standard resolution portriat splash screen
-    %link{:href => "images/apple-splash-screen-320x480.png", :rel => "apple-touch-startup-image", :sizes => "320x480"}
-
+    +include 'app/shared/_head.haml'
 
   %body.theme-basic
     %script{src: 'scripts/bundle.js'}
     .application
-      .application-navbar
-        .container-fluid
-          .row
-            .col-sm-12.col-md-4
-              .navbar-description
-                Магазин мебели ручной работы
-                %br
-                = "+7 903 595 1737"
-            .col-md-4.col-sm-12.col-xs-12.col-sm-pull-0
-              %a.navbar-brand-link{href: 'welcome.html'}
-                %img.navbar-brand-image{src: 'images/logo.png', alt:'field & rage'}
-            .row.visible-xs
-            .col-sm-4
-              %a.navbar-cart-btn.navbar-cart-btn-full{data-cart: '5'}
-                %span.navbar-cart-btn-icon
-                %span.navbar-cart-btn-caption
-                  Корзина — 13 000 Р
-            .col-sm-12.col-xs-6.col-xs-pull-6.col-sm-pull-0.hidden-sm.hidden-xs
-              %button.navbar-categories-toggle-btn.collapsed{"data-target" => "[categories-nav]", "data-toggle" => "collapse", type: "button"}
-                %i.fa.fa-bars
-                %span.navbar-categories-toggle-btn-caption
-                  Каталог
+      +include 'app/shared/_navbar_empty.haml'
 
 
 
@@ -70,7 +18,11 @@
               %strong 5 товаров
               на сумму
               %strong 16 000 руб.
-            %form{action: 'complete.html'}
+
+            %form#new_vendor_order.simple_form.new_vendor_order{"accept-charset" => "UTF-8", :action => "/order", :method => "post", :novalidate => "novalidate"}
+              %div{:style => "display:none"}
+                %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+                %input{:name => "authenticity_token", :type => "hidden", :value => "oBDbmcDA0JU1rJJfqNAVU8YSF425ggRQQu4MuZ8em+c="}/
               .cart__form
                 .cart__form__row
                   .cart__form__row__num 1
@@ -78,79 +30,73 @@
                     .cart__form__row__title
                       Выберите тип доставки. Ваш город
                       %strong Москва
-                    %label.cart__form__radio
-                      %input{type: 'radio', name: 'delivery-radio-stack'}
-                      %span.cart__form__radio__name
-                        Вариант 1
-                      %span.cart__form__radio__val
-                        360 руб.
-                    %label.cart__form__radio
-                      %input{type: 'radio', name: 'delivery-radio-stack'}
-                      %span.cart__form__radio__name
-                        Вариант 2 пусть тут будет что-нибудь написано (и тут тоже)
-                      %span.cart__form__radio__val
-                        Бесплатно
-
+                    .form-group.radio_buttons.required.vendor_order_delivery_type_id
+                      %span.radio
+                        %label{:for => "vendor_order_delivery_type_id_1", :name => "vendor_order[delivery_type_id]"}
+                          %input#vendor_order_delivery_type_id_1.radio_buttons.required.form-control{:name => "vendor_order[delivery_type_id]", :type => "radio", :value => "1"}>
+                          Курьером по москве
+                      %span.radio
+                        %label{:for => "vendor_order_delivery_type_id_2", :name => "vendor_order[delivery_type_id]"}
+                          %input#vendor_order_delivery_type_id_2.radio_buttons.required.form-control{:name => "vendor_order[delivery_type_id]", :type => "radio", :value => "2"}>
+                          Самовывоз
+                      %span.radio
+                        %label{:for => "vendor_order_delivery_type_id_3", :name => "vendor_order[delivery_type_id]"}
+                          %input#vendor_order_delivery_type_id_3.radio_buttons.required.form-control{:name => "vendor_order[delivery_type_id]", :type => "radio", :value => "3"}>
+                          Курьером
                 .cart__form__row
                   .cart__form__row__num 2
                   .cart__form__row__content
                     .cart__form__row__title
                       Введите данные
-                    .cart__form__widget
-                      %label.cart__form__widget__name{for: 'phone'} Телефон
-                      %input#phone.cart__form__widget__field.cart__field{type: 'text', placeholder: 'Прим.: +7 913 123 32 10'}
-                    
-                    .cart__form__widget
-                      %label.cart__form__widget__name{for: 'name'} Как к вам обращаться?
-                      %input#name.cart__form__widget__field.cart__field{type: 'text', placeholder: 'Как к вам обращаться'}
-                    
-                    .cart__form__widget
-                      %label.cart__form__widget__name{for: 'city'} Город доставки
-                      %select#city.cart__form__widget__field.cart__field.cart__field_select
-                        %option Москва
-                    
-                    .cart__form__widget
-                      %label.cart__form__widget__name{for: 'text'} Адрес доставки
-                      %textarea#text.cart__form__widget__field.cart__field{rows: 3, placeholder: 'Акедемика Вавилова 12-10'}
-                    
-                    .cart__form__widget
-                      %label.cart__form__widget__name{for: 'comment'} Комментарий
-                      %textarea#comment.cart__form__widget__field.cart__field{rows: 3, placeholder: 'Ваш комментарий'}
-                        Оставьте у поребрика
-
+                    .form-group.string.required.vendor_order_phone
+                      %label.string.required.control-label{:for => "vendor_order_phone"} Телефон
+                      %input#vendor_order_phone.string.required.form-control{:name => "vendor_order[phone]", :placeholder => "Прим.: +7 913 123 32 10", :type => "text"}
+                    .form-group.string.required.vendor_order_name
+                      %label.string.required.control-label{:for => "vendor_order_name"} Как к вам обращаться?
+                      %input#vendor_order_name.string.required.form-control{:name => "vendor_order[name]", :placeholder => "Как к вам обращаться", :type => "text"}
+                    .form-group.select.required.vendor_order_city_id
+                      %label.select.required.control-label{:for => "vendor_order_city_id"} Город доставки
+                      %select#vendor_order_city_id.select.required.form-control{:name => "vendor_order[city_id]"}
+                        %option{:value => "1"} Чебоксары
+                        %option{:value => "2"} Москва
+                    .form-group.text.required.vendor_order_address
+                      %label.text.required.control-label{:for => "vendor_order_address"} Адрес доставки
+                      %textarea#vendor_order_address.text.required.form-control{:name => "vendor_order[address]", :placeholder => "Академика Вавилова 12-10"}
+                    .form-group.text.optional.vendor_order_comment
+                      %label.text.optional.control-label{:for => "vendor_order_comment"} Комментарий
+                      %textarea#vendor_order_comment.text.optional.form-control{:name => "vendor_order[comment]", :placeholder => "Ваш комментарий"}
                 .cart__form__row
                   .cart__form__row__num 3
                   .cart__form__row__content
                     .cart__form__row__title
                       Способы оплаты
-                    %label.cart__form__radio
-                      %input{type: 'radio', name: 'delivery-radio-stack2'}
-                      %span.cart__form__radio__name
-                        Способ 1
-                    %label.cart__form__radio
-                      %input{type: 'radio', name: 'delivery-radio-stack2'}
-                      %span.cart__form__radio__name
-                        Способ 2 пусть тут будет что-нибудь написано (и тут тоже)
-
-
+                    .form-group.radio_buttons.required.vendor_order_payment_type_id
+                      %span.radio
+                        %label{:for => "vendor_order_payment_type_id_1", :name => "vendor_order[payment_type_id]"}
+                          %input#vendor_order_payment_type_id_1.radio_buttons.required.form-control{:name => "vendor_order[payment_type_id]", :type => "radio", :value => "1"}>
+                          Банковской картой на сайте
+                      %span.radio
+                        %label{:for => "vendor_order_payment_type_id_2", :name => "vendor_order[payment_type_id]"}
+                          %input#vendor_order_payment_type_id_2.radio_buttons.required.form-control{:name => "vendor_order[payment_type_id]", :type => "radio", :value => "2"}>
+                          Через ближайший салон связи
+                      %span.radio
+                        %label{:for => "vendor_order_payment_type_id_3", :name => "vendor_order[payment_type_id]"}
+                          %input#vendor_order_payment_type_id_3.radio_buttons.required.form-control{:name => "vendor_order[payment_type_id]", :type => "radio", :value => "3"}>
+                          Наличными или банковской картой курьеру
+                      %span.radio
+                        %label{:for => "vendor_order_payment_type_id_4", :name => "vendor_order[payment_type_id]"}
+                          %input#vendor_order_payment_type_id_4.radio_buttons.required.form-control{:name => "vendor_order[payment_type_id]", :type => "radio", :value => "4"}>
+                          Наличными курьеру
               .cart__list-actions.cart__list-actions_after-form
                 .row
                   .col-md-5.col-sm-6.hidden-xs
-                    %a.cart-btn.cart-btn_clear.cart__list-actions-btn{href: 'cart.html'}
+                    %a.cart-btn.cart-btn_clear.cart__list-actions-btn{:href => "/cart"}
                       Вернуться назад
                   .col-md-5.col-md-offset-1.col-sm-6
-                    %button.cart-btn-checkout.cart__list-actions-btn{type: 'submit'}
-                      Продолжить
+                    %input.cart-btn-checkout.cart__list-actions-btn{:name => "commit", :type => "submit", :value => "Продолжить"}
                   .col-md-5.col-sm-6.visible-xs
-                    %a.cart-btn.cart-btn_clear.cart__list-actions-btn{href: 'cart.html'}
+                    %a.cart-btn.cart-btn_clear.cart__list-actions-btn{:href => "/cart"}
                       Вернуться назад
+                        
 
-
-      .application-footer
-        .container-fluid
-          .application-footer__inner
-            %ul.footer-nav
-              - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
-              - for l in footer_links
-                %li
-                  %a{href: '#'}= "#{l}"
+      +include 'app/shared/_footer.haml'
