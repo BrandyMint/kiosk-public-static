@@ -23,6 +23,14 @@ $basicThemeDropdownMenuLink: #434343
   // .application-navbar
   //   overflow-x: hidden
 
+  .alert
+    text-align: center
+    border-radius: 3px
+  
+  .alert-danger
+    background-color: #da2a41
+    border-color: #da2a41
+
   .application
     overflow: hidden
 
@@ -383,9 +391,30 @@ $basicThemeDropdownMenuLink: #434343
     @media screen and (max-width: $screen-md-min)
       margin: 0
 
+  .has-error
+    .help-block,
+    .control-label,
+    .radio,
+    .checkbox,
+    .radio-inline,
+    .checkbox-inline
+      color: $basicThemeMainColor
+
+    input[type="text"],
+    textarea,
+    select
+      color: #da2a41
+      border-radius: 2px 2px 0 0 !important
+      border-bottom-width: 0 !important
+
+
   .cart__form
     padding-top: 10px
     padding-bottom: 50px
+    .alert
+      margin-left: 62px
+      @media screen and (max-width: $screen-sm-min)
+        margin-left: 0
     .radio
       font-size: 14px
       padding: 0
@@ -406,7 +435,7 @@ $basicThemeDropdownMenuLink: #434343
     select 
       resize: none
       border-radius: 2px
-      border: 1px solid #cbcbcb
+      border: 1px solid #CFCFCF
       padding: 14px
       width: 100%
       box-shadow: none
@@ -544,6 +573,10 @@ $basicThemeDropdownMenuLink: #434343
   .cart__form__row
     @include clearfix()
     margin: 0 0 20px
+    .alert
+      margin: 0
+      border-radius: 0 0 3px 3px
+      padding: 5px
 
   .cart__form__row__num
     float: left
