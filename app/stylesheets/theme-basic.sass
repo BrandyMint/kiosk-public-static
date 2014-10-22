@@ -906,6 +906,34 @@ html.mm-opening #mm-blocker
   &.mm-menu
     height: 100%
 
+#fancybox-thumbs
+  ul
+    position: static
+    text-align: center
+    width: 100% !important
+    li
+      float: none
+      display: inline-block
+      vertical-align: middle
+      padding: 0 3px
+      cursor: pointer
+      width: 16px !important
+      opacity: .5
+      a
+        display: block
+        overflow: hidden
+        width: 10px
+        height: 10px
+        background: #fff
+        border-radius: 5px
+      img
+        width: 100%
+    
+      &.active
+        background: none
+        opacity: 1
+        border: none
+        padding: 0 3px
 
 @-moz-document url-prefix()
   .theme-basic .cart__form select
