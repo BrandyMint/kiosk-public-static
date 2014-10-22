@@ -24,6 +24,7 @@
                 %input{:name => "utf8", :type => "hidden", :value => "✓"}/
                 %input{:name => "authenticity_token", :type => "hidden", :value => "oBDbmcDA0JU1rJJfqNAVU8YSF425ggRQQu4MuZ8em+c="}/
               .cart__form
+                .alert.alert-danger Обнаружены ошибки, пожалуйста, взгляните на них
                 .cart__form__row
                   .cart__form__row__num 1
                   .cart__form__row__content
@@ -51,9 +52,10 @@
                   .cart__form__row__content
                     .cart__form__row__title
                       Введите данные
-                    .form-group.string.required.vendor_order_phone
+                    .form-group.string.required.vendor_order_phone.has-error
                       %label.string.required.control-label{:for => "vendor_order_phone"} Телефон
                       %input#vendor_order_phone.string.required.form-control{:name => "vendor_order[phone]", :placeholder => "Прим.: +7 913 123 32 10", :type => "text"}
+                      .alert.alert-danger Неверный формат телефона
                     .form-group.string.required.vendor_order_name
                       %label.string.required.control-label{:for => "vendor_order_name"} Как к вам обращаться?
                       %input#vendor_order_name.string.required.form-control{:name => "vendor_order[name]", :placeholder => "Как к вам обращаться", :type => "text"}
