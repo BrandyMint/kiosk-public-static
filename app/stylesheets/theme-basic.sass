@@ -31,6 +31,16 @@ $basicThemeDropdownMenuLink: #434343
     background-color: #da2a41
     border-color: #da2a41
 
+  .help-block
+    background-color: #da2a41
+    text-align: center
+    border-radius: 0 0 3px 3px
+    color: #fff
+    padding: 5px
+    margin: 0
+    color: #fff
+    border: 1px solid #da2a41
+
   .application
     overflow: hidden
 
@@ -407,6 +417,9 @@ $basicThemeDropdownMenuLink: #434343
       border-radius: 2px 2px 0 0 !important
       border-bottom-width: 0 !important
 
+    .help-block
+      color: #fff
+
 
   .cart__form
     padding-top: 10px
@@ -434,6 +447,7 @@ $basicThemeDropdownMenuLink: #434343
     textarea,
     select 
       resize: none
+      background-color: #fff
       border-radius: 2px
       border: 1px solid #CFCFCF
       padding: 14px
@@ -602,6 +616,8 @@ $basicThemeDropdownMenuLink: #434343
   .cart__form__row__title
     font-size: 22px
     margin: 6px 0 28px
+    @media screen and (max-width: $screen-sm-min)
+      text-align: center
 
   .cart__form__radio
     display: block
