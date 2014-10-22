@@ -55,7 +55,7 @@
                     .form-group.string.required.vendor_order_phone.has-error
                       %label.string.required.control-label{:for => "vendor_order_phone"} Телефон
                       %input#vendor_order_phone.string.required.form-control{:name => "vendor_order[phone]", :placeholder => "Прим.: +7 913 123 32 10", :type => "text"}
-                      .alert.alert-danger Неверный формат телефона
+                      %p.help-block Неверный формат телефона
                     .form-group.string.required.vendor_order_name
                       %label.string.required.control-label{:for => "vendor_order_name"} Как к вам обращаться?
                       %input#vendor_order_name.string.required.form-control{:name => "vendor_order[name]", :placeholder => "Как к вам обращаться", :type => "text"}

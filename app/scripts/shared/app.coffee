@@ -56,10 +56,11 @@ $ ->
 
   $('.js-lightbox').fancybox({
     padding: 0
+    margin: 0
     helpers: {
       thumbs: {
-        width: 50
-        height: 50
+        width: 8
+        height: 8
       }
     }
     tpl: {
