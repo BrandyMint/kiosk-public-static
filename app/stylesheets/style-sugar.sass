@@ -1,0 +1,39 @@
+// Sugar theme
+
+// ============= Settings =============
+$themeSugarMainColor: #969696
+$themeSugarCategoriesNavLinkColorHover: #2b2b2b
+
+// ============= /Settings =============
+
+.style-sugar
+  color: $themeSugarMainColor
+
+
+  %cart-btn
+    background: none
+    color: $themeSugarMainColor
+    &:hover
+      background: none
+    &:active
+      box-shadow: none
+
+  .navbar-cart-btn-empty,
+  .navbar-cart-btn-full
+    background: none
+
+  .categories-nav
+    border: none
+    li
+      a
+        text-transform: uppercase
+        color: $themeSugarMainColor
+        &:hover
+          color: $themeSugarCategoriesNavLinkColorHover
+
+  .application-slider__slide
+    max-height: 400px
+
+  .products__list-item-price
+    font-style: italic
+    font-weight: normal

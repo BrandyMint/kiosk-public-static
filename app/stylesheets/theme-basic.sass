@@ -896,6 +896,12 @@ html.mm-opening #mm-blocker
   @media screen and (max-width: $screen-md-min)
     margin-top: 0
 
+.application-slider_photos
+  max-width: 1400px
+  margin: 0 auto
+  .application-slider__slide
+    height: 400px
+
 .application-slider__slide
   img
     width: 100%
@@ -934,6 +940,36 @@ html.mm-opening #mm-blocker
         opacity: 1
         border: none
         padding: 0 3px
+
+.owl-theme .owl-controls .owl-buttons div
+  width: 22px
+  height: 50px
+  background: #eee
+  position: absolute
+  top: 50%
+  margin-top: -25px
+  font: 0/0 a
+  opacity: 1
+
+.owl-prev
+  left: 20px
+
+.owl-next
+  right: 20px
+
+.products__list-item-badge
+  padding: 4px 15px
+  background-color: #feed9d
+  color: #969791
+  position: absolute
+  top: 0
+  left: 0
+  margin: 20px 18px
+  z-index: 2
+  border-radius: 15px
+
+.products__list-item-badge_hit
+  background-color: #ffdfca
 
 @-moz-document url-prefix()
   .theme-basic .cart__form select
