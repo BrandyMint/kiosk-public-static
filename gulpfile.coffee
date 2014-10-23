@@ -11,6 +11,7 @@ sass = require('gulp-sass')
 haml = require('gulp-haml-coffee')
 flatten = require('gulp-flatten')
 include = require('gulp-file-include')
+autoprefixer = require('gulp-autoprefixer')
 
 $ = require("gulp-load-plugins")()
 sourcemaps = require("gulp-sourcemaps")
@@ -73,6 +74,16 @@ gulp.task "sass", ->
     .pipe($.connect.reload())
     .on "error", $.util.log
   return
+
+options.prefixer =
+  browsers: ['last 2 versions']
+  cascade: false
+
+gulp.task "prefixer", ->
+  gulp
+    .src("./dist/stylesheets/app.css")
+    .pipe(autoprefixer(options.prefixer))
+    .pipe(gulp.dest("dist/stylesheets"))
 
 gulp.task "jade", ->
   gulp
@@ -140,7 +151,7 @@ gulp.task "clean", ->
   ).pipe $.clean()
 
 
-gulp.task "styles", ["sass"]
+gulp.task "styles", ["sass", "prefixer"]
 
 # Bundle
 gulp.task "bundle", [

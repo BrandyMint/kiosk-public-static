@@ -6,6 +6,7 @@ require 'jquery.role/lib/role.js'
 require 'jQuery.mmenu/src/js/jquery.mmenu.min.all.js'
 require 'OwlCarousel/owl-carousel/owl.carousel.js'
 require 'fancybox/source/jquery.fancybox.js'
+require 'fancybox-wannabe-fix/index.js'
 window.accounting = require 'accounting.js/accounting.js'
 window.accounting.settings =
   currency:
