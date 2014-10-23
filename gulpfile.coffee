@@ -83,7 +83,7 @@ gulp.task "prefixer", ->
   gulp
     .src("./dist/stylesheets/app.css")
     .pipe(autoprefixer(options.prefixer))
-    .pipe(gulp.dest("dist/stylesheets/app_pref.css"))
+    .pipe(gulp.dest("dist/stylesheets"))
 
 gulp.task "jade", ->
   gulp
