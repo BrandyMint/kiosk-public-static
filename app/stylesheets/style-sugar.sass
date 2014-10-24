@@ -4,6 +4,11 @@
 $themeSugarMainColor: #969696
 $themeSugarCategoriesNavLinkColorHover: #2b2b2b
 
+$themeSugarCategoriesHoverColor: #ffdfca
+
+$timesNewRoman: TimesNewRoman, "Times New Roman", Times, Baskerville, Georgia, serif
+$minion: "minion-pro", TimesNewRoman, "Times New Roman", times, serif
+
 // ============= /Settings =============
 
 .style-sugar
@@ -12,17 +17,16 @@ $themeSugarCategoriesNavLinkColorHover: #2b2b2b
   .owl-buttons
     display: block
 
+  .products__list__title
+    font-family: $minion
+    font-style: italic
+
   %cart-btn
-    background: none
-    color: $themeSugarMainColor
+    color: #fff
     &:hover
-      background: none
+      background: $themeSugarMainColor
     &:active
       box-shadow: none
-
-  .navbar-cart-btn-empty,
-  .navbar-cart-btn-full
-    background: none
 
   .categories-nav
     border: none
@@ -37,10 +41,14 @@ $themeSugarCategoriesNavLinkColorHover: #2b2b2b
     max-height: 400px
 
   .products__list-item-price
+    font-family: $minion
     font-style: italic
     font-weight: normal
 
   .products__list-more__btn
     &:hover
-      border-color: $themeSugarCategoriesNavLinkColorHover
-      color: $themeSugarCategoriesNavLinkColorHover
+      border-color: $themeSugarCategoriesHoverColor
+      background-color: $themeSugarCategoriesHoverColor
+
+  .application-footer
+    padding: 30px 0
