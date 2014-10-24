@@ -4,11 +4,6 @@
     +include 'app/shared/_head.haml'
   %body.theme-basic.style-sugar
     %script{src: 'scripts/bundle.js'}
-
-    .b-theme-switch
-      .b-theme-switch__item{data-classlist: "theme-basic"} Basic
-      .b-theme-switch__item{data-classlist: "theme-basic style-wannabe"} Wannabe
-      .b-theme-switch__item{data-classlist: "theme-basic style-sugar"} Sugar
     
     .application
       +include 'app/shared/_navbar.haml'
@@ -32,4 +27,6 @@
                     .products__list-item-price
                       8 900 руб.
       +include 'app/shared/_footer.haml'
+
+      +include 'app/shared/_themeswitcher.haml'
       
