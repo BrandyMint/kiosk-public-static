@@ -25,8 +25,8 @@ if	app/scripts/shared/app.coffee	/^  if floatCart.length$/;"	b	line:146	language
 number	app/scripts/libs.coffee	/^  number:$/;"	v	line:18	language:coffee
 recalcFloatCartPosition	app/scripts/shared/app.coffee	/^    recalcFloatCartPosition = () ->$/;"	f	line:155	language:coffee	object:window
 sass	gulpfile.coffee	/^options.sass =$/;"	v	line:63	language:coffee
-setCartItemCount	app/scripts/shared/cart.coffee	/^  setCartItemCount = (root_item_el, count) ->$/;"	f	line:3	language:coffee	object:window
+setCartItemCount	app/scripts/shared/cart.coffee	/^  setCartItemCount = (root_item_el, count) ->$/;"	f	line:4	language:coffee	object:window
 settings	app/scripts/libs.coffee	/^window.accounting.settings =$/;"	v	line:11	language:coffee
 shim	gulpfile.coffee	/^      shim:$/;"	v	line:40	language:coffee
 syncPosition	app/scripts/shared/app.coffee	/^  syncPosition = (el) ->$/;"	f	line:86	language:coffee	object:window
-updateCartTotal	app/scripts/shared/cart.coffee	/^  updateCartTotal = ->$/;"	f	line:19	language:coffee	object:window
+updateCartTotal	app/scripts/shared/cart.coffee	/^  updateCartTotal = ->$/;"	f	line:21	language:coffee	object:window

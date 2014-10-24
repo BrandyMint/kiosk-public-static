@@ -15,7 +15,7 @@
             %form{action: 'checkout.html'}
               .cart__list
                 - for i in [1..5]
-                  .cart__list-item{cart-item: i, data-item-price: 12000}
+                  .cart__list-item{cart-item: i, data-item-price: 12000, data-item-total-price: 24000}
                     .row
                       .col-lg-2.col-md-2.col-sm-2.col-xs-4
                         %img{ src: "http://placehold.it/92x92", alt: 'cart item', width: '100%'}
@@ -27,7 +27,7 @@
                         .cart__list-item-option
                           Арт. 123456
                         .cart__list-item-quantity.cart__list-item-quantity_xs.visible-xs
-                          %span.cart__list-item-quantity__text{cart-item-block: 'basic', data-total-price: 24000}
+                          %span.cart__list-item-quantity__text{cart-item-block: 'basic'}
                             Количество
                           .cart__list-item-quantity-select
                             %select{cart-item-selector: 'basic'}
@@ -45,7 +45,7 @@
                         %span.cart__list-item-remove.cart__list-item-remove_xs.visible-xs
                           %a{href:'#'}
                             %img{src: 'images/cross_white.svg', alt: ''}
-                      %div{cart-item-block: 'additional', data-total-price: 24000}
+                      %div{cart-item-block: 'additional'}
                         .col-lg-3.col-md-3.col-sm-3.hidden-xs
                           .cart__list-item-quantity
                             %span.cart__list-item-quantity__text
