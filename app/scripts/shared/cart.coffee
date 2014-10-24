@@ -8,10 +8,7 @@ $ ->
       total = price*count
       $block.data 'total-price', total
 
-      #price = $block.data 'price'
-
-      $price_el = $block.find '[cart-item-price]'
-
+      $price_el = $block.find '[cart-item-total-price]'
       $price_el.html accounting.formatMoney total
 
       $selector = $block.find '[cart-item-selector]'
