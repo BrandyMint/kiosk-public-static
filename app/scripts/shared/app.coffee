@@ -70,6 +70,13 @@ $ ->
     }
   })
 
+  # Style changer
+
+  $('.b-theme-switch__item').on 'click', ()->
+    classlistVal = $(this).data "classlist"
+    $('body').attr 'class', classlistVal
+
+
   # Welcome slider
 
   defaultCarouselOptions =
