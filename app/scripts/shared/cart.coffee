@@ -2,13 +2,13 @@ $ ->
 
   setCartItemCount = (root_item_el, count) ->
 
-    price = root_item_el.data 'price'
+    price = root_item_el.data 'item-price'
     root_item_el.find('[cart-item-block]').each (idx, block) ->
       $block = $ block
       total = price*count
-      $block.data 'total', total
+      $block.data 'total-price', total
 
-      price = $block.data 'price'
+      #price = $block.data 'price'
 
       $price_el = $block.find '[cart-item-price]'
 
@@ -22,7 +22,7 @@ $ ->
   updateCartTotal = ->
     totalPrice = 0
     $('[cart-item-block]').each (idx, block) ->
-      totalPrice += $(block).data('total') || $(block).data('price')
+      totalPrice += $(block).data('total-price')
 
     $cartTotal = $ '[cart-total]'
     $cartTotal.html accounting.formatMoney totalPrice
