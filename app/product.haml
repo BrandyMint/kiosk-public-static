@@ -3,7 +3,7 @@
   %head
     +include 'app/shared/_head.haml'
 
-  %body.theme-basic
+  %body.theme-basic.style-sugar
     %script{src: 'scripts/bundle.js'}
     .application
       +include 'app/shared/_navbar_with-cart.haml'
@@ -80,28 +80,20 @@
                         = "#{key}:"
                         = obj[key]
 
-
-      +include 'app/shared/_footer.haml'
-
-    .modal.orders-modal.fade{"aria-hidden" => "true", "aria-labelledby" => "", :role => "product-modal", :tabindex => "-1"}
-      .modal-dialog
-        .modal-content{role: 'modal-content'}
-          .carousel.slide{role: 'carousel product-show-carousel'}
-            .carousel-inner
-              - for i in [0..3]
-                - if i == 0
-                  - item_class = 'active'
-                - else
-                  - item_class = ''
-                .item.products__show-item-image-block{class: "#{item_class}", role: 'product-show-image'}
-                  %img.products__show-item-image{ src: "images/product-square-large.png" }
-            .left.carousel-control{data: {target: '[role*="product-show-carousel"]', 'slide-to' => 'prev'} }
-              %span.fa.fa-angle-left.carousel-control-icon
-            .right.carousel-control{data: {target: '[role*="product-show-carousel"]', 'slide-to' => 'next'} }
-              %span.fa.fa-angle-right.carousel-control-icon
-
-            -#.products__show-images-list
-              - for i in [0..3]
-                .products__show-image-thumb-block{data: {target: '[role*="product-show-carousel"]', 'slide-to' => i} }
-                  %img.products__show-image-thumb{:src => "images/product-square.png"}
-
+          .products__list
+            %h2.products__list__title Табуретки
+            .row
+              - for i in [1..3]
+                .products__list-item-wrap
+                  .products__list-item{role: 'jump', 'data-href': 'product.html'}
+                    - if i == 1
+                      .products__list-item-badge НОВИНКА
+                    - if i == 2
+                      .products__list-item-badge.products__list-item-badge_hit ХИТ
+                    .products__list-item-image-block
+                      %img.products__list-item-image{ src: "images/product-square.jpg" }
+                    .products__list-item-title
+                      Моно-серьга имитация тоннеля серебряная с белыми цирконами
+                    .products__list-item-price
+                      8 900 руб.
+      +include 'app/shared/_footer_sugar.haml'

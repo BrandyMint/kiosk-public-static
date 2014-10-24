@@ -9,6 +9,8 @@ $themeSugarCategoriesNavLinkColorHover: #2b2b2b
 .style-sugar
   color: $themeSugarMainColor
 
+  .owl-buttons
+    display: block
 
   %cart-btn
     background: none
@@ -37,3 +39,8 @@ $themeSugarCategoriesNavLinkColorHover: #2b2b2b
   .products__list-item-price
     font-style: italic
     font-weight: normal
+
+  .products__list-more__btn
+    &:hover
+      border-color: $themeSugarCategoriesNavLinkColorHover
+      color: $themeSugarCategoriesNavLinkColorHover
