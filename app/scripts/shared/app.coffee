@@ -70,14 +70,38 @@ $ ->
     }
   })
 
+  # Style changer
+
+  logo = $('.navbar-brand-image')
+
+  $('[ks-theme-switcher]').on 'click', ()->
+    classlistVal = $(this).data "classlist"
+    logoUrl = $(this).data "logourl"
+    $('body').attr 'class', classlistVal
+    logo.attr 'src', logoUrl
+
+
   # Welcome slider
 
-  $('.application-slider__inner').owlCarousel({
+  defaultCarouselOptions =
     singleItem: true
     pagination: false
-    responsiveBaseWidth: $('.application-slider'),
-    autoPlay: 5000
-  })
+    responsiveBaseWidth: $('.application-slider')
+    autoPlay: 5000,
+    navigation: true
+
+  
+
+  $('.application-slider').each ->
+    thisInner = $(this).find '.application-slider__inner'
+    options = defaultCarouselOptions
+    if $(this).hasClass 'application-slider_photos'
+      options['singleItem'] = false
+      options['items'] = 3
+      options['itemsDesktop'] = 3
+
+    thisInner.owlCarousel options
+
 
   # Product carousel (http://owlgraphic.com/owlcarousel)
 
