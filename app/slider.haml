@@ -16,8 +16,8 @@
 
       .application-content
         .container-fluid
-          .products__list(ks-products-container){data-total-pages: 10, data-current-page: 1, data-url: 'shared/_products.html'}
-            .row(ks-products-list)
+          .products__list(ks-products-container){data-total-pages: 3, data-current-page: 1, data-url: 'shared/_products.html'}
+            .row
               +include 'app/shared/_products.haml'
             +include 'app/shared/_load_more.haml'
               %span.products__list-more__btn Показать еще

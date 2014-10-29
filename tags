@@ -5,10 +5,10 @@
 !_TAG_PROGRAM_URL	https://github.com/lukaszkorecki/CoffeeTags	/GitHub repository/
 !_TAG_PROGRAM_VERSION	0.5.0	//
 afterInit	app/scripts/shared/product_images_slider.coffee	/^    afterInit: (el) ->$/;"	f	line:37	language:coffee	object:center
-beforeSend	app/scripts/shared/load_more.coffee	/^      beforeSend: (xhr)->$/;"	f	line:22	language:coffee	object:window
+beforeSend	app/scripts/shared/load_more.coffee	/^      beforeSend: (xhr)->$/;"	f	line:28	language:coffee	object:window
 center	app/scripts/shared/product_images_slider.coffee	/^  center = (number) ->$/;"	f	line:13	language:coffee	object:window
 currency	app/scripts/libs.coffee	/^  currency:$/;"	v	line:12	language:coffee
-data	app/scripts/shared/load_more.coffee	/^      data:$/;"	v	line:20	language:coffee
+data	app/scripts/shared/load_more.coffee	/^      data:$/;"	v	line:26	language:coffee
 defaultCarouselOptions	app/scripts/shared/application_slider.coffee	/^  defaultCarouselOptions =$/;"	v	line:4	language:coffee
 depends	gulpfile.coffee	/^          depends:$/;"	v	line:44	language:coffee
 depends	gulpfile.coffee	/^          depends:$/;"	v	line:49	language:coffee
