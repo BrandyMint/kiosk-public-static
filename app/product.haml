@@ -22,15 +22,15 @@
             .row
               .col-md-6.col-sm-12.col-xs-12
                 .owl-carousel.product__show__slider#product-slider
-                  %a.product__show__slider__slide.js-lightbox{href: 'http://images.gear4music.com/media/87068/600/preview.jpg', rel: 'photo-stack'}
+                  %a.product__show__slider__slide{lightbox: true, href: 'http://images.gear4music.com/media/87068/600/preview.jpg', rel: 'photo-stack'}
                     %img{src: 'http://images.gear4music.com/media/87068/600/preview.jpg', alt: ''}
-                  %a.product__show__slider__slide.js-lightbox{href: 'http://www.plasticsounds.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/m/o/moog_minitaur.jpg', rel: 'photo-stack'}
+                  %a.product__show__slider__slide{lightbox: true, href: 'http://www.plasticsounds.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/m/o/moog_minitaur.jpg', rel: 'photo-stack'}
                     %img{src: 'http://www.mesi.fr/product_img/moog_minitaur_front_b.jpg', alt: ''}
-                  %a.product__show__slider__slide.js-lightbox{href: 'http://www.1905.ru/upload/iblock/885/moog-etherwave-theremin-kit.jpg', rel: 'photo-stack'}
+                  %a.product__show__slider__slide{lightbox: true, href: 'http://www.1905.ru/upload/iblock/885/moog-etherwave-theremin-kit.jpg', rel: 'photo-stack'}
                     %img{src: 'http://www.1905.ru/upload/iblock/885/moog-etherwave-theremin-kit.jpg', alt: ''}
-                  %a.product__show__slider__slide.js-lightbox{href: 'http://galleryplus.ebayimg.com/ws/web/121020506330_1_0_1/1000x1000.jpg', rel: 'photo-stack'}
+                  %a.product__show__slider__slide{lightbox: true, href: 'http://galleryplus.ebayimg.com/ws/web/121020506330_1_0_1/1000x1000.jpg', rel: 'photo-stack'}
                     %img{src: 'http://galleryplus.ebayimg.com/ws/web/121020506330_1_0_1/1000x1000.jpg', alt: ''}
-                  %a.product__show__slider__slide.js-lightbox{href: 'http://rekkerd.org/img/201210/moog_mooganalogdelay.jpg', rel: 'photo-stack'}
+                  %a.product__show__slider__slide{lightbox: true, href: 'http://rekkerd.org/img/201210/moog_mooganalogdelay.jpg', rel: 'photo-stack'}
                     %img{src: 'http://rekkerd.org/img/201210/moog_mooganalogdelay.jpg', alt: ''}
 
                 .product__show__thumbs#product-thumbs
@@ -85,7 +85,7 @@
             .row
               - for i in [1..3]
                 .products__list-item-wrap
-                  .products__list-item{role: 'jump', 'data-href': 'product.html'}
+                  .products__list-item{'ks-jump': 'product.html'}
                     .products__list-item-image-block
                       %img.products__list-item-image{ src: "images/product-square.jpg" }
                     .products__list-item-title

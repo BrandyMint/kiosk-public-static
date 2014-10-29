@@ -4,29 +4,32 @@
 !_TAG_PROGRAM_NAME	CoffeeTags	//
 !_TAG_PROGRAM_URL	https://github.com/lukaszkorecki/CoffeeTags	/GitHub repository/
 !_TAG_PROGRAM_VERSION	0.5.0	//
-afterInit	app/scripts/shared/app.coffee	/^    afterInit: (el) ->$/;"	f	line:116	language:coffee	object:center
-beforeSend	app/scripts/shared/app.coffee	/^      beforeSend: (xhr)->$/;"	f	line:46	language:coffee	object:window
-center	app/scripts/shared/app.coffee	/^  center = (number) ->$/;"	f	line:92	language:coffee	object:window
+afterInit	app/scripts/shared/product_images_slider.coffee	/^    afterInit: (el) ->$/;"	f	line:37	language:coffee	object:center
+beforeSend	app/scripts/shared/load_more.coffee	/^    beforeSend: (xhr)->$/;"	f	line:18	language:coffee	object:window
+center	app/scripts/shared/product_images_slider.coffee	/^  center = (number) ->$/;"	f	line:13	language:coffee	object:window
 currency	app/scripts/libs.coffee	/^  currency:$/;"	v	line:12	language:coffee
-data	app/scripts/shared/app.coffee	/^      data:$/;"	v	line:44	language:coffee
+data	app/scripts/shared/load_more.coffee	/^    data:$/;"	v	line:16	language:coffee
+defaultCarouselOptions	app/scripts/shared/application_slider.coffee	/^  defaultCarouselOptions =$/;"	v	line:4	language:coffee
 depends	gulpfile.coffee	/^          depends:$/;"	v	line:44	language:coffee
 depends	gulpfile.coffee	/^          depends:$/;"	v	line:49	language:coffee
-es	app/scripts/shared/app.coffee	/^    classes: "mm-slide",$/;"	c	line:131	language:coffee
-getRightOffset	app/scripts/shared/app.coffee	/^    getRightOffset = (el) ->$/;"	f	line:151	language:coffee	object:window
+es	app/scripts/shared/mobile_navigation.coffee	/^    classes: "mm-slide",$/;"	c	line:7	language:coffee
+getRightOffset	app/scripts/shared/float_cart.coffee	/^    getRightOffset = (el) ->$/;"	f	line:11	language:coffee	object:window
 handleError	gulpfile.coffee	/^handleError = (err) ->$/;"	f	line:4	language:coffee	object:window
-if	app/scripts/shared/app.coffee	/^      if \$(@).scrollTop() >= floatCartPosition$/;"	b	line:159	language:coffee
-if	app/scripts/shared/app.coffee	/^      if event.shiftKey || event.ctrlKey || event.metaKey$/;"	b	line:21	language:coffee
-if	app/scripts/shared/app.coffee	/^      if floatCart.hasClass floatCartLockedClass$/;"	b	line:167	language:coffee
-if	app/scripts/shared/app.coffee	/^      if num > sync2visible[sync2visible.length - 1]$/;"	b	line:99	language:coffee
-if	app/scripts/shared/app.coffee	/^    if found is false$/;"	b	line:98	language:coffee
-if	app/scripts/shared/app.coffee	/^    if href != ''$/;"	b	line:20	language:coffee
 if	app/scripts/shared/app.coffee	/^  if 'ontouchstart' of document$/;"	b	line:3	language:coffee
-if	app/scripts/shared/app.coffee	/^  if floatCart.length$/;"	b	line:146	language:coffee
+if	app/scripts/shared/application_slider.coffee	/^    if \$(this).hasClass 'application-slider_photos'$/;"	b	line:14	language:coffee
+if	app/scripts/shared/float_cart.coffee	/^      if \$(@).scrollTop() >= floatCartPosition$/;"	b	line:19	language:coffee
+if	app/scripts/shared/float_cart.coffee	/^      if floatCart.hasClass floatCartLockedClass$/;"	b	line:27	language:coffee
+if	app/scripts/shared/float_cart.coffee	/^  if floatCart.length$/;"	b	line:6	language:coffee
+if	app/scripts/shared/jump.coffee	/^      if event.shiftKey || event.ctrlKey || event.metaKey$/;"	b	line:5	language:coffee
+if	app/scripts/shared/jump.coffee	/^    if href != ''$/;"	b	line:4	language:coffee
+if	app/scripts/shared/product_images_slider.coffee	/^      if num > sync2visible[sync2visible.length - 1]$/;"	b	line:20	language:coffee
+if	app/scripts/shared/product_images_slider.coffee	/^    if found is false$/;"	b	line:19	language:coffee
+listVal	app/scripts/shared/theme_switcher.coffee	/^    classlistVal = \$(this).data "classlist"$/;"	c	line:7	language:coffee
 number	app/scripts/libs.coffee	/^  number:$/;"	v	line:18	language:coffee
-recalcFloatCartPosition	app/scripts/shared/app.coffee	/^    recalcFloatCartPosition = () ->$/;"	f	line:155	language:coffee	object:window
+recalcFloatCartPosition	app/scripts/shared/float_cart.coffee	/^    recalcFloatCartPosition = () ->$/;"	f	line:15	language:coffee	object:window
 sass	gulpfile.coffee	/^options.sass =$/;"	v	line:63	language:coffee
 setCartItemCount	app/scripts/shared/cart.coffee	/^  setCartItemCount = (root_item_el, count) ->$/;"	f	line:4	language:coffee	object:window
 settings	app/scripts/libs.coffee	/^window.accounting.settings =$/;"	v	line:11	language:coffee
 shim	gulpfile.coffee	/^      shim:$/;"	v	line:40	language:coffee
-syncPosition	app/scripts/shared/app.coffee	/^  syncPosition = (el) ->$/;"	f	line:86	language:coffee	object:window
+syncPosition	app/scripts/shared/product_images_slider.coffee	/^  syncPosition = (el) ->$/;"	f	line:7	language:coffee	object:window
 updateCartTotal	app/scripts/shared/cart.coffee	/^  updateCartTotal = ->$/;"	f	line:21	language:coffee	object:window
