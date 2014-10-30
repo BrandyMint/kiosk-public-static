@@ -23,6 +23,29 @@
             Каталог
     .collapse.navbar-collapse{'categories-nav': ''}
       %ul.categories-nav
+        %li.dropdown
+          %a.dropdown-toggle{href: '#', data-toggle: "dropdown"} Аксессуары
+          %ul.dropdown-menu
+            %li.dropdown-col
+              %ul
+                %li
+                  %a{href: '#', data-count:'45'} Кольца
+                %li
+                  %a{href: '#', data-count:'1'} Цепи
+                %li
+                  %a{href: '#', data-count:'6'} Злато
+                %li
+                  %a{href: '#', data-count:'12'} Тренд
+                %li
+                  %a{href: '#', data-count:'4'} Миднайт
+                %li
+                  %a{href: '#', data-count:'9'} Дисплей
+                %li
+                  %a{href: '#', data-count:'1'} Цепи
+                %li
+                  %a{href: '#', data-count:'6'} Злато
+
+
         - categories = ['Столы', 'Стулья', 'Свет', 'Декор' ]
         - for c in categories
           %li
@@ -48,12 +71,6 @@
                   %a{href: '#', data-count:'1'} Цепи
                 %li
                   %a{href: '#', data-count:'6'} Злато
-                %li
-                  %a{href: '#', data-count:'12'} Тренд
-                %li
-                  %a{href: '#', data-count:'4'} Городские велосипеды
-                %li
-                  %a{href: '#', data-count:'9'} Дисплей
             %li.dropdown-col
               %ul
                 %li
@@ -64,16 +81,6 @@
                   %a{href: '#', data-count:'6'} Злато
                 %li
                   %a{href: '#', data-count:'45'} Кольца
-                %li
-                  %a{href: '#', data-count:'1'} Цепи
-                %li
-                  %a{href: '#', data-count:'6'} Злато
-                %li
-                  %a{href: '#', data-count:'12'} Тренд
-                %li
-                  %a{href: '#', data-count:'4'} Миднайт
-                %li
-                  %a{href: '#', data-count:'9'} Дисплей
 
       #nav
         %ul
