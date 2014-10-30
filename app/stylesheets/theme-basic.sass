@@ -10,6 +10,10 @@
   // .application-navbar
   //   overflow-x: hidden
 
+  input,
+  textarea
+    @include placeholder($basicThemeCategoriesNavBorderColor)
+
   .alert
     text-align: center
     border-radius: 3px
@@ -562,7 +566,7 @@
       opacity: .5
 
   .cart__list-item-price
-    font-size: 22px
+    font-size: 20px
     margin-top: -3px
     @media screen and (max-width: $screen-sm-min)
       font-size: 18px
@@ -593,7 +597,6 @@
     width: 190px
     border: 1px solid $basicThemeCategoriesNavBorderColor
     padding: 12px 17px 10px
-    @include placeholder($basicThemeCategoriesNavBorderColor)
 
   .cart-btn-checkout
     display: inline-block
@@ -705,7 +708,6 @@
     border: 1px solid $basicThemeCategoriesNavLinkColorHover
     padding: 14px
     width: 100%
-    @include placeholder($basicThemeCategoriesNavLinkColorHover)
     &:focus
       border-color: $basicThemeCategoriesNavLinkColor
       outline: none
