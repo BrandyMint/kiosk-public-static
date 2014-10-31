@@ -38,9 +38,6 @@
     color: #fff
     border: 1px solid #da2a41
 
-  .owl-buttons
-    display: none
-
   .application
     overflow: hidden
 
@@ -84,6 +81,8 @@
         color: $basicThemeCategoriesNavLinkColor
         &:hover
           color: $basicThemeCategoriesNavLinkColorHover
+        &:focus
+          outline: none
     .dropdown
       &:hover
         .dropdown-menu
@@ -259,6 +258,7 @@
     @extend .col-md-4
     @extend .col-sm-6
     @extend .col-xs-12
+    font-weight: normal
   
   .products__list-item
     height: auto
@@ -313,7 +313,7 @@
           content: ''
 
   .products__show-item-title
-    font-size: 53px
+    font-size: 36px
     margin: 3px 0 1em
     line-height: 1
     color: $basicThemeMainColor
@@ -395,7 +395,7 @@
   .application-footer
     border: none
     padding-bottom: 0
-    margin-top: 30px
+    margin-top: 70px
     @media screen and (max-width: $screen-sm-min)
       margin-top: 10px      
 
@@ -404,16 +404,8 @@
 
   .footer-nav
     margin: 19px 0
-    li
-      @media screen and (min-width: $screen-xs-min)
-        &:first-child
-          margin-left: -15px
-      @media screen and (max-width: $screen-xs-min)
-        display: block
-        float: left
-        width: 50%
-        margin: 0
-        text-align: center
+    
+    
     a
       padding: 6px 0
       font-size: 16px
@@ -421,6 +413,12 @@
       color: $basicThemeCategoriesNavLinkColor
       &:hover
         color: $basicThemeCategoriesNavLinkColorHover
+      @media screen and (max-width: $screen-xs-min)
+        font-size: 14px
+        margin: 0 5px
+
+    @media screen and (max-width: $screen-xs-min)
+      text-align: center
 
   .cart__list-item
     border: none
@@ -791,8 +789,8 @@
     list-style: none
     overflow-y: auto
     background-color: #252525
-    max-width: 140px
-    min-width: 130px
+    max-width: 200px
+    min-width: 170px
     .mm-counter
       color: #fff
     .mm-subclose
@@ -936,11 +934,17 @@ html.mm-opening #mm-blocker
 .application-slider_photos
   max-width: 1400px
   margin: 0 auto
+  .owl-buttons
+    opacity: 0
+    transition: opacity .2s ease
   .application-slider__slide
     height: 400px
     background-color: #242424
     img
       opacity: .5
+  &:hover
+    .owl-buttons
+      opacity: 1
 
 .application-slider__slide
   img
@@ -1003,6 +1007,8 @@ html.mm-opening #mm-blocker
   background: none
   padding: 0
   background-size: 100% 100%
+  @media screen and (max-width: $screen-xs-min)
+    display: none !important
 
   &.owl-prev
     left: 20px
@@ -1025,6 +1031,13 @@ html.mm-opening #mm-blocker
 
 .products__list-item-badge_hit
   background-color: #ffdfca
+
+.is-sticky
+  margin-top: 43px
+  .categories-nav
+    z-index: 10
+    background-color: rgba(255,255,255,.8)
+    margin-top: 0
 
 @-moz-document url-prefix()
   .theme-basic .cart__form select
