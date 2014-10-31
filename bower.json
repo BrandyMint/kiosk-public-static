@@ -11,7 +11,8 @@
     "OwlCarousel": "~1.3.2",
     "fancybox": "~2.1.5",
     "fancybox-wannabe-fix": "https://raw.githubusercontent.com/srjsrj/fancyBox-wannabe/master/source/helpers/jquery.fancybox-thumbs.js",
-    "accounting.js": "~0.3.2"
+    "accounting.js": "~0.3.2",
+    "sticky": "~1.0.1"
   },
   "devDependencies": {
     "jquery": "latest",
