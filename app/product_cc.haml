@@ -51,7 +51,18 @@
 
                         .col-md-4
                           .modification__acts
-                            %button.products__show-item-cart-btn{type: 'submit'} В корзину
+                            %button.products__show-item-cart-btn{type: 'submit'}
+                              .navbar-cart-btn-icon
+                              В корзину
+
+            .products__show-item__features
+              .row
+                - for i in [1..6]
+                  .col-md-2.col-sm-4
+                    .products__show-item__feature
+                      .products__show-item__feature__pic
+                        %img{src: 'http://citycycle.ru/upload/product_images/21702/f2a3684cba49a5ee5aeb5cc8748f5d4a_0x0.jpg', alt: ''}
+                      Крепкая стальная рама
             
             .row
               .col-md-5
@@ -77,14 +88,27 @@
                   %p
                     Если вам необходимо получить уже собранный и настроенный велосипед перед заказом свяжитесь и уточните все детали с менеджером по телефону +7 903 500 20 70. 
 
-          .products__list
+          .products__list.products__list_four-in-row
             %h2.products__list__title С этим товаром мы рекомендуем
             .row
               - for i in [1..4]
                 .products__list-item-wrap
                   .products__list-item{'ks-jump': 'product.html'}
                     .products__list-item-image-block
-                      %img.products__list-item-image{ src: "images/product-square.jpg" }
+                      %img.products__list-item-image{ src: "http://citycycle.ru/upload/iblock/c2f/c2fc837702ea76c8c335085bfbda3d05.jpg" }
+                    .products__list-item-title
+                      Моно-серьга имитация тоннеля серебряная с белыми цирконами
+                    .products__list-item-price
+                      8 900 руб.
+
+          .products__list
+            %h2.products__list__title Этот товар, но другого цвета
+            .row
+              - for i in [1..6]
+                .products__list-item-wrap
+                  .products__list-item{'ks-jump': 'product.html'}
+                    .products__list-item-image-block
+                      %img.products__list-item-image{ src: "http://citycycle.ru/upload/product_images/26237/38ad26c8324bca1f4af84156c9a64c40_350x235.jpg" }
                     .products__list-item-title
                       Моно-серьга имитация тоннеля серебряная с белыми цирконами
                     .products__list-item-price
