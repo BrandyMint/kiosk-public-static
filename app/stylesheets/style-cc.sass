@@ -4,8 +4,19 @@ $ccMainColor: #242427
   font: 13px/1.538em "Apercu Pro", Arial, Helvetica, sans-serif
   color: $ccMainColor
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+    color: $ccMainColor
+
   a
     color: #303030
+    font-weight: normal
+    &:hover
+      color: #ef5a61
 
   .categories-nav
     margin-top: 0
@@ -67,3 +78,147 @@ $ccMainColor: #242427
   .products__list-item-price
     font-size: 16px
     color: $ccMainColor
+  
+  .products__show-item-category,
+  .products__show-item-title
+    text-align: center
+
+  .products__show-item-title
+    font-size: 45px
+
+  .products__show-item-category
+    font-size: 13px
+    margin: 0 0 14px
+
+  .products__list__title
+    font-size: 20px
+    text-align: left
+    font-weight: bold
+
+  .products__show-item__main
+    border-bottom: 1px solid #dcdcdc
+    padding-bottom: 35px
+    margin-bottom: 55px
+
+  .products__show-item-cart-btn
+    font-size: 15px
+    height: 40px
+    line-height: 40px
+    display: block
+    text-align: center
+    padding: 0
+    width: 100%
+    border-radius: 2em
+    &:hover
+      background-color: #ef5a61
+      color: #fff
+
+  .products__show-item-details
+    li
+      padding: 0 0 18px
+      font-size: 12px
+      line-height: 18px
+      overflow: hidden
+      &:before
+        display: none
+
+  .products__show-item-delivery
+    h3
+      margin: 0 0 12px
+      font-size: 16px
+      font-weight: bold
+
+  .products__show-item-details__name
+    width: 105px
+    position: relative
+    float: left
+    color: #999
+    font-weight: bold
+
+  .products__show-item-details__val
+    margin-left: 120px
+
+  .products__show-item-description
+    font-size: 14px
+    line-height: 1.5
+    p
+      margin: 0 0 14px
+
+  .product__show__slider
+    max-height: 630px
+    margin-bottom: 80px
+    .owl-item
+      max-height: 630px
+    .owl-controls
+      visibility: visible
+      bottom: auto
+      top: 0
+    .owl-pagination
+      background: none
+      .owl-page
+        span
+          background-color: #d9d9d9
+        &.active
+          span
+            box-shadow: 0 0 0 3px #333
+            background-color: #333
+
+
+
+.big-price
+  big
+    font: 33.4px/36px
+  .currency 
+    position: relative
+    top: -28px
+    font-size: 11px
+    line-height: 16px
+    vertical-align: baseline
+  .price-old
+    margin-right: 6px
+    font-size: 13px
+    text-decoration: line-through
+    color: #A1A1A1
+    vertical-align: top
+  .sale
+    vertical-align: top
+    background-color: #f05a61
+    padding: 3px 2px 2px 5px
+    font-size: 11px
+    line-height: 16px
+    text-transform: uppercase
+    color: #fff
+    z-index: 1
+    letter-spacing: 2px
+
+.modification
+  padding: 20px 0
+  font-size: 13px
+  list-style: none
+  margin: 0
+  border-top: 1px solid #e2e2e2
+  &:first-child
+    border-top: 0
+
+.modification__desc
+  padding: 6px 10px 6px 0
+
+.stock-status__dots
+  margin-right: .25em
+
+.stock-status__dot
+  width: 4px
+  height: 4px
+  margin-right: .25em
+  display: inline-block
+  background-color: #b2b2b2
+  vertical-align: middle
+  border-radius: 2px
+
+.stock-status__dot_filled
+  background-color: #000
+
+.stock-status__text,
+.stock-status__dots
+  display: inline-block
+  vertical-align: middle
