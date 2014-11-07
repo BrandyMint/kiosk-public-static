@@ -16,18 +16,11 @@
 
       .application-content
         .container-fluid
-          .products__list(ks-products-container){data-total-pages: 3, data-current-page: 1, data-url: 'shared/_products.html'}
+          .products__list.products__list_four-in-row(ks-products-container){data-total-pages: 3, data-current-page: 1, data-url: 'shared/_products.html'}
             .row
               +include 'app/shared/_products.haml'
             +include 'app/shared/_load_more.haml'
-
-      .application-slider.application-slider_photos(application-slider)
-        .application-slider__inner
-          - for i in [1..8]
-            .application-slider__slide
-              %img{src: 'http://www.gold4u.ru/pictures/large/R00173.jpg', alt: ''}
-
-
+      
       +include 'app/shared/_footer.haml'
 
       +include 'app/shared/_themeswitcher.haml'
