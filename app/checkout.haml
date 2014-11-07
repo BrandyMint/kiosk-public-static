@@ -8,8 +8,6 @@
     .application
       +include 'app/shared/_navbar_empty.haml'
 
-
-
       .application-content
         .container-fluid
           .products__show
@@ -17,7 +15,7 @@
               Оформление заказа.
               %strong 5 товаров
               на сумму
-              %strong 16 000 руб.
+              %strong{checkout-total: true, data-products-price: 16000, data-delivery-price: 0} 16 000 руб.
 
             %form#new_vendor_order.simple_form.new_vendor_order{"accept-charset" => "UTF-8", :action => "/order", :method => "post", :novalidate => "novalidate"}
               %div{:style => "display:none"}
@@ -34,17 +32,17 @@
                     .form-group.radio_buttons.required.vendor_order_delivery_type_id
                       %span.radio
                         %label{:for => "vendor_order_delivery_type_id_1", :name => "vendor_order[delivery_type_id]"}
-                          %input#vendor_order_delivery_type_id_1.radio_buttons.required.form-control{:name => "vendor_order[delivery_type_id]", :type => "radio", :value => "1"}>
+                          %input#vendor_order_delivery_type_id_1.radio_buttons.required.form-control{:name => "vendor_order[delivery_type_id]", :type => "radio", :value => "1", data-delivery-price: 600, delivery-type: true}>
                           .cart__form__delivery-name Курьером по москве
                           .cart__form__delivery-price 600 рублей
                       %span.radio
                         %label{:for => "vendor_order_delivery_type_id_2", :name => "vendor_order[delivery_type_id]"}
-                          %input#vendor_order_delivery_type_id_2.radio_buttons.required.form-control{:name => "vendor_order[delivery_type_id]", :type => "radio", :value => "2"}>
+                          %input#vendor_order_delivery_type_id_2.radio_buttons.required.form-control{:name => "vendor_order[delivery_type_id]", :type => "radio", :value => "2", data-delivery-price: 0, delivery-type: true, data-delivery-type: 'selfdelivery'}>
                           .cart__form__delivery-name Самовывоз
                           .cart__form__delivery-price 0 рублей
                       %span.radio
                         %label{:for => "vendor_order_delivery_type_id_3", :name => "vendor_order[delivery_type_id]"}
-                          %input#vendor_order_delivery_type_id_3.radio_buttons.required.form-control{:name => "vendor_order[delivery_type_id]", :type => "radio", :value => "3"}>
+                          %input#vendor_order_delivery_type_id_3.radio_buttons.required.form-control{:name => "vendor_order[delivery_type_id]", :type => "radio", :value => "3", data-delivery-price: 200, delivery-type: true}>
                           .cart__form__delivery-name Курьером
                           .cart__form__delivery-price 200 рублей
                 .cart__form__row
@@ -59,15 +57,15 @@
                     .form-group.string.required.vendor_order_name
                       %label.string.required.control-label{:for => "vendor_order_name"} Как к вам обращаться?
                       %input#vendor_order_name.string.required.form-control{:name => "vendor_order[name]", :placeholder => "Как к вам обращаться", :type => "text"}
-                    .form-group.select.required.vendor_order_city_id
-                      %label.select.required.control-label{:for => "vendor_order_city_id"} Город доставки
+                    .form-group.select.required.vendor_order_city_id{delivery-only-field: true}
+                      %label.select.required.control-label{:for => "vendor_order_city_id", delivery-only-field: true} Город доставки
                       %select#vendor_order_city_id.select.required.form-control{:name => "vendor_order[city_id]"}
                         %option{:value => "1"} Чебоксары
                         %option{:value => "2"} Москва
-                    .form-group.text.required.vendor_order_address
+                    .form-group.text.required.vendor_order_address{delivery-only-field: true}
                       %label.text.required.control-label{:for => "vendor_order_address"} Адрес доставки
                       %textarea#vendor_order_address.text.required.form-control{:name => "vendor_order[address]", :placeholder => "Академика Вавилова 12-10"}
-                    .form-group.text.optional.vendor_order_comment
+                    .form-group.text.optional.vendor_order_comment{delivery-only-field: true}
                       %label.text.optional.control-label{:for => "vendor_order_comment"} Комментарий
                       %textarea#vendor_order_comment.text.optional.form-control{:name => "vendor_order[comment]", :placeholder => "Ваш комментарий"}
                 .cart__form__row
@@ -84,11 +82,11 @@
                         %label{:for => "vendor_order_payment_type_id_2", :name => "vendor_order[payment_type_id]"}
                           %input#vendor_order_payment_type_id_2.radio_buttons.required.form-control{:name => "vendor_order[payment_type_id]", :type => "radio", :value => "2"}>
                           Через ближайший салон связи
-                      %span.radio
+                      %span.radio{delivery-only-field: true}
                         %label{:for => "vendor_order_payment_type_id_3", :name => "vendor_order[payment_type_id]"}
                           %input#vendor_order_payment_type_id_3.radio_buttons.required.form-control{:name => "vendor_order[payment_type_id]", :type => "radio", :value => "3"}>
                           Наличными или банковской картой курьеру
-                      %span.radio
+                      %span.radio{delivery-only-field: true}
                         %label{:for => "vendor_order_payment_type_id_4", :name => "vendor_order[payment_type_id]"}
                           %input#vendor_order_payment_type_id_4.radio_buttons.required.form-control{:name => "vendor_order[payment_type_id]", :type => "radio", :value => "4"}>
                           Наличными курьеру
