@@ -18,6 +18,16 @@ $ccMainColor: #242427
     &:hover
       color: #ef5a61
 
+  .application-navbar
+    padding: 20px 0
+    margin-bottom: 0
+
+  .application-slider
+    margin-top: 0
+
+  .navbar-collapse
+    margin-top: -20px
+
   .categories-nav
     margin-top: 0
     border-top: 0
@@ -52,8 +62,12 @@ $ccMainColor: #242427
   .application-footer
     padding: 0
     .footer-nav
+      margin: 14px 0
       a
+        color: #fff
         font-size: 13px
+        &:hover
+          color: #c1c1c1
 
   .application-footer,
   .navbar-head
@@ -74,10 +88,12 @@ $ccMainColor: #242427
     line-height: 18px
     font-size: 13px
     height: 33px
+    margin-top: 6px
 
   .products__list-item-price
     font-size: 16px
     color: $ccMainColor
+    margin-top: 2px
   
   .products__show-item-category,
   .products__show-item-title
@@ -85,10 +101,14 @@ $ccMainColor: #242427
 
   .products__show-item-title
     font-size: 45px
+    margin-bottom: 8px
 
   .products__show-item-category
     font-size: 13px
-    margin: 0 0 14px
+    margin: 0 0 12px
+
+  .products__show-item-price
+    margin-bottom: 38px
 
   .products__list__title
     font-size: 20px
@@ -100,6 +120,17 @@ $ccMainColor: #242427
     padding-bottom: 35px
     margin-bottom: 55px
 
+  .products__show
+    margin-top: -45px
+
+  .modification-list
+    margin-top: -30px
+    padding: 0
+
+  .mmenu-open
+    top: 13px
+    left: 13px
+
   .products__show-item-cart-btn
     font-size: 15px
     height: 40px
@@ -109,9 +140,11 @@ $ccMainColor: #242427
     padding: 0
     width: 100%
     border-radius: 2em
-    &:hover
+    &:hover,
+    &:focus
       background-color: #ef5a61
       color: #fff
+      outline: none
 
   .products__show-item-details
     li
@@ -167,7 +200,7 @@ $ccMainColor: #242427
 
 .big-price
   big
-    font: 33.4px/36px
+    font-size 33px
   .currency 
     position: relative
     top: -28px
@@ -176,20 +209,25 @@ $ccMainColor: #242427
     vertical-align: baseline
   .price-old
     margin-right: 6px
-    font-size: 13px
+    font-size: 16px
     text-decoration: line-through
     color: #A1A1A1
     vertical-align: top
+    line-height: 1.7
   .sale
+    display: inline-block
+    margin: 1px 0 0
     vertical-align: top
     background-color: #f05a61
-    padding: 3px 2px 2px 5px
-    font-size: 11px
+    padding: 5px 2px 5px 5px
+    font-size: 14px
     line-height: 16px
     text-transform: uppercase
     color: #fff
     z-index: 1
     letter-spacing: 2px
+
+  
 
 .modification
   padding: 20px 0
