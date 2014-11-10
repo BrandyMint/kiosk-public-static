@@ -9,6 +9,7 @@ $screen-sm: 508px !default; //bootstrap override
 @import "settings/mixins";
 @import "settings/fonts";
 @import "fonts/gotham";
+@import "fonts/apercu";
 @import "bootstrap-sass-official/assets/stylesheets/bootstrap";
 
 @import "compass-mixins/lib/compass/typography/links/link-colors";
@@ -56,3 +57,4 @@ $screen-sm: 508px !default; //bootstrap override
 @import "theme-basic_black"; //Базовая темная тема
 @import "style-sugar"; //Сахарная тема
 @import "style-wannabe"; //Уонаби тема
+@import "style-cc"; //cc тема
