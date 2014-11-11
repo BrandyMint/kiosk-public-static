@@ -12,10 +12,7 @@
           %img.navbar-brand-image{src: 'images/wannabe/logo.png', alt:'field & rage'}
       .row.visible-xs
       .col-sm-4
-        %a.navbar-cart-btn.navbar-cart-btn-empty{href: 'cart.html'}
-          %span.navbar-cart-btn-icon
-          %span.navbar-cart-btn-caption
-            Корзина
+        %div{data-react-class: 'BasketButton', data-react-props: '{"itemsCount": 0, "cartUrl": "cart.html", "totalPrice": 1200}'}
       .col-sm-12.col-xs-6.col-xs-pull-6.col-sm-pull-0.hidden-sm.hidden-xs
         %button.navbar-categories-toggle-btn.collapsed{"data-target" => "[categories-nav]", "data-toggle" => "collapse", type: "button"}
           %i.fa.fa-bars

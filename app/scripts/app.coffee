@@ -10,3 +10,5 @@ require './shared/application_slider'
 require './shared/theme_switcher'
 require './shared/mobile_navigation'
 require './shared/checkout'
+# React
+require './react/basketbutton'
