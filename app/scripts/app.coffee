@@ -1,6 +1,7 @@
 require './libs'
 require './shared/app'
 require './shared/cart'
+require './shared/react_cart'
 require './shared/load_more'
 require './shared/lightbox'
 require './shared/float_cart'
