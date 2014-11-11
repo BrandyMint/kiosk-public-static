@@ -11,8 +11,8 @@
         %a.navbar-brand-link{href: 'welcome.html'}
           %img.navbar-brand-image{src: 'images/wannabe/logo.png', alt:'field & rage'}
       .row.visible-xs
-      .col-sm-4
-        %a.navbar-cart-btn.navbar-cart-btn-empty#cart-btn{href: 'cart.html'}
+      .col-sm-4{data-react-class: 'BasketButton', data-react-props: '{"itemsCount": 1}'}
+        %a.navbar-cart-btn.navbar-cart-btn-empty{href: 'cart.html'}
           %span.navbar-cart-btn-icon
           %span.navbar-cart-btn-caption
             Корзина

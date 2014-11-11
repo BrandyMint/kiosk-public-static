@@ -1,7 +1,6 @@
 require './libs'
 require './shared/app'
 require './shared/cart'
-require './shared/react_cart'
 require './shared/load_more'
 require './shared/lightbox'
 require './shared/float_cart'
@@ -11,3 +10,5 @@ require './shared/application_slider'
 require './shared/theme_switcher'
 require './shared/mobile_navigation'
 require './shared/checkout'
+# React
+require './react/basketbutton'

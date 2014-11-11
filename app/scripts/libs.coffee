@@ -24,4 +24,4 @@ window.React = require 'react/addons'
 require('react-mixin-manager')(window.React)
 window.Dispatcher = require('flux').Dispatcher
 window.EventEmitter = require 'eventEmitter'
-
+window.ReactUjs = require 'react_ujs'
