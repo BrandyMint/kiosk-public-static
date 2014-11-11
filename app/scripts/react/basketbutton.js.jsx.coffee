@@ -7,14 +7,22 @@ window.BasketButton = React.createClass
 
   render: ->
     if @props.itemsCount > 0
-      return `<a className='navbar-cart-btn navbar-cart-btn-full' data-cart={this.props.itemsCount} href='cart.html'>
+      return `<BasketButton_Full itemsCount={this.props.itemsCount} price={this.props.price}/>`
+    else
+      return `<BasketButton_Empty/>`
+
+window.BasketButton_Full = React.createClass
+  render: ->
+    return `<a className='navbar-cart-btn navbar-cart-btn-full' data-cart={this.props.itemsCount} href='cart.html'>
           <span className='navbar-cart-btn-icon'></span>
           <span className='navbar-cart-btn-caption'>
-            Корзина {this.props.price}
+            Корзина — {accounting.formatMoney(this.props.price)}
           </span>
         </a>`
-    else
-      return `<a className='navbar-cart-btn navbar-cart-btn-empty' href='cart.html'>
+
+window.BasketButton_Empty = React.createClass
+  render: ->
+    return `<a className='navbar-cart-btn navbar-cart-btn-empty' href='cart.html'>
           <span className='navbar-cart-btn-icon'></span>
           <span className='navbar-cart-btn-caption'>
             Корзина
