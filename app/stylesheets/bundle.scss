@@ -44,6 +44,9 @@ $screen-sm: 508px !default; //bootstrap override
 @import "modules/floatcart";
 @import "modules/theme-switch";
 @import "modules/adm";
+@import "modules/bigprice";
+@import "modules/modification";
+@import "modules/stock-status";
 
 @import "modules/navbar";
 @import "modules/categories";
@@ -55,6 +58,6 @@ $screen-sm: 508px !default; //bootstrap override
 
 @import "theme-basic"; //Базовая тема
 @import "theme-basic_black"; //Базовая темная тема
-@import "style-sugar"; //Сахарная тема
-@import "style-wannabe"; //Уонаби тема
-@import "style-cc"; //cc тема
+// @import "style-sugar"; //Сахарная тема
+// @import "style-wannabe"; //Уонаби тема
+// @import "style-cc"; //cc тема
