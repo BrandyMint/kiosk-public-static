@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 %html
   %head
-    +include 'app/shared/_head.haml'
+    +include 'app/haml/shared/_head.haml'
 
   %body.theme-basic.style-sugar
-    %script{src: 'scripts/bundle.js'}
     .application
-      +include 'app/shared/_navbar.haml'
+      +include 'app/haml/shared/_navbar.haml'
 
       .application-slider(application-slider)
         .application-slider__inner
@@ -18,8 +17,8 @@
         .container-fluid
           .products__list(ks-products-container){data-total-pages: 3, data-current-page: 1, data-url: 'shared/_products.html'}
             .row
-              +include 'app/shared/_products.haml'
-            +include 'app/shared/_load_more.haml'
+              +include 'app/haml/shared/_products.haml'
+            +include 'app/haml/shared/_load_more.haml'
 
       .application-slider.application-slider_photos(application-slider)
         .application-slider__inner
@@ -28,6 +27,9 @@
               %img{src: 'http://www.gold4u.ru/pictures/large/R00173.jpg', alt: ''}
 
 
-      +include 'app/shared/_footer_sugar.haml'
+      +include 'app/haml/shared/_footer_sugar.haml'
 
-      +include 'app/shared/_themeswitcher.haml'
+      +include 'app/haml/shared/_themeswitcher.haml'
+
+    %script{src: 'scripts/vendor.js'}
+    %script{src: 'scripts/client.js'}
