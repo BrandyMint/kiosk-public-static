@@ -1,61 +1,47 @@
 {
-  "name": "tastyapp",
+  "name": "KioskPublicStatic",
   "version": "0.0.1",
-  "description": "js application for taaasty.ru",
+  "description": "JS application for kormilica.info",
   "repository": {
     "type": "git",
-    "url": "https://github.com/BrandyMint/mmm-tasty-static.git"
+    "url": "git@github.com:BrandyMint/kiosk-public-static.git"
+  },
+  "browserify": {
+    "transform": [
+      "coffeeify",
+      "reactify"
+    ]
   },
   "dependencies": {
-    "blueimp-file-upload": "~9.5.8",
-    "envify": "^1.2.1",
-    "flux": "^2.0.1",
-    "gulp-sourcemaps": "~1.1.0",
-    "imagesloaded": "^3.1.8",
-    "react": "^0.11.0",
-    "react-mixin-manager": "~0.5.2",
-    "react-tools": "^0.11.0",
-    "superagent": "~0.18.2",
-    "undo.js": "^0.1.0"
+    "flux": "^2.0.1"
   },
   "devDependencies": {
-    "gulp": "~3.7.0",
-    "gulp-load-plugins": "~0.3.0",
-    "gulp-util": "~2.2.9",
+    "bower": "^1.3.12",
+    "browser-sync": "^1.5.8",
+    "browserify": "^6.1.0",
+    "coffee-script": "^1.8.0",
+    "coffeeify": "^0.7.0",
+    "del": "^0.1.3",
+    "gulp": "^3.8.8",
     "gulp-autoprefixer": "^1.0.1",
-    "gulp-jshint": "~1.4.0",
-    "gulp-clean": "~0.2.4",
-    "gulp-bower": "0.0.3",
-    "gulp-cache": "~0.1.1",
-    "gulp-react": "~0.2.0",
-    "gulp-size": "~0.1.2",
-    "gulp-connect": "~1.0.0",
-    "gulp-jade": "~0.4.2",
-    "gulp-useref": "^0.4.4",
-    "gulp-coffee": "~1.4.1",
-    "gulp-bundle": "bleech/gulp-bundle",
-    "gulp-browserify": "~0.4.6",
-    "reactify": "~0.10.0",
-    "through2": "latest",
-    "coffeeify": "^0.6.0",
-    "bower": "^1.3.4",
-    "gulp-less": "^1.2.3",
-    "coffee-script": "^1.7.1",
+    "gulp-file-include": "^0.5.1",
+    "gulp-flatten": "0.0.4",
+    "gulp-haml-coffee": "0.0.6",
+    "gulp-minify-css": "^0.3.11",
+    "gulp-notify": "^2.0.0",
     "gulp-rename": "^1.2.0",
-    "wiredep": "^1.7.3",
-    "debowerify": "^0.7.1",
-    "gulp-concat": "^2.2.0",
-    "less": "~1.7.3",
-    "gulp-sass": "^0.7.3",
-    "node-sass": "^0.9.3",
-    "gulp-hamlc": "smithclay/gulp-hamlc",
-    "haml-coffee": "^1.14.1",
-    "gulp-haml-coffee": "saschagehlich/gulp-haml-coffee",
-    "gulp-flatten": "0.0.2",
-    "gulp-file-include": "^0.4.2",
-    "serve-static": "expressjs/serve-static"
+    "gulp-sass": "1.1.0",
+    "gulp-uglify": "^1.0.1",
+    "gulp-util": "^3.0.1",
+    "pretty-hrtime": "^0.2.2",
+    "react-tools": "^0.11.0",
+    "reactify": "0.14.0",
+    "require-dir": "^0.1.0",
+    "run-sequence": "^1.0.1",
+    "vinyl-source-stream": "^1.0.0",
+    "watchify": "^2.0.0"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=0.10.32"
   }
 }

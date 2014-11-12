@@ -10,5 +10,15 @@ require './shared/application_slider'
 require './shared/theme_switcher'
 require './shared/mobile_navigation'
 require './shared/checkout'
-# React
-require './react/basketbutton'
+
+# /*=============================
+# =            React            =
+# =============================*/
+
+# /*==========  Components  ==========*/
+
+require './react/components/basketbutton'
+
+# /*-----  End of React  ------*/
+
+window.ReactUjs.initialize()

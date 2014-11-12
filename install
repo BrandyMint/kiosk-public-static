@@ -1,4 +1,0 @@
-gem install bundle
-bundle
-bower install
-npm install

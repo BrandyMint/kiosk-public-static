@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 %html
   %head
-    +include 'app/shared/_head.haml'
+    +include 'app/haml/shared/_head.haml'
 
   %body.theme-basic.style-cc
-    %script{src: 'scripts/bundle.js'}
     .application
-      +include 'app/shared/_navbar_cc.haml'
+      +include 'app/haml/shared/_navbar_cc.haml'
 
 
       .application-content
@@ -113,6 +112,9 @@
                       Моно-серьга имитация тоннеля серебряная с белыми цирконами
                     .products__list-item-price
                       8 900 руб.
-      +include 'app/shared/_footer.haml'
+      +include 'app/haml/shared/_footer.haml'
 
-      +include 'app/shared/_themeswitcher.haml'
+      +include 'app/haml/shared/_themeswitcher.haml'
+
+    %script{src: 'scripts/vendor.js'}
+    %script{src: 'scripts/client.js'}

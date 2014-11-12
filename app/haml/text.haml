@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 %html
   %head
-    +include 'app/shared/_head.haml'
+    +include 'app/haml/shared/_head.haml'
 
   %body.theme-basic
-    %script{src: 'scripts/bundle.js'}
     .application
-      +include 'app/shared/_navbar.haml'
+      +include 'app/haml/shared/_navbar.haml'
 
       .application-content
         .container-fluid
@@ -61,4 +60,7 @@
               <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d285380.4474658517!2d92.86573395!3d56.02672945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1413262218716" width="1090" height="400" frameborder="0" style="border:0"></iframe>
 
 
-      +include 'app/shared/_footer.haml'
+      +include 'app/haml/shared/_footer.haml'
+
+    %script{src: 'scripts/vendor.js'}
+    %script{src: 'scripts/client.js'}
