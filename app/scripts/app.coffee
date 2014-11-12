@@ -12,3 +12,4 @@ require './shared/mobile_navigation'
 require './shared/checkout'
 # React
 require './react/basketbutton'
+require './react/basketpopup'
