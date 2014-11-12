@@ -18,6 +18,7 @@ require './shared/checkout'
 # /*==========  Components  ==========*/
 
 require './react/components/basketbutton'
+require './react/basketpopup'
 
 # /*-----  End of React  ------*/
 
