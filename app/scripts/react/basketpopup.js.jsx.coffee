@@ -9,16 +9,26 @@ window.BasketPopup = React.createClass
   getInitialState: ->
     isVisible: false
 
-  handleClick: (event)->
-    console.log 'Я свечу событие'
+  handleClick: (e)->
+    $(document).trigger "cart:clicked"
+
+  handleBodyClick: ()->
+    @setState isVisible: false if @state.isVisible
+
+  handleBodyKey: (e)->
+    @setState isVisible: false if e.keyCode == 27
 
   componentDidMount: ()->
-    $(document).on "cart:clicked", this.handleCartClicked
+    $(document).on "click", @handleBodyClick
+    $(document).on "cart:clicked", @handleCartClicked
+    $(document).on "keyup", @handleBodyKey
 
   componentWillUnmount: ()->
-    $(document).off "cart:clicked", this.handleCartClicked
+    $(document).off "click", @handleBodyClick
+    $(document).off "cart:clicked", @handleCartClicked
+    $(document).off "keyup", @handleBodyKey
 
-  handleCartClicked: ()->
+  handleCartClicked: (e)->
     @setState isVisible: true
 
   getDefaultProps: ->
@@ -38,10 +48,12 @@ window.BasketPopup = React.createClass
           ]
 
   render: ->
-    return `<div className='float-cart__content' onClick={this.handleClick}>
+    classNameValue = "float-cart"
+    classNameValue += " float-cart_invisible" if @state.isVisible is false
+    return `<div className={classNameValue}><div className='float-cart__content' onClick={this.handleClick}>
           <BasketPopupList items={this.props.items}/>
           <BasketPopupControl cartUrl={this.props.cartUrl} cartClearUrl={this.props.cartClearUrl}/>
-        </div>`
+        </div></div>`
 
 window.BasketPopupList = React.createClass
   propTypes:
