@@ -2,7 +2,7 @@
 
 window.BasketPopup = React.createClass
   propTypes:
-    cartUrl: React.PropTypes.string
+    cartUrl: React.PropTypes.string.isRequired
     cartClearUrl: React.PropTypes.string
     items: React.PropTypes.array
 
@@ -50,7 +50,7 @@ window.BasketPopupList = React.createClass
   render: ->
     itemsList = @props.items.map((item) ->
       return (
-        `<BasketPopupItem key={item.order_product_id} order_product_id={item.order_product_id} product_id={item.product_id} price={item.price} count={item.count} image_url={item.image_url} title={item.title} description={item.description} article={item.article}/>`
+        `<BasketPopupItem key={item.order_product_id} item={item}/>`
         )
     )
     
@@ -70,6 +70,7 @@ window.BasketPopupItem = React.createClass
     article: React.PropTypes.string
 
   render: ->
+    @props = @props.item
     return `<div className="float-cart__item" data-order_product_id={this.props.order_product_id} data-product-id={this.props.product_id}>
           <div className="row">
             <div className="col-sm-3">
@@ -99,7 +100,7 @@ window.BasketPopupItem = React.createClass
 
 window.BasketPopupControl = React.createClass
   propTypes:
-    cartUrl: React.PropTypes.string
+    cartUrl: React.PropTypes.string.isRequired
     cartClearUrl: React.PropTypes.string
 
   render: ->
