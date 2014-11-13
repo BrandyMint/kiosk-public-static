@@ -10,7 +10,6 @@ node_modules/
 npm-debug.log
 *.apk
 *.ipa
-/dist/
 www
 .tmp
 *.bak
