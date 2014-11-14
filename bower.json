@@ -6,6 +6,7 @@
     "eventEmitter": "~4.2.9",
     "fancybox": "~2.1.5",
     "fancybox-wannabe-fix": "https://raw.githubusercontent.com/srjsrj/fancyBox-wannabe/master/source/helpers/jquery.fancybox-thumbs.js",
+    "sticky": "~1.0.1",
     "react": "0.11.0",
     "react-mixin-manager": "~0.7.0",
     "OwlCarousel": "~1.3.2"

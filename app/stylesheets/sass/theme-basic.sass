@@ -21,7 +21,7 @@
     font-size: 12px
 
   .products__show-item-art
-    margin: 3px 0
+    margin: 1em 0
 
   .products__show-item-header
     .products__show-item-articul
@@ -51,9 +51,6 @@
     margin: 0
     color: #fff
     border: 1px solid #da2a41
-
-  .owl-buttons
-    display: none
 
   .application
     overflow: hidden
@@ -98,6 +95,8 @@
         color: $basicThemeCategoriesNavLinkColor
         &:hover
           color: $basicThemeCategoriesNavLinkColorHover
+        &:focus
+          outline: none
     .dropdown
       &:hover
         .dropdown-menu
@@ -273,6 +272,7 @@
     @extend .col-md-4
     @extend .col-sm-6
     @extend .col-xs-12
+    font-weight: normal
   
   .products__list-item
     height: auto
@@ -327,8 +327,8 @@
           content: ''
 
   .products__show-item-title
-    font-size: 24px
-    margin: 3px 0 31px
+    font-size: 28px
+    margin: 3px 0 1em
     line-height: 1
     color: $basicThemeMainColor
 
@@ -336,7 +336,7 @@
     font-weight: normal
     padding: 0
     margin: 0 0 10px
-    font-size: 38px
+    font-size: 28px
 
   .plain-select__select--single
     height: 43px
@@ -363,8 +363,12 @@
       padding: 0 0 3px
 
   .products__show-item-cart-btn
+    width: 100%
     &:hover
       background-color: $basicThemeCategoriesNavLinkColorHover
+    &[disabled]
+      background-color: $basicThemeCategoriesNavLinkColorHover
+      cursor: default
 
   .product__show__slider
     margin-bottom: 14px
@@ -409,7 +413,7 @@
   .application-footer
     border: none
     padding-bottom: 0
-    margin-top: 30px
+    margin-top: 70px
     @media screen and (max-width: $screen-sm-min)
       margin-top: 10px      
 
@@ -418,16 +422,8 @@
 
   .footer-nav
     margin: 19px 0
-    li
-      @media screen and (min-width: $screen-xs-min)
-        &:first-child
-          margin-left: -15px
-      @media screen and (max-width: $screen-xs-min)
-        display: block
-        float: left
-        width: 50%
-        margin: 0
-        text-align: center
+    
+    
     a
       padding: 6px 0
       font-size: 16px
@@ -807,8 +803,8 @@
     list-style: none
     overflow-y: auto
     background-color: #252525
-    max-width: 140px
-    min-width: 130px
+    max-width: 200px
+    min-width: 170px
     .mm-counter
       color: #fff
     .mm-subclose
@@ -958,6 +954,18 @@ html.mm-opening #mm-blocker
     img
       opacity: .5
 
+
+.owl-buttons
+  opacity: 0
+  transition: opacity .2s ease
+  @media screen and (max-width: $screen-xs-min)
+    display: none
+
+.owl-carousel
+  &:hover
+    .owl-buttons
+      opacity: 1
+
 .application-slider__slide
   img
     width: 100%
@@ -1019,6 +1027,8 @@ html.mm-opening #mm-blocker
   background: none
   padding: 0
   background-size: 100% 100%
+  @media screen and (max-width: $screen-xs-min)
+    display: none !important
 
   &.owl-prev
     left: 20px
@@ -1041,6 +1051,13 @@ html.mm-opening #mm-blocker
 
 .products__list-item-badge_hit
   background-color: #ffdfca
+
+.is-sticky
+  margin-top: 43px
+  .categories-nav
+    z-index: 10
+    background-color: rgba(255,255,255,.8)
+    margin-top: 0
 
 @-moz-document url-prefix()
   .theme-basic .cart__form select
