@@ -10841,31 +10841,32 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
 /* line 29, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
 .products__list-item-image {
   max-width: 100%;
+  height: 228px;
   display: inline-block;
   -webkit-transition: opacity 0.2s ease;
   transition: opacity 0.2s ease; }
 
-/* line 34, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+/* line 35, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
 .products__list-item-image-empty {
   width: 100%; }
 
-/* line 37, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+/* line 38, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
 .products__list-item-title {
   min-height: 38px;
   margin-top: 0.5em; }
 
-/* line 42, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+/* line 43, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
 .products__list-item-price {
   font-weight: bold;
   font-size: 18px;
   margin-top: 0.5em; }
 
-/* line 48, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+/* line 49, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
 .products__show {
   margin-top: 30px;
   margin-bottom: 60px; }
 
-/* line 53, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+/* line 54, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
 .products__show-item-content {
   padding-top: 30px; }
   @media screen and (min-width: 992px) {
@@ -10880,69 +10881,69 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
   .products__show-item-header {
     display: none; } }
 
-/* line 66, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+/* line 67, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
 .products__show-item-image-block {
   text-align: center;
   padding-left: 30px;
   padding-right: 30px;
   cursor: pointer; }
 
-/* line 73, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+/* line 74, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
 .products__show-item-image {
   max-width: 100%;
   display: inline-block;
   margin: 0 auto; }
 
-/* line 78, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+/* line 79, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
 .products__show-images-list {
   margin-left: -15px;
   margin-right: -15px; }
 
-/* line 83, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+/* line 84, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
 .products__show-image-thumb-block {
   padding: 15px;
   cursor: pointer; }
-  /* line 89, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+  /* line 90, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
   .products__show-image-thumb-block:hover .products__show-image-thumb-remove {
     display: block; }
 
-/* line 92, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+/* line 93, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
 .products__show-image-thumb {
   position: relative;
   max-width: 100%;
   -webkit-transition: opacity 0.2s ease;
   transition: opacity 0.2s ease; }
-  /* line 96, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+  /* line 97, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
   .products__show-image-thumb:hover {
     opacity: 0.7;
     filter: alpha(opacity=70); }
 
-/* line 101, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+/* line 102, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
 .products__show-item-category {
   font-size: 14px;
   font-weight: bold;
   text-transform: uppercase; }
 
-/* line 107, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+/* line 108, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
 .products__show-item-title {
   font-size: 26px;
   font-weight: normal;
   margin-bottom: 0.7em; }
 
-/* line 113, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+/* line 114, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
 .products__show-item-articul {
   font-size: 14px;
   font-weight: normal;
   color: #666666; }
 
-/* line 119, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+/* line 120, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
 .products__show-item-price {
   font-size: 24px;
   font-weight: bold;
   padding-top: 0.5em;
   padding-bottom: 1em; }
 
-/* line 127, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+/* line 128, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
 .products__show-item-details {
   display: block;
   font-size: 16px;
@@ -10950,44 +10951,44 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
   margin-top: 15px;
   margin-bottom: 30px;
   padding-left: 0; }
-  /* line 135, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+  /* line 136, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
   .products__show-item-details li {
     list-style-type: none;
     padding-top: 2px;
     padding-bottom: 2px; }
-    /* line 140, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+    /* line 141, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
     .products__show-item-details li:before {
       content: '\b7\a0'; }
 
-/* line 143, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+/* line 144, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
 .products__show-item-description {
   font-size: 16px;
   line-height: 22px;
   margin-top: 45px;
   margin-bottom: 30px; }
 
-/* line 150, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+/* line 151, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
 .products__show-item-cart-btn {
   display: block; }
 
-/* line 155, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+/* line 156, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
 .product-show-modal-image {
   max-width: 100%; }
 
-/* line 158, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+/* line 159, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
 .products__show-item__feature {
   text-align: center;
   font-size: 15px;
   margin: 0 0 60px; }
 
-/* line 163, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+/* line 164, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
 .products__show-item__feature__pic {
   margin: 0 auto 20px;
   border-radius: 50%;
   overflow: hidden;
   width: 105px;
   height: 105px; }
-  /* line 169, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+  /* line 170, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
   .products__show-item__feature__pic img {
     height: 100%; }
 

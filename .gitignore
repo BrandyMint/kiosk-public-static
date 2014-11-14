@@ -1,6 +1,7 @@
 app/bower_components/
 bower_components/
 /secret
+/build
 /rails
 *.swo
 .sass-cache
