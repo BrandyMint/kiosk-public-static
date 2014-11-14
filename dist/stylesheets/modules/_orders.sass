@@ -1,0 +1,142 @@
+$order-status-bullet-size: 10px
+
+%order__status-btn
+  @extend .btn
+  @extend .btn-large
+  border-radius: 0
+  +antialiased
+  &, &:hover, &:focus
+    color: #fff
+  font-weight: bold
+
+.orders-list__list
+  margin-top: $grid-gutter-width
+
+.orders-list__title
+  margin-top: 0
+
+.orders-list__search-input
+  width: 300px
+
+.orders-list__table
+  @extend .table
+  @extend .table-striped
+  margin:
+    top: $grid-gutter-width
+    bottom: $grid-gutter-width
+  & > tbody > tr
+    & > td
+      vertical-align: middle
+      padding: 10px
+      border:
+        top: none
+        bottom: 1px solid $line-color
+      &.orders-list__table-status
+        padding: 0
+
+.orders-list__table-header
+  border-bottom: 1px solid $line-color
+
+.orders-list__table-header-cell
+  color: $gray-light
+  padding-bottom: 0.5em
+  font-size: $font-size-small
+
+.orders-list__table-number,
+.orders-list__table-location,
+.orders-list__table-time
+  color: $gray-light
+  font-size: 14px
+
+@media screen and (max-width: $screen-sm-max)
+  .orders-list__table-status,
+  .orders-list__table-header-cell-status
+    display: none
+
+.orders-list__table-status
+  color: #fff
+  text-align: center
+  background-color: $gray-light
+
+.orders-list__table-status-btn
+  display: block
+  padding: 15px 10px
+
+
+.order-status-bullet
+  display: inline-block
+  width: $order-status-bullet-size
+  height: $order-status-bullet-size
+  border-radius: 100%
+  background-color: $gray-lighter
+  margin-right: 3px
+
+@each $c in new $green, delivery $blue, cancelled $red, paused $yellow
+  .orders-list__table > tbody > tr > td
+    &.orders-list__table-status-#{nth($c,1)}
+      background-color: nth($c,2)
+      border-bottom-color: nth($c,2)
+  .order-status-bullet-#{nth($c,1)}
+    background-color: nth($c,2)
+  .orders-list__modal-btn-#{nth($c,1)}
+    &,
+    .dropdown-menu.orders-list__dropdown-menu > li > &,
+    .dropdown-menu.orders-list__status-menu > li > &,
+    .orders-list__table-status-btn-#{nth($c,1)}
+      background-color: nth($c,2)
+      &:hover, &:focus
+        background-color: darken(nth($c,2), 20%)
+
+
+.orders-list__table-row
+  cursor: pointer
+  +transition(background 0.2s ease)
+  &:hover
+    background-color: $gray-lightest
+
+.orders-list__modal-btn
+  @extend %order__status-btn
+  margin: - $grid-gutter-width/2
+  padding: $grid-gutter-width/2
+
+.orders-list__table-status-btn
+  @extend %order__status-btn
+
+.dropdown-menu
+  &.orders-list__dropdown-menu,
+  &.orders-list__status-menu
+    padding: 0
+    margin:
+      top: $grid-gutter-width/2 - 1px
+      left: - $grid-gutter-width/2 - 1px
+    & > li
+      padding: 0
+      margin: 0
+      & > a
+        &.orders-list__modal-btn
+          @extend %order__status-dropdown-btn
+
+.dropdown-menu.orders-list__status-menu
+  margin:
+    top: 0
+    left: 0
+
+.order-products__list-item-cost
+  font:
+    weight: bold
+    size: $font-size-larger
+
+
+
+.modal.orders-modal
+  text-align: center
+  &:before
+    display: inline-block
+    vertical-align: middle
+    content: " "
+    height: 100%
+
+  .modal-dialog
+    display: inline-block
+    text-align: left
+    vertical-align: middle

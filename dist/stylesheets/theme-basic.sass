@@ -1,0 +1,1032 @@
+// Basic theme
+
+.theme-basic
+
+  color: $basicThemeMainColor
+
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+
+  // .application-content
+  // .application-navbar
+  //   overflow-x: hidden
+
+  input,
+  textarea
+    @include placeholder($basicThemeCategoriesNavBorderColor)
+
+  .alert
+    text-align: center
+    border-radius: 3px
+  
+  .alert-danger
+    background-color: #da2a41
+    border-color: #da2a41
+
+  .tel-link
+    font-weight: normal
+    color: inherit
+    &:hover
+      color: $basicThemeCategoriesNavLinkColorHover
+
+  .help-block
+    background-color: #da2a41
+    text-align: center
+    border-radius: 0 0 3px 3px
+    color: #fff
+    padding: 5px
+    margin: 0
+    color: #fff
+    border: 1px solid #da2a41
+
+  .owl-buttons
+    display: none
+
+  .application
+    overflow: hidden
+
+  .container-fluid
+    max-width: 1032px
+    margin: 0 auto
+
+  .navbar-brand-image
+    @media screen and (max-width: $screen-md-min)
+      max-height: 100%
+
+  .application-navbar
+    padding-top: 30px
+    margin-bottom: 25px
+    .container
+      position: relative
+    @media screen and (max-width: $screen-md-min)
+      padding-top: 20px
+
+  .navbar-description
+    @media screen and (max-width: $screen-md-min)
+      text-align: center
+      padding: 0 60px 20px
+
+  .navbar-collapse
+    padding: 0
+
+  .categories-nav
+    // padding: 18px 0 15px
+    margin-top: 43px
+    border: 1px solid $basicThemeCategoriesNavBorderColor
+    border-width: 1px 0
+    text-align: center
+    li
+      a
+        text-transform: none
+        font-weight: normal
+        padding: 18px 20px 15px
+        display: inline-block
+        vertical-align: top
+        color: $basicThemeCategoriesNavLinkColor
+        &:hover
+          color: $basicThemeCategoriesNavLinkColorHover
+    .dropdown
+      &:hover
+        .dropdown-menu
+          display: block
+
+  %cart-btn
+    height: auto
+    padding: 11px 17px 9px
+    &:hover
+      background-color: $basicThemeCategoriesNavLinkColorHover
+    &:active
+      box-shadow: none
+
+  .navbar-cart-btn-empty,
+  .navbar-cart-btn-full
+    background-color: $basicThemeCategoriesNavLinkColorHover
+    &:hover
+      background-color: $basicThemeCategoriesNavLinkColorHover
+    &:active
+      box-shadow: none
+
+  .cart-btn_clear
+    background: none
+    border: 1px solid $basicThemeCategoriesNavBorderColor
+    color: $basicThemeMainColor
+
+  .navbar-cart-btn-icon
+    display: inline-block
+    vertical-align: middle
+    width: 26px
+    height: 23px
+    background: url(#{$images-path}/cart.svg)
+    margin: -5px 9px 0 0
+    
+  .navbar-categories-toggle-btn
+    padding-top: 8px
+    padding-bottom: 8px
+
+  .navbar-cart-btn
+    position: relative
+    @media screen and (max-width: $screen-md-min)
+      position: fixed
+      z-index: 10
+      right: 20px
+      top: 20px
+      width: 49px
+      padding: 10px 0 9px
+      border-radius: 3px
+      margin: 0
+      .navbar-cart-btn-icon
+        margin: 0
+  
+  .navbar-cart-btn-full
+    background-color: $basicThemeMainColor
+    color: #fff
+    &:before
+      content: attr(data-cart)
+      position: absolute
+      bottom: 100%
+      left: 100%
+      background: #00AEFF
+      width: 30px
+      height: 30px
+      margin: 0 0 -15px -15px
+      text-align: center
+      line-height: 30px
+      border-radius: 15px
+
+  // Menu
+  .categories-nav
+    .dropdown-toggle:focus
+      text-decoration: none
+    .dropdown-menu
+      border: none
+      border-radius: 2px
+      // margin-top: 12px
+      left: -15px
+      padding-right: 25px
+      width: auto
+      background-color: rgba(0,0,0,.9)
+      white-space: nowrap
+      
+      font-size: 15px
+      &:after
+        content: ''
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: 0 6px 6px 6px
+        border-color: transparent transparent #000 transparent
+        opacity: .9
+        position: absolute
+        bottom: 100%
+        left: 80px
+      &:before
+        content: ''
+        position: absolute
+        top: 3px
+        left: 0
+        right: 0
+        height: 1px
+        background-color: #191919
+      
+      .dropdown-col
+        width: 240px
+        display: inline-block
+        vertical-align: top
+        ul
+          margin: 0
+          padding: 21px 0 19px
+          li
+            margin: 0 0 0 25px
+            border-top: 1px solid rgba(255,255,255,.1)
+            &:first-child
+              border-top: 0
+
+      li
+        color: #6c6c6c
+        border: none
+        margin-bottom: 3px
+        
+        a
+          display: block
+          padding: 8px 20px 4px 0
+          font-size: 13px
+          margin-right: 4px
+          overflow: hidden
+          text-overflow: ellipsis
+          white-space: nowrap
+          text-align: left
+          position: relative
+          color: #fff
+          border: none
+          &:after
+            content: attr(data-count)
+            color: #5d5d5d
+            position: absolute
+            right: 5px
+            top: 8px
+          &:hover
+            background: none
+            color: $basicThemeCategoriesNavLinkColorHover
+
+      @media screen and (max-width: $screen-md-min)
+        position: relative
+        margin: 0
+        left: 0
+        width: 100%
+
+    .dropdown_right
+      .dropdown-menu
+        left: auto
+        right: -15px
+        &:after
+          right: 80px
+          left: auto
+
+  .products__list__title
+    text-align: center
+    font-size: 53px
+    color: inherit
+    margin: 17px 0 16px
+    @media screen and (max-width: $screen-sm-min)
+      font-size: 36px
+
+  .products__list-item-title
+    font-size: 16px
+    height: 44px
+    overflow: hidden
+
+  //Change grid here
+  .products__list-item-wrap
+    @extend .col-md-4
+    @extend .col-sm-6
+    @extend .col-xs-12
+  
+  .products__list-item
+    height: auto
+    &:hover
+      color: $basicThemeCategoriesNavLinkColorHover
+
+  .products__list-item-image
+    backface-visibility: hidden
+    width: 100%
+  
+  .products_list-title
+    font-size: 16px
+    margin: 10px 0 0
+  
+  .products__list-item-price
+    font-size: 16px
+    margin: .5em 0 0
+
+  .products__show
+    .page-title
+      text-transform: uppercase
+    @media screen and (max-width: $screen-md-min)
+      margin-bottom: 30px
+
+  .product__show__thumbs__slide,
+  .product__show__slider__slide
+    img
+      width: 100%
+
+  .product__show__thumbs__slide
+    margin-right: 15px
+    cursor: pointer
+
+  .product__show__thumbs
+    @media screen and (max-width: $screen-md-min)
+      visibility: hidden
+      height: 0
+
+  .products__show-item-content
+    padding-top: 5px
+
+  .products__show-item-category
+    font-weight: normal
+    text-transform: none
+    a
+      color: inherit
+      font-weight: normal
+      &:before
+        content: ' / '
+      &:first-child
+        &:before
+          content: ''
+
+  .products__show-item-title
+    font-size: 53px
+    margin: 3px 0 1em
+    line-height: 1
+    color: $basicThemeMainColor
+
+  .products__show-item-price
+    font-weight: normal
+    padding: 0
+    margin: 0 0 10px
+    font-size: 38px
+
+  .plain-select__select--single
+    height: 43px
+    line-height: 1
+    padding: 0 15px
+    @media screen and (max-width: $screen-md-min)
+      margin-bottom: 10px
+
+  .products__show-item__actions
+    margin: 10px 0 17px
+
+  .products__show-item__subtitle
+    font-weight: bold
+    margin: 17px 0 5px
+    font-size: 14px
+
+  .products__show-item-description
+    margin: 0 0 30px
+    line-height: 24px
+
+  .products__show-item-details
+    margin: 0
+    li 
+      padding: 0 0 3px
+
+  .products__show-item-cart-btn
+    &:hover
+      background-color: $basicThemeCategoriesNavLinkColorHover
+
+  .product__show__slider
+    margin-bottom: 14px
+    .owl-controls
+      visibility: hidden
+      position: absolute
+      z-index: 2
+      bottom: 0
+      left: 0
+      right: 0
+      @media screen and (max-width: $screen-md-min)
+        visibility: visible
+
+  .product__show__slider .owl-pagination
+    display: inline-block
+    vertical-align: top
+    background-color: $basicThemeDotsColor
+    background-color: rgba(0,0,0,.6)
+    border-radius: 20px
+    padding: 0 10px
+    margin-bottom: 22px
+    .owl-page span
+      box-sizing: content-box
+      display: block
+      opacity: 1
+      width: 4px
+      height: 4px
+      background: #fff
+      margin: 11px 6px
+      border-radius: 10px
+    .owl-page.active span
+      border-color: #fff
+      box-shadow: 0 0 0 3px #fff
+
+  .product__show__thumbs
+    .owl-item
+      transition: opacity .2s ease
+      &.synced
+        opacity: .8
+
+  //Footer
+  .application-footer
+    border: none
+    padding-bottom: 0
+    margin-top: 30px
+    @media screen and (max-width: $screen-sm-min)
+      margin-top: 10px      
+
+  .application-footer__inner
+    padding: 0 15px
+
+  .footer-nav
+    margin: 19px 0
+    li
+      @media screen and (min-width: $screen-xs-min)
+        &:first-child
+          margin-left: -15px
+      @media screen and (max-width: $screen-xs-min)
+        display: block
+        float: left
+        width: 50%
+        margin: 0
+        text-align: center
+    a
+      padding: 6px 0
+      font-size: 16px
+      margin-right: 25px
+      color: $basicThemeCategoriesNavLinkColor
+      &:hover
+        color: $basicThemeCategoriesNavLinkColorHover
+
+  .cart__list-item
+    border: none
+    font-size: 16px
+    padding: 0 0 26px
+
+  .cart__list-actions,
+  .cart__list-item,
+  .cart__form
+    margin: 0 60px 0 100px
+    @media screen and (max-width: $screen-md-min)
+      margin: 0
+
+  .has-error
+    .help-block,
+    .control-label,
+    .radio,
+    .checkbox,
+    .radio-inline,
+    .checkbox-inline
+      color: $basicThemeMainColor
+
+    input[type="text"],
+    textarea,
+    select
+      color: #da2a41
+      border-radius: 2px 2px 0 0 !important
+      border-bottom-width: 0 !important
+
+    .help-block
+      color: #fff
+
+
+  .cart__form
+    padding-top: 10px
+    padding-bottom: 50px
+    .alert
+      margin-left: 62px
+      @media screen and (max-width: $screen-sm-min)
+        margin-left: 0
+    .radio
+      font-size: 14px
+      padding: 0
+      margin: 0 0 30px
+      input
+        display: block
+        width: auto
+        height: auto
+        background: none
+        box-shadow: none
+        border: none
+    label
+      font-weight: normal
+      margin: 0 0 7px
+      display: block
+    input[type="text"],
+    textarea,
+    select 
+      resize: none
+      background-color: #fff
+      border-radius: 2px
+      border: 1px solid #CFCFCF
+      padding: 14px
+      width: 100%
+      box-shadow: none
+      height: auto
+    
+    select
+      height: 49px
+      padding: 14px 0 14px
+      text-indent: 14px
+      line-height: 43px
+
+
+  .cart__list-actions_after-form,
+  .cart__form
+    margin: 0 0 0 205px
+    max-width: 580px
+    @media screen and (max-width: $screen-md-min)
+      margin: 0 auto
+
+  .cart__list-item-remove
+    display: block
+    border-radius: 17px
+    width: 34px
+    height: 34px
+    background-color: #bcbcbc
+    cursor: pointer
+    transition: background-color .2s ease
+    img
+      width: 100%
+    &:hover
+      background-color: $basicThemeCategoriesNavLinkColorHover
+
+  .cart__list-item-remove_xs
+    position: absolute
+    top: 0
+    right: 17px
+
+  .cart__list-item-title
+    font-weight: bold 
+    margin: 0
+    a
+      font-weight: bold
+      color: inherit
+    @media screen and (max-width: $screen-sm-min)
+      padding-right: 40px
+
+  .cart__list-item-option
+    margin: 0 0 3px
+
+  .cart__list-item-quantity
+    font-size: 14px
+
+  .cart__list-item-quantity__text
+    float: left
+    width: 90px
+    padding: 5px 0 5px
+
+  .cart__list-item-quantity__field
+    margin: -4px 3px 0
+    width: 32px
+    height: 32px
+    line-height: 32px
+    text-align: center
+    color: $basicThemeMainColor
+    border: 1px solid $basicThemeCategoriesNavBorderColor
+    border-radius: 2px
+
+  .cart__list-item-quantity__control
+    display: inline-block
+    vertical-align: middle
+    width: 11px
+    height: 32px
+    background: url(#{$images-path}/updown.png)
+
+  .cart__list-item-quantity__control__up,
+  .cart__list-item-quantity__control__down
+    height: 16px
+    display: block
+    cursor: pointer
+    background-color: #fff
+    opacity: 0
+    &:hover
+      opacity: .5
+
+  .cart__list-item-price
+    font-size: 20px
+    margin-top: -3px
+    @media screen and (max-width: $screen-sm-min)
+      font-size: 18px
+      margin: 5px 0
+
+  
+  .cart__list-item-quantity-select
+    margin-left: 90px
+    @media screen and (max-width: $screen-md-min)
+      margin: 10px 0 0
+      clear: both
+    select
+      width: 100%
+      padding: 5px
+
+  .cart__list-item-quantity_xs
+    @include clearfix()
+    .cart__list-item-quantity__text
+      width: 85px
+    .cart__list-item-quantity-select
+      @media screen and (max-width: $screen-md-min)
+        margin: 0 0 0 85px
+        clear: none
+
+  .cart__list-actions-code
+    display: inline-block
+    vertical-align: top
+    width: 190px
+    border: 1px solid $basicThemeCategoriesNavBorderColor
+    padding: 12px 17px 10px
+
+  .cart-btn-checkout
+    display: inline-block
+    vertical-align: top
+    padding: 10px 30px
+    background-color: $basicThemeMainColor
+    color: #fff
+
+  .cart-btn-checkout-wrap
+    @media screen and (max-width: $screen-sm-min)
+      position: fixed
+      bottom: 0
+      left: 15px
+      right: 15px
+
+  .cart__list-actions-code,
+  .cart-btn-checkout
+    width: 100%
+    margin: 0 0 10px
+
+  .cart__form__row
+    @include clearfix()
+    margin: 0 0 20px
+    .alert
+      margin: 0
+      border-radius: 0 0 3px 3px
+      padding: 5px
+
+  .cart__form__row__num
+    float: left
+    height: 44px
+    width: 44px
+    text-align: center
+    line-height: 44px
+    background-color: $basicThemeMainColor
+    color: #fff
+    font-size: 22px
+    border-radius: 22px
+    @media screen and (max-width: $screen-sm-min)
+      float: none
+      margin: 0 auto 20px
+
+  .cart__form__row__content
+    margin-left: 62px
+    @media screen and (max-width: $screen-sm-min)
+      margin-left: 0
+    .cart__field
+      resize: none
+
+  .cart__form__row__title
+    font-size: 22px
+    margin: 6px 0 28px
+    @media screen and (max-width: $screen-sm-min)
+      text-align: center
+
+  .cart__form__radio
+    display: block
+    position: relative
+    padding: 0 0 0 25px
+    max-width: 555px
+    margin: 0 0 30px
+    font-weight: normal
+    input
+      display: block
+      position: absolute
+      margin: 0
+      top: 0
+      left: 0
+
+  .cart__form__radio__name,
+  .cart__form__radio__val
+    display: inline-block
+    vertical-align: top
+    width: 46%
+    @media screen and (max-width: $screen-xs-min)
+      display: block
+      width: 100%
+      margin-bottom: 10px
+
+  .cart__complete
+    padding: 38px 0
+    font-size: 22px
+    max-width: 800px
+    margin: 0 auto
+    text-align: center
+    p
+      margin: 0 0 100px
+    a
+      border: none
+      padding-bottom: 6px
+      color: $basicThemeMainColor
+      border-bottom: 1px solid $basicThemeCategoriesNavBorderColor
+      &:hover
+        border-bottom-color: $basicThemeCategoriesNavLinkColor
+    @media screen and (max-width: $screen-xs-min)
+      font-size: 22px
+
+
+  .cart__form__widget
+    margin: 25px 0 0
+
+  .cart__form__widget__name
+    display: block
+    font-weight: normal
+    margin: 0 0 7px
+
+  .cart__field
+    border-radius: 2px
+    border: 1px solid $basicThemeCategoriesNavLinkColorHover
+    padding: 14px
+    width: 100%
+    &:focus
+      border-color: $basicThemeCategoriesNavLinkColor
+      outline: none
+
+  .cart__field_select
+    height: 49px
+
+  .float-cart__item__name,
+  .float-cart__clear
+    color: $basicThemeMainColor
+    &:hover
+      color: $basicThemeCategoriesNavLinkColorHover
+
+  .float-cart__clear
+    color: $basicThemeCategoriesNavLinkColorHover
+
+  .page-title
+    padding: 19px 0 13px
+    border: 1px solid $basicThemeCategoriesNavBorderColor
+    border-width: 1px 0
+    margin: -30px 0 47px
+    text-align: center
+    font-weight: normal
+    font-size: 18px
+    text-transform: none
+        
+    .dropdown
+      .dropdown-toggle
+        position: relative
+        &:before
+          content: ''
+          background: url(#{$images-path}/mobnav-cat-arrow.svg)
+          background-size: 18px 10px
+          width: 18px
+          height: 10px
+          position: absolute
+          top: 27px
+          left: 12px
+          transform: rotate(90deg)
+          transition: transform .2s ease
+        &:focus
+          text-decoration: none
+      &.open
+        .dropdown-toggle:before
+          transform: rotate(180deg)
+
+      .dropdown-menu
+        border: none
+        margin: 0
+        position: relative
+        background: none
+        a
+          text-align: left
+          border: none
+          background: $basicThemeDropdownMenuLink
+          &:hover
+            background: $basicThemeDropdownMenuLink
+
+  .mm-page
+    overflow: hidden    
+
+  .mm-list > li > a,
+  .mm-list > li > span
+    color: #fff
+    padding: 23px 16px
+    font-size: 14px
+    display: block
+    line-height: 1.3
+    font-weight: normal
+
+  .mm-list a.mm-subopen
+    &:after
+      right: 10px
+    & + a,
+    & + span
+      margin-right: 0
+
+  .mm-menu
+    list-style: none
+    overflow-y: auto
+    background-color: #252525
+    max-width: 140px
+    min-width: 130px
+    .mm-counter
+      color: #fff
+    .mm-subclose
+      text-indent: 0
+      margin: 0
+      &:before
+        margin-bottom: -4px
+        left: 6px
+    li
+      border-bottom: 2px solid #2d2d2d
+      &:after
+        display: none !important
+
+  .mm-list
+    padding: 0
+
+  .mm-menu .mm-list > li > a.mm-subopen:after,
+  .mm-menu .mm-list > li > a.mm-subclose:before
+    border-color: #fff
+
+  .mm-menu .mm-list > li > a.mm-subclose
+    background-color: #5f5f5f
+    color: #fff
+
+  .mmenu-open
+    display: none
+    position: fixed
+    z-index: 10
+    top: 20px
+    left: 20px
+    width: 49px
+    height: 44px
+    background: #000
+    border-radius: 3px
+  .mmenu-open__tick
+    height: 2px
+    position: absolute
+    left: 13px
+    right: 13px
+    top: 50%
+    background-color: #fff
+    margin-top: -6px
+    @include transition( transform .2s ease, margin-top .2s ease, opacity .2s ease )
+  .mmenu-open__tick_s
+    margin-top: -1px
+  .mmenu-open__tick_t
+    margin-top: 4px
+  .mmenu-open_active
+    .mmenu-open__tick_f
+      margin-top: 0
+      transform: rotate(45deg)
+    .mmenu-open__tick_s
+      opacity: 0
+    .mmenu-open__tick_t
+      margin-top: 0
+      transform: rotate(-45deg)
+
+// .mm-page
+//   overflow-x: hidden
+
+html.mm-opened .mm-page
+  box-shadow: none
+
+html.mm-opening .mm-page,
+html.mm-opening #mm-blocker
+  -webkit-transform: translate(200px, 0)
+  transform: translate(200px, 0)
+
+.cart__list-item-sum
+  font-size: 30px
+  text-align: right
+  @media screen and (max-width: $screen-xs-min)
+    text-align: center
+
+.text
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  ul,
+  table
+    width: 100%
+    max-width: 600px
+    margin: 0 auto
+  h1,
+  h2
+    text-align: center
+  h1
+    font-size: 48px
+    margin-bottom: 38px
+  h2
+    font-size: 26px
+    font-weight: normal
+    margin-bottom: 50px
+  p
+    margin-bottom: 20px
+  ul
+    padding: 0 0 0 20px
+    margin-top: 20px
+    margin-bottom: 20px
+    
+  table
+    th,
+    td
+      padding: 15px
+    th
+      font-weight: normal
+      border-bottom: 1px solid $basicThemeCategoriesNavBorderColor
+
+.text__image
+  margin: 40px 0
+  img
+    width: 100%
+    margin: 10px 0
+
+.cart__form__delivery-name,
+.cart__form__delivery-price
+  display: inline-block
+  vertical-align: top
+  width: 40%
+
+.map-embed
+  margin: 40px auto
+  width: 100%
+  height: 400px
+  overflow: hidden
+  img
+    width: 100%
+
+.application-slider
+  max-width: 1000px
+  width: 100%
+  margin: -40px auto 5px
+  background: url(#{$images-path}/loader.gif) 50% 50% no-repeat
+  @media screen and (max-width: $screen-md-min)
+    margin-top: 0
+
+.application-slider_photos
+  max-width: 1400px
+  margin: 0 auto
+  .application-slider__slide
+    height: 400px
+    background-color: #242424
+    img
+      opacity: .5
+
+.application-slider__slide
+  img
+    width: 100%
+
+.products__list-more
+  margin: 60px auto
+  text-align: center  
+
+.products__list-more__btn
+  padding: 18px 30px
+  color: #939393
+  border: 1px solid #939393
+  border-radius: 36px
+  cursor: pointer
+
+#nav
+  height: 0
+  overflow: hidden
+  &.mm-menu
+    height: 100%
+
+#fancybox-thumbs
+  ul
+    position: static
+    text-align: center
+    width: 100% !important
+    li
+      float: none
+      display: inline-block
+      vertical-align: middle
+      padding: 0 3px
+      cursor: pointer
+      width: 16px !important
+      opacity: .5
+      a
+        display: block
+        overflow: hidden
+        width: 10px
+        height: 10px
+        background: #fff
+        border-radius: 5px
+      img
+        width: 100%
+    
+      &.active
+        background: none
+        opacity: 1
+        border: none
+        padding: 0 3px
+
+.owl-theme .owl-controls .owl-buttons div
+  width: 44px
+  height: 100px
+  position: absolute
+  top: 50%
+  margin-top: -25px
+  font: 0/0 a
+  opacity: 1
+  background: none
+  padding: 0
+  background-size: 100% 100%
+
+  &.owl-prev
+    left: 20px
+    background-image: url(#{$images-path}/ar_right-c.svg)
+
+  &.owl-next
+    right: 20px
+    background-image: url(#{$images-path}/ar_left-c.svg)
+
+.products__list-item-badge
+  padding: 4px 15px
+  background-color: #feed9d
+  color: #969791
+  position: absolute
+  top: 0
+  left: 0
+  margin: 20px 18px
+  z-index: 2
+  border-radius: 15px
+
+.products__list-item-badge_hit
+  background-color: #ffdfca
+
+@-moz-document url-prefix()
+  .theme-basic .cart__form select
+    text-indent: 0
+    padding-left: 14px

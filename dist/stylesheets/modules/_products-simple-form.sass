@@ -1,0 +1,43 @@
+.products__new-form
+  @extend .form-inline
+  .form-group
+    margin:
+      bottom: $grid-gutter-width/2
+    &.text
+      display: block
+      margin-right: 0
+    .form-control
+      @extend .plain-input__input
+      padding-left: 0
+      text-align: left
+    input.form-control,
+    .btn.form-control
+      display: inline-block
+    textarea.form-control
+      height: auto
+      margin:
+        top: $grid-gutter-width
+        bottom: $grid-gutter-width/2
+      padding-left: $grid-gutter-width/2
+      &, &:hover
+        border: 1px solid $line-color
+      &:focus
+        border: 1px solid $yellow
+
+    &.has-error
+      .form-control
+        @extend %plain-input__input--error
+        display: block
+      +arrow(top, 7px, $red, transparent)
+      &:after, &:before
+        top: $plain-input-height - 2*7px
+
+
+  .help-block
+    margin: 0
+    padding:
+      top: 0.5em
+      bottom: 0.5em
+    &.has-error
+      @extend .alert-danger
+      +antialiased

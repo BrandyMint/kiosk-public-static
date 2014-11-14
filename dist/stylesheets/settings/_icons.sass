@@ -1,0 +1,16 @@
+@each $size in 8, 10, 12, 14, 16, 18, 20, 24, 28, 32, 40, 48, 64, 128, 256, 512
+  .icon-size-#{$size}
+    font-size: #{$size}px
+    //min-width: #{$size}px
+
+@each $align in top,line, middle, bottom
+  .v-align-#{$align}
+    vertical-align: #{$align}
+
+//@each $color in (white $white, gray-lightest $grayLightest, gray-light $grayLight, gray $gray, gray-lighter $grayLighter, gray-dark $grayDark, gray-darkest $grayDarkest, green $green, red $red, orange $orange, blue $blue)
+  .icon-color-#{nth($color,1)}
+    color: nth($color,2)
+    &:hover
+      color: darken(nth($color,2),10%)
+
+

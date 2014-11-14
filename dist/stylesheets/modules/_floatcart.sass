@@ -1,0 +1,61 @@
+.float-cart
+  position: absolute
+  z-index: 5
+  background-color: #fff
+  top: 43px
+  right: 0
+  // right: 0 !important
+  width: 600px
+  padding: 18px
+  box-shadow: 0 0 5px rgba(0,0,0,.5)
+  margin: $grid-gutter-width/2
+  border-radius: 3px
+  @media screen and (max-width: $screen-md-min)
+    position: fixed
+    top: 60px !important
+    right: 5px !important
+  @media screen and (max-width: $floatCart-min-res)
+    display: none !important
+
+.float-cart_locked
+  position: fixed
+  top: 0
+  right: 0
+
+.float-cart__item__q
+  text-align: right
+
+.float-cart__item-wrap
+  max-height: 280px
+  overflow: hidden
+  overflow-y: auto
+  margin: 0 0 20px
+
+.float-cart__item
+  font-size: 1.2em
+  margin: 20px 0 0
+  &:first-child
+    margin-top: 0
+
+.float-cart__item__img
+  display: block
+  img
+    width: 100%
+
+.float-cart__item__name
+  font-weight: bold
+  text-decoration: none
+  display: block
+
+.float-cart__item__price
+  text-align: right
+
+.float-cart__control
+  @include clearfix()
+
+.float-cart__link
+  float: right
+
+.float-cart__clear
+  padding: 13px 0 11px
+  float: left

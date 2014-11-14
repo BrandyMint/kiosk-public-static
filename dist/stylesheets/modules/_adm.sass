@@ -1,0 +1,44 @@
+.b-adm
+  position: fixed
+  top: 30px
+  left: 30px
+  width: 50px
+  background-color: #31383f
+  display: none
+  border-radius: 25px
+  &:hover
+    background-color: #4d5257
+
+  @media screen and (max-width: $screen-md-min)
+    display: none !important
+
+.b-adm_show
+  display: block
+
+.b-adm__item
+  display: block
+  height: 50px
+  background-repeat: no-repeat
+  background-position: 50% 50%
+  background-size: 30px 30px
+  text-indent: -999px
+  transition: background-color .2s ease
+  
+// .b-adm__item_site
+//   background-image: url(#{$images-path}/b-adm__item_site.png)
+
+// .b-adm__item_dashboard
+//   background-image: url(#{$images-path}/b-adm__item_dashboard.png)
+
+// .b-adm__item_cat
+//   background-image: url(#{$images-path}/b-adm__item_cat.png)
+
+// .b-adm__item_order
+//   background-image: url(#{$images-path}/b-adm__item_order.png)
+
+.b-adm__item_setting
+  background-image: url(#{$images-path}/b-adm__item_setting.png)
+
+// .b-adm__item_active
+//   background-color: #454b51
+//   pointer-events: none

@@ -1,0 +1,62 @@
+// ============= Sugar theme Settings =============
+$themeSugarMainColor: #222
+$themeSugarCategoriesNavLinkColorHover: #2b2b2b
+
+$themeSugarCategoriesHoverColor: #ffdfca
+
+$verdanaFam: Verdana, Geneva, sans-serif
+$minion: "minion-pro", TimesNewRoman, "Times New Roman", times, serif
+// ============= /Settings =============
+.style-sugar
+  color: $themeSugarMainColor
+  font-family: $verdanaFam
+
+  .owl-buttons
+    display: block
+
+  .products__list__title
+    font-family: $minion
+    font-style: italic
+
+  .page-title
+    border: none
+    font-family: $minion
+    font-style: italic
+
+  .cart__list-item-price,
+  .products__show-item-title
+    font-family: $minion
+    font-style: italic
+
+  .navbar-cart-btn-empty,
+  .navbar-cart-btn-full
+    color: #fff
+    &:hover
+      background: $themeSugarMainColor
+    &:active
+      box-shadow: none
+
+  .categories-nav
+    border: none
+    li
+      a
+        text-transform: uppercase
+        color: $themeSugarMainColor
+        &:hover
+          color: $themeSugarCategoriesNavLinkColorHover
+
+  .application-slider__slide
+    max-height: 400px
+
+  .products__list-item-price
+    font-family: $minion
+    font-style: italic
+    font-weight: normal
+
+  .products__list-more__btn
+    &:hover
+      border-color: $themeSugarCategoriesHoverColor
+      background-color: $themeSugarCategoriesHoverColor
+
+  .application-footer
+    padding: 30px 0

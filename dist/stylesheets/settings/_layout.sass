@@ -1,0 +1,28 @@
+body
+  background-color: $body-background
+
+%block-padding
+  padding: $block-padding
+
+%block-wide-element,
+.block-wide-element
+  padding:
+    left: $block-padding
+    right: $block-padding
+  margin:
+    left: - $block-padding
+    right: - $block-padding
+
+
+%block-wide-divider,
+.block-wide-divider
+  margin:
+    left: - $block-padding
+    right: - $block-padding
+
+
+.page-title
+  font:
+    size: 26px
+    weight: normal
+  text-transform: uppercase

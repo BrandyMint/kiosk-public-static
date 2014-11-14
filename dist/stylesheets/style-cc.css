@@ -1,0 +1,191 @@
+/* line 3, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+.style-cc {
+  font: 13px/1.538em "apercu", Arial, Helvetica, sans-serif;
+  color: #242427; }
+  /* line 12, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+  .style-cc h1, .style-cc h2, .style-cc h3, .style-cc h4, .style-cc h5, .style-cc h6 {
+    color: #242427; }
+  /* line 15, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+  .style-cc a {
+    color: #303030;
+    font-weight: normal; }
+    /* line 18, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+    .style-cc a:hover {
+      color: #ef5a61; }
+  /* line 21, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+  .style-cc .application-navbar {
+    padding: 20px 0;
+    margin-bottom: 0; }
+  /* line 25, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+  .style-cc .application-slider {
+    margin-top: 0; }
+  /* line 28, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+  .style-cc .navbar-collapse {
+    margin-top: -20px; }
+  /* line 31, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+  .style-cc .categories-nav {
+    margin-top: 0;
+    border-top: 0;
+    height: 46px;
+    text-align: left; }
+    /* line 37, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+    .style-cc .categories-nav > li > a {
+      font-weight: bold;
+      font-size: 13px;
+      text-transform: uppercase;
+      padding: 13px 7px; }
+  /* line 43, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+  .style-cc .categories-nav .dropdown-menu {
+    background: #242427; }
+  /* line 52, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+  .style-cc .navbar-head {
+    padding: 14px 0; }
+  /* line 55, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+  .style-cc .navbar-cart-btn {
+    padding: 0;
+    background: none; }
+    /* line 58, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+    .style-cc .navbar-cart-btn:hover {
+      background: none; }
+  /* line 61, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+  .style-cc .application-footer {
+    padding: 0; }
+    /* line 63, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+    .style-cc .application-footer .footer-nav {
+      margin: 14px 0; }
+      /* line 65, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+      .style-cc .application-footer .footer-nav a {
+        color: #fff;
+        font-size: 13px; }
+        /* line 68, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+        .style-cc .application-footer .footer-nav a:hover {
+          color: #c1c1c1; }
+  /* line 72, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+  .style-cc .application-footer, .style-cc .navbar-head {
+    background: #242427;
+    color: #7d7d7d; }
+    /* line 75, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+    .style-cc .application-footer a, .style-cc .navbar-head a {
+      color: #7d7d7d; }
+      /* line 77, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+      .style-cc .application-footer a:hover, .style-cc .navbar-head a:hover {
+        color: #fff; }
+  /* line 81, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+  .style-cc .products__list-more__btn:hover {
+    border-color: #242427;
+    color: #242427; }
+  /* line 85, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+  .style-cc .products__list-item-title {
+    color: #303030;
+    line-height: 18px;
+    font-size: 13px;
+    height: 33px;
+    margin-top: 6px; }
+  /* line 92, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+  .style-cc .products__list-item-price {
+    font-size: 16px;
+    color: #242427;
+    margin-top: 2px; }
+  /* line 98, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+  .style-cc .products__show-item-category, .style-cc .products__show-item-title {
+    text-align: center; }
+  /* line 101, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+  .style-cc .products__show-item-title {
+    font-size: 45px;
+    margin-bottom: 8px; }
+  /* line 105, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+  .style-cc .products__show-item-category {
+    font-size: 13px;
+    margin: 0 0 12px; }
+  /* line 109, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+  .style-cc .products__show-item-price {
+    margin-bottom: 38px; }
+  /* line 112, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+  .style-cc .products__list__title {
+    font-size: 20px;
+    text-align: left;
+    font-weight: bold; }
+  /* line 117, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+  .style-cc .products__show-item__main {
+    border-bottom: 1px solid #dcdcdc;
+    padding-bottom: 35px;
+    margin-bottom: 55px; }
+  /* line 122, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+  .style-cc .products__show {
+    margin-top: -45px; }
+  /* line 125, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+  .style-cc .modification-list {
+    margin-top: -30px;
+    padding: 0; }
+  /* line 129, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+  .style-cc .mmenu-open {
+    top: 13px;
+    left: 13px; }
+  /* line 133, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+  .style-cc .products__show-item-cart-btn {
+    font-size: 15px;
+    height: 40px;
+    line-height: 40px;
+    display: block;
+    text-align: center;
+    padding: 0;
+    width: 100%;
+    border-radius: 2em; }
+    /* line 143, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+    .style-cc .products__show-item-cart-btn:hover, .style-cc .products__show-item-cart-btn:focus {
+      background-color: #ef5a61;
+      color: #fff;
+      outline: none; }
+  /* line 149, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+  .style-cc .products__show-item-details li {
+    padding: 0 0 18px;
+    font-size: 12px;
+    line-height: 18px;
+    overflow: hidden; }
+    /* line 154, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+    .style-cc .products__show-item-details li:before {
+      display: none; }
+  /* line 158, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+  .style-cc .products__show-item-delivery h3 {
+    margin: 0 0 12px;
+    font-size: 16px;
+    font-weight: bold; }
+  /* line 163, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+  .style-cc .products__show-item-details__name {
+    width: 105px;
+    position: relative;
+    float: left;
+    color: #999;
+    font-weight: bold; }
+  /* line 170, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+  .style-cc .products__show-item-details__val {
+    margin-left: 120px; }
+  /* line 173, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+  .style-cc .products__show-item-description {
+    font-size: 19px;
+    line-height: 1.5; }
+    /* line 176, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+    .style-cc .products__show-item-description p {
+      margin: 0 0 14px; }
+  /* line 179, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+  .style-cc .product__show__slider {
+    max-height: 630px;
+    margin-bottom: 80px; }
+    /* line 182, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+    .style-cc .product__show__slider .owl-item {
+      max-height: 630px; }
+    /* line 184, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+    .style-cc .product__show__slider .owl-controls {
+      visibility: visible;
+      bottom: auto;
+      top: 0; }
+    /* line 188, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+    .style-cc .product__show__slider .owl-pagination {
+      background: none; }
+      /* line 191, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+      .style-cc .product__show__slider .owl-pagination .owl-page span {
+        background-color: #d9d9d9; }
+      /* line 194, /home/danil/code/kiosk-public-static/app/stylesheets/style-cc.sass */
+      .style-cc .product__show__slider .owl-pagination .owl-page.active span {
+        box-shadow: 0 0 0 3px #333;
+        background-color: #333; }

@@ -1,0 +1,14 @@
+<div class='alert alert-danger'>Обнаружены ошибки, пожалуйста, взгляните на них</div>
+<form class='login__form simple_form' id='new_operator_login_form' accept-charset='UTF-8' action='/login' method='post' novalidate='novalidate'>
+  <div class='login__form-header'>Авторизация</div>
+  <div class='form-group has-error operator_login_form_phone required tel'>
+    <input class='form-control form-control required string tel' id='operator_login_form_phone' name='operator_login_form[phone]' placeholder='ргн' type='tel' value='sdsd'>
+    <span class='has-error help-block'>Неверный формат телефона</span>
+  </div>
+  <div class='form-group operator_login_form_pin_code required string'>
+    <input class='form-control required string' id='operator_login_form_pin_code' name='operator_login_form[pin_code]' placeholder='ргн' type='text' value='sdsdsd'>
+  </div>
+  <div class='login__form-actions'>
+    <input class='btn login__form-submit-btn' name='commit' type='submit' value='Войти'>
+  </div>
+</form>

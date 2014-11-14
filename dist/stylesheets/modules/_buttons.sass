@@ -1,0 +1,97 @@
+.btn
+  +transition(color 0.2s ease, background 0.2s ease, border 0.2s ease)
+  border-radius: $border-radius-base
+  &:focus
+    outline: none
+
+
+.btn-link
+  &:hover
+    text-decoration: none
+
+@each $b in primary, info, danger, warning, success
+  .btn-#{$b}
+    @extend %antialiased
+
+.btn-primary
+  background-color: $blue
+  border-color: $blue
+  &:hover
+    background-color: $blue-dark
+    border-color: $blue-dark
+
+@each $color in green $green, red $red, blue $blue, yellow $yellow, orange $orange, gray $gray, gray-light $gray-light, gray-dark $gray-dark, gray-darker $gray-darker
+  .btn-#{nth($color,1)}
+    background-color: nth($color,2)
+    border-color: nth($color,2)
+    @if nth($color,2) == $yellow
+      +link-colors($text-color, $text-color)
+      &:hover, &:focus
+        background-color: lighten(nth($color,2), 15%)
+        border-color: lighten(nth($color,2), 15%)
+    @else
+      +link-colors(#fff, #fff)
+      &:hover, &:focus
+        background-color: darken(nth($color,2), 15%)
+        border-color: darken(nth($color,2), 15%)
+
+.btn-lg
+  padding: 12px 16px
+
+.btn-link-light
+  @extend .btn-link
+  +link-colors($text-color-lighter)
+
+.btn-link-lighter
+  @extend .btn-link
+  +link-colors($text-color-lighter)
+
+.btn-link-brand
+  @extend .btn-link
+  +link-colors($brand-color, $brand-color-light)
+
+.bare-btn
+  cursor: pointer
+  display: inline-block
+  height: $block-padding*3
+  &, &:focus, &:hover
+    text-decoration: none
+    border:
+      top: none
+      left: none
+      right: none
+    +box-shadow(none)
+  font-size: $font-size-large
+  line-height: $block-padding
+  @extend %font-bold
+  @extend %block-padding
+  +link-colors($text-color-lighter, $text-color-light)
+  text-align: center
+  +transition(color 0.2s ease, background 0.2s ease, border 0.2s ease)
+
+.bare-btn--white
+  background: #fff
+  // Error! No extention font-normal
+  // @extend %font-normal
+  +link-colors($text-color, $brand-color)
+
+.bare-btn--full
+  display: block
+
+.bare-btn__icon-outline
+  display: inline-block
+  width: 35px
+  height: 35px
+  line-height: 40px
+  border-radius: 35px/1.4
+  border: 1px solid darken($line-color, 10%)
+  //padding: (35px - $font-size-base)/2 0
+  text-align: center
+  margin: 5px
+  +transition(border-color 0.2s ease)
+  a:hover &,
+  &:hover
+    border-color: $text-color-light
+
+.btn-gray
+  +button-variant(#fff, $gray-light, $gray-light)
