@@ -1,4 +1,5 @@
 $products-list-item-image-width: 228px
+$products-list-item-image-height: 228px
 $products-list-item-height: 360px
 $products-form-images-list-padding: $grid-gutter-width
 $products-show-image-width: 477px
@@ -28,7 +29,8 @@ $products-show-image-width: 477px
 
 .products__list-item-image
   max-width: 100%
-  height: 228px
+  //@media screen and (min-width: $screen-md-min)
+    //height: $products-list-item-image-height
   display: inline-block
   +transition(opacity 0.2s ease)
 

@@ -10812,7 +10812,7 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
         display: block;
         padding: 8px 0; } }
 
-/* line 6, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+/* line 7, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
 .products__list-item {
   margin-top: 15px;
   margin-bottom: 15px;
@@ -10822,26 +10822,25 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
   transition: color 0.2s ease;
   -webkit-font-smoothing: antialiased; }
 
-/* line 15, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+/* line 16, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
 .products__list-item {
   position: relative; }
 
-/* line 21, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+/* line 22, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
 .feature_no-touch .products__list-item:hover {
   color: #29b791; }
-  /* line 23, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+  /* line 24, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
   .feature_no-touch .products__list-item:hover .products__list-item-image {
     opacity: 0.8;
     filter: alpha(opacity=80); }
 
-/* line 26, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+/* line 27, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
 .products__list-item-block {
   text-align: center; }
 
-/* line 29, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
+/* line 30, /home/danil/code/kiosk-public-static/app/stylesheets/sass/modules/products */
 .products__list-item-image {
   max-width: 100%;
-  height: 228px;
   display: inline-block;
   -webkit-transition: opacity 0.2s ease;
   transition: opacity 0.2s ease; }
