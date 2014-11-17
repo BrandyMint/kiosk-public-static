@@ -10,11 +10,11 @@
       .application-content
         .container-fluid
           .products__show
-            %h1.page-title Корзина
+            %h1.page-title(tooltip=true title="Корзина номер 123") Корзина
             %form{action: 'checkout.html'}
               .cart__list
                 - for i in [1..5]
-                  .cart__list-item{cart-item: i, data-item-price: 12000, data-item-total-price: 24000}
+                  .cart__list-item{cart-item: i, data-item-price: '12000', data-item-total-price: '24000'}
                     .row
                       .col-lg-2.col-md-2.col-sm-2.col-xs-4
                         %img{ src: "http://placehold.it/92x92", alt: 'cart item', width: '100%'}

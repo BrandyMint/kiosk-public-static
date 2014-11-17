@@ -274,10 +274,11 @@ window.BasketPopupControl = React.createClass({displayName: 'BasketPopupControl'
 },{}],5:[function(require,module,exports){
 $(function() {
   if ('ontouchstart' in document) {
-    return $("html").addClass("feature_touch");
+    $("html").addClass("feature_touch");
   } else {
-    return $("html").addClass("feature_no-touch");
+    $("html").addClass("feature_no-touch");
   }
+  return $('[tooltip]').tooltip();
 });
 
 
@@ -313,7 +314,7 @@ $(function() {
   $cartTotal = $('[cart-total]');
   setCartItemCount = function(root_item_el, count) {
     var price, total;
-    price = parseInt(root_item_el.data('item-price'));
+    price = +root_item_el.data('item-price');
     total = price * count;
     root_item_el.data('item-total-price', total);
     root_item_el.find('[cart-item-block]').each(function(idx, block) {
@@ -330,7 +331,7 @@ $(function() {
     var totalPrice;
     totalPrice = 0;
     $('[cart-item]').each(function(idx, block) {
-      return totalPrice += parseInt($(block).data('item-total-price'));
+      return totalPrice += +$(block).data('item-total-price');
     });
     return $cartTotal.html(accounting.formatMoney(totalPrice));
   };
