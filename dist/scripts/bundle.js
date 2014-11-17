@@ -388,7 +388,7 @@ $(function() {
     if ($e) {
       setOnlyCity($e.data('delivery-only-city'));
       setCheckoutDeliveryPrice(parseInt($e.data('delivery-price')));
-      return toggleDeliveryOnlyElementsVisibility($e.data('selfDelivery'));
+      return toggleDeliveryOnlyElementsVisibility($e.data().hasOwnProperty('selfDelivery'));
     } else {
       return console.log('Ни один способ доставки по умолчанию не выбран');
     }

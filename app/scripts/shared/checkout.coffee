@@ -37,7 +37,7 @@ $ ->
     if $e
       setOnlyCity $e.data('delivery-only-city')
       setCheckoutDeliveryPrice parseInt $e.data('delivery-price')
-      toggleDeliveryOnlyElementsVisibility $e.data('selfDelivery')
+      toggleDeliveryOnlyElementsVisibility $e.data().hasOwnProperty('selfDelivery')
     else
       console.log 'Ни один способ доставки по умолчанию не выбран'
 
