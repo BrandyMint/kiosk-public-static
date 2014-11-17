@@ -347,7 +347,7 @@ $(function() {
 
 },{}],8:[function(require,module,exports){
 $(function() {
-  var $checkoutTotal, setCheckoutDeliveryPrice, setOnlyCity, toggleDeliveryOnlyElementsVisibility, updateCheckoutTotal;
+  var $checkoutTotal, findSelectedDeliveryType, selectDeliveryType, setCheckoutDeliveryPrice, setOnlyCity, toggleDeliveryOnlyElementsVisibility, updateCheckoutTotal;
   $checkoutTotal = $('[checkout-total]');
   setCheckoutDeliveryPrice = function(price) {
     $checkoutTotal.data('delivery-price', price);
@@ -384,13 +384,33 @@ $(function() {
       }
     }
   };
-  return $('[delivery-type]').on('change', function() {
-    var $e;
-    $e = $(this);
-    setOnlyCity($e.data('delivery-only-city'));
-    setCheckoutDeliveryPrice(parseInt($e.data('delivery-price')));
-    return toggleDeliveryOnlyElementsVisibility($e.data('delivery-type') === 'selfdelivery');
+  selectDeliveryType = function($e) {
+    if ($e) {
+      setOnlyCity($e.data('delivery-only-city'));
+      setCheckoutDeliveryPrice(parseInt($e.data('delivery-price')));
+      return toggleDeliveryOnlyElementsVisibility($e.data('selfDelivery'));
+    } else {
+      return console.log('Ни один способ доставки по умолчанию не выбран');
+    }
+  };
+  $('[delivery-type]').on('change', function() {
+    return selectDeliveryType($(this));
   });
+  findSelectedDeliveryType = function() {
+    var selected;
+    selected = null;
+    $('[delivery-type]').each(function() {
+      var $el;
+      $el = $(this);
+      if ($el.attr('checked')) {
+        return selected = $el;
+      }
+    });
+    return selected;
+  };
+  return window.InitializeCheckout = function() {
+    return selectDeliveryType(findSelectedDeliveryType());
+  };
 });
 
 

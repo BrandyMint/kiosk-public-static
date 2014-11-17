@@ -29,16 +29,29 @@ $ ->
 
       $c.val city
     else
-
       if $c.attr 'disabled'
         $c.removeAttr 'disabled'
         $c.val saved_city
 
+  selectDeliveryType = ($e) ->
+    if $e
+      setOnlyCity $e.data('delivery-only-city')
+      setCheckoutDeliveryPrice parseInt $e.data('delivery-price')
+      toggleDeliveryOnlyElementsVisibility $e.data('selfDelivery')
+    else
+      console.log 'Ни один способ доставки по умолчанию не выбран'
+
   $('[delivery-type]').on 'change', ->
-    $e = $ @
+    selectDeliveryType $ @
 
-    setOnlyCity $e.data('delivery-only-city')
+  findSelectedDeliveryType= ->
+    selected = null
+    $('[delivery-type]').each ->
+      $el = $ @
+      selected = $el if $el.attr 'checked'
 
-    setCheckoutDeliveryPrice parseInt $e.data('delivery-price')
+    return selected
 
-    toggleDeliveryOnlyElementsVisibility $e.data('delivery-type')=='selfdelivery'
+  window.InitializeCheckout = ->
+    selectDeliveryType findSelectedDeliveryType()
+
