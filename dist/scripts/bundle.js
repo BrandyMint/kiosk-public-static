@@ -347,7 +347,7 @@ $(function() {
 
 },{}],8:[function(require,module,exports){
 $(function() {
-  var $checkoutTotal, setCheckoutDeliveryPrice, toggleDeliveryOnlyElementsVisibility, updateCheckoutTotal;
+  var $checkoutTotal, setCheckoutDeliveryPrice, setOnlyCity, toggleDeliveryOnlyElementsVisibility, updateCheckoutTotal;
   $checkoutTotal = $('[checkout-total]');
   setCheckoutDeliveryPrice = function(price) {
     $checkoutTotal.data('delivery-price', price);
@@ -367,9 +367,27 @@ $(function() {
       return $el.slideDown();
     }
   };
+  setOnlyCity = function(city) {
+    var $c, saved_city;
+    $c = $('[city-field]');
+    saved_city = $c.data('saved-city');
+    if (city) {
+      if (!$c.attr('disabled')) {
+        $c.attr('disabled', 'disabled');
+        $c.data('saved-city', $c.val());
+      }
+      return $c.val(city);
+    } else {
+      if ($c.attr('disabled')) {
+        $c.removeAttr('disabled');
+        return $c.val(saved_city);
+      }
+    }
+  };
   return $('[delivery-type]').on('change', function() {
     var $e;
     $e = $(this);
+    setOnlyCity($e.data('delivery-only-city'));
     setCheckoutDeliveryPrice(parseInt($e.data('delivery-price')));
     return toggleDeliveryOnlyElementsVisibility($e.data('delivery-type') === 'selfdelivery');
   });

@@ -31,8 +31,8 @@
                     .form-group.radio_buttons.required.vendor_order_delivery_type_id
                       %span.radio
                         %label{:for => "vendor_order_delivery_type_id_1", :name => "vendor_order[delivery_type_id]"}
-                          %input#vendor_order_delivery_type_id_1.radio_buttons.required.form-control{:name => "vendor_order[delivery_type_id]", :type => "radio", :value => "1", data-delivery-price: 600, delivery-type: true}>
-                          .cart__form__delivery-name Курьером по москве
+                          %input#vendor_order_delivery_type_id_1.radio_buttons.required.form-control{:name => "vendor_order[delivery_type_id]", :type => "radio", :value => "1", data-delivery-price: 600, delivery-type: true, data-delivery-only-city: 'Москва'}>
+                          .cart__form__delivery-name Курьером по Москве
                           .cart__form__delivery-price 600 рублей
                       %span.radio
                         %label{:for => "vendor_order_delivery_type_id_2", :name => "vendor_order[delivery_type_id]"}
@@ -58,9 +58,10 @@
                       %input#vendor_order_name.string.required.form-control{:name => "vendor_order[name]", :placeholder => "Как к вам обращаться", :type => "text"}
                     .form-group.select.required.vendor_order_city_id{delivery-only-field: true}
                       %label.select.required.control-label{:for => "vendor_order_city_id", delivery-only-field: true} Город доставки
-                      %select#vendor_order_city_id.select.required.form-control{:name => "vendor_order[city_id]"}
-                        %option{:value => "1"} Чебоксары
-                        %option{:value => "2"} Москва
+                      %input#vendor_order_name.string.required.form-control{:name => "vendor_order[city_title]", :placeholder => "Город", :type => "text", 'city-field' => true}
+                      -#%select#vendor_order_city_id.select.required.form-control{:name => "vendor_order[city_id]"}
+                        -#%option{:value => "1"} Чебоксары
+                        -#%option{:value => "2"} Москва
                     .form-group.text.required.vendor_order_address{delivery-only-field: true}
                       %label.text.required.control-label{:for => "vendor_order_address"} Адрес доставки
                       %textarea#vendor_order_address.text.required.form-control{:name => "vendor_order[address]", :placeholder => "Академика Вавилова 12-10"}
