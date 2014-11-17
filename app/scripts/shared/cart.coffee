@@ -2,7 +2,7 @@ $ ->
   $cartTotal = $ '[cart-total]'
 
   setCartItemCount = (root_item_el, count) ->
-    price = root_item_el.data 'item-price'
+    price = parseInt root_item_el.data 'item-price'
     total = price*count
 
     root_item_el.data 'item-total-price', total
@@ -21,7 +21,7 @@ $ ->
   updateCartTotal = ->
     totalPrice = 0
     $('[cart-item]').each (idx, block) ->
-      totalPrice += $(block).data('item-total-price')
+      totalPrice += parseInt $(block).data('item-total-price')
 
     $cartTotal.html accounting.formatMoney totalPrice
 
