@@ -9,8 +9,6 @@ require('./shared/load_more');
 
 require('./shared/lightbox');
 
-require('./shared/float_cart');
-
 require('./shared/jump');
 
 require('./shared/product_images_slider');
@@ -31,7 +29,7 @@ window.ReactUjs.initialize();
 
 
 
-},{"./libs":2,"./react/components/basket/basket_button":3,"./react/components/basket/basket_popup":4,"./shared/app":5,"./shared/application_slider":6,"./shared/cart":7,"./shared/checkout":8,"./shared/float_cart":9,"./shared/jump":10,"./shared/lightbox":11,"./shared/load_more":12,"./shared/mobile_navigation":13,"./shared/product_images_slider":14,"./shared/theme_switcher":15}],2:[function(require,module,exports){
+},{"./libs":2,"./react/components/basket/basket_button":3,"./react/components/basket/basket_popup":4,"./shared/app":5,"./shared/application_slider":6,"./shared/cart":7,"./shared/checkout":8,"./shared/jump":9,"./shared/lightbox":10,"./shared/load_more":11,"./shared/mobile_navigation":12,"./shared/product_images_slider":13,"./shared/theme_switcher":14}],2:[function(require,module,exports){
 window.$ = window.jQuery = require('jquery');
 
 window.React = require('react');
@@ -75,7 +73,7 @@ window.accounting.settings = {
 
 
 
-},{"accounting":undefined,"bootstrapSass":undefined,"eventEmitter":undefined,"fancybox":undefined,"fancybox.wannabe":undefined,"flux":16,"jquery":undefined,"jquery.mmenu":undefined,"jquery.role":undefined,"owlCarousel":undefined,"react":undefined,"react-mixin-manager":undefined,"reactUjs":undefined}],3:[function(require,module,exports){
+},{"accounting":undefined,"bootstrapSass":undefined,"eventEmitter":undefined,"fancybox":undefined,"fancybox.wannabe":undefined,"flux":15,"jquery":undefined,"jquery.mmenu":undefined,"jquery.role":undefined,"owlCarousel":undefined,"react":undefined,"react-mixin-manager":undefined,"reactUjs":undefined}],3:[function(require,module,exports){
 
 /** @jsx React.DOM */
 window.BasketButton = React.createClass({displayName: 'BasketButton',
@@ -417,45 +415,6 @@ $(function() {
 
 },{}],9:[function(require,module,exports){
 $(function() {
-  var floatCart, floatCartLockedClass, floatCartPosition, getRightOffset, navbarCollapse, recalcFloatCartPosition;
-  floatCart = $('.float-cart');
-  if (floatCart.length) {
-    floatCartLockedClass = 'float-cart_locked';
-    floatCartPosition = floatCart.offset().top;
-    navbarCollapse = $('.navbar-collapse');
-    getRightOffset = function(el) {
-      var rt;
-      rt = $(window).width() - el.width();
-      return rt / 2 - 14;
-    };
-    recalcFloatCartPosition = function() {
-      return floatCart.css({
-        right: getRightOffset(navbarCollapse)
-      });
-    };
-    $(window).on("scroll", function(e) {
-      if ($(this).scrollTop() >= floatCartPosition) {
-        floatCart.addClass(floatCartLockedClass);
-        return recalcFloatCartPosition();
-      } else {
-        floatCart.removeClass(floatCartLockedClass);
-        return floatCart.css({
-          right: 0
-        });
-      }
-    });
-    return $(window).on("resize", function(e) {
-      if (floatCart.hasClass(floatCartLockedClass)) {
-        return recalcFloatCartPosition();
-      }
-    });
-  }
-});
-
-
-
-},{}],10:[function(require,module,exports){
-$(function() {
   $('[ks-jump]').on('click', function(e) {
     var href;
     href = $(this).attr('ks-jump');
@@ -474,7 +433,7 @@ $(function() {
 
 
 
-},{}],11:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 $(function() {
   return $('[lightbox]').fancybox({
     padding: 0,
@@ -495,7 +454,7 @@ $(function() {
 
 
 
-},{}],12:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 $(function() {
   var LOADING_TITLE, isRequest;
   isRequest = false;
@@ -539,7 +498,7 @@ $(function() {
 
 
 
-},{}],13:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 $(function() {
   var menuCopy, navOpen;
   menuCopy = $('#nav');
@@ -558,7 +517,7 @@ $(function() {
 
 
 
-},{}],14:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 $(function() {
   var center, productSlider, productThumbs, syncPosition;
   productSlider = $('#product-slider');
@@ -619,7 +578,7 @@ $(function() {
 
 
 
-},{}],15:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 $(function() {
   var logo;
   logo = $('.navbar-brand-image');
@@ -634,7 +593,7 @@ $(function() {
 
 
 
-},{}],16:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 /**
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.
@@ -646,7 +605,7 @@ $(function() {
 
 module.exports.Dispatcher = require('./lib/Dispatcher')
 
-},{"./lib/Dispatcher":17}],17:[function(require,module,exports){
+},{"./lib/Dispatcher":16}],16:[function(require,module,exports){
 /*
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.
@@ -898,7 +857,7 @@ var _prefix = 'ID_';
 
 module.exports = Dispatcher;
 
-},{"./invariant":18}],18:[function(require,module,exports){
+},{"./invariant":17}],17:[function(require,module,exports){
 /**
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.
