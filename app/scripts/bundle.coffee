@@ -19,6 +19,11 @@ require './shared/checkout'
 require './react/components/basket/basket_button'
 require './react/components/basket/basket_popup'
 
+
+require './react/dispatchers/dispatcher'
+require './react/actions/basket_action'
+require './react/stores/basket_store'
+
 # /*-----  End of React  ------*/
 
 window.ReactUjs.initialize()
