@@ -1,0 +1,27 @@
+// Список фильтров
+
+.filter-list
+  text-align: center
+  margin-bottom: 50px
+  &__item
+    display: inline-block
+    vertical-align: top
+    margin: 6px 3px
+
+.filter-val
+  display: inline-block
+  padding: 6px 16px
+  background-color: #eee
+  border-radius: 1em
+  transition: background-color .2s ease
+  &__count
+    color: #949494
+  &:hover
+    color: #212121
+    background-color: #ddd
+  &_active
+    background-color: #00beff
+    color: #fff !important
+    .filter-val
+      &__count
+        color: #fff
