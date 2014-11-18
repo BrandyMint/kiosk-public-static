@@ -47,6 +47,8 @@
             .row
               .col-md-5.col-sm-6
                 %ul.products__show-item-details
+                  %li.products__show-item-details__title
+                    Технические характеристики
                   - details = [{'Рама и вилка': 'сталь'}, {'Колесо': 'есть'}, {'Ездить': 'может'}, {'Цепь': 'слетает' }]
                   - for obj, i in details
                     - for key of obj
@@ -58,7 +60,7 @@
                 %a{href: '#'} Показать полностью
 
               .col-md-7.col-sm-6
-                .products__show-item-delivery
+                .products__show-item-text
                   %h3
                     Наличие и условия поставки
                   %p
