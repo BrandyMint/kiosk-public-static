@@ -10493,68 +10493,53 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
 
 /* line 1, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/modules/floatcart */
 .float-cart {
-  position: absolute;
+  position: fixed;
   z-index: 5;
   background-color: #fff;
-  top: 43px;
-  right: 0;
+  top: 90px;
+  right: 30px;
   width: 600px;
   padding: 18px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  margin: 15px;
   border-radius: 3px; }
-  @media screen and (max-width: 992px) {
-    .float-cart {
-      position: fixed;
-      top: 60px !important;
-      right: 5px !important; } }
-  @media screen and (max-width: 600px) {
-    .float-cart {
-      display: none !important; } }
 
-/* line 19, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/modules/floatcart */
+/* line 12, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/modules/floatcart */
 .float-cart_invisible {
   display: none; }
 
-/* line 22, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/modules/floatcart */
-.float-cart_locked {
-  position: fixed;
-  top: 0;
-  right: 0; }
-
-/* line 27, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/modules/floatcart */
+/* line 15, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/modules/floatcart */
 .float-cart__item__q {
   text-align: right; }
 
-/* line 30, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/modules/floatcart */
+/* line 18, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/modules/floatcart */
 .float-cart__item-wrap {
   max-height: 280px;
   overflow: hidden;
   overflow-y: auto;
   margin: 0 0 20px; }
 
-/* line 36, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/modules/floatcart */
+/* line 24, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/modules/floatcart */
 .float-cart__item {
   font-size: 1.2em;
   margin: 20px 0 0; }
-  /* line 39, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/modules/floatcart */
+  /* line 27, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/modules/floatcart */
   .float-cart__item:first-child {
     margin-top: 0; }
 
-/* line 42, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/modules/floatcart */
+/* line 30, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/modules/floatcart */
 .float-cart__item__img {
   display: block; }
-  /* line 44, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/modules/floatcart */
+  /* line 32, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/modules/floatcart */
   .float-cart__item__img img {
     width: 100%; }
 
-/* line 47, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/modules/floatcart */
+/* line 35, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/modules/floatcart */
 .float-cart__item__name {
   font-weight: bold;
   text-decoration: none;
   display: block; }
 
-/* line 52, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/modules/floatcart */
+/* line 40, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/modules/floatcart */
 .float-cart__item__price {
   text-align: right; }
 
@@ -10566,11 +10551,11 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
 .float-cart__control:after {
   clear: both; }
 
-/* line 58, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/modules/floatcart */
+/* line 46, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/modules/floatcart */
 .float-cart__link {
   float: right; }
 
-/* line 61, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/modules/floatcart */
+/* line 49, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/modules/floatcart */
 .float-cart__clear {
   padding: 13px 0 11px;
   float: left; }
@@ -10727,6 +10712,33 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
     /* line 25, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/modules/filter */
     .filter-val_active .filter-val__count {
       color: #fff; }
+
+/* line 1, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/modules/search */
+.search {
+  position: relative; }
+  @media screen and (max-width: 992px) {
+    .search {
+      margin-top: 20px; } }
+  /* line 5, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/modules/search */
+  .search__field {
+    border: 1px solid #E3E3E3;
+    width: 100%;
+    font-size: 13px;
+    padding: 10px 15px 10px 40px;
+    border-radius: 20px; }
+  /* line 11, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/modules/search */
+  .search__submit {
+    width: 39px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 13px;
+    background: url(/assets/search.svg) 0 50% no-repeat;
+    background-size: 20px 20px;
+    border: none; }
+  /* line 21, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/modules/search */
+  .search__field, .search__submit {
+    outline: none; }
 
 /* line 4, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/modules/navbar */
 .application-navbar {
@@ -11465,31 +11477,30 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
   /* line 14, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .products__show-item-articul, .theme-basic .products__show-item-art {
     color: #828282;
-    padding-left: 12px;
     font-size: 12px; }
-  /* line 19, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 18, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .products__show-item-art {
     margin: 1em 0; }
-  /* line 23, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 22, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .products__show-item-header .products__show-item-articul {
     padding: 8px 0 0;
     display: block; }
-  /* line 27, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 26, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .alert {
     text-align: center;
     border-radius: 3px; }
-  /* line 31, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 30, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .alert-danger {
     background-color: #da2a41;
     border-color: #da2a41; }
-  /* line 35, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 34, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .tel-link {
     font-weight: normal;
     color: inherit; }
-    /* line 38, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 37, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .tel-link:hover {
       color: #cbcbcb; }
-  /* line 41, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 40, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .help-block {
     background-color: #da2a41;
     text-align: center;
@@ -11499,21 +11510,21 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
     margin: 0;
     color: #fff;
     border: 1px solid #da2a41; }
-  /* line 51, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 50, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .application {
     overflow: hidden; }
-  /* line 54, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 53, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .container-fluid {
     max-width: 1032px;
     margin: 0 auto; }
   @media screen and (max-width: 992px) {
     .theme-basic .navbar-brand-image {
       max-height: 100%; } }
-  /* line 62, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 61, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .application-navbar {
     padding-top: 30px;
     margin-bottom: 25px; }
-    /* line 65, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 64, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .application-navbar .container {
       position: relative; }
     @media screen and (max-width: 992px) {
@@ -11523,16 +11534,16 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
     .theme-basic .navbar-description {
       text-align: center;
       padding: 0 60px 20px; } }
-  /* line 75, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 74, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .navbar-collapse {
     padding: 0; }
-  /* line 78, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 77, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .categories-nav {
     margin-top: 43px;
     border: 1px solid #e2e2e2;
     border-width: 1px 0;
     text-align: center; }
-    /* line 84, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 83, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .categories-nav li a {
       text-transform: none;
       font-weight: normal;
@@ -11540,40 +11551,40 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
       display: inline-block;
       vertical-align: top;
       color: #121212; }
-      /* line 91, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
+      /* line 90, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
       .theme-basic .categories-nav li a:hover {
         color: #cbcbcb; }
-      /* line 93, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
+      /* line 92, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
       .theme-basic .categories-nav li a:focus {
         outline: none; }
-    /* line 97, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 96, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .categories-nav .dropdown:hover .dropdown-menu {
       display: block; }
-  /* line 100, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 99, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart-btn, .theme-basic .cart-btn-checkout, .theme-basic .navbar-cart-btn, .theme-basic .navbar-categories-toggle-btn, .theme-basic .products__show-item-cart-btn {
     height: auto;
     padding: 11px 17px 9px; }
-    /* line 103, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 102, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .cart-btn:hover, .theme-basic .cart-btn-checkout:hover, .theme-basic .navbar-cart-btn:hover, .theme-basic .navbar-categories-toggle-btn:hover, .theme-basic .products__show-item-cart-btn:hover {
       background-color: #cbcbcb; }
-    /* line 105, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 104, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .cart-btn:active, .theme-basic .cart-btn-checkout:active, .theme-basic .navbar-cart-btn:active, .theme-basic .navbar-categories-toggle-btn:active, .theme-basic .products__show-item-cart-btn:active {
       box-shadow: none; }
-  /* line 109, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 108, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .navbar-cart-btn-empty, .theme-basic .navbar-cart-btn-full {
     background-color: #cbcbcb; }
-    /* line 111, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 110, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .navbar-cart-btn-empty:hover, .theme-basic .navbar-cart-btn-full:hover {
       background-color: #cbcbcb; }
-    /* line 113, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 112, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .navbar-cart-btn-empty:active, .theme-basic .navbar-cart-btn-full:active {
       box-shadow: none; }
-  /* line 116, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 115, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart-btn_clear {
     background: none;
     border: 1px solid #e2e2e2;
     color: #121212; }
-  /* line 121, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 120, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .navbar-cart-btn-icon {
     display: inline-block;
     vertical-align: middle;
@@ -11581,26 +11592,26 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
     height: 23px;
     background: url(/assets/cart.svg);
     margin: -5px 9px 0 0; }
-  /* line 129, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 128, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .navbar-categories-toggle-btn {
     padding-top: 8px;
     padding-bottom: 8px; }
-  /* line 133, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 132, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .navbar-cart-btn {
-    position: relative; }
-    @media screen and (max-width: 992px) {
-      .theme-basic .navbar-cart-btn {
-        position: fixed;
-        z-index: 10;
-        right: 20px;
-        top: 20px;
-        width: 49px;
-        padding: 10px 0 9px;
-        border-radius: 3px;
-        margin: 0; }
-        /* line 144, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
-        .theme-basic .navbar-cart-btn .navbar-cart-btn-icon {
-          margin: 0; } }
+    position: fixed;
+    z-index: 10;
+    right: 30px;
+    top: 30px;
+    width: 50px;
+    padding: 12px 0;
+    border-radius: 25px;
+    margin: 0; }
+    /* line 141, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    .theme-basic .navbar-cart-btn .navbar-cart-btn-icon {
+      margin: 0; }
+  /* line 144, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  .theme-basic .navbar-cart-btn-caption {
+    display: none; }
   /* line 147, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .navbar-cart-btn-full {
     background-color: #121212;
@@ -12326,8 +12337,8 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
     display: none;
     position: fixed;
     z-index: 10;
-    top: 20px;
-    left: 20px;
+    top: 30px;
+    left: 30px;
     width: 49px;
     height: 44px;
     background: #000;
@@ -12761,90 +12772,93 @@ html.mm-opening .mm-page, html.mm-opening #mm-blocker {
   .style-cc .navbar-head {
     padding: 14px 0; }
   /* line 66, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
-  .style-cc .navbar-cart-btn {
-    padding: 0;
-    background: none; }
-    /* line 69, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
-    .style-cc .navbar-cart-btn:hover {
-      background: none; }
-  /* line 72, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
   .style-cc .application-footer {
     padding: 0; }
-    /* line 74, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+    /* line 68, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
     .style-cc .application-footer .footer-nav {
       margin: 14px 0; }
-      /* line 76, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+      /* line 70, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
       .style-cc .application-footer .footer-nav a {
         color: #fff;
         font-size: 13px; }
-        /* line 79, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+        /* line 73, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
         .style-cc .application-footer .footer-nav a:hover {
           color: #c1c1c1; }
-  /* line 83, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+  /* line 77, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
   .style-cc .application-footer, .style-cc .navbar-head {
     background: #242427;
     color: #7d7d7d; }
-    /* line 86, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+    /* line 80, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
     .style-cc .application-footer a, .style-cc .navbar-head a {
       color: #7d7d7d; }
-      /* line 88, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+      /* line 82, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
       .style-cc .application-footer a:hover, .style-cc .navbar-head a:hover {
         color: #fff; }
-  /* line 92, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+  /* line 86, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+  .style-cc .navbar-head .navbar-cart-btn {
+    color: #fff; }
+  /* line 89, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+  .style-cc .navbar-cart-btn {
+    border-radius: 3px;
+    top: 13px; }
+    /* line 92, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+    .style-cc .navbar-cart-btn:before {
+      bottom: 0; }
+  /* line 96, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
   .style-cc .products__list-more__btn:hover {
     border-color: #242427;
     color: #242427; }
-  /* line 96, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+  /* line 100, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
   .style-cc .products__list-item-title {
     color: #303030;
     line-height: 18px;
     font-size: 13px;
     height: 33px;
     margin-top: 6px; }
-  /* line 103, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+  /* line 107, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
   .style-cc .products__list-item-price {
     font-size: 16px;
     color: #242427;
     margin-top: 2px; }
-  /* line 109, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+  /* line 113, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
   .style-cc .products__show-item-category, .style-cc .products__show-item-title {
     text-align: center; }
-  /* line 112, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+  /* line 116, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
   .style-cc .products__show-item-title {
     font-size: 45px;
     margin-bottom: 8px; }
-  /* line 116, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+  /* line 120, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
   .style-cc .products__show-item-category {
     font-size: 13px;
     margin: 0 0 12px; }
-  /* line 120, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+  /* line 124, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
   .style-cc .products__show-item-price {
     margin-bottom: 38px; }
-  /* line 123, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+  /* line 127, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
   .style-cc .products__list__title {
     font-size: 20px;
     text-align: left;
     font-weight: bold; }
-  /* line 128, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+  /* line 132, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
   .style-cc .products__show-item__main {
     border-bottom: 1px solid #dcdcdc;
     padding-bottom: 35px;
     margin-bottom: 55px; }
-  /* line 133, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+  /* line 137, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
   .style-cc .products__show {
     margin-top: -45px; }
     @media screen and (max-width: 992px) {
       .style-cc .products__show {
         margin-top: 0; } }
-  /* line 138, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+  /* line 142, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
   .style-cc .modification-list {
     margin-top: -30px;
     padding: 0; }
-  /* line 142, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+  /* line 146, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
   .style-cc .mmenu-open {
     top: 13px;
     left: 13px; }
-  /* line 146, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+  /* line 150, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
   .style-cc .products__show-item-cart-btn {
     font-size: 15px;
     height: 40px;
@@ -12854,106 +12868,115 @@ html.mm-opening .mm-page, html.mm-opening #mm-blocker {
     padding: 0;
     width: 100%;
     border-radius: 2em; }
-    /* line 156, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+    /* line 160, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
     .style-cc .products__show-item-cart-btn:hover, .style-cc .products__show-item-cart-btn:focus {
       background-color: #ef5a61;
       color: #fff;
       outline: none; }
-  /* line 162, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+  /* line 166, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
   .style-cc .products__show-item-details li {
     padding: 0 0 12px;
     font-size: 12px;
     line-height: 18px;
     overflow: hidden; }
-    /* line 167, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+    /* line 171, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
     .style-cc .products__show-item-details li:before {
       display: none; }
-  /* line 170, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+  /* line 174, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
   .style-cc .products__show-item-details .products__show-item-details__title {
     font-weight: bold;
     font-size: 16px; }
-  /* line 175, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+  /* line 179, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
   .style-cc .products__show-item-text h3 {
     margin: 0 0 12px;
     font-size: 16px;
     font-weight: bold; }
-  /* line 180, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+  /* line 184, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
   .style-cc .products__show-item-details__name {
     width: 105px;
     position: relative;
     float: left;
     color: #999;
     font-weight: bold; }
-  /* line 187, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+  /* line 191, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
   .style-cc .products__show-item-details__val {
     margin-left: 120px; }
-  /* line 190, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+  /* line 194, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
   .style-cc .products__show-item-description {
     font-size: 19px;
     line-height: 1.5; }
-    /* line 193, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+    /* line 197, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
     .style-cc .products__show-item-description p {
       margin: 0 0 14px; }
-  /* line 196, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+  /* line 200, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
   .style-cc .product__show__slider {
     max-height: 630px;
     margin-bottom: 80px; }
-    /* line 199, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+    /* line 203, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
     .style-cc .product__show__slider .owl-item {
       max-height: 630px; }
-    /* line 201, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+    /* line 205, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
     .style-cc .product__show__slider .owl-controls {
       visibility: visible;
       bottom: auto;
       top: 0; }
-    /* line 205, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+    /* line 209, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
     .style-cc .product__show__slider .owl-pagination {
       background: none; }
-      /* line 208, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+      /* line 212, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
       .style-cc .product__show__slider .owl-pagination .owl-page span {
         background-color: #d9d9d9; }
-      /* line 211, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+      /* line 215, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
       .style-cc .product__show__slider .owl-pagination .owl-page.active span {
         box-shadow: 0 0 0 3px #333;
         background-color: #333; }
-  /* line 215, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+  /* line 219, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
   .style-cc .big-price .currency {
     top: -18px; }
-  /* line 218, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+  /* line 222, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
   .style-cc .products__list_catalog {
     margin-top: -65px; }
     @media screen and (max-width: 992px) {
       .style-cc .products__list_catalog {
         margin-top: 0; } }
-    /* line 222, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+    /* line 226, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
     .style-cc .products__list_catalog .products__list__title {
       font-size: 44px;
       font-weight: normal;
       text-align: center;
       margin: 0 0 40px; }
-    /* line 227, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+    /* line 231, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
     .style-cc .products__list_catalog .products__list-item-wrap {
       margin-bottom: 25px; }
-  /* line 231, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+  /* line 235, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
   .style-cc .filter-val:hover {
     color: #242427; }
-  /* line 234, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+  /* line 238, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+  .style-cc .search {
+    margin: -5px 0; }
+    /* line 240, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+    .style-cc .search__submit {
+      height: 29px; }
+    /* line 242, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+    .style-cc .search__field {
+      padding: 4px 15px 4px 40px; }
+  /* line 245, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
   .style-cc .products__show_simple {
     margin-top: 25px; }
-    /* line 236, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+    /* line 247, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
     .style-cc .products__show_simple .products__show-item-text {
       margin-bottom: 40px; }
-    /* line 238, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+    /* line 249, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
     .style-cc .products__show_simple .product__show__thumbs {
       margin-bottom: 35px; }
-    /* line 240, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+    /* line 251, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
     .style-cc .products__show_simple .products__show-item-category {
       margin-bottom: 2px; }
-    /* line 242, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+    /* line 253, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
     .style-cc .products__show_simple .products__show-item-title {
       font-size: 22px;
       margin-bottom: 20px; }
-    /* line 245, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
+    /* line 256, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-cc */
     .style-cc .products__show_simple .owl-controls {
       visibility: hidden; }
     @media screen and (max-width: 508px) {
