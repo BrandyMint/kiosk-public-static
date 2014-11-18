@@ -1,16 +1,20 @@
 .navbar-head
   .container-fluid
     .row
-      .col-md-8
+      .col-md-9
         .navbar-description
           Магазин мебели ручной работы
           %a.tel-link{href: 'tel:123123123'}
             ="+7 903 595 1737"
-      .col-sm-4
-        %a.navbar-cart-btn.navbar-cart-btn-empty{href: 'cart.html'}
-          %span.navbar-cart-btn-icon
-          %span.navbar-cart-btn-caption
-            Корзина
+      .col-md-3
+        %div.search
+          %form
+            %input.search__field{type: 'text', placeholder: 'Поиск'}
+            %button.search__submit{type: 'submit'}
+        
+        %div{data-react-class: 'BasketButton', data-react-props: '{"itemsCount": 5, "cartUrl": "cart.html", "totalPrice": 1200}'}
+        
+        %div{data-react-class: 'BasketPopup'}
 .application-navbar
   .container-fluid
     .row

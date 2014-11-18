@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+%html
+  %head
+    +include 'app/haml/shared/_head.haml'
+
+  %body.theme-basic.style-cc
+    .application
+      +include 'app/haml/shared/_navbar_cc.haml'
+
+
+      .application-content
+        .container-fluid
+          .products__list.products__list_catalog
+            %h1.products__list__title Компоненты
+            
+            %ul.filter-list
+              - details = [{'Рама и вилка': '12'}, {'Вилка': '12'}, {'Ложка': '72'}, {'Колеса': '46'}, {'Грипсы': '1'}, {'Цепи': '89' }]
+              - for i in [1..4]
+                - for obj, i in details
+                  - for key of obj
+                    %li.filter-list__item
+                      %a.filter-val{'href': '#'}
+                        = "#{key}"
+                        %span.filter-val__count
+                          = obj[key]
+            
+            .row
+              - for i in [1..8]
+                .products__list-item-wrap
+                  %a.products__list-item{'href': 'product_cc_2.html'}
+                    .products__list-item-image-block
+                      %img.products__list-item-image{ src: "http://citycycle.ru/upload/product_images/21708/61fcd15b1d117e39baf91e6e54f0867d_350x235.jpg" }
+                    .products__list-item-title
+                      Рама трековая Fobos «Zet» (2014) / Зеленая матовая
+                    .products__list-item-price
+                      8 900 руб.
+
+
+      +include 'app/haml/shared/_footer.haml'
+
+      +include 'app/haml/shared/_themeswitcher.haml'
+
+    %script{src: 'scripts/vendor.js'}
+    %script{src: 'scripts/client.js'}

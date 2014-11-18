@@ -12,6 +12,11 @@ $ccMainColor: #242427
   h6
     color: $ccMainColor
 
+  .text
+    font-size: 14px
+    h1
+      line-height: 1
+
   a
     color: #303030
     font-weight: normal
@@ -50,14 +55,14 @@ $ccMainColor: #242427
       @extend .col-sm-4
       @extend .col-xs-12
 
+  .products__list_two-in-row
+    .products__list-item-wrap
+      @extend .col-md-6
+      @extend .col-sm-6
+      @extend .col-xs-6
+
   .navbar-head
     padding: 14px 0
-  
-  .navbar-cart-btn
-    padding: 0
-    background: none
-    &:hover
-      background: none
 
   .application-footer
     padding: 0
@@ -77,6 +82,16 @@ $ccMainColor: #242427
       color: #7d7d7d
       &:hover
         color: #fff
+
+  .navbar-head
+    .navbar-cart-btn
+      color: #fff
+
+  .navbar-cart-btn
+    border-radius: 3px
+    top: 13px
+    &:before
+      bottom: 0
   
   .products__list-more__btn
     &:hover
@@ -122,6 +137,8 @@ $ccMainColor: #242427
 
   .products__show
     margin-top: -45px
+    @media screen and (max-width: $screen-md-min)
+      margin-top: 0
 
   .modification-list
     margin-top: -30px
@@ -148,14 +165,18 @@ $ccMainColor: #242427
 
   .products__show-item-details
     li
-      padding: 0 0 18px
+      padding: 0 0 12px
       font-size: 12px
       line-height: 18px
       overflow: hidden
       &:before
         display: none
 
-  .products__show-item-delivery
+    .products__show-item-details__title
+      font-weight: bold
+      font-size: 16px
+
+  .products__show-item-text
     h3
       margin: 0 0 12px
       font-size: 16px
@@ -195,3 +216,50 @@ $ccMainColor: #242427
           span
             box-shadow: 0 0 0 3px #333
             background-color: #333
+  
+  .big-price .currency
+    top: -18px
+
+  .products__list_catalog
+    margin-top: -65px
+    @media screen and (max-width: $screen-md-min)
+      margin-top: 0
+    .products__list__title
+      font-size: 44px
+      font-weight: normal
+      text-align: center
+      margin: 0 0 40px
+    .products__list-item-wrap
+      margin-bottom: 25px
+
+  .filter-val
+    &:hover
+      color: $ccMainColor 
+
+  .search
+    margin: -5px 0
+    &__submit
+      height: 29px
+    &__field
+      padding: 4px 15px 4px 40px
+  
+  .products__show_simple
+    margin-top: 25px
+    .products__show-item-text
+      margin-bottom: 40px
+    .product__show__thumbs
+      margin-bottom: 35px
+    .products__show-item-category
+      margin-bottom: 2px
+    .products__show-item-title
+      font-size: 22px
+      margin-bottom: 20px
+    .owl-controls
+      visibility: hidden
+    .product__show__slider
+      @media screen and (max-width: $screen-sm-min)
+        margin-bottom: 10px
+    .products__show-item-category,
+    .products__show-item-title
+      @media screen and (min-width: $screen-md-min)
+        text-align: left

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+%html
+  %head
+    +include 'app/haml/shared/_head.haml'
+
+  %body.theme-basic.style-cc
+    .application
+      +include 'app/haml/shared/_navbar_cc.haml'
+
+      .application-content
+        .container-fluid
+          .products__show.products__show_simple
+            .hidden-md.hidden-lg
+              .products__show-item-category
+                %a{href: ''} Столы
+                %a{href: ''} Маленькие столы
+              %h1.products__show-item-title
+                Велосипед Linus «Dutchi 1»,<br>односкоростной / Кремовый
+            
+            .row
+              .col-md-6
+                +include 'app/haml/shared/_product-carousel.haml'
+                .products__list.products__list_two-in-row.visible-md.visible-lg
+                  %h2.products__list__title С этим товаром обычно покупают
+                  .row
+                    - for i in [1..4]
+                      .products__list-item-wrap
+                        %a.products__list-item{'href': 'product_cc_2.html'}
+                          .products__list-item-image-block
+                            %img.products__list-item-image{ src: "http://citycycle.ru/upload/iblock/c2f/c2fc837702ea76c8c335085bfbda3d05.jpg" }
+                          .products__list-item-title
+                            Моно-серьга имитация тоннеля серебряная с белыми цирконами
+                          .products__list-item-price
+                            8 900 руб.
+              .col-md-6
+                .visible-md.visible-lg
+                  .products__show-item-category
+                    %a{href: '#'} Компоненты
+                    %a{href: '#'} Посадка
+                  %h1.products__show-item-title
+                    Очиститель цепи Muc-Off «Bio Chain Cleaner», аэрозоль, 400 мл
+                .products__show-item-price
+                  .big-price
+                    %big 19990
+                    %span.currency руб
+                    %br/
+                    %span.price-old 20990 руб
+                    %span.sale –5%
+                +include 'app/haml/shared/_modification-list.haml'
+                .products__show-item-text
+                  %h3
+                    Описание
+                  %p
+                    Биоразалагаемый очиститель цепи Muc-Off «Bio Chain Cleaner» специально разработан для того, чтобы быстро и безопасно удалить смазку цепи, с использованием передовых растворителей. Уникальная формула разрушает грязь и смазку, оставляя всю цепь сверкающей и чистой.
+                %ul.products__show-item-details
+                  %li.products__show-item-details__title
+                    Технические характеристики
+                  - details = [{'Рама и вилка': 'сталь'}, {'Колесо': 'есть'}, {'Ездить': 'может'}, {'Цепь': 'слетает' }]
+                  - for obj, i in details
+                    - for key of obj
+                      %li
+                        .products__show-item-details__name
+                          = "#{key}:"
+                        .products__show-item-details__val
+                          = obj[key]
+            .products__list.products__list_two-in-row.visible-sm.visible-xs
+              %h2.products__list__title С этим товаром обычно покупают
+              .row
+                - for i in [1..4]
+                  .products__list-item-wrap
+                    %a.products__list-item{'href': 'product_cc_2.html'}
+                      .products__list-item-image-block
+                        %img.products__list-item-image{ src: "http://citycycle.ru/upload/iblock/c2f/c2fc837702ea76c8c335085bfbda3d05.jpg" }
+                      .products__list-item-title
+                        Моно-серьга имитация тоннеля серебряная с белыми цирконами
+                      .products__list-item-price
+                        8 900 руб.
+
+
+      +include 'app/haml/shared/_footer.haml'
+
+      +include 'app/haml/shared/_themeswitcher.haml'
+
+    %script{src: 'scripts/vendor.js'}
+    %script{src: 'scripts/client.js'}
