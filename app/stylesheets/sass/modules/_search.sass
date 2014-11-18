@@ -1,0 +1,22 @@
+.search
+  position: relative
+  @media screen and (max-width: $screen-md-min)
+    margin-top: 20px
+  &__field
+    border: 1px solid #E3E3E3
+    width: 100%
+    font-size: 13px
+    padding: 10px 15px 10px 40px
+    border-radius: 20px
+  &__submit
+    width: 39px
+    height: 40px
+    position: absolute
+    top: 0
+    left: 13px
+    background: url(#{$images-path}/search.svg) 0 50% no-repeat
+    background-size: 20px 20px
+    border: none
+  &__field,
+  &__submit
+    outline: none
