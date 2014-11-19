@@ -22,7 +22,7 @@ require './react/components/product/product'
 
 
 require './react/dispatchers/basket'
-require './react/actions/basket'
+require './react/actions/view/basket'
 require './react/stores/basket'
 
 # /*-----  End of React  ------*/

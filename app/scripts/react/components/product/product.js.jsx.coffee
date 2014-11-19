@@ -2,13 +2,13 @@
 
 window.Product = React.createClass
   propTypes:
-    order_product_id: React.PropTypes.number
-    product_id: React.PropTypes.number
-    price: React.PropTypes.number
-    count: React.PropTypes.number
-    image_url: React.PropTypes.string
-    title: React.PropTypes.string
-    description: React.PropTypes.string
+    order_product_id:   React.PropTypes.number
+    product_id:         React.PropTypes.number
+    price:              React.PropTypes.number
+    count:              React.PropTypes.number
+    image_url:          React.PropTypes.string
+    title:              React.PropTypes.string
+    description:        React.PropTypes.string
 
   getDefaultProps: ->
     order_product_id: 4
@@ -19,8 +19,8 @@ window.Product = React.createClass
     title: 'title'
     description: 'descr'
 
-  addToCart: ->
-    window.basketActions.addToCart @props
+  addToBasket: ->
+    window.basketActions.addToBasket @props
   
   render: ->
-    return `<button onClick={this.addToCart}> addtocart </button>`
+    return `<button onClick={this.addToBasket}> addtocart </button>`
