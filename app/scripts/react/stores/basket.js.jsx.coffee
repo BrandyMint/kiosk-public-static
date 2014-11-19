@@ -1,10 +1,10 @@
-_products = {}
+_items = {}
 
-addToCart = (data)->
+addToBasket = (data)->
   console.log 'store add to cart'
   console.log data
-  _products[data.order_product_id] =
-    order_product_id: data.order_product_id
+  _items[data.order_product_id] =
+    product_item_id: data.order_product_id
     product_id: data.product_id
     price: data.price
     count: data.count
@@ -17,6 +17,6 @@ window.BasketDispatcher.register (payload) ->
   action = payload.action
   
   switch action.actionType
-    when 'addToCart'
-      addToCart action.data
+    when 'addToBasket'
+      addToBasket action.data
       break

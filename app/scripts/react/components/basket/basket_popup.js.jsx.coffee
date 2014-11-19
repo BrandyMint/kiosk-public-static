@@ -49,7 +49,7 @@ window.BasketPopupList = React.createClass
     items: React.PropTypes.array
 
   render: ->
-    return null if @props.items == null
+    return null if @props.items is null
     itemsList = @props.items.map((item) ->
       return (
         `<BasketPopupItem key={item.order_product_id} item={item}/>`

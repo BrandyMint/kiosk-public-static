@@ -1,6 +1,6 @@
 window.basketActions =
 
-  addToCart: (data) ->
+  addToBasket: (data) ->
     window.BasketDispatcher.handleViewAction
-      actionType: 'addToCart'
+      actionType: 'addToBasket'
       data: data
