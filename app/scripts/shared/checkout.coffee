@@ -10,14 +10,12 @@ $ ->
 
     $checkoutTotal.html accounting.formatMoney totalPrice
 
-  toggleDeliveryOnlyElementsVisibility= (visible) ->
+  toggleDeliveryOnlyElementsVisibility= (showFields) ->
+    $('[hideable]').slideUp()
 
-    $el = $('[delivery-only-field]')
-
-    if visible
-      $el.slideUp()
-    else
-      $el.slideDown()
+    if showFields
+      $el = $ "[show-#{showFields}]"
+      $el.stop().slideDown()
 
   setOnlyCity = (city) ->
     $c = $ '[city-field]'
@@ -37,7 +35,8 @@ $ ->
     if $e
       setOnlyCity $e.data('delivery-only-city')
       setCheckoutDeliveryPrice parseInt $e.data('delivery-price')
-      toggleDeliveryOnlyElementsVisibility $e.data().hasOwnProperty('selfDelivery')
+
+      toggleDeliveryOnlyElementsVisibility $e.data('show-fields')
     else
       console.log 'Ни один способ доставки по умолчанию не выбран'
 

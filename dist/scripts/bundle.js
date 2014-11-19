@@ -356,13 +356,12 @@ $(function() {
     totalPrice = $checkoutTotal.data('delivery-price') + $checkoutTotal.data('products-price');
     return $checkoutTotal.html(accounting.formatMoney(totalPrice));
   };
-  toggleDeliveryOnlyElementsVisibility = function(visible) {
+  toggleDeliveryOnlyElementsVisibility = function(showFields) {
     var $el;
-    $el = $('[delivery-only-field]');
-    if (visible) {
-      return $el.slideUp();
-    } else {
-      return $el.slideDown();
+    $('[hideable]').slideUp();
+    if (showFields) {
+      $el = $("[show-" + showFields + "]");
+      return $el.stop().slideDown();
     }
   };
   setOnlyCity = function(city) {
@@ -386,7 +385,7 @@ $(function() {
     if ($e) {
       setOnlyCity($e.data('delivery-only-city'));
       setCheckoutDeliveryPrice(parseInt($e.data('delivery-price')));
-      return toggleDeliveryOnlyElementsVisibility($e.data().hasOwnProperty('selfDelivery'));
+      return toggleDeliveryOnlyElementsVisibility($e.data('show-fields'));
     } else {
       return console.log('Ни один способ доставки по умолчанию не выбран');
     }
