@@ -48,6 +48,9 @@ window.BasketPopupList = React.createClass
   propTypes:
     items: React.PropTypes.array
 
+  componentDidMount: ->
+    # window.basketStore.addChangeListener
+
   render: ->
     return null if @props.items is null
     itemsList = @props.items.map((item) ->
