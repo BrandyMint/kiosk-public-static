@@ -1,16 +1,10 @@
-_items = {}
+_basketItems = {}
 
 addToBasket = (data)->
   console.log 'store add to cart'
   console.log data
-  _items[data.order_product_id] =
-    product_item_id: data.order_product_id
-    product_id: data.product_id
-    price: data.price
-    count: data.count
-    image_url: data.image_url
-    title: data.title
-    description: data.description
+  _basketItems[data.order_product_id] =
+    productItem: data
   return
 
 window.BasketDispatcher.register (payload) ->
@@ -20,3 +14,12 @@ window.BasketDispatcher.register (payload) ->
     when 'addToBasket'
       addToBasket action.data
       break
+
+window.basketStore = assign({}, EventEmitter::,
+  
+  getBasketItems: ->
+    _basketItems
+
+  getBasketCount: ->
+    Object.keys(_basketItems).length
+)
