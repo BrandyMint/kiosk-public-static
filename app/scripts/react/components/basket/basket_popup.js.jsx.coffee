@@ -34,18 +34,7 @@ window.BasketPopup = React.createClass
   getDefaultProps: ->
     cartUrl: "/cart.html"
     cartClearUrl: "/cart.html?clear"
-    items: [
-            {
-              order_product_id: 1
-              product_id: 1
-              price: 1200
-              count: 4
-              image_url: "http://cdn.sparkfun.com/r/92-92/assets/parts/1/0/2/2/7/13146-01.jpg"
-              title: "title"
-              description: "description"
-              article: "article"
-            }
-          ]
+    items: null
 
   render: ->
     classNameValue = "float-cart"
@@ -60,6 +49,7 @@ window.BasketPopupList = React.createClass
     items: React.PropTypes.array
 
   render: ->
+    return null if @props.items == null
     itemsList = @props.items.map((item) ->
       return (
         `<BasketPopupItem key={item.order_product_id} item={item}/>`
