@@ -31,5 +31,8 @@ window.basketStore = _.extend new BaseStore(), {
     _basketItems
 
   getBasketCount: ->
-    Object.keys(_basketItems).length
+    total = 0
+    _.forEach _basketItems, (item)->
+      total += item.count
+    return total
 }
