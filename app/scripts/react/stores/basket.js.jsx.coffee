@@ -17,6 +17,7 @@ window.BasketDispatcher.register (payload) ->
   switch action.actionType
     when 'addToBasket'
       addToBasket action.productItem
+      window.basketStore.emitChange()
       break
 
 window.basketStore = _.extend new BaseStore(), {

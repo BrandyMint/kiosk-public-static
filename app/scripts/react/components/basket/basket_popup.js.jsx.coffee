@@ -22,11 +22,15 @@ window.BasketPopup = React.createClass
     $(document).on "click", @handleBodyClick
     $(document).on "cart:clicked", @handleCartClicked
     $(document).on "keyup", @handleBodyKey
+    window.basketStore.addChangeListener @_onChange
 
   componentWillUnmount: ()->
     $(document).off "click", @handleBodyClick
     $(document).off "cart:clicked", @handleCartClicked
     $(document).off "keyup", @handleBodyKey
+
+  _onChange: ()->
+    @setState items: window.basketStore.getBasketItems()
 
   handleCartClicked: (e)->
     @setState isVisible: true
@@ -46,10 +50,7 @@ window.BasketPopup = React.createClass
 
 window.BasketPopupList = React.createClass
   propTypes:
-    items: React.PropTypes.array
-
-  componentDidMount: ->
-    # window.basketStore.addChangeListener
+    items: React.PropTypes.array    
 
   render: ->
     return null unless @props.items
