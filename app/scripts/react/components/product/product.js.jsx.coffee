@@ -23,6 +23,7 @@ window.Product = React.createClass
 
   addToBasket: ->
     window.basketActions.addToBasket @props
+    $(document).trigger 'cart:clicked'
   
   render: ->
     return `<button onClick={this.addToBasket}> addtocart </button>`
