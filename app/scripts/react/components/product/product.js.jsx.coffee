@@ -26,4 +26,4 @@ window.Product = React.createClass
     $(document).trigger 'cart:clicked'
   
   render: ->
-    return `<button onClick={this.addToBasket}> addtocart </button>`
+    return `<button className="products__show-item-cart-btn" onClick={this.addToBasket}>В корзину</button>`
