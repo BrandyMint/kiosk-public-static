@@ -1,3 +1,4 @@
+window._                 = require 'lodash'
 window.$ = window.jQuery = require 'jquery'
 window.React             = require 'react'
 window.ReactUjs          = require 'reactUjs'

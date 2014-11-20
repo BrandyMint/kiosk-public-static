@@ -2,7 +2,7 @@
 
 window.Product = React.createClass
   propTypes:
-    order_product_id:   React.PropTypes.number
+    product_item_id:    React.PropTypes.number
     product_id:         React.PropTypes.number
     price:              React.PropTypes.number
     count:              React.PropTypes.number
@@ -11,7 +11,7 @@ window.Product = React.createClass
     description:        React.PropTypes.string
 
   getDefaultProps: ->
-    order_product_id: 4
+    product_item_id: 4
     product_id: 2
     price: 123
     count: 1

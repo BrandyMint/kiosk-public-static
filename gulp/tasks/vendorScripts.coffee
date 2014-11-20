@@ -22,6 +22,7 @@ gulp.task 'vendorScripts', ->
     .require './fancybox/source/jquery.fancybox',                      { expose: 'fancybox' }
     .require './fancybox-wannabe-fix/index',                           { expose: 'fancybox.wannabe' }
     .require './accounting.js/accounting',                             { expose: 'accounting' }
+    .require './lodash/dist/lodash',                                   { expose: 'lodash' }
 
   bundle = ->
     bundleLogger.start config.outputName
