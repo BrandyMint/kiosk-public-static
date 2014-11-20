@@ -1,10 +1,10 @@
+BaseStore = require './_base'
+
 _basketItems = {}
 
-addToBasket = (data)->
-  console.log 'store add to cart'
-  console.log data
-  _basketItems[data.order_product_id] =
-    productItem: data
+addToBasket = (productItem)->
+  _basketItems[productItem.product_item_id] =
+    productItem: productItem
   return
 
 window.BasketDispatcher.register (payload) ->
@@ -12,14 +12,14 @@ window.BasketDispatcher.register (payload) ->
   
   switch action.actionType
     when 'addToBasket'
-      addToBasket action.data
+      addToBasket action.productItem
       break
 
-window.basketStore = assign({}, EventEmitter::,
+window.basketStore = _.extend new BaseStore(), {
   
   getBasketItems: ->
     _basketItems
 
   getBasketCount: ->
     Object.keys(_basketItems).length
-)
+}

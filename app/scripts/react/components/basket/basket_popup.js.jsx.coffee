@@ -52,7 +52,7 @@ window.BasketPopupList = React.createClass
     # window.basketStore.addChangeListener
 
   render: ->
-    return null if @props.items is null
+    return null unless @props.items
     itemsList = @props.items.map((item) ->
       return (
         `<BasketPopupItem key={item.order_product_id} item={item}/>`
