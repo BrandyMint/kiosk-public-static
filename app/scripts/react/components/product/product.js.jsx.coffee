@@ -9,6 +9,7 @@ window.Product = React.createClass
     image_url:          React.PropTypes.string
     title:              React.PropTypes.string
     description:        React.PropTypes.string
+    articul:            React.PropTypes.number
 
   getDefaultProps: ->
     product_item_id: 4
@@ -18,6 +19,7 @@ window.Product = React.createClass
     image_url: 'http://placehold.it/120x120'
     title: 'title'
     description: 'descr'
+    articul: 123
 
   addToBasket: ->
     window.basketActions.addToBasket @props

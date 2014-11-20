@@ -3,8 +3,12 @@ BaseStore = require './_base'
 _basketItems = {}
 
 addToBasket = (productItem)->
-  _basketItems[productItem.product_item_id] =
-    productItem: productItem
+  if productItem.articul in _basketItems
+    _basketItems[productItem.articul].count += 1
+  else
+    _basketItems[productItem.articul] = productItem
+
+  console.log _basketItems
   return
 
 window.BasketDispatcher.register (payload) ->
