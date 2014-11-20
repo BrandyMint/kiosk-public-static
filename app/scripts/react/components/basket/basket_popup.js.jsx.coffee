@@ -8,6 +8,7 @@ window.BasketPopup = React.createClass
 
   getInitialState: ->
     isVisible: false
+    items: null
 
   handleClick: (e)->
     $(document).trigger "cart:clicked"
@@ -22,11 +23,15 @@ window.BasketPopup = React.createClass
     $(document).on "click", @handleBodyClick
     $(document).on "cart:clicked", @handleCartClicked
     $(document).on "keyup", @handleBodyKey
+    basketStore.addChangeListener @_onChange
 
   componentWillUnmount: ()->
     $(document).off "click", @handleBodyClick
     $(document).off "cart:clicked", @handleCartClicked
     $(document).off "keyup", @handleBodyKey
+
+  _onChange: ()->
+    @setState items: basketStore.getBasketItems()
 
   handleCartClicked: (e)->
     @setState isVisible: true
@@ -34,32 +39,22 @@ window.BasketPopup = React.createClass
   getDefaultProps: ->
     cartUrl: "/cart.html"
     cartClearUrl: "/cart.html?clear"
-    items: [
-            {
-              order_product_id: 1
-              product_id: 1
-              price: 1200
-              count: 4
-              image_url: "http://cdn.sparkfun.com/r/92-92/assets/parts/1/0/2/2/7/13146-01.jpg"
-              title: "title"
-              description: "description"
-              article: "article"
-            }
-          ]
+    items: null
 
   render: ->
     classNameValue = "float-cart"
     classNameValue += " float-cart_invisible" if @state.isVisible is false
     return `<div className={classNameValue}><div className='float-cart__content' onClick={this.handleClick}>
-          <BasketPopupList items={this.props.items}/>
+          <BasketPopupList items={this.state.items}/>
           <BasketPopupControl cartUrl={this.props.cartUrl} cartClearUrl={this.props.cartClearUrl}/>
         </div></div>`
 
 window.BasketPopupList = React.createClass
   propTypes:
-    items: React.PropTypes.array
+    items: React.PropTypes.array    
 
   render: ->
+    return null unless @props.items
     itemsList = @props.items.map((item) ->
       return (
         `<BasketPopupItem key={item.order_product_id} item={item}/>`

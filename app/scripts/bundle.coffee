@@ -18,6 +18,12 @@ require './shared/checkout'
 
 require './react/components/basket/basket_button'
 require './react/components/basket/basket_popup'
+require './react/components/product/product'
+
+
+require './react/dispatchers/basket'
+require './react/actions/view/basket'
+require './react/stores/basket'
 
 # /*-----  End of React  ------*/
 
