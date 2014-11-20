@@ -1,15 +1,15 @@
 BaseStore = require './_base'
 
-_basketItems = {}
+_basketItems = []
 
 addToBasket = (productItem)->
-  if productItem.articul in _basketItems
-    _basketItems[productItem.articul].count += 1
+  basketItem = window.basketStore.findItem productItem
+  if basketItem?
+    basketItem.count += 1
   else
-    _basketItems[productItem.articul] = productItem
-
-  console.log _basketItems
+    _basketItems.push productItem
   return
+
 
 window.BasketDispatcher.register (payload) ->
   action = payload.action
@@ -20,6 +20,11 @@ window.BasketDispatcher.register (payload) ->
       break
 
 window.basketStore = _.extend new BaseStore(), {
+  findItem: (productItem) ->
+    thisItem = _.findIndex _basketItems, (item) ->
+      item.product_item_id == productItem.product_item_id
+    console.log _basketItems[thisItem]
+    return _basketItems[thisItem]
   
   getBasketItems: ->
     _basketItems
