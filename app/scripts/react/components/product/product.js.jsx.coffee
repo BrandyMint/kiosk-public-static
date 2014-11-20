@@ -22,7 +22,7 @@ window.Product = React.createClass
     articul: 123
 
   addToBasket: ->
-    window.basketActions.addToBasket @props
+    basketActions.addToBasket @props
     $(document).trigger 'cart:clicked'
   
   render: ->

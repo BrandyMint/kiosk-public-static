@@ -24,7 +24,6 @@ window.basketStore = _.extend new BaseStore(), {
   findItem: (productItem) ->
     thisItem = _.findIndex _basketItems, (item) ->
       item.product_item_id == productItem.product_item_id
-    console.log _basketItems[thisItem]
     return _basketItems[thisItem]
   
   getBasketItems: ->
