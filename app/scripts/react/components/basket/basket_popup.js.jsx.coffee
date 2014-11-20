@@ -30,7 +30,7 @@ window.BasketPopup = React.createClass
     $(document).off "keyup", @handleBodyKey
 
   _onChange: ()->
-    @setState items: window.basketStore.getBasketItems()
+    @setState items: basketStore.getBasketItems()
 
   handleCartClicked: (e)->
     @setState isVisible: true
