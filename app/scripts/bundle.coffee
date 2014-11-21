@@ -10,6 +10,8 @@ require './shared/theme_switcher'
 require './shared/mobile_navigation'
 require './shared/checkout'
 
+require './routes/routes'
+
 # /*=============================
 # =            React            =
 # =============================*/

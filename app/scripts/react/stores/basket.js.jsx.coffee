@@ -33,5 +33,19 @@ window.BasketStore = _.extend new BaseStore(), {
     else
       productItem.count = 1
       _basketItems.push productItem
-    return
+      @_addItemToServer productItem
+    
+
+  _addItemToServer: (productItem) ->
+    $.ajax
+      dataType: 'json'
+      method:   'post'
+      data:
+        product_item_id: productItem.product_id
+        count: productItem.count
+      url:      Routes.vendor_cart_items(productItem.product_id, productItem.count)
+      error: (xhr, status, err) ->
+        console.log err
+      success: (data) ->
+        console.log data
 }
