@@ -1,9 +1,9 @@
 ###* @jsx React.DOM ###
 
-window.Product = React.createClass
+window.AddToBasketButton = React.createClass
   propTypes:
-    product_item_id:    React.PropTypes.number
-    product_id:         React.PropTypes.number
+    product_item_id:    React.PropTypes.number.isRequired
+    product_id:         React.PropTypes.number.isRequired
     price:              React.PropTypes.number
     count:              React.PropTypes.number
     image_url:          React.PropTypes.string
@@ -22,8 +22,7 @@ window.Product = React.createClass
     articul: 123
 
   addToBasket: ->
-    basketActions.addToBasket @props
-    $(document).trigger 'cart:clicked'
+    BasketActions._addItem @props
   
   render: ->
     return `<button className="products__show-item-cart-btn" onClick={this.addToBasket}>В корзину</button>`

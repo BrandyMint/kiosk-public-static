@@ -10,14 +10,14 @@ window.BasketButton = React.createClass
     cartUrl: "/cart.html"
 
   getInitialState: ->
-    itemsCount: 0
+    itemsCount: BasketStore.getBasketCount()
     totalPrice: 0
 
   componentDidMount: ()->
-    basketStore.addChangeListener @_onChange
+    BasketStore.addChangeListener @_onChange
 
   _onChange: ()->
-    @setState itemsCount: basketStore.getBasketCount()
+    @setState itemsCount: BasketStore.getBasketCount()
 
   render: ->
     if @state.itemsCount > 0

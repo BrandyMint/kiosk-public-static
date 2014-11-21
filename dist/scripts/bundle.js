@@ -25,7 +25,7 @@ require('./react/components/basket/basket_button');
 
 require('./react/components/basket/basket_popup');
 
-require('./react/components/product/product');
+require('./react/components/product/add_to_basket_button');
 
 require('./react/dispatchers/basket');
 
@@ -37,7 +37,7 @@ window.ReactUjs.initialize();
 
 
 
-},{"./libs":2,"./react/actions/view/basket":3,"./react/components/basket/basket_button":4,"./react/components/basket/basket_popup":5,"./react/components/product/product":6,"./react/dispatchers/basket":8,"./react/stores/basket":10,"./shared/app":11,"./shared/application_slider":12,"./shared/cart":13,"./shared/checkout":14,"./shared/jump":15,"./shared/lightbox":16,"./shared/load_more":17,"./shared/mobile_navigation":18,"./shared/product_images_slider":19,"./shared/theme_switcher":20}],2:[function(require,module,exports){
+},{"./libs":2,"./react/actions/view/basket":3,"./react/components/basket/basket_button":4,"./react/components/basket/basket_popup":5,"./react/components/product/add_to_basket_button":6,"./react/dispatchers/basket":8,"./react/stores/basket":10,"./shared/app":11,"./shared/application_slider":12,"./shared/cart":13,"./shared/checkout":14,"./shared/jump":15,"./shared/lightbox":16,"./shared/load_more":17,"./shared/mobile_navigation":18,"./shared/product_images_slider":19,"./shared/theme_switcher":20}],2:[function(require,module,exports){
 window._ = require('lodash');
 
 window.$ = window.jQuery = require('jquery');
@@ -84,8 +84,8 @@ window.accounting.settings = {
 
 
 },{"accounting":undefined,"bootstrapSass":undefined,"eventEmitter":undefined,"fancybox":undefined,"fancybox.wannabe":undefined,"flux":21,"jquery":undefined,"jquery.mmenu":undefined,"jquery.role":undefined,"lodash":undefined,"owlCarousel":undefined,"react":undefined,"react-mixin-manager":undefined,"reactUjs":undefined}],3:[function(require,module,exports){
-window.basketActions = {
-  addToBasket: function(productItem) {
+window.BasketActions = {
+  _addItem: function(productItem) {
     return BasketDispatcher.handleViewAction({
       actionType: 'addToBasket',
       productItem: productItem
@@ -111,16 +111,16 @@ window.BasketButton = React.createClass({displayName: 'BasketButton',
   },
   getInitialState: function() {
     return {
-      itemsCount: 0,
+      itemsCount: BasketStore.getBasketCount(),
       totalPrice: 0
     };
   },
   componentDidMount: function() {
-    return basketStore.addChangeListener(this._onChange);
+    return BasketStore.addChangeListener(this._onChange);
   },
   _onChange: function() {
     return this.setState({
-      itemsCount: basketStore.getBasketCount()
+      itemsCount: BasketStore.getBasketCount()
     });
   },
   render: function() {
@@ -197,7 +197,7 @@ window.BasketPopup = React.createClass({displayName: 'BasketPopup',
     $(document).on("click", this.handleBodyClick);
     $(document).on("cart:clicked", this.handleCartClicked);
     $(document).on("keyup", this.handleBodyKey);
-    return basketStore.addChangeListener(this._onChange);
+    return BasketStore.addChangeListener(this._onChange);
   },
   componentWillUnmount: function() {
     $(document).off("click", this.handleBodyClick);
@@ -205,9 +205,10 @@ window.BasketPopup = React.createClass({displayName: 'BasketPopup',
     return $(document).off("keyup", this.handleBodyKey);
   },
   _onChange: function() {
-    return this.setState({
-      items: basketStore.getBasketItems()
+    this.setState({
+      items: BasketStore.getBasketItems()
     });
+    return this.handleCartClicked();
   },
   handleCartClicked: function(e) {
     return this.setState({
@@ -312,10 +313,10 @@ window.BasketPopupControl = React.createClass({displayName: 'BasketPopupControl'
 },{}],6:[function(require,module,exports){
 
 /** @jsx React.DOM */
-window.Product = React.createClass({displayName: 'Product',
+window.AddToBasketButton = React.createClass({displayName: 'AddToBasketButton',
   propTypes: {
-    product_item_id: React.PropTypes.number,
-    product_id: React.PropTypes.number,
+    product_item_id: React.PropTypes.number.isRequired,
+    product_id: React.PropTypes.number.isRequired,
     price: React.PropTypes.number,
     count: React.PropTypes.number,
     image_url: React.PropTypes.string,
@@ -336,8 +337,7 @@ window.Product = React.createClass({displayName: 'Product',
     };
   },
   addToBasket: function() {
-    basketActions.addToBasket(this.props);
-    return $(document).trigger('cart:clicked');
+    return BasketActions._addItem(this.props);
   },
   render: function() {
     return React.DOM.button({className: "products__show-item-cart-btn", onClick: this.addToBasket}, "В корзину");
@@ -424,41 +424,24 @@ module.exports = BaseStore;
 
 
 },{}],10:[function(require,module,exports){
-var BaseStore, addToBasket, _basketItems;
+var BaseStore, _basketItems;
 
 BaseStore = require('./_base');
 
 _basketItems = [];
-
-addToBasket = function(productItem) {
-  var basketItem;
-  basketItem = window.basketStore.findItem(productItem);
-  if (basketItem != null) {
-    basketItem.count += 1;
-  } else {
-    _basketItems.push(productItem);
-  }
-};
 
 window.BasketDispatcher.register(function(payload) {
   var action;
   action = payload.action;
   switch (action.actionType) {
     case 'addToBasket':
-      addToBasket(action.productItem);
-      window.basketStore.emitChange();
+      BasketStore._addItem(action.productItem);
+      BasketStore.emitChange();
       break;
   }
 });
 
-window.basketStore = _.extend(new BaseStore(), {
-  findItem: function(productItem) {
-    var thisItem;
-    thisItem = _.findIndex(_basketItems, function(item) {
-      return item.product_item_id === productItem.product_item_id;
-    });
-    return _basketItems[thisItem];
-  },
+window.BasketStore = _.extend(new BaseStore(), {
   getBasketItems: function() {
     return _basketItems;
   },
@@ -469,6 +452,22 @@ window.basketStore = _.extend(new BaseStore(), {
       return total += item.count;
     });
     return total;
+  },
+  _findItem: function(productItem) {
+    var thisItem;
+    thisItem = _.findIndex(_basketItems, function(item) {
+      return item.product_item_id === productItem.product_item_id;
+    });
+    return _basketItems[thisItem];
+  },
+  _addItem: function(productItem) {
+    var basketItem;
+    basketItem = BasketStore._findItem(productItem);
+    if (basketItem != null) {
+      basketItem.count += 1;
+    } else {
+      _basketItems.push(productItem);
+    }
   }
 });
 
