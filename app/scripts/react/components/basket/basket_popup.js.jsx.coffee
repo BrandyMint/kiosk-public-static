@@ -76,19 +76,20 @@ window.BasketPopupItem = React.createClass
     title: React.PropTypes.string
     description: React.PropTypes.string
     article: React.PropTypes.string
+    product: React.PropTypes.object.isRequired
 
   render: ->
     @props = @props.item
-    return `<div className="float-cart__item" data-order_product_id={this.props.order_product_id} data-product-id={this.props.product_id}>
+    return `<div className="float-cart__item">
           <div className="row">
             <div className="col-sm-3">
               <a className="float-cart__item__img" href={this.props.product_id}>
-                <img src={this.props.image_url} alt={this.props.title}/>
+                <img src={this.props.product.image.url} alt={this.props.title}/>
               </a>
             </div>
             <div className="col-sm-5">
               <div className="float-cart__item__nfo">
-                <a className="float-cart__item__name" href={this.props.product_id}>{this.props.title}</a>
+                <a className="float-cart__item__name" href={this.props.product_id}>{this.props.product.title}</a>
                 <div className="float-cart__item__param">{this.props.description}</div>
                 <div className="float-cart__item__param">{this.props.article}</div>
               </div>
@@ -100,7 +101,7 @@ window.BasketPopupItem = React.createClass
             </div>
             <div className="col-sm-2">
               <div className="float-cart__item__price">
-                {accounting.formatMoney(this.props.price * this.props.count)}
+                {accounting.formatMoney(this.props.product.price.cents * this.props.count)}
               </div>
             </div>
           </div>
