@@ -11786,25 +11786,19 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
     .theme-basic .products__show-item-category a {
       color: inherit;
       font-weight: normal; }
-      /* line 315, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
-      .theme-basic .products__show-item-category a:before {
-        content: ' / '; }
-      /* line 318, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
-      .theme-basic .products__show-item-category a:first-child:before {
-        content: ''; }
-  /* line 321, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 316, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .products__show-item-title {
     font-size: 28px;
     margin: 3px 0 1em;
     line-height: 1;
     color: #121212; }
-  /* line 327, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 322, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .products__show-item-price {
     font-weight: normal;
     padding: 0;
     margin: 0 0 10px;
     font-size: 28px; }
-  /* line 333, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 328, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .plain-select__select--single, .theme-basic .dropdown-select-btn {
     height: 43px;
     line-height: 1;
@@ -11812,38 +11806,38 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
     @media screen and (max-width: 992px) {
       .theme-basic .plain-select__select--single {
         margin-bottom: 10px; } }
-  /* line 340, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 335, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .products__show-item__actions {
     margin: 10px 0 17px; }
-  /* line 343, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 338, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .products__show-item__subtitle {
     font-weight: bold;
     margin: 17px 0 5px;
     font-size: 14px; }
-  /* line 348, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 343, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .products__show-item-description {
     margin: 0 0 30px;
     line-height: 24px; }
-  /* line 352, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 347, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .products__show-item-details {
     margin: 0; }
-    /* line 354, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 349, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .products__show-item-details li {
       padding: 0 0 3px; }
-  /* line 357, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 352, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .products__show-item-cart-btn {
     width: 100%; }
-    /* line 359, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 354, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .products__show-item-cart-btn:hover {
       background-color: #cbcbcb; }
-    /* line 361, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 356, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .products__show-item-cart-btn[disabled] {
       background-color: #cbcbcb;
       cursor: default; }
-  /* line 365, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 360, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .product__show__slider {
     margin-bottom: 14px; }
-    /* line 367, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 362, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .product__show__slider .owl-controls {
       visibility: hidden;
       position: absolute;
@@ -11854,7 +11848,7 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
       @media screen and (max-width: 992px) {
         .theme-basic .product__show__slider .owl-controls {
           visibility: visible; } }
-  /* line 377, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 372, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .product__show__slider .owl-pagination {
     display: inline-block;
     vertical-align: top;
@@ -11863,7 +11857,7 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
     border-radius: 20px;
     padding: 0 10px;
     margin-bottom: 22px; }
-    /* line 385, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 380, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .product__show__slider .owl-pagination .owl-page span {
       box-sizing: content-box;
       display: block;
@@ -11873,18 +11867,18 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
       background: #fff;
       margin: 11px 6px;
       border-radius: 10px; }
-    /* line 394, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 389, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .product__show__slider .owl-pagination .owl-page.active span {
       border-color: #fff;
       box-shadow: 0 0 0 3px #fff; }
-  /* line 399, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 394, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .product__show__thumbs .owl-item {
     -webkit-transition: opacity 0.2s ease;
             transition: opacity 0.2s ease; }
-    /* line 401, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 396, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .product__show__thumbs .owl-item.synced {
       opacity: 0.8; }
-  /* line 404, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 399, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .application-footer {
     border: none;
     padding-bottom: 0;
@@ -11892,59 +11886,59 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
     @media screen and (max-width: 508px) {
       .theme-basic .application-footer {
         margin-top: 10px; } }
-  /* line 411, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 406, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .application-footer__inner {
     padding: 0 15px; }
-  /* line 414, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 409, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .footer-nav {
     margin: 19px 0; }
-    /* line 418, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 413, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .footer-nav a {
       padding: 6px 0;
       font-size: 16px;
       margin-right: 25px;
       color: #121212; }
-      /* line 423, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+      /* line 418, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
       .theme-basic .footer-nav a:hover {
         color: #cbcbcb; }
-  /* line 426, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 421, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart__list-item {
     border: none;
     font-size: 16px;
     padding: 0 0 26px; }
-  /* line 433, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 428, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart__list-actions, .theme-basic .cart__list-item, .theme-basic .cart__form {
     margin: 0 60px 0 100px; }
     @media screen and (max-width: 992px) {
       .theme-basic .cart__list-actions, .theme-basic .cart__list-item, .theme-basic .cart__form {
         margin: 0; } }
-  /* line 444, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 439, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .has-error .help-block, .theme-basic .has-error .control-label, .theme-basic .has-error .radio, .theme-basic .has-error .checkbox, .theme-basic .has-error .radio-inline, .theme-basic .has-error .checkbox-inline {
     color: #121212; }
-  /* line 450, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 445, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .has-error input[type="text"], .theme-basic .has-error input[type="email"], .theme-basic .has-error textarea, .theme-basic .has-error select {
     color: #da2a41;
     border-radius: 2px 2px 0 0 !important;
     border-bottom-width: 0 !important; }
-  /* line 455, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 450, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .has-error .help-block {
     color: #fff; }
-  /* line 459, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 454, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart__form {
     padding-top: 10px;
     padding-bottom: 50px; }
-    /* line 462, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 457, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .cart__form .alert {
       margin-left: 62px; }
       @media screen and (max-width: 508px) {
         .theme-basic .cart__form .alert {
           margin-left: 0; } }
-    /* line 466, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 461, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .cart__form .radio {
       font-size: 14px;
       padding: 0;
       margin: 0 0 30px; }
-      /* line 470, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+      /* line 465, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
       .theme-basic .cart__form .radio input {
         display: block;
         width: auto;
@@ -11952,12 +11946,12 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
         background: none;
         box-shadow: none;
         border: none; }
-    /* line 477, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 472, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .cart__form label {
       font-weight: normal;
       margin: 0 0 7px;
       display: block; }
-    /* line 484, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 479, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .cart__form input[type="text"], .theme-basic .cart__form input[type="email"], .theme-basic .cart__form textarea, .theme-basic .cart__form select {
       resize: none;
       background-color: #fff;
@@ -11967,20 +11961,20 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
       width: 100%;
       box-shadow: none;
       height: auto; }
-    /* line 494, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 489, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .cart__form select {
       height: 49px;
       padding: 14px 0 14px;
       text-indent: 14px;
       line-height: 43px; }
-  /* line 502, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 497, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart__list-actions_after-form, .theme-basic .cart__form {
     margin: 0 0 0 205px;
     max-width: 580px; }
     @media screen and (max-width: 992px) {
       .theme-basic .cart__list-actions_after-form, .theme-basic .cart__form {
         margin: 0 auto; } }
-  /* line 508, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 503, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart__list-item-remove {
     display: block;
     border-radius: 17px;
@@ -11990,40 +11984,40 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
     cursor: pointer;
     -webkit-transition: background-color 0.2s ease;
             transition: background-color 0.2s ease; }
-    /* line 516, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 511, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .cart__list-item-remove img {
       width: 100%; }
-    /* line 518, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 513, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .cart__list-item-remove:hover {
       background-color: #cbcbcb; }
-  /* line 521, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 516, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart__list-item-remove_xs {
     position: absolute;
     top: 0;
     right: 17px; }
-  /* line 526, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 521, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart__list-item-title {
     font-weight: bold;
     margin: 0; }
-    /* line 529, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 524, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .cart__list-item-title a {
       font-weight: bold;
       color: inherit; }
     @media screen and (max-width: 508px) {
       .theme-basic .cart__list-item-title {
         padding-right: 40px; } }
-  /* line 535, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 530, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart__list-item-option {
     margin: 0 0 3px; }
-  /* line 538, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 533, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart__list-item-quantity {
     font-size: 14px; }
-  /* line 541, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 536, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart__list-item-quantity__text {
     float: left;
     width: 90px;
     padding: 5px 0 5px; }
-  /* line 546, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 541, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart__list-item-quantity__field {
     margin: -4px 3px 0;
     width: 32px;
@@ -12033,24 +12027,24 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
     color: #121212;
     border: 1px solid #e2e2e2;
     border-radius: 2px; }
-  /* line 556, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 551, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart__list-item-quantity__control {
     display: inline-block;
     vertical-align: middle;
     width: 11px;
     height: 32px;
     background: url(/assets/updown.png); }
-  /* line 564, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 559, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart__list-item-quantity__control__up, .theme-basic .cart__list-item-quantity__control__down {
     height: 16px;
     display: block;
     cursor: pointer;
     background-color: #fff;
     opacity: 0; }
-    /* line 570, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 565, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .cart__list-item-quantity__control__up:hover, .theme-basic .cart__list-item-quantity__control__down:hover {
       opacity: 0.5; }
-  /* line 573, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 568, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart__list-item-price {
     font-size: 20px;
     margin-top: -3px; }
@@ -12058,14 +12052,14 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
       .theme-basic .cart__list-item-price {
         font-size: 18px;
         margin: 5px 0; } }
-  /* line 581, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 576, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart__list-item-quantity-select {
     margin-left: 90px; }
     @media screen and (max-width: 992px) {
       .theme-basic .cart__list-item-quantity-select {
         margin: 10px 0 0;
         clear: both; } }
-    /* line 586, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 581, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .cart__list-item-quantity-select select {
       width: 100%;
       padding: 5px; }
@@ -12076,21 +12070,21 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
   /* line 19, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/clearfix */
   .theme-basic .cart__list-item-quantity_xs:after {
     clear: both; }
-  /* line 592, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 587, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart__list-item-quantity_xs .cart__list-item-quantity__text {
     width: 85px; }
   @media screen and (max-width: 992px) {
     .theme-basic .cart__list-item-quantity_xs .cart__list-item-quantity-select {
       margin: 0 0 0 85px;
       clear: none; } }
-  /* line 599, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 594, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart__list-actions-code {
     display: inline-block;
     vertical-align: top;
     width: 190px;
     border: 1px solid #e2e2e2;
     padding: 12px 17px 10px; }
-  /* line 606, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 601, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart-btn-checkout {
     display: inline-block;
     vertical-align: top;
@@ -12104,11 +12098,11 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
       bottom: 0;
       left: 15px;
       right: 15px; } }
-  /* line 622, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 617, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart__list-actions-code, .theme-basic .cart-btn-checkout {
     width: 100%;
     margin: 0 0 10px; }
-  /* line 626, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 621, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart__form__row {
     margin: 0 0 20px; }
     /* line 15, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/clearfix */
@@ -12118,12 +12112,12 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
     /* line 19, ./app/bower_components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins/clearfix */
     .theme-basic .cart__form__row:after {
       clear: both; }
-    /* line 629, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 624, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .cart__form__row .alert {
       margin: 0;
       border-radius: 0 0 3px 3px;
       padding: 5px; }
-  /* line 634, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 629, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart__form__row__num {
     float: left;
     height: 44px;
@@ -12138,23 +12132,23 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
       .theme-basic .cart__form__row__num {
         float: none;
         margin: 0 auto 20px; } }
-  /* line 648, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 643, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart__form__row__content {
     margin-left: 62px; }
     @media screen and (max-width: 508px) {
       .theme-basic .cart__form__row__content {
         margin-left: 0; } }
-    /* line 652, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 647, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .cart__form__row__content .cart__field {
       resize: none; }
-  /* line 655, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 650, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart__form__row__title {
     font-size: 22px;
     margin: 6px 0 28px; }
     @media screen and (max-width: 508px) {
       .theme-basic .cart__form__row__title {
         text-align: center; } }
-  /* line 661, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 656, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart__form__radio {
     display: block;
     position: relative;
@@ -12162,14 +12156,14 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
     max-width: 555px;
     margin: 0 0 30px;
     font-weight: normal; }
-    /* line 668, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 663, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .cart__form__radio input {
       display: block;
       position: absolute;
       margin: 0;
       top: 0;
       left: 0; }
-  /* line 676, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 671, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart__form__radio__name, .theme-basic .cart__form__radio__val {
     display: inline-block;
     vertical-align: top;
@@ -12179,59 +12173,59 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
         display: block;
         width: 100%;
         margin-bottom: 10px; } }
-  /* line 685, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 680, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart__complete {
     padding: 38px 0;
     font-size: 22px;
     max-width: 800px;
     margin: 0 auto;
     text-align: center; }
-    /* line 691, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 686, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .cart__complete p {
       margin: 0 0 100px; }
-    /* line 693, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 688, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .cart__complete a {
       border: none;
       padding-bottom: 6px;
       color: #121212;
       border-bottom: 1px solid #e2e2e2; }
-      /* line 698, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+      /* line 693, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
       .theme-basic .cart__complete a:hover {
         border-bottom-color: #121212; }
     @media screen and (max-width: 480px) {
       .theme-basic .cart__complete {
         font-size: 22px; } }
-  /* line 704, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 699, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart__form__widget {
     margin: 25px 0 0; }
-  /* line 707, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 702, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart__form__widget__name {
     display: block;
     font-weight: normal;
     margin: 0 0 7px; }
-  /* line 712, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 707, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart__field {
     border-radius: 2px;
     border: 1px solid #cbcbcb;
     padding: 14px;
     width: 100%; }
-    /* line 717, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 712, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .cart__field:focus {
       border-color: #121212;
       outline: none; }
-  /* line 721, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 716, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart__field_select {
     height: 49px; }
-  /* line 725, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 720, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .float-cart__item__name, .theme-basic .float-cart__clear {
     color: #121212; }
-    /* line 727, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 722, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .float-cart__item__name:hover, .theme-basic .float-cart__clear:hover {
       color: #cbcbcb; }
-  /* line 730, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 725, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .float-cart__clear {
     color: #cbcbcb; }
-  /* line 733, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 728, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .page-title {
     padding: 19px 0 13px;
     border: 1px solid #e2e2e2;
@@ -12241,10 +12235,10 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
     font-weight: normal;
     font-size: 18px;
     text-transform: none; }
-    /* line 744, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 739, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .page-title .dropdown .dropdown-toggle {
       position: relative; }
-      /* line 746, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+      /* line 741, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
       .theme-basic .page-title .dropdown .dropdown-toggle:before {
         content: '';
         background: url(/assets/mobnav-cat-arrow.svg);
@@ -12259,32 +12253,32 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
                 transform: rotate(90deg);
         -webkit-transition: -webkit-transform 0.2s ease;
                 transition: transform 0.2s ease; }
-      /* line 757, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+      /* line 752, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
       .theme-basic .page-title .dropdown .dropdown-toggle:focus {
         text-decoration: none; }
-    /* line 760, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 755, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .page-title .dropdown.open .dropdown-toggle:before {
       -webkit-transform: rotate(180deg);
           -ms-transform: rotate(180deg);
               transform: rotate(180deg); }
-    /* line 763, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 758, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .page-title .dropdown .dropdown-menu {
       border: none;
       margin: 0;
       position: relative;
       background: none; }
-      /* line 768, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+      /* line 763, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
       .theme-basic .page-title .dropdown .dropdown-menu a {
         text-align: left;
         border: none;
         background: #434343; }
-        /* line 772, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+        /* line 767, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
         .theme-basic .page-title .dropdown .dropdown-menu a:hover {
           background: #434343; }
-  /* line 775, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 770, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .mm-page {
     overflow: hidden; }
-  /* line 779, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 774, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .mm-list > li > a, .theme-basic .mm-list > li > span {
     color: #fff;
     padding: 23px 16px;
@@ -12292,47 +12286,47 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
     display: block;
     line-height: 1.3;
     font-weight: normal; }
-  /* line 788, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 783, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .mm-list a.mm-subopen:after {
     right: 10px; }
-  /* line 791, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 786, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .mm-list a.mm-subopen + a, .theme-basic .mm-list a.mm-subopen + span {
     margin-right: 0; }
-  /* line 794, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 789, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .mm-menu {
     list-style: none;
     overflow-y: auto;
     background-color: #252525;
     max-width: 200px;
     min-width: 170px; }
-    /* line 800, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 795, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .mm-menu .mm-counter {
       color: #fff; }
-    /* line 802, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 797, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .mm-menu .mm-subclose {
       text-indent: 0;
       margin: 0; }
-      /* line 805, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+      /* line 800, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
       .theme-basic .mm-menu .mm-subclose:before {
         margin-bottom: -4px;
         left: 6px; }
-    /* line 808, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 803, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .theme-basic .mm-menu li {
       border-bottom: 2px solid #2d2d2d; }
-      /* line 810, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+      /* line 805, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
       .theme-basic .mm-menu li:after {
         display: none !important; }
-  /* line 813, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 808, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .mm-list {
     padding: 0; }
-  /* line 817, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 812, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .mm-menu .mm-list > li > a.mm-subopen:after, .theme-basic .mm-menu .mm-list > li > a.mm-subclose:before {
     border-color: #fff; }
-  /* line 820, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 815, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .mm-menu .mm-list > li > a.mm-subclose {
     background-color: #5f5f5f;
     color: #fff; }
-  /* line 824, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 819, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .mmenu-open {
     display: none;
     position: fixed;
@@ -12343,7 +12337,7 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
     height: 44px;
     background: #000;
     border-radius: 3px; }
-  /* line 834, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 829, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .mmenu-open__tick {
     height: 2px;
     position: absolute;
@@ -12354,39 +12348,39 @@ a.login__form-input-icon, a.login__form-input-icon--left, a.login__form-input-ic
     margin-top: -6px;
     -webkit-transition: -webkit-transform 0.2s ease, margin-top 0.2s ease, opacity 0.2s ease;
     transition: transform 0.2s ease, margin-top 0.2s ease, opacity 0.2s ease; }
-  /* line 843, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 838, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .mmenu-open__tick_s {
     margin-top: -1px; }
-  /* line 845, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 840, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .mmenu-open__tick_t {
     margin-top: 4px; }
-  /* line 848, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 843, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .mmenu-open_active .mmenu-open__tick_f {
     margin-top: 0;
     -webkit-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
             transform: rotate(45deg); }
-  /* line 851, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 846, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .mmenu-open_active .mmenu-open__tick_s {
     opacity: 0; }
-  /* line 853, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 848, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .mmenu-open_active .mmenu-open__tick_t {
     margin-top: 0;
     -webkit-transform: rotate(-45deg);
         -ms-transform: rotate(-45deg);
             transform: rotate(-45deg); }
 
-/* line 858, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+/* line 853, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
 html.mm-opened .mm-page {
   box-shadow: none; }
 
-/* line 862, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+/* line 857, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
 html.mm-opening .mm-page, html.mm-opening #mm-blocker {
   -webkit-transform: translate(200px, 0);
   -ms-transform: translate(200px, 0);
       transform: translate(200px, 0); }
 
-/* line 866, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+/* line 861, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
 .cart__list-item-sum {
   font-size: 30px;
   text-align: right; }
@@ -12394,64 +12388,64 @@ html.mm-opening .mm-page, html.mm-opening #mm-blocker {
     .cart__list-item-sum {
       text-align: center; } }
 
-/* line 881, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+/* line 876, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
 .text h1, .text h2, .text h3, .text h4, .text h5, .text h6, .text p, .text ul, .text table {
   width: 100%;
   max-width: 600px;
   margin: 0 auto; }
-/* line 886, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+/* line 881, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
 .text h1, .text h2 {
   text-align: center; }
-/* line 888, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+/* line 883, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
 .text h1 {
   font-size: 48px;
   margin-bottom: 38px; }
-/* line 891, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+/* line 886, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
 .text h2 {
   font-size: 26px;
   font-weight: normal;
   margin-bottom: 50px; }
-/* line 895, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+/* line 890, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
 .text p {
   margin-bottom: 20px; }
-/* line 897, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+/* line 892, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
 .text ul {
   padding: 0 0 0 20px;
   margin-top: 20px;
   margin-bottom: 20px; }
-/* line 904, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+/* line 899, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
 .text table th, .text table td {
   padding: 15px; }
-/* line 906, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+/* line 901, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
 .text table th {
   font-weight: normal;
   border-bottom: 1px solid #e2e2e2; }
 
-/* line 910, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+/* line 905, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
 .text__image {
   margin: 40px 0; }
-  /* line 912, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 907, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .text__image img {
     width: 100%;
     margin: 10px 0; }
 
-/* line 917, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+/* line 912, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
 .cart__form__delivery-name, .cart__form__delivery-price {
   display: inline-block;
   vertical-align: top;
   width: 40%; }
 
-/* line 922, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+/* line 917, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
 .map-embed {
   margin: 40px auto;
   width: 100%;
   height: 400px;
   overflow: hidden; }
-  /* line 927, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 922, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .map-embed img {
     width: 100%; }
 
-/* line 930, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+/* line 925, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
 .application-slider {
   max-width: 1000px;
   width: 100%;
@@ -12461,19 +12455,19 @@ html.mm-opening .mm-page, html.mm-opening #mm-blocker {
     .application-slider {
       margin-top: 0; } }
 
-/* line 938, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+/* line 933, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
 .application-slider_photos {
   max-width: 1400px;
   margin: 0 auto; }
-  /* line 941, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 936, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .application-slider_photos .application-slider__slide {
     height: 400px;
     background-color: #242424; }
-    /* line 944, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 939, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     .application-slider_photos .application-slider__slide img {
       opacity: 0.5; }
 
-/* line 948, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+/* line 943, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
 .owl-buttons {
   opacity: 0;
   -webkit-transition: opacity 0.2s ease;
@@ -12482,20 +12476,20 @@ html.mm-opening .mm-page, html.mm-opening #mm-blocker {
     .owl-buttons {
       display: none; } }
 
-/* line 956, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+/* line 951, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
 .owl-carousel:hover .owl-buttons {
   opacity: 1; }
 
-/* line 960, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+/* line 955, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
 .application-slider__slide img {
   width: 100%; }
 
-/* line 963, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+/* line 958, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
 .products__list-more {
   margin: 60px auto;
   text-align: center; }
 
-/* line 967, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+/* line 962, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
 .products__list-more__btn {
   padding: 18px 30px;
   color: #939393;
@@ -12503,20 +12497,20 @@ html.mm-opening .mm-page, html.mm-opening #mm-blocker {
   border-radius: 36px;
   cursor: pointer; }
 
-/* line 974, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+/* line 969, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
 #nav {
   height: 0;
   overflow: hidden; }
-  /* line 977, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 972, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   #nav.mm-menu {
     height: 100%; }
 
-/* line 981, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+/* line 976, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
 #fancybox-thumbs ul {
   position: static;
   text-align: center;
   width: 100% !important; }
-  /* line 985, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 980, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   #fancybox-thumbs ul li {
     float: none;
     display: inline-block;
@@ -12525,7 +12519,7 @@ html.mm-opening .mm-page, html.mm-opening #mm-blocker {
     cursor: pointer;
     width: 16px !important;
     opacity: 0.5; }
-    /* line 993, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 988, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     #fancybox-thumbs ul li a {
       display: block;
       overflow: hidden;
@@ -12533,17 +12527,17 @@ html.mm-opening .mm-page, html.mm-opening #mm-blocker {
       height: 10px;
       background: #fff;
       border-radius: 5px; }
-    /* line 1000, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 995, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     #fancybox-thumbs ul li img {
       width: 100%; }
-    /* line 1003, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+    /* line 998, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
     #fancybox-thumbs ul li.active {
       background: none;
       opacity: 1;
       border: none;
       padding: 0 3px; }
 
-/* line 1009, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+/* line 1004, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
 .owl-theme .owl-controls .owl-buttons div {
   width: 44px;
   height: 100px;
@@ -12558,16 +12552,16 @@ html.mm-opening .mm-page, html.mm-opening #mm-blocker {
   @media screen and (max-width: 480px) {
     .owl-theme .owl-controls .owl-buttons div {
       display: none !important; } }
-  /* line 1023, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 1018, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .owl-theme .owl-controls .owl-buttons div.owl-prev {
     left: 20px;
     background-image: url(/assets/ar_right-c.svg); }
-  /* line 1027, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 1022, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .owl-theme .owl-controls .owl-buttons div.owl-next {
     right: 20px;
     background-image: url(/assets/ar_left-c.svg); }
 
-/* line 1031, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+/* line 1026, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
 .products__list-item-badge {
   padding: 4px 15px;
   background-color: #feed9d;
@@ -12579,26 +12573,26 @@ html.mm-opening .mm-page, html.mm-opening #mm-blocker {
   z-index: 2;
   border-radius: 15px; }
 
-/* line 1042, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+/* line 1037, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
 .products__list-item-badge_hit {
   background-color: #ffdfca; }
 
-/* line 1045, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+/* line 1040, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
 .is-sticky {
   margin-top: 43px; }
-  /* line 1047, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 1042, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .is-sticky .categories-nav {
     z-index: 10;
     background-color: rgba(255, 255, 255, 0.8);
     margin-top: 0; }
 
 @-moz-document url-prefix() {
-  /* line 1053, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+  /* line 1048, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
   .theme-basic .cart__form select {
     text-indent: 0;
     padding-left: 14px; } }
 
-/* line 1057, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
+/* line 1052, /home/danil/code/kiosk-public-static/app/stylesheets/sass/theme-basic */
 .navbar-phones {
   padding: 0;
   margin: 0;
