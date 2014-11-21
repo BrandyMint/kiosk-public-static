@@ -31,6 +31,7 @@ window.BasketStore = _.extend new BaseStore(), {
     if basketItem?
       basketItem.count += 1
     else
+      productItem.count = 1
       _basketItems.push productItem
     return
 }
