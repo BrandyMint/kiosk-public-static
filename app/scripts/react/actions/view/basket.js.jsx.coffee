@@ -1,5 +1,5 @@
 window.BasketActions =
-  _addItem: (productItem) ->
+  addItem: (productItem) ->
     BasketDispatcher.handleViewAction
       actionType: 'addToBasket'
       productItem: productItem
