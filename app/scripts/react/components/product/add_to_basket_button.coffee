@@ -22,7 +22,7 @@ window.AddToBasketButton = React.createClass
     articul: 123
 
   addToBasket: ->
-    BasketActions._addItem @props
+    BasketActions.addItem @props
   
   render: ->
     return `<button className="products__show-item-cart-btn" onClick={this.addToBasket}>В корзину</button>`
