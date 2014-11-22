@@ -11,6 +11,11 @@ window.BasketDispatcher.register (payload) ->
       BasketStore.emitChange()
       break
 
+    when 'receiveBasket'
+      BasketStore._receiveBasket action.basketItems
+      BasketStore.emitChange()
+      break
+
 window.BasketStore = _.extend new BaseStore(), {
   getBasketItems: ->
     _basketItems
@@ -33,5 +38,12 @@ window.BasketStore = _.extend new BaseStore(), {
     else
       productItem.count = 1
       _basketItems.push productItem
-    return
+      BasketActions.addItemToServer productItem
+
+  _receiveBasket: (basketItems)->
+    if basketItems?
+      _.forEach basketItems.items, (basketItem)->
+        _basketItems.push basketItem.product_item
+
+
 }

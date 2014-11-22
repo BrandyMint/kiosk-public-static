@@ -23,6 +23,7 @@ window.BasketPopup = React.createClass
     $(document).on "click", @handleBodyClick
     $(document).on "cart:clicked", @handleCartClicked
     $(document).on "keyup", @handleBodyKey
+    BasketActions.receiveBasket()
     BasketStore.addChangeListener @_onChange
 
   componentWillUnmount: ()->
