@@ -4,7 +4,7 @@ window.BasketActions =
       actionType: 'addToBasket'
       productItem: productItem
 
-  addItemToServer: (productItem) ->
+  _addItemToServer: (productItem) ->
     $.ajax
       dataType: 'json'
       method:   'post'

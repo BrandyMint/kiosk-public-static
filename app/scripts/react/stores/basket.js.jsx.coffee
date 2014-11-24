@@ -38,7 +38,7 @@ window.BasketStore = _.extend new BaseStore(), {
     else
       productItem.count = 1
       _basketItems.push productItem
-      BasketActions.addItemToServer productItem
+      BasketActions._addItemToServer productItem
 
   _receiveBasket: (basketItems)->
     if basketItems?
