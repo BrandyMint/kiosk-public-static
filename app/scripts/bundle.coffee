@@ -10,6 +10,7 @@ require './shared/theme_switcher'
 require './shared/mobile_navigation'
 require './shared/checkout'
 
+require './routes/routes'
 # /*=============================
 # =            React            =
 # =============================*/
@@ -18,6 +19,11 @@ require './shared/checkout'
 
 require './react/components/basket/basket_button'
 require './react/components/basket/basket_popup'
+require './react/components/product/add_to_basket_button'
+
+require './react/dispatchers/basket'
+require './react/actions/view/basket'
+require './react/stores/basket'
 
 # /*-----  End of React  ------*/
 

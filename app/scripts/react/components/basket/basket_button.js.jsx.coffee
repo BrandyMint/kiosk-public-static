@@ -6,9 +6,22 @@ window.BasketButton = React.createClass
     totalPrice: React.PropTypes.object
     cartUrl: React.PropTypes.object
 
+  getDefaultProps: ->
+    cartUrl: "/cart.html"
+
+  getInitialState: ->
+    itemsCount: BasketStore.getBasketCount()
+    totalPrice: 0
+
+  componentDidMount: ()->
+    BasketStore.addChangeListener @_onChange
+
+  _onChange: ()->
+    @setState itemsCount: BasketStore.getBasketCount()
+
   render: ->
-    if @props.itemsCount > 0
-      return `<BasketButton_Full cartUrl={this.props.cartUrl} itemsCount={this.props.itemsCount} totalPrice={this.props.totalPrice}/>`
+    if @state.itemsCount > 0
+      return `<BasketButton_Full cartUrl={this.props.cartUrl} itemsCount={this.state.itemsCount} totalPrice={this.props.totalPrice}/>`
     else
       return `<BasketButton_Empty/>`
 
@@ -26,10 +39,23 @@ window.BasketButton_Full = React.createClass
         </a>`
 
 window.BasketButton_Empty = React.createClass
+  getInitialState: ->
+    isMessageVisible: false
+  
+  handleClick: ->
+    @setState isMessageVisible: true unless @state.isMessageVisible
+
+  handleMouseLeave: ->
+    @setState isMessageVisible: false
+  
   render: ->
-    return `<span className='navbar-cart-btn navbar-cart-btn-empty'>
+    classNameValue = 'navbar-cart-btn-msg'
+    classNameValue += " navbar-cart-btn-msg_visible" if @state.isMessageVisible
+    
+    return `<span className='navbar-cart-btn navbar-cart-btn-empty' onMouseLeave={this.handleMouseLeave} onClick={this.handleClick}>
           <span className='navbar-cart-btn-icon'></span>
           <span className='navbar-cart-btn-caption'>
             Корзина
           </span>
+          <span className={classNameValue}>Корзина пуста</span>
         </span>`
