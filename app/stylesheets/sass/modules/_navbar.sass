@@ -47,6 +47,34 @@ $navbar-logo-height: 105px
   @media screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max)
     max-width: $grid-gutter-width*4
 
+.navbar-cart-btn-msg
+  position: absolute
+  top: 100%
+  right: 0
+  padding: 2px 8px
+  background-color: #000
+  color: #fff
+  font-size: 13px
+  margin-top: 5px
+  transition: transform .2s ease, opacity .2s ease
+  visibility: hidden
+  opacity: 0
+  &:before
+    content: ''
+    position: absolute
+    bottom: 100%
+    right: 20px
+    width: 0
+    height: 0
+    border-left: 3px solid transparent
+    border-right: 3px solid transparent
+    border-bottom: 3px solid #000
+
+  &_visible
+    opacity: 1
+    transform: translateY(5px)
+    visibility: visible
+
 .navbar-cart-btn-caption
   @media screen and (max-width: $screen-sm-max)
     display: none
