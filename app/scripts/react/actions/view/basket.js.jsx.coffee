@@ -1,10 +1,12 @@
 window.BasketActions =
   addItem: (productItem) ->
-    BasketDispatcher.handleViewAction
-      actionType: 'addToBasket'
-      productItem: productItem
+    if @_addItemToServer productItem
+      BasketDispatcher.handleViewAction
+        actionType: 'addToBasket'
+        productItem: productItem
 
   _addItemToServer: (productItem) ->
+    result = false
     $.ajax
       dataType: 'json'
       method:   'post'
@@ -16,6 +18,8 @@ window.BasketActions =
         console.log err
       success: (data) ->
         console.log data
+        result = true
+    result
 
   receiveBasket: (basketItems) ->
     BasketDispatcher.handleViewAction
