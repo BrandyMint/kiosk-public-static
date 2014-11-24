@@ -108,12 +108,35 @@ window.BasketButton_Full = React.createClass({displayName: 'BasketButton_Full',
 });
 
 window.BasketButton_Empty = React.createClass({displayName: 'BasketButton_Empty',
+  getInitialState: function() {
+    return {
+      isMessageVisible: false
+    };
+  },
+  handleClick: function() {
+    if (!this.state.isMessageVisible) {
+      return this.setState({
+        isMessageVisible: true
+      });
+    }
+  },
+  handleMouseLeave: function() {
+    return this.setState({
+      isMessageVisible: false
+    });
+  },
   render: function() {
-    return React.DOM.span({className: "navbar-cart-btn navbar-cart-btn-empty"}, 
+    var classNameValue;
+    classNameValue = 'navbar-cart-btn-msg';
+    if (this.state.isMessageVisible) {
+      classNameValue += " navbar-cart-btn-msg_visible";
+    }
+    return React.DOM.span({className: "navbar-cart-btn navbar-cart-btn-empty", onMouseLeave: this.handleMouseLeave, onClick: this.handleClick}, 
           React.DOM.span({className: "navbar-cart-btn-icon"}), 
           React.DOM.span({className: "navbar-cart-btn-caption"}, 
             "Корзина"
-          )
+          ), 
+          React.DOM.span({className: classNameValue}, "Корзина пуста")
         );
   }
 });
