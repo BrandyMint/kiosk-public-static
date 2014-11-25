@@ -12,14 +12,13 @@ window.BasketActions =
       data:
         product_item_id: productId
         count: count
-      url:      Routes.vendor_cart_items_path(productId, count)
+      url:      Routes.vendor_cart_items_path()
       error: (xhr, status, err) ->
         console.log err
       success: (response) ->
         BasketDispatcher.handleServerAction
           actionType: 'productAddedToBasket'
           productItem: productItem
-
 
   receiveBasket: (basketItems) ->
     BasketDispatcher.handleViewAction
