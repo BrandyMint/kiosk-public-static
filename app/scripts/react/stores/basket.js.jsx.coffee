@@ -6,7 +6,7 @@ window.BasketDispatcher.register (payload) ->
   action = payload.action
   
   switch action.actionType
-    when 'addToBasket'
+    when 'productAddedToBasket'
       BasketStore._addItem action.productItem
       BasketStore.emitChange()
       break
