@@ -15,11 +15,10 @@
 
       .application-content
         .container-fluid
-          .products__list.products__list_four-in-row(ks-products-container){data-total-pages: 3, data-current-page: 1, data-url: 'shared/_products.html'}
+          .products__list(ks-products-container){data-total-pages: 3, data-current-page: 1, data-url: 'shared/_products.html'}
             .row
               +include 'app/haml/shared/_products.haml'
-            +include 'app/haml/shared/_load_more.haml'
-      
+
       +include 'app/haml/shared/_footer.haml'
 
       +include 'app/haml/shared/_themeswitcher.haml'

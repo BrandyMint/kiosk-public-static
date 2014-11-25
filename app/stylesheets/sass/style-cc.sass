@@ -1,7 +1,7 @@
 $ccMainColor: #242427
 
 .style-cc
-  font: 13px/1.538em "apercu", Arial, Helvetica, sans-serif
+  font: 14px/1.538em "apercu", Arial, Helvetica, sans-serif
   color: $ccMainColor
 
   h1,
@@ -13,7 +13,8 @@ $ccMainColor: #242427
     color: $ccMainColor
 
   .text
-    font-size: 14px
+    font-size: 16px
+    line-height: 1.45
     h1
       line-height: 1
 
@@ -27,8 +28,12 @@ $ccMainColor: #242427
     padding: 20px 0
     margin-bottom: 0
 
+  .navbar-brand-link
+    position: relative
+    z-index: 2
+
   .application-slider
-    margin-top: 0
+    margin-top: -81px
 
   .navbar-collapse
     margin-top: -20px
@@ -41,12 +46,16 @@ $ccMainColor: #242427
     & > li
       & > a
         font-weight: bold
-        font-size: 13px
+        font-size: 14px
         text-transform: uppercase
         padding: 13px 7px
+        letter-spacing: 0.04em
 
   .categories-nav .dropdown-menu
     background: $ccMainColor
+
+  .products__list
+    margin-bottom: 60px
 
   //Change grid here
   .products__list_four-in-row
@@ -70,7 +79,7 @@ $ccMainColor: #242427
       margin: 14px 0
       a
         color: #fff
-        font-size: 13px
+        font-size: 14px
         &:hover
           color: #c1c1c1
 
@@ -101,7 +110,7 @@ $ccMainColor: #242427
   .products__list-item-title
     color: #303030
     line-height: 18px
-    font-size: 13px
+    font-size: 14px
     height: 33px
     margin-top: 6px
 
@@ -119,7 +128,7 @@ $ccMainColor: #242427
     margin-bottom: 8px
 
   .products__show-item-category
-    font-size: 13px
+    font-size: 14px
     margin: 0 0 12px
 
   .products__show-item-price
@@ -143,6 +152,10 @@ $ccMainColor: #242427
   .modification-list
     margin-top: -30px
     padding: 0
+    overflow: hidden
+
+  .modification__desc
+    font-size: 14px
 
   .mmenu-open
     top: 13px
@@ -166,7 +179,7 @@ $ccMainColor: #242427
   .products__show-item-details
     li
       padding: 0 0 12px
-      font-size: 12px
+      font-size: 14px
       line-height: 18px
       overflow: hidden
       &:before
@@ -174,12 +187,13 @@ $ccMainColor: #242427
 
     .products__show-item-details__title
       font-weight: bold
-      font-size: 16px
+      font-size: 20px
+      line-height: 26px
 
   .products__show-item-text
     h3
       margin: 0 0 12px
-      font-size: 16px
+      font-size: 20px
       font-weight: bold
 
   .products__show-item-details__name
@@ -252,7 +266,8 @@ $ccMainColor: #242427
     .products__show-item-category
       margin-bottom: 2px
     .products__show-item-title
-      font-size: 22px
+      font-size: 24px
+      line-height: 1.22
       margin-bottom: 20px
     .owl-controls
       visibility: hidden
