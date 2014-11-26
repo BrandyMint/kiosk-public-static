@@ -12982,3 +12982,71 @@ html.mm-opening .mm-page, html.mm-opening #mm-blocker {
     @media screen and (min-width: 992px) {
       .style-cc .products__show_simple .products__show-item-category, .style-cc .products__show_simple .products__show-item-title {
         text-align: left; } }
+
+/* line 6, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-etc */
+.style-etc {
+  color: #fff;
+  font-family: Verdana, Geneva, sans-serif;
+  background-color: #000; }
+  /* line 11, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-etc */
+  .style-etc .products__show-item-title {
+    color: #fff; }
+  /* line 14, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-etc */
+  .style-etc .categories-nav {
+    border: none; }
+  /* line 19, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-etc */
+  .style-etc .categories-nav li a {
+    color: #fff; }
+  /* line 22, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-etc */
+  .style-etc .products__list-item-wrap {
+    padding: 0 15px; }
+    /* line 25, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-etc */
+    .style-etc .products__list-item-wrap:hover .products__list-item {
+      color: #000; }
+    /* line 27, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-etc */
+    .style-etc .products__list-item-wrap:hover .products__list-item-image {
+      opacity: 1; }
+  /* line 30, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-etc */
+  .style-etc .products__list-item {
+    overflow: hidden;
+    text-align: center; }
+  /* line 34, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-etc */
+  .style-etc .search__field {
+    color: #000; }
+  /* line 38, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-etc */
+  .style-etc .products__show, .style-etc .products__list-item {
+    color: #000;
+    border-radius: 4px;
+    background-color: #fff; }
+  /* line 43, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-etc */
+  .style-etc .products__show {
+    padding: 4px 0; }
+    /* line 45, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-etc */
+    .style-etc .products__show .products__show-item-title {
+      color: #000; }
+    /* line 47, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-etc */
+    .style-etc .products__show_centered {
+      max-width: 700px;
+      margin: 0 auto; }
+  /* line 51, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-etc */
+  .style-etc .page-title {
+    margin-top: 0; }
+  /* line 54, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-etc */
+  .style-etc .products__list-item-title {
+    font-size: 14px; }
+  /* line 57, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-etc */
+  .style-etc .products__list-item-price {
+    font-size: 14px;
+    margin: 0 0 10px; }
+  /* line 61, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-etc */
+  .style-etc .product__show-item-wrap {
+    padding: 0 95px; }
+    @media screen and (max-width: 480px) {
+      .style-etc .product__show-item-wrap {
+        padding: 0 20px; } }
+  /* line 67, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-etc */
+  .style-etc .text h1, .style-etc .text h2, .style-etc .text h3, .style-etc .text h4, .style-etc .text h5, .style-etc .text h6, .style-etc .text .h1, .style-etc .text .h2, .style-etc .text .h3, .style-etc .text .h4, .style-etc .text .h5, .style-etc .text .h6 {
+    color: #fff; }
+  /* line 71, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/style-etc */
+  .style-etc .footer-nav a {
+    color: #fff; }
