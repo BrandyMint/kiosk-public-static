@@ -1,0 +1,74 @@
+// ============= etc theme Settings =============
+$themeEtcBG: #000
+
+$themeEtcMainColor: #fff
+
+$verdanaFam: Verdana, Geneva, sans-serif
+// ============= /Settings =============
+.style-etc
+  color: $themeEtcMainColor
+  font-family: $verdanaFam
+  background-color: $themeEtcBG
+
+  .products__show-item-title
+    color: $themeEtcMainColor
+
+  .categories-nav
+    border: none
+
+  .categories-nav
+    li
+      a
+        color: $themeEtcMainColor
+
+  .products__list-item-wrap
+    padding: 0 15px
+    &:hover
+      .products__list-item
+        color: $themeEtcBG
+      .products__list-item-image
+        opacity: 1  
+
+  .products__list-item
+    overflow: hidden
+    text-align: center
+  
+  .search__field
+    color: $themeEtcBG
+
+  .products__show,
+  .products__list-item
+    color: $themeEtcBG
+    border-radius: 4px
+    background-color: $themeEtcMainColor
+
+  .products__show
+    padding: 4px 0
+    .products__show-item-title
+      color: $themeEtcBG
+    &_centered
+      max-width: 700px
+      margin: 0 auto
+
+  .page-title
+    margin-top: 0
+
+  .products__list-item-title
+    font-size: 14px
+
+  .products__list-item-price
+    font-size: 14px
+    margin: 0 0 10px
+
+  .product__show-item-wrap
+    padding: 0 95px
+    @media screen and (max-width: $screen-xs-min)
+      padding: 0 20px
+
+  .text
+    h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
+      color: $themeEtcMainColor
+
+  .footer-nav
+    a
+      color: $themeEtcMainColor

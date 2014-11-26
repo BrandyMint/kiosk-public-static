@@ -35,21 +35,37 @@
         - for c in categories
           %li
             %a{href: '#'}= "#{c}"
-        %li.dropdown
+        %li.dropdown.dropdown_right
           %a.dropdown-toggle{href: '#', data-toggle: "dropdown"} Аксессуары
           %ul.dropdown-menu
-            %li
-              %a{href: '#', data-count:'45'} Категория
-            %li
-              %a{href: '#', data-count:'1'} Категория
-            %li
-              %a{href: '#', data-count:'6'} Категория
-            %li
-              %a{href: '#', data-count:'12'} Категория
-            %li
-              %a{href: '#', data-count:'4'} Категория
-            %li
-              %a{href: '#', data-count:'9'} Категория
+            %li.dropdown-col
+              %ul
+                %li
+                  %a{href: '#', data-count:'45'} Кольца
+                %li
+                  %a{href: '#', data-count:'1'} Цепи
+                %li
+                  %a{href: '#', data-count:'6'} Злато
+                %li
+                  %a{href: '#', data-count:'12'} Тренд
+                %li
+                  %a{href: '#', data-count:'4'} Миднайт
+                %li
+                  %a{href: '#', data-count:'9'} Дисплей
+                %li
+                  %a{href: '#', data-count:'1'} Цепи
+                %li
+                  %a{href: '#', data-count:'6'} Злато
+            %li.dropdown-col
+              %ul
+                %li
+                  %a{href: '#', data-count:'45'} Кольца
+                %li
+                  %a{href: '#', data-count:'1'} Цепи
+                %li
+                  %a{href: '#', data-count:'6'} Злато
+                %li
+                  %a{href: '#', data-count:'45'} Кольца
       #nav
         %ul
           - categories = ['Столы', 'Стулья', 'Свет', 'Декор' ]
