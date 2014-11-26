@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+%html
+  %head
+    +include 'app/haml/shared/_head.haml'
+
+  %body.theme-basic.style-etc
+    .application
+      +include 'app/haml/shared/_navbar_with-cart.haml'
+
+      .application-content
+        .container-fluid
+          .products__show.products__show_centered
+            .product__show-item-wrap
+              .products__show-item-header
+                .products__show-item-category
+                  Столы / Маленькие столы
+                %h1.products__show-item-title
+                  Моно-серьга лалала
+                  %span.products__show-item-articul Арт. 123123
+            +include 'app/haml/shared/_product-cc-carousel.haml'
+            .product__show-item-wrap
+              .products__show-item-content
+                .products__show-item-content-header
+                  .products__show-item-category
+                    %a{href: ''} Столы
+                    %a{href: ''} Маленькие столы
+                  %h1.products__show-item-title
+                    Моно-серьга лалала
+                    %span.products__show-item-articul Арт. 123123
+                .products__show-item-price
+                  12 000.-
+
+              .products__show-item__actions
+                .row
+                  .col-md-6
+                    %select.plain-select__select--single
+                      %option{selected: 'selected'} Выберите размер
+                      %option Размер 15
+                      %option Размер 14
+                      %option{disabled} Размер 11 — нет в наличии
+
+                  .col-md-6
+                    %button.products__show-item-cart-btn{href: 'cart.html', type: 'submit'}
+                      В корзину
+
+              .products__show-item-description
+                Make peace, not war! Настоящий блокбастер среди украшений - серебряная моносерьга в виде пули Wanna?Be! - попала в самое сердце столичных модниц. Инкрустированный цирконами аксессуар не оставил и знаменитую на весь мир икону стилю, Рианну. Известная дива не раз дополняла этим аксессуаром свои образы. Рекомендуем надевать кулон вместе с белыми майками, кружевными эспадрильями и джинсами бойфренда.
+
+              / %h3.products__show-item__subtitle Характеристики
+              %ul.products__show-item-details
+                - details = [{'Серебро': '12 К'}, {'Цирконы': '10 К'}, {'Кристаллов': '1294'}, {'Вес': '3 гр' }]
+                - for obj, i in details
+                  - for key of obj
+                    %li
+                      = "#{key}:"
+                      = obj[key]
+
+              .products__show-item-art
+                Арт. 123123
+
+          .products__list
+            %h2.products__list__title Табуретки
+            .row
+              - for i in [1..3]
+                .products__list-item-wrap
+                  .products__list-item{'ks-jump': 'product.html'}
+                    .products__list-item-image-block
+                      %img.products__list-item-image{ src: "images/product-square.jpg" }
+                    .products__list-item-title
+                      Моно-серьга имитация тоннеля серебряная с белыми цирконами
+                    .products__list-item-price
+                      8 900 руб.
+      +include 'app/haml/shared/_footer.haml'
+
+      +include 'app/haml/shared/_themeswitcher.haml'
+
+    %script{src: 'scripts/vendor.js'}
+    %script{src: 'scripts/client.js'}
