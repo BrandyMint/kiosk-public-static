@@ -10,6 +10,16 @@ $verdanaFam: Verdana, Geneva, sans-serif
   font-family: $verdanaFam
   background-color: $themeEtcBG
 
+  .navbar-cart-btn,
+  .b-adm,
+  .search__field,
+  .products__list-more__btn,
+  .cart__list-item-remove,
+  .cart__form__row__num,
+  .help-block,
+  .alert
+    border-radius: 0
+
   .products__show-item-title
     color: $themeEtcMainColor
 
@@ -25,9 +35,7 @@ $verdanaFam: Verdana, Geneva, sans-serif
     padding: 0 15px
     &:hover
       .products__list-item
-        color: $themeEtcBG
-      .products__list-item-image
-        opacity: 1  
+        color: $themeEtcMainColor
 
   .products__list-item
     overflow: hidden
@@ -36,16 +44,20 @@ $verdanaFam: Verdana, Geneva, sans-serif
   .search__field
     color: $themeEtcBG
 
+  .products__show-item-cart-btn,
+  .plain-select__select--single
+    background-color: $themeEtcMainColor
+    color: $themeEtcBG
+
   .products__show,
   .products__list-item
-    color: $themeEtcBG
-    border-radius: 4px
-    background-color: $themeEtcMainColor
+    color: $themeEtcMainColor
+    background-color: $themeEtcBG
 
   .products__show
     padding: 4px 0
     .products__show-item-title
-      color: $themeEtcBG
+      color: $themeEtcMainColor
     &_centered
       max-width: 700px
       margin: 0 auto
