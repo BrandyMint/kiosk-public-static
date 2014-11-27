@@ -4,6 +4,8 @@ $ ->
   instagramContainer = $('[ks-instagram]')
   instagramTrigger = $('[ks-instagram-trigger]')
 
+  instagramRequestUrl = 'https://api.instagram.com/v1/users/' + instagramContainer.data('user') + '/media/recent/?client_id=' + instagramContainer.data('client')
+
   instagramTrigger.on 'click', (e)->
     e.preventDefault()
     instagramTrigger.toggleClass 'active'
@@ -11,7 +13,7 @@ $ ->
 
   $.ajax(
     dataType: "jsonp"
-    url: 'https://api.instagram.com/v1/users/3123/media/recent/?client_id=295b9ad8c3304e5f8cf9a27da8014082'
+    url: instagramRequestUrl
     success: (data) ->
       i = 0
       while i < 10
