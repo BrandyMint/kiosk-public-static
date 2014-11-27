@@ -1,8 +1,16 @@
 .application-footer
   .container-fluid
     .application-footer__inner
-      %ul.footer-nav
-        - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
-        - for l in footer_links
-          %li
-            %a{href: '#'}= "#{l}"
+      .row
+        .col-md-8
+          %ul.footer-nav
+            - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
+            - for l in footer_links
+              %li
+                %a{href: '#'}= "#{l}"
+        .col-md-4
+          %ul.footer-nav
+            %li
+              %a{href: '#'} Facebook
+            %li
+              %a.footer-nav__trigger{'href': '#', 'ks-instagram-trigger': ''} Instagram

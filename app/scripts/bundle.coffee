@@ -9,6 +9,7 @@ require './shared/application_slider'
 require './shared/theme_switcher'
 require './shared/mobile_navigation'
 require './shared/checkout'
+require './shared/instagram'
 
 require './routes/routes'
 # /*=============================
