@@ -6,16 +6,7 @@ STATE_ERROR   = 'error'
 
 INSTAGRAM_API_URL = 'https://api.instagram.com/v1/'
 
-window.InstagramFeed = React.createClass
-  propTypes:
-    clientId: React.PropTypes.string.isRequired
-    userId: React.PropTypes.number.isRequired
-
-  getInitialState: ->
-    isVisible: false
-    photos: null
-    currentState: STATE_LOADING
-
+InstagramFeed_Mixin =
   _getRequestUrl: ()->
     requestUrl = INSTAGRAM_API_URL + 'users/' + @props.userId + '/media/recent/?client_id=' + @props.clientId
   
@@ -29,39 +20,66 @@ window.InstagramFeed = React.createClass
         @setState currentState: STATE_ERROR if @isMounted()
     )
 
+window.InstagramFeed_Controllable = React.createClass
+  propTypes:
+    isVisible: React.PropTypes.bool.isRequired
+    clientId:  React.PropTypes.string.isRequired
+    userId:    React.PropTypes.number.isRequired
+
+  getInitialState: ->
+    isVisible: @props.isVisible
+
   toggleVisibleState: -> @setState(isVisible: !@state.isVisible) if STATE_LOADED
 
   componentDidMount: ()->
-    @_getPhotos()
     $(document).on "instagram:clicked", @toggleVisibleState
 
   componentWillUnmount: ()->
     $(document).off "instagram:clicked", @toggleVisibleState
 
   render: ->
-    feedClasses = React.addons.classSet {
-      'instagram-feed': true
-      'instagram-feed_invisible': !@state.isVisible
-      'instagram-feed_error': !@state.STATE_ERROR
-      'instagram-feed_loading': !@state.STATE_LOADING
-    }
+    if @state.isVisible
+      return `<InstagramFeed clientId={this.props.clientId} userId={this.props.userId} />`
+    else
+      return `<span></span>`
 
+window.InstagramFeed = React.createClass
+  propTypes:
+    clientId: React.PropTypes.string.isRequired
+    userId: React.PropTypes.number.isRequired
+
+  mixins: [InstagramFeed_Mixin]
+
+  getInitialState: ->
+    isVisible: false
+    photos: null
+    currentState: STATE_LOADING
+
+  componentDidMount: ()->
+    @_getPhotos()
+
+  render: ->
     switch @state.currentState
       when STATE_LOADED
-        `<div className={feedClasses}>
-          <InstagramFeed_Carousel photos={this.state.photos}/>
-        </div>`
+        `<InstagramFeed_Carousel photos={this.state.photos}/>`
       when STATE_LOADING
-        `<div className={feedClasses}>
-          Загрузка
-        </div>`
+        `<InstagramFeed_Spinner/>`
       when STATE_ERROR
-        `<div className={feedClasses}>
-          Ошибка при загрузке фотографий
-        </div>`
+        `<InstagramFeed_Error/>`
       else
         console.log 'Неизвестное состояние #{@state.currentState}'
 
+window.InstagramFeed_Error = React.createClass
+  render: ->
+    `<div className='instagram-feed instagram-feed_error'>
+      Ошибка при загрузке фотографий
+    </div>`
+
+window.InstagramFeed_Spinner = React.createClass
+  render: ->
+    `<div className='instagram-feed instagram-feed_loading'>
+      <span className='instagram-feed__loader'></span>
+    </div>`
 
 window.InstagramFeed_Photo = React.createClass
   propTypes:
@@ -89,6 +107,6 @@ window.InstagramFeed_Carousel = React.createClass
 
   render: ->
     photos = _.map @props.photos.data, (photo) -> `<InstagramFeed_Photo photo={photo} key={photo.id} />`
-    `<div classNameValue="instagram-feed__content">{photos}</div>`
+    `<div className="instagram-feed">{photos}</div>`
 
 
