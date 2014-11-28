@@ -1,5 +1,11 @@
 ###* @jsx React.DOM ###
 
+STATE_LOADING = 'loading'
+STATE_LOADED  = 'loaded'
+STATE_ERROR   = 'error'
+
+INSTAGRAM_API_URL = 'https://api.instagram.com/v1/'
+
 window.InstagramFeed = React.createClass
   propTypes:
     clientId: React.PropTypes.string.isRequired
@@ -7,37 +13,70 @@ window.InstagramFeed = React.createClass
 
   getInitialState: ->
     isVisible: false
-
-  getDefaultProps: ->
-    instagramApiUrl: 'https://api.instagram.com/v1/'
+    photos: null
+    currentState: STATE_LOADING
 
   _getRequestUrl: ()->
-    requestUrl = @props.instagramApiUrl + 'users/' + @props.userId + '/media/recent/?client_id=' + @props.clientId
+    requestUrl = INSTAGRAM_API_URL + 'users/' + @props.userId + '/media/recent/?client_id=' + @props.clientId
   
   _getPhotos: ()->
-    that = @
-    carouselApi = $(this.refs.carousel.getDOMNode()).data('owlCarousel')
     $.ajax(
       dataType: "jsonp"
-      url: that._getRequestUrl()
-      success: (data) ->
-        that._appendPhotos data
+      url: @_getRequestUrl()
+      success: (data) =>
+        @setState currentState: STATE_LOADED, photos: data if @isMounted()
+      error: (data) =>
+        @setState currentState: STATE_ERROR if @isMounted()
     )
 
-  _appendPhotos: (instagramData)->
-    carousel = $(this.refs.carousel.getDOMNode())
-    content = ''
-    i = 0
-    
-    while i < 10
-      content += "<a class='instagram-feed__photo' lightbox rel='instagram-stack' href='" + instagramData.data[i].images.standard_resolution.url + "'><img class='lazyOwl' data-src='" + instagramData.data[i].images.low_resolution.url + "'></img></a>"
-      i++
+  toggleVisibleState: -> @setState(isVisible: !@state.isVisible) if STATE_LOADED
 
-    carousel.html content
-    @_initCarousel()
+  componentDidMount: ()->
+    @_getPhotos()
+    $(document).on "instagram:clicked", @toggleVisibleState
+
+  componentWillUnmount: ()->
+    $(document).off "instagram:clicked", @toggleVisibleState
+
+  render: ->
+    feedClasses = React.addons.classSet {
+      'instagram-feed': true
+      'instagram-feed_invisible': !@state.isVisible
+      'instagram-feed_error': !@state.STATE_ERROR
+      'instagram-feed_loading': !@state.STATE_LOADING
+    }
+
+    switch @state.currentState
+      when STATE_LOADED
+        `<div className={feedClasses}>
+          <InstagramFeed_Carousel photos={this.state.photos}/>
+        </div>`
+      when STATE_LOADING
+        `<div className={feedClasses}>
+          Загрузка
+        </div>`
+      when STATE_ERROR
+        `<div className={feedClasses}>
+          Ошибка при загрузке фотографий
+        </div>`
+      else
+        console.log 'Неизвестное состояние #{@state.currentState}'
+
+
+window.InstagramFeed_Photo = React.createClass
+  propTypes:
+    photo: React.PropTypes.object.isRequired
+
+  render: ->
+    `<a className='instagram-feed__photo' href={this.props.photo.images.standard_resolution.url}><img className='lazyOwl' data-src={ this.props.photo.images.low_resolution.url }></img></a>`
+
+
+window.InstagramFeed_Carousel = React.createClass
+  propTypes:
+    photos: React.PropTypes.object.isRequired
 
   _initCarousel: ()->
-    $(this.refs.carousel.getDOMNode()).owlCarousel
+    $(@getDOMNode()).owlCarousel
       items: 6
       itemsDesktop: 6
       pagination: false
@@ -45,19 +84,11 @@ window.InstagramFeed = React.createClass
       navigation: true
       lazyLoad: true
 
-  handleInstagramClicked: ()->
-    if @state.isVisible
-      @setState isVisible: false
-    else
-      @setState isVisible: true
-
   componentDidMount: ()->
-    @_getPhotos()
-    $(document).on "instagram:clicked", @handleInstagramClicked
+    @_initCarousel()
 
   render: ->
-    classNameValue = "instagram-feed"
-    classNameValue += " instagram-feed_invisible" if @state.isVisible is false
-    `<div className={classNameValue}>
-      <div className="instagram-feed__content" ref="carousel"></div>
-    </div>`
+    photos = _.map @props.photos.data, (photo) -> `<InstagramFeed_Photo photo={photo} key={photo.id} />`
+    `<div classNameValue="instagram-feed__content">{photos}</div>`
+
+
