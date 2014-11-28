@@ -13,14 +13,25 @@
             %h1.products__list__title Табуретки
             .row
               - for i in [1..5]
-                %a.products__list-item-wrap{href: 'product.html'}
-                  .products__list-item
-                    .products__list-item-image-block
-                      %img.products__list-item-image{ src: "images/product-square.jpg" }
-                    .products__list-item-title
-                      Моно-серьга имитация тоннеля серебряная с белыми цирконами
-                    .products__list-item-price
-                      8 900 руб.
+                - if i == 1 
+                  %a.products__list-item-wrap{href: 'product.html'}
+                    .products__list-item.products__list-item_sold
+                      .products__list-item-image-block
+                        %img.products__list-item-image{ src: "images/product-square.jpg" }
+                        %span.products__list-item-status Распродано
+                      .products__list-item-title
+                        Моно-серьга имитация тоннеля серебряная с белыми цирконами
+                      .products__list-item-price
+                        8 900 руб.
+                - else
+                  %a.products__list-item-wrap{href: 'product.html'}
+                    .products__list-item
+                      .products__list-item-image-block
+                        %img.products__list-item-image{ src: "images/product-square.jpg" }
+                      .products__list-item-title
+                        Моно-серьга имитация тоннеля серебряная с белыми цирконами
+                      .products__list-item-price
+                        8 900 руб.
       +include 'app/haml/shared/_footer.haml'
 
       +include 'app/haml/shared/_themeswitcher.haml'
