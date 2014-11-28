@@ -938,13 +938,8 @@ html.mm-opening #mm-blocker
   width: 100%
   margin: -40px auto 5px
   background: url(#{$images-path}/loader.gif) 50% 50% no-repeat
-
   @media screen and (max-width: $screen-md-min)
     margin-top: 0
-  &_instagram
-    display: none
-    max-width: 1600px
-    margin-top: -49px
 
 .application-slider_photos
   max-width: 1400px
@@ -1070,8 +1065,15 @@ html.mm-opening #mm-blocker
   margin: 0
   list-style: none
 
-.instagram-photo
-  display: block
+.instagram-feed
+  max-width: 1600px
+  margin: -49px auto 0
   overflow: hidden
-  img
-    width: 100%
+  transition: height .2s ease
+  &__photo
+    display: block
+    overflow: hidden
+    img
+      width: 100%
+  &_invisible
+    height: 0
