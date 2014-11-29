@@ -7,18 +7,24 @@ STATE_ERROR   = 'error'
 INSTAGRAM_API_URL = 'https://api.instagram.com/v1/'
 
 InstagramFeed_Mixin =
-  _getRequestUrl: ()->
-    requestUrl = INSTAGRAM_API_URL + 'users/' + @props.userId + '/media/recent/?client_id=' + @props.clientId
+  _getRequestUrl: ->
+    INSTAGRAM_API_URL + 'users/' + @props.userId + '/media/recent/?client_id=' + @props.clientId
   
-  _getPhotos: ()->
+  _loadPhotos: ->
     $.ajax(
       dataType: "jsonp"
       url: @_getRequestUrl()
-      success: (data) =>
-        @setState currentState: STATE_LOADED, photos: data if @isMounted()
+      success: (photos) =>
+        if @isMounted() && photos?
+          @setState {
+            currentState: STATE_LOADED
+            photos: photos
+          }
       error: (data) =>
-        @setState currentState: STATE_ERROR if @isMounted()
+        @_activateErrorState()
     )
+
+  _activateErrorState: -> @setState(currentState: STATE_ERROR) if @isMounted()
 
 window.InstagramFeed_Controllable = React.createClass
   propTypes:
@@ -29,45 +35,41 @@ window.InstagramFeed_Controllable = React.createClass
   getInitialState: ->
     isVisible: @props.isVisible
 
-  toggleVisibleState: -> @setState(isVisible: !@state.isVisible) if STATE_LOADED
-
-  componentDidMount: ()->
+  componentDidMount: ->
     $(document).on "instagram:clicked", @toggleVisibleState
 
-  componentWillUnmount: ()->
+  componentWillUnmount: ->
     $(document).off "instagram:clicked", @toggleVisibleState
 
   render: ->
     if @state.isVisible
       return `<InstagramFeed clientId={this.props.clientId} userId={this.props.userId} />`
     else
-      return `<span></span>`
+      return null
+
+  toggleVisibleState: -> @setState(isVisible: !@state.isVisible) if STATE_LOADED
 
 window.InstagramFeed = React.createClass
+  mixins: [InstagramFeed_Mixin]
+
   propTypes:
     clientId: React.PropTypes.string.isRequired
     userId: React.PropTypes.number.isRequired
 
-  mixins: [InstagramFeed_Mixin]
-
   getInitialState: ->
+    currentState: STATE_LOADING
     isVisible: false
     photos: null
-    currentState: STATE_LOADING
-
-  componentDidMount: ()->
-    @_getPhotos()
+    
+  componentDidMount: ->
+    @_loadPhotos()
 
   render: ->
     switch @state.currentState
-      when STATE_LOADED
-        `<InstagramFeed_Carousel photos={this.state.photos}/>`
-      when STATE_LOADING
-        `<InstagramFeed_Spinner/>`
-      when STATE_ERROR
-        `<InstagramFeed_Error/>`
-      else
-        console.log 'Неизвестное состояние #{@state.currentState}'
+      when STATE_LOADED  then `<InstagramFeed_Carousel photos={ this.state.photos } />`
+      when STATE_LOADING then `<InstagramFeed_Spinner/>`
+      when STATE_ERROR   then `<InstagramFeed_Error/>`
+      else console.warn 'Неизвестное состояние #{@state.currentState}'
 
 window.InstagramFeed_Error = React.createClass
   render: ->
@@ -78,7 +80,7 @@ window.InstagramFeed_Error = React.createClass
 window.InstagramFeed_Spinner = React.createClass
   render: ->
     `<div className='instagram-feed instagram-feed_loading'>
-      <span className='instagram-feed__loader'></span>
+      <span className='instagram-feed__loader'/>
     </div>`
 
 window.InstagramFeed_Photo = React.createClass
@@ -86,14 +88,28 @@ window.InstagramFeed_Photo = React.createClass
     photo: React.PropTypes.object.isRequired
 
   render: ->
-    `<a className='instagram-feed__photo' href={this.props.photo.images.standard_resolution.url}><img className='lazyOwl' data-src={ this.props.photo.images.low_resolution.url }></img></a>`
+    image = this.props.photo.images
+    `<a className='instagram-feed__photo' href={image.standard_resolution.url}>
+      <img className='lazyOwl' data-src={image.low_resolution.url}/>
+    </a>`
 
 
 window.InstagramFeed_Carousel = React.createClass
   propTypes:
     photos: React.PropTypes.object.isRequired
 
-  _initCarousel: ()->
+  componentDidMount: ->
+    @_initCarousel()
+
+  render: ->
+    photos = _.map @props.photos.data, (photo) ->
+      `<InstagramFeed_Photo
+        photo={photo}
+        key={photo.id} />`
+    
+    return `<div className="instagram-feed">{photos}</div>`
+
+  _initCarousel: ->
     $(@getDOMNode()).owlCarousel
       items: 6
       itemsDesktop: 6
@@ -101,12 +117,5 @@ window.InstagramFeed_Carousel = React.createClass
       autoPlay: 5000
       navigation: true
       lazyLoad: true
-
-  componentDidMount: ()->
-    @_initCarousel()
-
-  render: ->
-    photos = _.map @props.photos.data, (photo) -> `<InstagramFeed_Photo photo={photo} key={photo.id} />`
-    `<div className="instagram-feed">{photos}</div>`
 
 
