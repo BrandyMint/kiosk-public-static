@@ -18,7 +18,7 @@ InstagramFeed_Mixin =
         if @isMounted() && photos?
           @setState {
             currentState: STATE_LOADED
-            photos: photos
+            photos: photos.data
           }
       error: (data) =>
         @_activateErrorState()
@@ -45,7 +45,7 @@ window.InstagramFeed_Controllable = React.createClass
     if @state.isVisible
       return `<InstagramFeed clientId={this.props.clientId} userId={this.props.userId} />`
     else
-      return null
+      return `<span/>`
 
   toggleVisibleState: -> @setState(isVisible: !@state.isVisible) if STATE_LOADED
 
@@ -88,23 +88,25 @@ window.InstagramFeed_Photo = React.createClass
     photo: React.PropTypes.object.isRequired
 
   render: ->
-    image = this.props.photo.images
-    `<a className='instagram-feed__photo' href={image.standard_resolution.url}>
-      <img className='lazyOwl' data-src={image.low_resolution.url}/>
+    `<a className='instagram-feed__photo' href={this.props.photo.standard_resolution.url}>
+      <img className='lazyOwl' data-src={this.props.photo.low_resolution.url}/>
     </a>`
 
 
 window.InstagramFeed_Carousel = React.createClass
   propTypes:
-    photos: React.PropTypes.object.isRequired
+    photos: React.PropTypes.array.isRequired
 
   componentDidMount: ->
     @_initCarousel()
 
+  componentWillUnmount: ->
+    @_destroyCarousel()
+
   render: ->
-    photos = _.map @props.photos.data, (photo) ->
+    photos = _.map @props.photos, (photo) ->
       `<InstagramFeed_Photo
-        photo={photo}
+        photo={photo.images}
         key={photo.id} />`
     
     return `<div className="instagram-feed">{photos}</div>`
@@ -117,5 +119,8 @@ window.InstagramFeed_Carousel = React.createClass
       autoPlay: 5000
       navigation: true
       lazyLoad: true
+
+  _destroyCarousel: ->
+    $(@getDOMNode()).data('owlCarousel').destroy()
 
 
