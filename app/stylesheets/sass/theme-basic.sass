@@ -1017,7 +1017,7 @@ html.mm-opening #mm-blocker
   height: 100px
   position: absolute
   top: 50%
-  margin-top: -25px
+  margin-top: -50px
   font: 0/0 a
   opacity: 1
   background: none
@@ -1064,3 +1064,25 @@ html.mm-opening #mm-blocker
   padding: 0
   margin: 0
   list-style: none
+
+.instagram-feed
+  max-width: 1600px
+  margin: -49px auto 0
+  overflow: hidden
+  transition: height .2s ease
+  &__photo
+    display: block
+    overflow: hidden
+    img
+      width: 100%
+  &_invisible
+    height: 0
+  &_error
+  &_loading
+    text-align: center
+  &__loader
+    display: inline-block
+    height: 40px
+    width: 40px
+    background: url(#{$images-path}/loader.gif)
+
