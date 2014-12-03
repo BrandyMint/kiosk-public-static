@@ -24,6 +24,7 @@ gulp.task 'scripts', ->
     .require './bower_components/fancybox-wannabe-fix/index',                           { expose: 'fancybox.wannabe' }
     .require './bower_components/accounting.js/accounting',                             { expose: 'accounting' }
     .require './bower_components/lodash/dist/lodash',                                   { expose: 'lodash' }
+    .require './bower_components/nouislider/distribute/jquery.nouislider.all',          { expose: 'nouislider' }
 
   bundle = ->
     bundleLogger.start config.outputName
