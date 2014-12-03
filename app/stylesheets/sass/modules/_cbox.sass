@@ -1,0 +1,60 @@
+.cbox
+  display: block
+  position: relative
+  margin-bottom: 5px
+  input[type="checkbox"]
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    opacity: 0
+    z-index: 2
+    cursor: pointer
+    &:checked
+      & ~ .cbox
+        &__val
+          color: #4e4e4e
+          &:before
+            background-color: #2bcd7f
+  &__val
+    color: #a1a1a1
+    padding-left: 23px
+    font-weight: normal
+    font-size: 14px
+    transition: color .2s ease
+    &:before
+      content: ''
+      position: absolute
+      top: 4px
+      left: 0
+      width: 14px
+      height: 13px
+      background: #e0e0e0 url(#{$images-path}/cbox_tick.png) 50% 50% no-repeat
+      background-size: 10px 8px
+      border-radius: 3px
+      transition: background-color .2s ease
+
+  &_color
+    display: inline-block
+    vertical-align: top
+    margin: 0 8px 8px 0
+    .cbox
+      &__val
+        width: 24px
+        height: 24px
+        border-radius: 12px
+        background-color: #fff
+        box-shadow: 0 0 1px #c5c5c5 inset
+        transition: transform .2s ease
+        &:before
+          opacity: 0
+          top: 5px
+          left: 5px
+    input[type="checkbox"]
+      &:checked
+        & ~ .cbox
+          &__val
+            transform: scale(1.2)
+

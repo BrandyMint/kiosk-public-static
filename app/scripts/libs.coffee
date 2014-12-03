@@ -16,6 +16,7 @@ require 'bootstrapSass'
 require 'owlCarousel'
 require 'fancybox'
 require 'fancybox.wannabe'
+require 'nouislider'
 
 window.accounting.settings =
   currency:
