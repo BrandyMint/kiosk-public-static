@@ -13,6 +13,24 @@ $themeWannabeCategoriesHoverColor: #ffdfca
   .owl-buttons
     display: block
 
+  .products__list-item
+    &.__sold-out,
+    &:hover
+      color: $basicThemeCategoriesNavLinkColorHover
+      .products__list-item-image
+      +opacity(0.8)
+
+  .products__list-item-badge
+    left: -18px
+    border-radius: 1px
+    font-size: 13px
+    font-weight: normal
+  .products__list-item-badge-sold-out
+    top: auto
+    bottom: 70px
+    color: #fff
+    background: #969791
+
   .products__list-item-title
     font-weight: normal
 
@@ -23,7 +41,7 @@ $themeWannabeCategoriesHoverColor: #ffdfca
     &:hover
       border-color: $themeWannabeCategoriesHoverColor
       background-color: $themeWannabeCategoriesHoverColor
-  
+
   .categories-nav
     border: none
     li
