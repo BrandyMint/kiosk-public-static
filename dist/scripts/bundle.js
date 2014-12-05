@@ -23,11 +23,13 @@ require('./shared/checkout');
 
 require('./routes/routes');
 
-require('./react/components/basket/basket_button');
+require('./react/components/basket/button');
 
-require('./react/components/basket/basket_popup');
+require('./react/components/basket/popup');
 
 require('./react/components/product/add_to_basket_button');
+
+require('./react/components/instagram/instagram');
 
 require('./react/dispatchers/basket');
 
@@ -39,7 +41,7 @@ window.ReactUjs.initialize();
 
 
 
-},{"./libs":2,"./react/actions/view/basket":3,"./react/components/basket/basket_button":4,"./react/components/basket/basket_popup":5,"./react/components/product/add_to_basket_button":6,"./react/dispatchers/basket":8,"./react/stores/basket":10,"./routes/routes":11,"./shared/app":12,"./shared/application_slider":13,"./shared/cart":14,"./shared/checkout":15,"./shared/jump":16,"./shared/lightbox":17,"./shared/load_more":18,"./shared/mobile_navigation":19,"./shared/product_images_slider":20,"./shared/theme_switcher":21}],2:[function(require,module,exports){
+},{"./libs":2,"./react/actions/view/basket":3,"./react/components/basket/button":4,"./react/components/basket/popup":5,"./react/components/instagram/instagram":6,"./react/components/product/add_to_basket_button":7,"./react/dispatchers/basket":9,"./react/stores/basket":11,"./routes/routes":12,"./shared/app":13,"./shared/application_slider":14,"./shared/cart":15,"./shared/checkout":16,"./shared/jump":17,"./shared/lightbox":18,"./shared/load_more":19,"./shared/mobile_navigation":20,"./shared/product_images_slider":21,"./shared/theme_switcher":22}],2:[function(require,module,exports){
 window._ = require('lodash');
 
 window.$ = window.jQuery = require('jquery');
@@ -85,7 +87,7 @@ window.accounting.settings = {
 
 
 
-},{"accounting":undefined,"bootstrapSass":undefined,"eventEmitter":undefined,"fancybox":undefined,"fancybox.wannabe":undefined,"flux":22,"jquery":undefined,"jquery.mmenu":undefined,"jquery.role":undefined,"lodash":undefined,"owlCarousel":undefined,"react":undefined,"react-mixin-manager":undefined,"reactUjs":undefined}],3:[function(require,module,exports){
+},{"accounting":undefined,"bootstrapSass":undefined,"eventEmitter":undefined,"fancybox":undefined,"fancybox.wannabe":undefined,"flux":23,"jquery":undefined,"jquery.mmenu":undefined,"jquery.role":undefined,"lodash":undefined,"owlCarousel":undefined,"react":undefined,"react-mixin-manager":undefined,"reactUjs":undefined}],3:[function(require,module,exports){
 window.BasketActions = {
   addItem: function(productItem) {
     return this._addItemToServer(productItem);
@@ -342,6 +344,179 @@ window.BasketPopupControl = React.createClass({displayName: 'BasketPopupControl'
 },{}],6:[function(require,module,exports){
 
 /** @jsx React.DOM */
+var INSTAGRAM_API_URL, InstagramFeed_Mixin, STATE_ERROR, STATE_LOADED, STATE_LOADING;
+
+STATE_LOADING = 'loading';
+
+STATE_LOADED = 'loaded';
+
+STATE_ERROR = 'error';
+
+INSTAGRAM_API_URL = 'https://api.instagram.com/v1/';
+
+InstagramFeed_Mixin = {
+  _getRequestUrl: function() {
+    return INSTAGRAM_API_URL + 'users/' + this.props.userId + '/media/recent/?client_id=' + this.props.clientId;
+  },
+  _loadPhotos: function() {
+    return $.ajax({
+      dataType: "jsonp",
+      url: this._getRequestUrl(),
+      success: (function(_this) {
+        return function(photos) {
+          if (_this.isMounted() && (photos != null)) {
+            return _this.setState({
+              currentState: STATE_LOADED,
+              photos: photos.data
+            });
+          }
+        };
+      })(this),
+      error: (function(_this) {
+        return function(data) {
+          return _this._activateErrorState();
+        };
+      })(this)
+    });
+  },
+  _activateErrorState: function() {
+    if (this.isMounted()) {
+      return this.setState({
+        currentState: STATE_ERROR
+      });
+    }
+  }
+};
+
+window.InstagramFeed_Controllable = React.createClass({displayName: 'InstagramFeed_Controllable',
+  propTypes: {
+    isVisible: React.PropTypes.bool.isRequired,
+    clientId: React.PropTypes.string.isRequired,
+    userId: React.PropTypes.number.isRequired
+  },
+  getInitialState: function() {
+    return {
+      isVisible: this.props.isVisible
+    };
+  },
+  componentDidMount: function() {
+    return $(document).on("instagram:clicked", this.toggleVisibleState);
+  },
+  componentWillUnmount: function() {
+    return $(document).off("instagram:clicked", this.toggleVisibleState);
+  },
+  render: function() {
+    if (this.state.isVisible) {
+      return InstagramFeed({clientId: this.props.clientId, userId: this.props.userId});
+    } else {
+      return React.DOM.span(null);
+    }
+  },
+  toggleVisibleState: function() {
+    if (STATE_LOADED) {
+      return this.setState({
+        isVisible: !this.state.isVisible
+      });
+    }
+  }
+});
+
+window.InstagramFeed = React.createClass({displayName: 'InstagramFeed',
+  mixins: [InstagramFeed_Mixin],
+  propTypes: {
+    clientId: React.PropTypes.string.isRequired,
+    userId: React.PropTypes.number.isRequired
+  },
+  getInitialState: function() {
+    return {
+      currentState: STATE_LOADING,
+      isVisible: false,
+      photos: null
+    };
+  },
+  componentDidMount: function() {
+    return this._loadPhotos();
+  },
+  render: function() {
+    switch (this.state.currentState) {
+      case STATE_LOADED:
+        return InstagramFeed_Carousel({photos:  this.state.photos});
+      case STATE_LOADING:
+        return InstagramFeed_Spinner(null);
+      case STATE_ERROR:
+        return InstagramFeed_Error(null);
+      default:
+        return console.warn('Неизвестное состояние #{@state.currentState}');
+    }
+  }
+});
+
+window.InstagramFeed_Error = React.createClass({displayName: 'InstagramFeed_Error',
+  render: function() {
+    return React.DOM.div({className: "instagram-feed instagram-feed_error"}, 
+      "Ошибка при загрузке фотографий"
+    );
+  }
+});
+
+window.InstagramFeed_Spinner = React.createClass({displayName: 'InstagramFeed_Spinner',
+  render: function() {
+    return React.DOM.div({className: "instagram-feed instagram-feed_loading"}, 
+      React.DOM.span({className: "instagram-feed__loader"})
+    );
+  }
+});
+
+window.InstagramFeed_Photo = React.createClass({displayName: 'InstagramFeed_Photo',
+  propTypes: {
+    photo: React.PropTypes.object.isRequired
+  },
+  render: function() {
+    return React.DOM.a({className: "instagram-feed__photo", href: this.props.photo.standard_resolution.url}, 
+      React.DOM.img({className: "lazyOwl", 'data-src': this.props.photo.low_resolution.url})
+    );
+  }
+});
+
+window.InstagramFeed_Carousel = React.createClass({displayName: 'InstagramFeed_Carousel',
+  propTypes: {
+    photos: React.PropTypes.array.isRequired
+  },
+  componentDidMount: function() {
+    return this._initCarousel();
+  },
+  componentWillUnmount: function() {
+    return this._destroyCarousel();
+  },
+  render: function() {
+    var photos;
+    photos = _.map(this.props.photos, function(photo) {
+      return InstagramFeed_Photo({
+        photo: photo.images, 
+        key: photo.id});
+    });
+    return React.DOM.div({className: "instagram-feed"}, photos);
+  },
+  _initCarousel: function() {
+    return $(this.getDOMNode()).owlCarousel({
+      items: 6,
+      itemsDesktop: 6,
+      pagination: false,
+      autoPlay: 5000,
+      navigation: true,
+      lazyLoad: true
+    });
+  },
+  _destroyCarousel: function() {
+    return $(this.getDOMNode()).data('owlCarousel').destroy();
+  }
+});
+
+
+
+},{}],7:[function(require,module,exports){
+
+/** @jsx React.DOM */
 window.AddToBasketButton = React.createClass({displayName: 'AddToBasketButton',
   propTypes: {
     product_item_id: React.PropTypes.number.isRequired,
@@ -379,7 +554,7 @@ window.AddToBasketButton = React.createClass({displayName: 'AddToBasketButton',
 
 
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 var BaseDispatcher,
   __hasProp = {}.hasOwnProperty,
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
@@ -413,7 +588,7 @@ module.exports = BaseDispatcher;
 
 
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 var BaseDispatcher;
 
 BaseDispatcher = require('./_base');
@@ -422,7 +597,7 @@ window.BasketDispatcher = new BaseDispatcher();
 
 
 
-},{"./_base":7}],9:[function(require,module,exports){
+},{"./_base":8}],10:[function(require,module,exports){
 var BaseStore, CHANGE_EVENT,
   __hasProp = {}.hasOwnProperty,
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
@@ -456,7 +631,7 @@ module.exports = BaseStore;
 
 
 
-},{}],10:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 var BaseStore, _basketItems;
 
 BaseStore = require('./_base');
@@ -518,7 +693,7 @@ window.BasketStore = _.extend(new BaseStore(), {
 
 
 
-},{"./_base":9}],11:[function(require,module,exports){
+},{"./_base":10}],12:[function(require,module,exports){
 window.Routes = {
   vendor_cart_items_path: function() {
     return '/cart/cart_items/';
@@ -527,7 +702,7 @@ window.Routes = {
 
 
 
-},{}],12:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 $(function() {
   if ('ontouchstart' in document) {
     $("html").addClass("feature_touch");
@@ -539,7 +714,7 @@ $(function() {
 
 
 
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 $(function() {
   var defaultCarouselOptions;
   defaultCarouselOptions = {
@@ -558,13 +733,19 @@ $(function() {
       options['items'] = 3;
       options['itemsDesktop'] = 3;
     }
+    if ($(this).hasClass('application-slider_instagram')) {
+      options['singleItem'] = false;
+      options['items'] = 6;
+      options['itemsDesktop'] = 6;
+      options['lazyLoad'] = true;
+    }
     return thisInner.owlCarousel(options);
   });
 });
 
 
 
-},{}],14:[function(require,module,exports){
+},{}],15:[function(require,module,exports){
 $(function() {
   var $cartTotal, setCartItemCount, updateCartTotal;
   $cartTotal = $('[cart-total]');
@@ -601,7 +782,7 @@ $(function() {
 
 
 
-},{}],15:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 $(function() {
   var $checkoutTotal, findSelectedDeliveryType, selectDeliveryType, setCheckoutDeliveryPrice, setOnlyCity, toggleDeliveryOnlyElementsVisibility, updateCheckoutTotal;
   $checkoutTotal = $('[checkout-total]');
@@ -670,7 +851,7 @@ $(function() {
 
 
 
-},{}],16:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 $(function() {
   $('[ks-jump]').on('click', function(e) {
     var href;
@@ -690,7 +871,7 @@ $(function() {
 
 
 
-},{}],17:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 $(function() {
   return $('[lightbox]').fancybox({
     padding: 0,
@@ -711,7 +892,7 @@ $(function() {
 
 
 
-},{}],18:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 $(function() {
   var LOADING_TITLE, isRequest;
   isRequest = false;
@@ -755,7 +936,7 @@ $(function() {
 
 
 
-},{}],19:[function(require,module,exports){
+},{}],20:[function(require,module,exports){
 $(function() {
   var menuCopy, navOpen;
   menuCopy = $('#nav');
@@ -774,7 +955,7 @@ $(function() {
 
 
 
-},{}],20:[function(require,module,exports){
+},{}],21:[function(require,module,exports){
 $(function() {
   var center, productSlider, productThumbs, syncPosition;
   productSlider = $('#product-slider');
@@ -835,7 +1016,7 @@ $(function() {
 
 
 
-},{}],21:[function(require,module,exports){
+},{}],22:[function(require,module,exports){
 $(function() {
   var logo;
   logo = $('.navbar-brand-image');
@@ -850,7 +1031,7 @@ $(function() {
 
 
 
-},{}],22:[function(require,module,exports){
+},{}],23:[function(require,module,exports){
 /**
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.
@@ -862,7 +1043,7 @@ $(function() {
 
 module.exports.Dispatcher = require('./lib/Dispatcher')
 
-},{"./lib/Dispatcher":23}],23:[function(require,module,exports){
+},{"./lib/Dispatcher":24}],24:[function(require,module,exports){
 /*
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.
@@ -1114,7 +1295,7 @@ var _prefix = 'ID_';
 
 module.exports = Dispatcher;
 
-},{"./invariant":24}],24:[function(require,module,exports){
+},{"./invariant":25}],25:[function(require,module,exports){
 /**
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.
