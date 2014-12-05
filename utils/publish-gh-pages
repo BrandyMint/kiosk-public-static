@@ -2,15 +2,13 @@
 rm -fr ./bower_components
 git branch -D gh-pages
 git checkout --orphan gh-pages
-mv ./app/bower_components/ .
 git rm -rf ./app
 git rm -rf ./utils
 #git clean -fd -e dist
 git clean -fd
-mv dist/* ./
+mv build/* ./
+# rm -fr ./node_modules
 #shopt -s dotglob
 git add .
 git commit -am 'build gh-pages'
 git push -u -f origin gh-pages:gh-pages
-git checkout master
-mv ./bower_components/ ./app/
