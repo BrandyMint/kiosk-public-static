@@ -1,1 +1,1 @@
-./build && ./utils/publish-gh-pages
+./node_modules/gulp/bin/gulp.js build && ./utils/publish-gh-pages
