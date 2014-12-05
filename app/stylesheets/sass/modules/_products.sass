@@ -16,6 +16,12 @@ $products-show-image-width: 477px
 .products__list-item
   @extend %products__list-item
   position: relative
+  &_sold
+    .products__list-item
+      &-image,
+      &-title,
+      &-price
+        opacity: .4 !important
 
 .feature_no-touch
   .products__list-item
@@ -76,6 +82,17 @@ $products-show-image-width: 477px
     left: $grid-gutter-width
     right: $grid-gutter-width
   cursor: pointer
+
+.products__list-item-status
+  position: absolute
+  bottom: 0
+  left: 0
+  background-color: #E8E8E8
+  padding: 5px 8px
+  color: #4D4D4D
+
+.products__list-item-image-block
+  position: relative
 
 .products__show-item-image
   max-width: 100%
