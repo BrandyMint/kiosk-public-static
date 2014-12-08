@@ -9,7 +9,7 @@
 
       .application-content
         .container-fluid
-          .products__show
+          .cart
             %h1.page-title(tooltip=true title="Корзина номер 123") Корзина
             %form{action: 'checkout.html'}
               .cart__list
@@ -17,7 +17,7 @@
                   .cart__list-item{cart-item: i, data-item-price: '12000', data-item-total-price: '24000'}
                     .row
                       .col-lg-2.col-md-2.col-sm-2.col-xs-4
-                        %img{ src: "http://placehold.it/92x92", alt: 'cart item', width: '100%'}
+                        %img.cart__list-item-image{ src: "http://placehold.it/92x92", alt: 'cart item', width: '100%'}
                       .col-lg-4.col-md-3.col-sm-4.col-xs-8
                         .cart__list-item-title
                           Моно-серьга имитация тоннеля серебряная с белыми цирконами
