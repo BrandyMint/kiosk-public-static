@@ -9,26 +9,24 @@
 
       .application-content
         .container-fluid
-          .products__show.products__show_centered
-            .product__show-item-wrap
-              .products__show-item-header
+          .products__show
+            .products__show-item-header
+              .products__show-item-category
+                Столы / Маленькие столы
+              %h1.products__show-item-title
+                Моно-серьга лалала
+                %span.products__show-item-articul Арт. 123123
+            +include 'app/haml/shared/_product-cc-carousel.haml'
+            .products__show-item-content
+              .products__show-item-content-header
                 .products__show-item-category
-                  Столы / Маленькие столы
+                  %a{href: ''} Столы
+                  %a{href: ''} Маленькие столы
                 %h1.products__show-item-title
                   Моно-серьга лалала
                   %span.products__show-item-articul Арт. 123123
-            +include 'app/haml/shared/_product-cc-carousel.haml'
-            .product__show-item-wrap
-              .products__show-item-content
-                .products__show-item-content-header
-                  .products__show-item-category
-                    %a{href: ''} Столы
-                    %a{href: ''} Маленькие столы
-                  %h1.products__show-item-title
-                    Моно-серьга лалала
-                    %span.products__show-item-articul Арт. 123123
-                .products__show-item-price
-                  12 000.-
+              .products__show-item-price
+                12 000.-
 
               .products__show-item__actions
                 .row
