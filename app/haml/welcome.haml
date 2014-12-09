@@ -18,12 +18,30 @@
                     .products__list-item.products__list-item_sold
                       .products__list-item-image-block
                         %img.products__list-item-image{ src: "images/product-square.jpg" }
-                        %span.products__list-item-status Распродано
+                        %span.products__list-item-status РАСПРОДАНО
                       .products__list-item-title
                         Моно-серьга имитация тоннеля серебряная с белыми цирконами
                       .products__list-item-price
                         8 900 руб.
                 - else
+                  %a.products__list-item-wrap{href: 'product.html'}
+                    .products__list-item.products__list-item_sale
+                      .products__list-item-image-block
+                        %img.products__list-item-image{ src: "images/product-square.jpg" }
+                        %span.products__list-item-status SALE - 23%
+                      .products__list-item-title
+                        Моно-серьга имитация тоннеля серебряная с белыми цирконами
+                      .products__list-item-price
+                        8 900 руб.
+                  %a.products__list-item-wrap{href: 'product.html'}
+                    .products__list-item.products__list-item_preorder
+                      .products__list-item-image-block
+                        %img.products__list-item-image{ src: "images/product-square.jpg" }
+                        %span.products__list-item-status НА ЗАКАЗ 3-4 ДНЯ
+                      .products__list-item-title
+                        Моно-серьга имитация тоннеля серебряная с белыми цирконами
+                      .products__list-item-price
+                        8 900 руб.
                   %a.products__list-item-wrap{href: 'product.html'}
                     .products__list-item
                       .products__list-item-image-block

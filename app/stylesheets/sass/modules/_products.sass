@@ -22,6 +22,16 @@ $products-show-image-width: 477px
       &-title,
       &-price
         opacity: .4 !important
+  &_sale,
+  &_preorder
+    .products__list-item-status
+      color: $item-status-sale-text
+  &_sale
+    .products__list-item-status
+      background-color: $item-status-sale
+  &_preorder
+    .products__list-item-status
+      background-color: $item-status-preorder
 
 .feature_no-touch
   .products__list-item
@@ -87,9 +97,9 @@ $products-show-image-width: 477px
   position: absolute
   bottom: 0
   left: 0
-  background-color: #E8E8E8
+  background-color: $item-status-sold
   padding: 5px 8px
-  color: #4D4D4D
+  color: $item-status-sold-text
 
 .products__list-item-image-block
   position: relative
