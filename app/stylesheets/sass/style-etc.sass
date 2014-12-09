@@ -2,6 +2,7 @@
 $themeEtcBG: #000
 
 $themeEtcMainColor: #fff
+$themeEtcLinkHoverColor: #868383
 
 $verdanaFam: Verdana, Geneva, sans-serif
 // ============= /Settings =============
@@ -23,15 +24,17 @@ $verdanaFam: Verdana, Geneva, sans-serif
 
   .products__list-item-wrap
     padding: 0 15px
+    min-height: 424px    
     &:hover
       .products__list-item
-        color: $themeEtcBG
+        color: $themeEtcLinkHoverColor
       .products__list-item-image
-        opacity: 1  
+        opacity: 1
 
   .products__list-item
     overflow: hidden
     text-align: center
+
   
   .search__field
     color: $themeEtcBG
@@ -39,30 +42,42 @@ $verdanaFam: Verdana, Geneva, sans-serif
   .products__show,
   .products__list-item
     color: $themeEtcBG
-    border-radius: 4px
     background-color: $themeEtcMainColor
+
+  .products__list-item-info
+    background-color: $themeEtcMainColor
+    height: 74px
+    overflow: hidden
 
   .products__show
     padding: 4px 0
+    max-width: 700px
+    margin: 0 auto
     .products__show-item-title
       color: $themeEtcBG
-    &_centered
-      max-width: 700px
-      margin: 0 auto
+
+  .cart
+    max-width: 100%
+    padding: 0 20px
+      
 
   .page-title
     margin-top: 0
 
   .products__list-item-title
     font-size: 14px
+    min-height: 22px
+    height: auto
+    max-height: 44px
 
   .products__list-item-price
     font-size: 14px
     margin: 0 0 10px
 
-  .product__show-item-wrap
+  .products__show-item-content,
+  .products__show-item-header
     padding: 0 95px
-    @media screen and (max-width: $screen-xs-min)
+    @media screen and (max-width: $screen-md-min)
       padding: 0 20px
 
   .text
@@ -72,3 +87,7 @@ $verdanaFam: Verdana, Geneva, sans-serif
   .footer-nav
     a
       color: $themeEtcMainColor
+
+  .cart__list-actions_after-form,
+  .cart__form
+    margin: 0 20px
