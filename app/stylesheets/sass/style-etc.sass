@@ -2,6 +2,7 @@
 $themeEtcBG: #000
 
 $themeEtcMainColor: #fff
+$themeEtcLinkHoverColor: #868383
 
 $verdanaFam: Verdana, Geneva, sans-serif
 // ============= /Settings =============
@@ -26,7 +27,7 @@ $verdanaFam: Verdana, Geneva, sans-serif
     min-height: 424px    
     &:hover
       .products__list-item
-        color: $themeEtcBG
+        color: $themeEtcLinkHoverColor
       .products__list-item-image
         opacity: 1
 
@@ -41,8 +42,12 @@ $verdanaFam: Verdana, Geneva, sans-serif
   .products__show,
   .products__list-item
     color: $themeEtcBG
-    border-radius: 4px
     background-color: $themeEtcMainColor
+
+  .products__list-item-info
+    background-color: $themeEtcMainColor
+    height: 74px
+    overflow: hidden
 
   .products__show
     padding: 4px 0
@@ -53,6 +58,7 @@ $verdanaFam: Verdana, Geneva, sans-serif
 
   .cart
     max-width: 100%
+    padding: 0 20px
       
 
   .page-title
@@ -81,3 +87,7 @@ $verdanaFam: Verdana, Geneva, sans-serif
   .footer-nav
     a
       color: $themeEtcMainColor
+
+  .cart__list-actions_after-form,
+  .cart__form
+    margin: 0 20px
