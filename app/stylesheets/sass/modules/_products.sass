@@ -73,6 +73,24 @@ $products-show-image-width: 477px
     top: $grid-gutter-width
     bottom: $grid-gutter-width*2
 
+.products__show-item-status
+  bottom: 14px !important
+  left: 15px !important
+  font-weight: bold
+  @extend .products__list-item-status
+
+.products__show-item
+  &_sale,
+  &_preorder
+    .products__show-item-status
+      color: $item-status-sale-text
+  &_sale
+    .products__show-item-status
+      background-color: $item-status-sale
+  &_preorder
+    .products__show-item-status
+      background-color: $item-status-preorder
+
 .products__show-item-content
   padding-top: $grid-gutter-width
   @media screen and (min-width: $screen-md-min)
@@ -202,4 +220,4 @@ $products-show-image-width: 477px
   height: 105px
   img
     height: 100%
-    
+
