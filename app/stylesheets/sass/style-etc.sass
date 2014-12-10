@@ -72,3 +72,42 @@ $verdanaFam: Verdana, Geneva, sans-serif
   .footer-nav
     a
       color: $themeEtcMainColor
+
+  .full-filter
+    color: $themeEtcMainColor
+    &__item
+      &__title
+        font-weight: normal
+    &__list-wrap
+      padding-top: 12px
+    &__value
+      line-height: 1.4
+      color: $themeEtcBG
+      background-color: $themeEtcMainColor
+      &:before
+        background-image: url(#{$images-path}/cross_black.svg)
+    &__notifiction
+      background-color: $themeEtcMainColor
+      color: $themeEtcBG
+      a
+        color: $themeEtcBG !important
+
+  .noUi-handle
+    border-color: #fff
+    background-color: $themeEtcBG
+
+  .noUi-connect
+    background-color: #fff
+
+  .cbox__val
+    color: $themeEtcMainColor
+
+  .cbox input[type="checkbox"]
+    &:checked ~ .cbox__val
+      color: $themeEtcMainColor
+      &:before
+        background-color: $themeEtcMainColor
+
+  .full-filter__submit
+    background-color: $themeEtcMainColor
+    color: $themeEtcBG
