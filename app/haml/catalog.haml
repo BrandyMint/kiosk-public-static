@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+%html
+  %head
+    +include 'app/haml/shared/_head.haml'
+  %body.theme-basic.style-sugar
+    
+    .application
+      +include 'app/haml/shared/_navbar.haml'
+
+      .application-content
+        .container-fluid
+          .full-filter
+            %h1.products__list__title Табуретки
+            .row
+              .col-md-2
+                +include 'app/haml/shared/_filter.haml'
+              .col-md-10
+                .products__list
+                  .row
+                    - for i in [1..12]
+                      %a.products__list-item-wrap{href: 'product.html'}
+                        .products__list-item
+                          .products__list-item-image-block
+                            %img.products__list-item-image{ src: "images/product-square.jpg" }
+                          .products__list-item-title
+                            Моно-серьга имитация тоннеля серебряная с белыми цирконами
+                          .products__list-item-price
+                            8 900 руб.
+      +include 'app/haml/shared/_footer.haml'
+
+      #instagram{data-react-class: 'InstagramFeed_Controllable', data-react-props: '{"clientId": "295b9ad8c3304e5f8cf9a27da8014082", "userId": 30090607, "isVisible": false}'}
+
+      +include 'app/haml/shared/_themeswitcher.haml'
+
+      +include 'app/haml/shared/_adm.haml'
+      
+    %script{src: 'scripts/vendor.js'}
+    %script{src: 'scripts/client.js'}

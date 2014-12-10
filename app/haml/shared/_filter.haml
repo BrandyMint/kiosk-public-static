@@ -1,0 +1,108 @@
+.full-filter__list-wrap
+  .full-filter__item
+    .full-filter__item__title Текущий выбор
+    .full-filter__widget
+      %span.full-filter__value Цена от 20 000 до 5000 Р
+      %span.full-filter__value Категория: гибридные
+      %span.full-filter__value Материал: карбон
+
+  .full-filter__item
+    .full-filter__item__title Показывать
+    .full-filter__widget
+      %label.cbox
+        %input.cbox__native{type: 'checkbox'}
+        .cbox__val Все
+      %label.cbox
+        %input.cbox__native{type: 'checkbox'}
+        .cbox__val В наличии
+      %label.cbox
+        %input.cbox__native{type: 'checkbox'}
+        .cbox__val Под заказ
+      .full-filter__notifiction-wrap
+        .full-filter__notifiction 
+          Показать
+          %a{href: '#'} 12 вариантов
+        %label.cbox
+          %input.cbox__native{type: 'checkbox'}
+          .cbox__val Распродажа
+          
+  .full-filter__item.full-filter__item_price
+    .full-filter__item__title Ценовой диапазон
+    .full-filter__widget
+      .full-filter__slider
+        .full-filter__slider__value
+          20 000 
+          %span  – 
+          90 000 Р
+        .full-filter__slider__embed(range_slider)
+
+  .full-filter__item
+    .full-filter__item__title Показывать
+    .full-filter__widget
+      - for i in [1..3]
+        %label.cbox
+          %input.cbox__native{type: 'checkbox', 'checked': true}
+          .cbox__val Все
+        %label.cbox
+          %input.cbox__native{type: 'checkbox'}
+          .cbox__val Гибридные
+        %label.cbox
+          %input.cbox__native{type: 'checkbox'}
+          .cbox__val Складные
+        %label.cbox
+          %input.cbox__native{type: 'checkbox'}
+          .cbox__val Электро
+        
+  .full-filter__item
+    .full-filter__item__title Цвет
+    .full-filter__widget
+      %label.cbox.cbox_color
+        %input.cbox__native{type: 'checkbox'}
+        .cbox__val{style: 'background-color: #fe2a2a'}
+      %label.cbox.cbox_color
+        %input.cbox__native{type: 'checkbox'}
+        .cbox__val{style: 'background-color: #feac2a'}
+      %label.cbox.cbox_color
+        %input.cbox__native{type: 'checkbox'}
+        .cbox__val{style: 'background-color: #2fe1ec'}
+      %label.cbox.cbox_color
+        %input.cbox__native{type: 'checkbox'}
+        .cbox__val{style: 'background-color: #eee'}
+      %label.cbox.cbox_color
+        %input.cbox__native{type: 'checkbox'}
+        .cbox__val{style: 'background-color: #aeaeae'}
+      %label.cbox.cbox_color
+        %input.cbox__native{type: 'checkbox'}
+        .cbox__val{style: 'background-color: #efefef'}
+      %label.cbox.cbox_color
+        %input.cbox__native{type: 'checkbox'}
+        .cbox__val
+
+  .full-filter__item
+    .full-filter__item__title Материал рамы
+    .full-filter__widget
+      %label.cbox
+        %input.cbox__native{type: 'checkbox'}
+        .cbox__val Сталь
+      %label.cbox
+        %input.cbox__native{type: 'checkbox'}
+        .cbox__val Карбон
+      %label.cbox
+        %input.cbox__native{type: 'checkbox'}
+        .cbox__val Алюминий
+
+  .full-filter__item
+    .full-filter__item__title Модельный ряд
+    .full-filter__widget
+      %label.cbox
+        %input.cbox__native{type: 'checkbox'}
+        .cbox__val 2014
+      %label.cbox
+        %input.cbox__native{type: 'checkbox'}
+        .cbox__val 2013
+      %label.cbox
+        %input.cbox__native{type: 'checkbox'}
+        .cbox__val 2012
+
+  
+  %button.full-filter__submit{type: 'submit'} Показать
