@@ -7,6 +7,8 @@
   .products__list__title,
   .page-title,
   .cart-btn_clear,
+  .products__list-item-title,
+  .products__list-item-price
     color: $basicThemeDarkTextColor
   
   .categories-nav
@@ -42,3 +44,38 @@
   .text
     h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6
       color: inherit
+
+  .full-filter
+    color: $basicThemeDarkTextColor
+    &__item
+      &__title
+        font-weight: normal
+    &__list-wrap
+      padding-top: 12px
+    &__notifiction
+      color: $basicThemeMainColor
+      opacity: .9
+      a
+        color: $basicThemeMainColor !important
+      background-color: #fff
+      &:before
+        border-right-color: #fff
+    &__value
+      line-height: 1.4
+      background-color: $basicThemeMainColor
+      color: $basicThemeDarkTextColor
+
+  .noUi-handle
+    border-color: $basicThemeMainColor
+
+  .noUi-connect
+    background-color: $basicThemeMainColor
+
+  .cbox__val
+    color: $basicThemeDarkTextColor
+
+  .cbox input[type="checkbox"]
+    &:checked ~ .cbox__val
+      color: $basicThemeDarkTextColor
+      &:before
+        background-color: #000

@@ -35,6 +35,7 @@ $screen-sm: 508px !default; //bootstrap override
 @import "modules/owlcarousel";
 
 @import "modules/buttons";
+@import "modules/range";
 @import "modules/modal";
 @import "modules/dropdown";
 @import "modules/carousel";
@@ -47,7 +48,9 @@ $screen-sm: 508px !default; //bootstrap override
 @import "modules/bigprice";
 @import "modules/modification";
 @import "modules/stock-status";
+@import "modules/cbox";
 @import "modules/filter";
+@import "modules/full-filter";
 @import "modules/search";
 
 @import "modules/navbar";
