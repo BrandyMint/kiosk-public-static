@@ -1,0 +1,25 @@
+.b-nav
+  @extend .b-layout
+  &__list
+    list-style: none
+    margin: 0
+    padding: 0
+    text-align: center
+    &_sub
+      position: absolute
+      top: 100%
+      left: 0
+      background-color: #000
+      display: none
+  
+  &__item
+    display: inline-block
+    vertical-align: top
+    text-align: left
+    &_has-sub
+      position: relative
+
+  &__link
+    padding: 18px 20px 15px
+    display: inline-block
+    vertical-align: top
