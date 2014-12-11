@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+%html
+  %head
+    +include 'app/haml/shared/_head.haml'
+  %body.b-page
+    .b-page__content
+      
+      %header.b-header
+        .b-header__content
+          .b-header__desc
+            .b-site-description
+              Магазин мебели ручной работы
+              %ul
+                %li
+                  ="+7 903 595 1737"
+                %li
+                  ="+7 903 595 1737"
+
+          .b-header__logo
+            %a.b-logo{href: 'welcome.html'}
+              %img.b-logo__img{src: 'images/wannabe/logo.png', alt:'logo'}
+
+          .b-header__search
+            .b-search
+              %form
+                %input.b-search__field{type: 'text', placeholder: 'Поиск'}
+                %button.b-search__submit{type: 'submit'}
+
+      %nav.b-nav
+        %ul.b-nav__list
+          - categories = ['Столы', 'Стулья', 'Свет', 'Декор' ]
+          - for c in categories
+            %li.b-nav__item
+              %a.b-nav__link{href: '#'}= "#{c}"
+          %li.b-nav__item.b-nav__item_has-sub
+            %a.b-nav__link{href: '#'} Аксессуары
+            %ul.b-nav__list.b-nav__list_sub
+              %li.b-nav__list__col
+                %ul.b-nav__list
+                  %li.b-nav__item
+                    %a.b-nav__link{href: '#', data-count:'45'} Кольца
+                  %li.b-nav__item
+                    %a.b-nav__link{href: '#', data-count:'1'} Цепи
+                  %li.b-nav__item
+                    %a.b-nav__link{href: '#', data-count:'6'} Злато
+                  %li.b-nav__item
+                    %a.b-nav__link{href: '#', data-count:'12'} Тренд
+                  %li.b-nav__item
+                    %a.b-nav__link{href: '#', data-count:'4'} Миднайт
+                  %li.b-nav__item
+                    %a.b-nav__link{href: '#', data-count:'9'} Дисплей
+                  %li.b-nav__item
+                    %a.b-nav__link{href: '#', data-count:'1'} Цепи
+                  %li.b-nav__item
+                    %a.b-nav__link{href: '#', data-count:'6'} Злато
+              %li.b-nav__list__col
+                %ul.b-nav__list
+                  %li.b-nav__item
+                    %a.b-nav__link{href: '#', data-count:'45'} Кольца
+                  %li.b-nav__item
+                    %a.b-nav__link{href: '#', data-count:'1'} Цепи
+                  %li.b-nav__item
+                    %a.b-nav__link{href: '#', data-count:'6'} Злато
+                  %li.b-nav__item
+                    %a.b-nav__link{href: '#', data-count:'45'} Кольца
+
+      %section.b-item-list
+        %h1.b-item-list__title Табуретки
+        .b-item-list__content
+          - for i in [1..6]
+            .b-item-list__item
+              %a.b-item{href: 'product.html'}
+                .b-item__pic-wrap
+                  %img.b-item__pic{src: 'images/product-square.jpg', alt:'paste product name here'}
+                  .b-item__status
+                    %span.b-status.b-status_sold Распродано
+                .b-item__info
+                  %h2.b-item__name Моно-серьга имитация тоннеля серебряная с белыми цирконами
+                  .b-item__price 8 900 руб.
+
+      %footer.b-footer
+        .b-footer__content
+          .b-footer__nav.b-footer__nav_main
+            - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
+            - for l in footer_links
+              %a.b-footer__link{href: '#'}= "#{l}"
+          
+          .b-footer__nav.b-footer__nav_soc
+            %a.b-footer__link{href: '#'} Facebook
+            %a.b-footer__link{'href': '#instagram', 'onClick': '$(document).trigger("instagram:clicked")'} Instagram
+
+    
+    %script{src: 'scripts/vendor.js'}
+    %script{src: 'scripts/client.js'}
