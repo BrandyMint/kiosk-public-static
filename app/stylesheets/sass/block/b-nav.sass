@@ -1,5 +1,10 @@
 .b-nav
   @extend .b-layout
+  margin-top: 40px
+  border: 1px solid $basicBorderColor
+  border-width: 1px 0
+  position: relative
+  z-index: 5
   &__list
     list-style: none
     margin: 0
@@ -8,9 +13,54 @@
     &_sub
       position: absolute
       top: 100%
-      left: 0
-      background-color: #000
-      display: none
+      left: 15px
+      background-color: rgba(0, 0, 0, 0.9)
+      // display: none
+      padding: 21px 24px 19px
+      white-space: nowrap
+      &:before
+        content: ''
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: 0 6px 6px 6px
+        border-color: transparent transparent #000 transparent
+        opacity: 0.9
+        position: absolute
+        bottom: 100%
+        left: 30px
+      .b-nav
+        &__link
+          display: block
+          padding: 8px 20px 4px 0
+          font-size: 13px
+          margin-right: 4px
+          overflow: hidden
+          text-overflow: ellipsis
+          white-space: nowrap
+          position: relative
+          color: #fff
+          border: none
+          &:after
+            content: attr(data-count)
+            color: #5d5d5d
+            position: absolute
+            right: 5px
+            top: 8px
+        &__item
+          display: block
+          border-top: 1px solid rgba(255, 255, 255, 0.1)
+          &:first-child
+            border-top: 0
+    &__col
+      width: 240px
+      display: inline-block
+      vertical-align: top
+      white-space: normal
+      text-align: left
+      margin-left: 24px
+      &:first-child
+        margin-left: 0
   
   &__item
     display: inline-block
@@ -18,6 +68,11 @@
     text-align: left
     &_has-sub
       position: relative
+      &:hover
+        .b-nav
+          &__list
+            &_sub
+              display: block
 
   &__link
     padding: 18px 20px 15px

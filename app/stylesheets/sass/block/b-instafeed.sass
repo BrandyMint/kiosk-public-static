@@ -1,0 +1,21 @@
+.b-instafeed
+  max-width: 1600px
+  margin: -49px auto 0
+  overflow: hidden
+  transition: height .2s ease
+  &__photo
+    display: block
+    overflow: hidden
+    img
+      width: 100%
+  &_invisible
+    height: 0
+  &_error
+  &_loading
+    text-align: center
+  &__loader
+    display: inline-block
+    height: 40px
+    width: 40px
+    background: url(#{$images-path}/loader.gif)
+

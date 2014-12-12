@@ -73,7 +73,12 @@
                 .b-item__pic-wrap
                   %img.b-item__pic{src: 'images/product-square.jpg', alt:'paste product name here'}
                   .b-item__status
-                    %span.b-status.b-status_sold Распродано
+                    -if i == 1
+                      %span.b-status.b-status_sold Распродано
+                    -if i == 2
+                      %span.b-status.b-status_preorder Под заказ
+                    -if i == 3
+                      %span.b-status.b-status_sale Sale -24%
                 .b-item__info
                   %h2.b-item__name Моно-серьга имитация тоннеля серебряная с белыми цирконами
                   .b-item__price 8 900 руб.
@@ -89,6 +94,9 @@
             %a.b-footer__link{href: '#'} Facebook
             %a.b-footer__link{'href': '#instagram', 'onClick': '$(document).trigger("instagram:clicked")'} Instagram
 
-    
+      #instagram{data-react-class: 'InstagramFeed_Controllable', data-react-props: '{"clientId": "295b9ad8c3304e5f8cf9a27da8014082", "userId": 30090607, "isVisible": false}'}
+
+      %a.b-admin{href:'/admin'} Панель администратора
+
     %script{src: 'scripts/vendor.js'}
     %script{src: 'scripts/client.js'}

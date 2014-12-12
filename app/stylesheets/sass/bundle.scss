@@ -78,6 +78,11 @@
 @import "block/b-logo";	// Логотип
 @import "block/b-site-description"; // Описание сайта
 @import "block/b-item-list"; // Список товаров
+@import "block/b-item"; // Товар в списке
+@import "block/b-status"; // Статус товара
+@import "block/b-instafeed"; // Фид с инстаграмма
+@import "block/b-admin"; // Кнопка админки
+@import "block/b-search"; // Поле поиска
 
 //Global layout blocks
 @import "block/b-page"; // Основная страница
