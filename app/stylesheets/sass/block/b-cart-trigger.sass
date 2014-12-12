@@ -1,0 +1,42 @@
+$cartTriggerColor: #cbcbcb
+$cartTriggerFullColor: #121212
+$cartTriggerCounterColor: #00AEFF
+
+.b-cart-trigger
+  position: fixed
+  z-index: 10
+  right: 30px
+  top: 30px
+  width: 50px
+  height: 50px
+  border-radius: 25px
+  margin: 0
+  background-color: $cartTriggerColor
+  text-indent: -9999px
+  &:before
+    content: ''
+    width: 26px
+    height: 23px
+    background: url(../images/cart.svg)
+    margin: -12px 0 0 -13px
+    position: absolute
+    top: 50%
+    left: 50%
+  &_full
+    background-color: $cartTriggerFullColor
+    transition: background-color .2s ease
+    cursor: pointer
+    &:after
+      content: attr(data-cart)
+      position: absolute
+      bottom: 100%
+      left: 100%
+      background: $cartTriggerCounterColor
+      width: 30px
+      height: 30px
+      margin: 0 0 -15px -15px
+      text-align: center
+      line-height: 30px
+      border-radius: 15px
+    &:hover
+      background-color: $cartTriggerColor

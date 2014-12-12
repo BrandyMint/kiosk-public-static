@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+%html
+  %head
+    +include 'app/haml/shared/_head.haml'
+
+  %body.theme-basic.style-sugar
+    .application
+      +include 'app/haml/shared/_navbar_with-cart.haml'
+
+
+      .application-content
+        .container-fluid
+          .products__show
+            .products__show-item-header
+              .products__show-item-category
+                Столы / Маленькие столы
+              %h1.products__show-item-title
+                Моно-серьга лалала
+                %span.products__show-item-articul Арт. 123123
+            .row
+              .col-md-6.col-sm-12.col-xs-12
+                +include 'app/haml/shared/_product-carousel.haml'
+              .col-md-6.col-sm-12.col-xs-12
+                .products__show-item-content
+                  .products__show-item-content-header
+                    .products__show-item-category
+                      %a{href: ''} Столы
+                      %a{href: ''} Маленькие столы
+                    %h1.products__show-item-title
+                      Моно-серьга лалала
+                      %span.products__show-item-articul Арт. 123123
+                  .products__show-item-price
+                    12 000.-
+                .products__show-item__actions
+                  .row
+                    .col-sm-6.col-xs-12
+                      %select.plain-select__select--single{product-select}
+                        %option{selected: 'selected'} Выберите размер
+                        %option{data-productItem:'{"id":3777,"product_id":2057,"title":"Размер: 13","updated_at":"2014-11-19T15:27:48.378+04:00","created_at":"2014-10-29T15:48:25.489+04:00","article":"MR007-01-13","quantity_unit":{"id":"pcs","short":"шт."},"quantity":"15.0","count":15,"description":"Миникольцо Ви без камней серебряное (родий, Серебро 925, R140114, 13, MR007-01-13)","stock_synced_at":"2014-11-19T15:25:01.742+04:00","is_stock_synced":true,"ms_consignment_uuid":"ea75f922-2e22-11e4-f123-002590a28eca","ms_feature_uuid":"ea75f327-2e22-11e4-279d-002590a28eca","product":{"id":2057,"category_id":173,"title":"Миникольцо Ви без камней серебряное","updated_at":"2014-11-18T20:03:34.676+04:00","position":33,"price":{"cents":200000,"currency":"RUB"},"is_published":true,"has_errors":false,"manual_state":0,"total_items_quantity":"155.0","quantity_unit":{"id":"pcs","short":"шт."},"state":"published","image":{"mobile_url":"http://3001.vkontraste.ru/uploads/product_image/image/4229/image.png","url":"http://3001.vkontraste.ru/uploads/product_image/image/4229/image.png","id":4229},"images":[{"mobile_url":"http://3001.vkontraste.ru/uploads/product_image/image/4229/image.png","url":"http://3001.vkontraste.ru/uploads/product_image/image/4229/image.png","id":4229}]}}'} Размер 15
+                        %option{disabled} Размер 11 — нет в наличии
+
+                    .col-md-5.col-sm-6.col-xs-12
+                      %div{data-react-class: 'AddToBasketButton'}
+
+                / %h2.products__show-item__subtitle Описание
+                .products__show-item-description
+                  Make peace, not war! Настоящий блокбастер среди украшений - серебряная моносерьга в виде пули Wanna?Be! - попала в самое сердце столичных модниц. Инкрустированный цирконами аксессуар не оставил и знаменитую на весь мир икону стилю, Рианну. Известная дива не раз дополняла этим аксессуаром свои образы. Рекомендуем надевать кулон вместе с белыми майками, кружевными эспадрильями и джинсами бойфренда.
+
+                / %h3.products__show-item__subtitle Характеристики
+                %ul.products__show-item-details
+                  - details = [{'Серебро': '12 К'}, {'Цирконы': '10 К'}, {'Кристаллов': '1294'}, {'Вес': '3 гр' }]
+                  - for obj, i in details
+                    - for key of obj
+                      %li
+                        = "#{key}:"
+                        = obj[key]
+
+                .products__show-item-art
+                  Арт. 123123
+
+          .products__list
+            %h2.products__list__title Табуретки
+            .row
+              - for i in [1..3]
+                .products__list-item-wrap
+                  .products__list-item{'ks-jump': 'product.html'}
+                    .products__list-item-image-block
+                      %img.products__list-item-image{ src: "images/product-square.jpg" }
+                    .products__list-item-title
+                      Моно-серьга имитация тоннеля серебряная с белыми цирконами
+                    .products__list-item-price
+                      8 900 руб.
+      +include 'app/haml/shared/_footer.haml'
+
+      +include 'app/haml/shared/_themeswitcher.haml'
+    
+    %script{src: 'scripts/vendor.js'}
+    %script{src: 'scripts/client.js'}
+    %script{:defer => "defer", :type => "text/javascript"}
+      \//
+        BasketActions.receiveBasket( {"items":[{"product_item":{"id":3777,"product_id":2057,"title":"Размер: 13","updated_at":"2014-11-19T15:27:48.378+04:00","created_at":"2014-10-29T15:48:25.489+04:00","article":"MR007-01-13","quantity_unit":{"id":"pcs","short":"шт."},"quantity":"15.0","count":15,"description":"Миникольцо Ви без камней серебряное (родий, Серебро 925, R140114, 13, MR007-01-13)","stock_synced_at":"2014-11-19T15:25:01.742+04:00","is_stock_synced":true,"ms_consignment_uuid":"ea75f922-2e22-11e4-f123-002590a28eca","ms_feature_uuid":"ea75f327-2e22-11e4-279d-002590a28eca","product":{"id":2057,"category_id":173,"title":"Миникольцо Ви без камней серебряное","updated_at":"2014-11-18T20:03:34.676+04:00","position":33,"price":{"cents":200000,"currency":"RUB"},"is_published":true,"has_errors":false,"manual_state":0,"total_items_quantity":"155.0","quantity_unit":{"id":"pcs","short":"шт."},"state":"published","description":"","image":{"mobile_url":"http://3001.vkontraste.ru/uploads/product_image/image/4229/image.png","url":"http://3001.vkontraste.ru/uploads/product_image/image/4229/image.png","id":4229},"images":[{"mobile_url":"http://3001.vkontraste.ru/uploads/product_image/image/4229/image.png","url":"http://3001.vkontraste.ru/uploads/product_image/image/4229/image.png","id":4229}]}}}],"total_price":{"fractional":"230000.0","currency":{"id":"rub","priority":100,"iso_code":"RUB","name":"Russian Ruble","symbol":"р.","alternate_symbols":["руб"],"subunit":"Kopek","subunit_to_unit":100,"symbol_first":false,"html_entity":"\u0026#x0440;\u0026#x0443;\u0026#x0431;","decimal_mark":",","thousands_separator":".","iso_numeric":"643"},"bank":{"rounding_method":null,"rates":{},"mutex":{}}},"products_price":{"fractional":"200000.0","currency":{"id":"rub","priority":100,"iso_code":"RUB","name":"Russian Ruble","symbol":"р.","alternate_symbols":["руб"],"subunit":"Kopek","subunit_to_unit":100,"symbol_first":false,"html_entity":"\u0026#x0440;\u0026#x0443;\u0026#x0431;","decimal_mark":",","thousands_separator":".","iso_numeric":"643"},"bank":{"rounding_method":null,"rates":{},"mutex":{}}},"delivery_price":{"fractional":"30000.0","currency":{"id":"rub","priority":100,"iso_code":"RUB","name":"Russian Ruble","symbol":"р.","alternate_symbols":["руб"],"subunit":"Kopek","subunit_to_unit":100,"symbol_first":false,"html_entity":"\u0026#x0440;\u0026#x0443;\u0026#x0431;","decimal_mark":",","thousands_separator":".","iso_numeric":"643"},"bank":{"rounding_method":null,"rates":{},"mutex":{}}},"items_amount":1});
+        \//
+    

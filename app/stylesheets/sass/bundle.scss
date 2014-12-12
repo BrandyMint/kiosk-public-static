@@ -73,16 +73,24 @@
 @import "utilities/_normalize";
 @import "utilities/grid";
 
+@import "modules/owlcarousel";
+
 //Blocks
 @import "block/b-layout"; // Лейаут
+@import "block/b-btn"; // Кнопочки
 @import "block/b-logo";	// Логотип
 @import "block/b-site-description"; // Описание сайта
 @import "block/b-item-list"; // Список товаров
 @import "block/b-item"; // Товар в списке
+@import "block/b-item-full"; // Товар
 @import "block/b-status"; // Статус товара
 @import "block/b-instafeed"; // Фид с инстаграмма
 @import "block/b-admin"; // Кнопка админки
 @import "block/b-search"; // Поле поиска
+@import "block/b-cart-trigger"; // Кнопка корзины (триггер)
+@import "block/b-slider"; // Слайдер (прим. слайдер товаров)
+@import "block/b-characteristics"; // Характеристики товара
+// @import "blocks/b-breadcrumbs"; //Хлебные крошки
 
 //Global layout blocks
 @import "block/b-page"; // Основная страница
