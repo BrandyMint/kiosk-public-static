@@ -22,6 +22,19 @@ $verdanaFam: Verdana, Geneva, sans-serif
       a
         color: $themeEtcMainColor
 
+  .product__show__thumbs 
+    display: none !important
+
+  .products__show-item-carousel
+    @extend .col-md-12
+    @extend .col-sm-12
+    @extend .col-xs-12
+
+  .products__show-item-content-wrap
+    @extend .col-md-12
+    @extend .col-sm-12
+    @extend .col-xs-12
+
   .products__list-item-wrap
     padding: 0 15px
     min-height: 424px    
@@ -75,7 +88,9 @@ $verdanaFam: Verdana, Geneva, sans-serif
     margin: 0 0 10px
 
   .products__show-item-content,
-  .products__show-item-header
+  .products__show-item-header,
+  .products__show-item-details,
+  .products__show-item-art
     padding: 0 95px
     @media screen and (max-width: $screen-md-min)
       padding: 0 20px
