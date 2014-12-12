@@ -3,6 +3,7 @@
 
   &__content
     @extend %grid
+    padding: 30px 0 15px
   
   &__search,
   &__desc,
@@ -10,3 +11,10 @@
     @extend %grid__item
     @extend %four-twelfths
     @extend %palm--one-whole
+
+  &__search
+    text-align: right
+    .b-search
+      max-width: 250px
+      display: inline-block
+      vertical-align: top

@@ -1,7 +1,21 @@
 $font-stack-default-family: "Helvetica Neue", Helvetica, Arial, sans-serif
 $font-stack-default-size: 14px
 
+$basicColor: #121212
+$basicColorHover: #cbcbcb
+$basicBorderColor: #e2e2e2
+$lineHeight: 1.42857
+
+a
+  text-decoration: none
+  color: $basicColor
+  &:hover
+    color: $basicColorHover
+
 .b-page
   font:
     family: $font-stack-default-family
     size: $font-stack-default-size
+
+  color: $basicColor
+  line-height: $lineHeight
