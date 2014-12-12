@@ -1,0 +1,18 @@
+.b-item-list
+  @extend .b-layout
+
+  &__title
+    font-size: 53px
+    text-align: center
+    margin: 17px 0 56px
+
+  &__content
+    @extend %grid
+
+  &__item
+    @extend %grid__item
+    @extend %four-twelfths
+    @extend %lap--one-half
+    @extend %palm--one-whole
+    .b-item
+      margin: 15px 0

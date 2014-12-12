@@ -1,0 +1,26 @@
+.b-footer
+  @extend .b-layout
+  margin-top: 70px
+
+  &__content
+    @extend %grid
+
+  &__nav
+    @extend %grid__item
+    @extend %lap--one-half
+    @extend %palm--one-whole
+    margin: 20px 0
+    &_soc
+      @extend %three-twelfths
+      text-align: right
+      .b-footer
+        &__link
+          margin: 0 0 0 25px
+    &_main
+      @extend %nine-twelfths
+
+  &__link
+    font-size: 1.143em
+    margin-left: 25px
+    &:first-child
+      margin-left: 0

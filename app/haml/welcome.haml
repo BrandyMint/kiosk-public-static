@@ -2,63 +2,101 @@
 %html
   %head
     +include 'app/haml/shared/_head.haml'
-  %body.theme-basic.style-sugar
-    
-    .application
-      +include 'app/haml/shared/_navbar.haml'
+  %body.b-page
+    .b-page__content
+      
+      %header.b-header
+        .b-header__content
+          .b-header__desc
+            .b-site-description
+              Магазин мебели ручной работы
+              %ul
+                %li
+                  ="+7 903 595 1737"
+                %li
+                  ="+7 903 595 1737"
 
-      .application-content
-        .container-fluid
-          .products__list
-            %h1.products__list__title Табуретки
-            .row
-              - for i in [1..5]
-                - if i == 1 
-                  %a.products__list-item-wrap{href: 'product.html'}
-                    .products__list-item.products__list-item_sold
-                      .products__list-item-image-block
-                        %img.products__list-item-image{ src: "images/product-square.jpg" }
-                        %span.products__list-item-status Распродано
-                      .products__list-item-info
-                        .products__list-item-title
-                          Моно-серьга имитация тоннеля серебряная с белыми цирконами
-                        .products__list-item-price
-                          8 900 руб.
-                - else
-                  %a.products__list-item-wrap{href: 'product.html'}
-                    .products__list-item.products__list-item_sale
-                      .products__list-item-image-block
-                        %img.products__list-item-image{ src: "images/product-square.jpg" }
-                        %span.products__list-item-status SALE - 23%
-                      .products__list-item-title
-                        Моно-серьга имитация тоннеля серебряная с белыми цирконами
-                      .products__list-item-price
-                        8 900 руб.
-                  %a.products__list-item-wrap{href: 'product.html'}
-                    .products__list-item.products__list-item_preorder
-                      .products__list-item-image-block
-                        %img.products__list-item-image{ src: "images/product-square.jpg" }
-                        %span.products__list-item-status НА ЗАКАЗ 3-4 ДНЯ
-                      .products__list-item-title
-                        Моно-серьга имитация тоннеля серебряная с белыми цирконами
-                      .products__list-item-price
-                        8 900 руб.
-                  %a.products__list-item-wrap{href: 'product.html'}
-                    .products__list-item
-                      .products__list-item-image-block
-                        %img.products__list-item-image{ src: "images/product-square.jpg" }
-                      .products__list-item-info
-                        .products__list-item-title
-                          Моно-серьга имитация тоннеля серебряная с белыми цирконами
-                        .products__list-item-price
-                          8 900 руб.
-      +include 'app/haml/shared/_footer.haml'
+          .b-header__logo
+            %a.b-logo{href: 'welcome.html'}
+              %img.b-logo__img{src: 'images/wannabe/logo.png', alt:'logo'}
+
+          .b-header__search
+            .b-search
+              %form
+                %input.b-search__field{type: 'text', placeholder: 'Поиск'}
+                %button.b-search__submit{type: 'submit'}
+
+      %nav.b-nav
+        %ul.b-nav__list
+          - categories = ['Столы', 'Стулья', 'Свет', 'Декор' ]
+          - for c in categories
+            %li.b-nav__item
+              %a.b-nav__link{href: '#'}= "#{c}"
+          %li.b-nav__item.b-nav__item_has-sub
+            %a.b-nav__link{href: '#'} Аксессуары
+            %ul.b-nav__list.b-nav__list_sub
+              %li.b-nav__list__col
+                %ul.b-nav__list
+                  %li.b-nav__item
+                    %a.b-nav__link{href: '#', data-count:'45'} Кольца
+                  %li.b-nav__item
+                    %a.b-nav__link{href: '#', data-count:'1'} Цепи
+                  %li.b-nav__item
+                    %a.b-nav__link{href: '#', data-count:'6'} Злато
+                  %li.b-nav__item
+                    %a.b-nav__link{href: '#', data-count:'12'} Тренд
+                  %li.b-nav__item
+                    %a.b-nav__link{href: '#', data-count:'4'} Миднайт
+                  %li.b-nav__item
+                    %a.b-nav__link{href: '#', data-count:'9'} Дисплей
+                  %li.b-nav__item
+                    %a.b-nav__link{href: '#', data-count:'1'} Цепи
+                  %li.b-nav__item
+                    %a.b-nav__link{href: '#', data-count:'6'} Злато
+              %li.b-nav__list__col
+                %ul.b-nav__list
+                  %li.b-nav__item
+                    %a.b-nav__link{href: '#', data-count:'45'} Кольца
+                  %li.b-nav__item
+                    %a.b-nav__link{href: '#', data-count:'1'} Цепи
+                  %li.b-nav__item
+                    %a.b-nav__link{href: '#', data-count:'6'} Злато
+                  %li.b-nav__item
+                    %a.b-nav__link{href: '#', data-count:'45'} Кольца
+
+      %section.b-item-list
+        %h1.b-item-list__title Табуретки
+        .b-item-list__content
+          - for i in [1..6]
+            .b-item-list__item
+              %a.b-item{href: 'product.html'}
+                .b-item__pic-wrap
+                  %img.b-item__pic{src: 'images/product-square.jpg', alt:'paste product name here'}
+                  .b-item__status
+                    -if i == 1
+                      %span.b-status.b-status_sold Распродано
+                    -if i == 2
+                      %span.b-status.b-status_preorder Под заказ
+                    -if i == 3
+                      %span.b-status.b-status_sale Sale -24%
+                .b-item__info
+                  %h2.b-item__name Моно-серьга имитация тоннеля серебряная с белыми цирконами
+                  .b-item__price 8 900 руб.
+
+      %footer.b-footer
+        .b-footer__content
+          .b-footer__nav.b-footer__nav_main
+            - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
+            - for l in footer_links
+              %a.b-footer__link{href: '#'}= "#{l}"
+          
+          .b-footer__nav.b-footer__nav_soc
+            %a.b-footer__link{href: '#'} Facebook
+            %a.b-footer__link{'href': '#instagram', 'onClick': '$(document).trigger("instagram:clicked")'} Instagram
 
       #instagram{data-react-class: 'InstagramFeed_Controllable', data-react-props: '{"clientId": "295b9ad8c3304e5f8cf9a27da8014082", "userId": 30090607, "isVisible": false}'}
 
-      +include 'app/haml/shared/_themeswitcher.haml'
+      %a.b-admin{href:'/admin'} Панель администратора
 
-      +include 'app/haml/shared/_adm.haml'
-      
     %script{src: 'scripts/vendor.js'}
     %script{src: 'scripts/client.js'}
