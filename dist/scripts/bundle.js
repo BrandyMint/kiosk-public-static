@@ -712,7 +712,7 @@ $(function() {
     $("html").addClass("feature_no-touch");
   }
   $('[tooltip]').tooltip();
-  if ($("[range_slider]" != null)) {
+  if ($("[range_slider]").length) {
     return $("[range_slider]").noUiSlider({
       start: [20, 80],
       connect: true,

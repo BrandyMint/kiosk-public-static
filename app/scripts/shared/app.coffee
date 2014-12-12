@@ -7,7 +7,7 @@ $ ->
 
   $('[tooltip]').tooltip()
 
-  if $("[range_slider]"?)
+  if $("[range_slider]").length
     $("[range_slider]").noUiSlider(
       start: [20, 80]
       connect: true
