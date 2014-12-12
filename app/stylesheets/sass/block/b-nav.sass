@@ -1,6 +1,6 @@
 .b-nav
   @extend .b-layout
-  margin-top: 40px
+  margin-top: 30px
   border: 1px solid $basicBorderColor
   border-width: 1px 0
   position: relative
@@ -15,20 +15,9 @@
       top: 100%
       left: 15px
       background-color: rgba(0, 0, 0, 0.9)
-      // display: none
+      display: none
       padding: 21px 24px 19px
       white-space: nowrap
-      &:before
-        content: ''
-        width: 0
-        height: 0
-        border-style: solid
-        border-width: 0 6px 6px 6px
-        border-color: transparent transparent #000 transparent
-        opacity: 0.9
-        position: absolute
-        bottom: 100%
-        left: 30px
       .b-nav
         &__link
           display: block
@@ -66,13 +55,36 @@
     display: inline-block
     vertical-align: top
     text-align: left
+    font-size: 1.143em
     &_has-sub
       position: relative
+      &:before
+        display: none
+        content: ''
+        width: 0
+        height: 0
+        border-style: solid
+        border-width: 0 6px 6px 6px
+        border-color: transparent transparent #000 transparent
+        opacity: 0.9
+        position: absolute
+        bottom: 0
+        left: 50%
+        margin-left: -6px
+      &_reverse
+        .b-nav__list_sub
+          left: auto
+          right: 15px
+          &:before
+            left: auto
+            right: 30px
       &:hover
         .b-nav
           &__list
             &_sub
               display: block
+        &:before
+          display: block
 
   &__link
     padding: 18px 20px 15px

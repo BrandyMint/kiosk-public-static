@@ -1,16 +1,18 @@
-.application-footer
-  .container-fluid
-    .application-footer__inner
-      .row
-        .col-md-8
-          %ul.footer-nav
-            - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
-            - for l in footer_links
-              %li
-                %a{href: '#'}= "#{l}"
-        .col-md-4
-          %ul.footer-nav
-            %li
-              %a{href: '#'} Facebook
-            %li
-              %a.footer-nav__trigger{'href': '#instagram', 'onClick': '$(document).trigger("instagram:clicked")'} Instagram
+%footer.b-footer
+  .b-footer__content
+    .b-footer__nav.b-footer__nav_main
+      - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
+      - for l in footer_links
+        %a.b-footer__link{href: '#'}= "#{l}"
+    
+    .b-footer__nav.b-footer__nav_soc
+      %a.b-footer__link{href: '#'} Facebook
+      %a.b-footer__link{'href': '#instagram', 'onClick': '$(document).trigger("instagram:clicked")'} Instagram
+
+%a.b-admin{href:'/admin'} Панель администратора
+
+#instagram{data-react-class: 'InstagramFeed_Controllable', data-react-props: '{"clientId": "295b9ad8c3304e5f8cf9a27da8014082", "userId": 30090607, "isVisible": false}'}
+
+%div{data-react-class: 'BasketButton', data-react-props: '{"cartUrl": "cart.html"}'}
+  
+%div{data-react-class: 'BasketPopup'}

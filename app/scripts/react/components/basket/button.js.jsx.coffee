@@ -31,7 +31,7 @@ window.BasketButton_Full = React.createClass
     totalPrice: React.PropTypes.object
     cartUrl: React.PropTypes.object
   render: ->
-    return `<a className='navbar-cart-btn navbar-cart-btn-full' data-cart={this.props.itemsCount} href={this.props.cartUrl}>
+    return `<a className='b-cart-trigger b-cart-trigger_full' data-cart={this.props.itemsCount} href={this.props.cartUrl}>
           <span className='navbar-cart-btn-icon'></span>
           <span className='navbar-cart-btn-caption'>
             Корзина — {accounting.formatMoney(this.props.totalPrice)}
@@ -40,7 +40,7 @@ window.BasketButton_Full = React.createClass
 
 window.BasketButton_Empty = React.createClass
   render: ->
-    return `<span className='navbar-cart-btn navbar-cart-btn-empty'>
+    return `<span className='b-cart-trigger'>
           <span className='navbar-cart-btn-icon'></span>
           <span className='navbar-cart-btn-caption'>
             Корзина

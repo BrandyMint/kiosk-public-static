@@ -101,3 +101,32 @@
 .owl-item.loading
   min-height: 150px
   background: url(#{$images-path}/loader.gif) center center no-repeat
+
+.owl-buttons
+  opacity: 0
+  transition: opacity .2s ease
+
+.owl-carousel
+  &:hover
+    .owl-buttons
+      opacity: 1
+
+.owl-theme .owl-controls .owl-buttons div
+  width: 44px
+  height: 100px
+  position: absolute
+  top: 50%
+  margin-top: -50px
+  font: 0/0 a
+  opacity: 1
+  background: none
+  padding: 0
+  background-size: 100% 100%
+
+  &.owl-prev
+    left: 20px
+    background-image: url(#{$images-path}/ar_right-c.svg)
+
+  &.owl-next
+    right: 20px
+    background-image: url(#{$images-path}/ar_left-c.svg)
