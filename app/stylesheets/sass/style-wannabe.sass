@@ -1,5 +1,6 @@
 // ============= Wannabe theme Settings =============
 $themeWannabeCategoriesHoverColor: #ffdfca
+$themeWannabeNewPriceColor: #d21500
 // ============= /Settings =============
 .style-wannabe
   font-family: 'Gotham Pro'
@@ -23,7 +24,15 @@ $themeWannabeCategoriesHoverColor: #ffdfca
     &:hover
       border-color: $themeWannabeCategoriesHoverColor
       background-color: $themeWannabeCategoriesHoverColor
-  
+
+  .products__old-price
+    display: inline-block
+    text-decoration: line-through
+  .products__new-price
+    display: inline-block
+    margin-left: 15px
+    color: $themeWannabeNewPriceColor
+
   .categories-nav
     border: none
     li
