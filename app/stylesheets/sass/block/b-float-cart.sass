@@ -1,0 +1,58 @@
+$cartClearColor: #cbcbcb
+
+.b-float-cart
+  position: fixed
+  z-index: 5
+  background-color: #fff
+  top: 90px
+  right: 30px
+  width: 600px
+  padding: 18px
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5)
+  border-radius: 3px
+  box-sizing: border-box
+  &_invisible
+    display: none
+  &__item-wrap
+    max-height: 280px
+    overflow: hidden
+    overflow-y: auto
+    margin: 0 0 20px
+  &__item
+    font-size: 1.2em
+    margin: 20px 0 0
+    &:first-child
+      margin-top: 0
+    &__inner
+      @extend %grid
+    &__img,
+    &__info,
+    &__q,
+    &__price
+      @extend %grid__item
+    &__img
+      @extend %three-twelfths
+      img
+        width: 100%
+        vertical-align: top
+    &__info
+      @extend %five-twelfths
+      a
+        font-weight: bold
+        display: block
+    &__q,
+    &__price
+      @extend %two-twelfths
+      text-align: right
+
+  &__control
+    overflow: hidden
+
+  &__url
+    float: right
+
+  &__clear
+    color: $cartClearColor
+    padding: 13px 0 11px
+    text-decoration: none
+    float: left

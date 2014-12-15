@@ -74,10 +74,12 @@
 @import "utilities/grid";
 
 @import "modules/owlcarousel";
+@import "modules/fancybox";
 
 //Blocks
 @import "block/b-layout"; // Лейаут
 @import "block/b-btn"; // Кнопочки
+@import "block/b-alert"; // Алерты
 @import "block/b-logo";	// Логотип
 @import "block/b-site-description"; // Описание сайта
 @import "block/b-item-list"; // Список товаров
@@ -90,6 +92,11 @@
 @import "block/b-cart-trigger"; // Кнопка корзины (триггер)
 @import "block/b-slider"; // Слайдер (прим. слайдер товаров)
 @import "block/b-characteristics"; // Характеристики товара
+@import "block/b-float-cart"; // Плавающая корзина
+@import "block/b-cart"; // Корзина
+@import "block/b-article"; // Статья
+@import "block/b-text"; // Текстовый блок
+@import "block/b-form"; // Форма
 // @import "blocks/b-breadcrumbs"; //Хлебные крошки
 
 //Global layout blocks

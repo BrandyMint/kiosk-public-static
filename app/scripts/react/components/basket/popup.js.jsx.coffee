@@ -43,9 +43,9 @@ window.BasketPopup = React.createClass
     items: null
 
   render: ->
-    classNameValue = "float-cart"
-    classNameValue += " float-cart_invisible" if @state.isVisible is false
-    return `<div className={classNameValue}><div className='float-cart__content' onClick={this.handleClick}>
+    classNameValue = "b-float-cart"
+    classNameValue += " b-float-cart_invisible" if @state.isVisible is false
+    return `<div className={classNameValue}><div className='b-float-cart__content' onClick={this.handleClick}>
           <BasketPopupList items={this.state.items}/>
           <BasketPopupControl cartUrl={this.props.cartUrl} cartClearUrl={this.props.cartClearUrl}/>
         </div></div>`
@@ -62,7 +62,7 @@ window.BasketPopupList = React.createClass
         )
     )
     
-    return `<div className="float-cart__item-wrap">
+    return `<div className="b-float-cart__item-wrap">
         {itemsList}
       </div>`
 
@@ -80,32 +80,27 @@ window.BasketPopupItem = React.createClass
 
   render: ->
     @props = @props.item
-    return `<div className="float-cart__item">
-          <div className="row">
-            <div className="col-sm-3">
-              <a className="float-cart__item__img" href={this.props.product_id}>
-                <img src={this.props.product.image.url} alt={this.props.title}/>
-              </a>
-            </div>
-            <div className="col-sm-5">
-              <div className="float-cart__item__nfo">
-                <a className="float-cart__item__name" href={this.props.product_id}>{this.props.product.title}</a>
-                <div className="float-cart__item__param">{this.props.description}</div>
-                <div className="float-cart__item__param">{this.props.article}</div>
+    return `<div className="b-float-cart__item">
+              <div className="b-float-cart__item__inner">
+                <div className="b-float-cart__item__img">
+                  <a href={this.props.product_id}>
+                    <img src={this.props.product.image.url} alt={this.props.title}/>
+                  </a>
+                </div>
+                <div className="b-float-cart__item__info">
+                  <a className="b-float-cart__item__name" href={this.props.product_id}>{this.props.product.title}</a>
+                  <div className="b-float-cart__item__param">{this.props.description}</div>
+                  <div className="b-float-cart__item__param">{this.props.article}</div>
+                </div>
+                <div className="b-float-cart__item__q">{this.props.count}</div>
+                <div className="b-float-cart__item__price">
+                  <div className="b-float-cart__item__price-val">
+                    {accounting.formatMoney(this.props.product.price.cents * this.props.count)}
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className="col-sm-2">
-              <div className="float-cart__item__q">
-                {this.props.count}
-              </div>
-            </div>
-            <div className="col-sm-2">
-              <div className="float-cart__item__price">
-                {accounting.formatMoney(this.props.product.price.cents * this.props.count)}
-              </div>
-            </div>
-          </div>
-        </div>`
+            </div>`
+
 
 window.BasketPopupControl = React.createClass
   propTypes:
@@ -113,7 +108,7 @@ window.BasketPopupControl = React.createClass
     cartClearUrl: React.PropTypes.string
 
   render: ->
-    return `<div className="float-cart__control">
-          <a className="cart-btn float-cart__link" href={this.props.cartUrl}>Перейти в корзину</a>
-          <a className="float-cart__clear" href={this.props.cartClearUrl}>Очистить корзину</a>
+    return `<div className="b-float-cart__control">
+          <a className="b-float-cart__url b-btn" href={this.props.cartUrl}>Перейти в корзину</a>
+          <a className="b-float-cart__clear" href={this.props.cartClearUrl}>Очистить корзину</a>
         </div>`
