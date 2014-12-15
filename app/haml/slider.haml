@@ -2,34 +2,36 @@
 %html
   %head
     +include 'app/haml/shared/_head.haml'
-
-  %body.theme-basic.style-sugar
-    .application
+  %body.b-page
+    .b-page__content
+      
       +include 'app/haml/shared/_navbar.haml'
 
-      .application-slider(application-slider)
-        .application-slider__inner
-          - for i in [1..5]
-            .application-slider__slide
-              %img{src: 'images/slidertest.jpg', alt: ''}
+      .b-slider.b-slider_promo(application-slider)
+        - for i in [1..5]
+          .b-slider__item
+            %img{src: 'images/slidertest.jpg', alt: ''}
 
-      .application-content
-        .container-fluid
-          .products__list(ks-products-container){data-total-pages: 3, data-current-page: 1, data-url: 'shared/_products.html'}
-            .row
-              +include 'app/haml/shared/_products.haml'
-            +include 'app/haml/shared/_load_more.haml'
+      %section.b-item-list
+        %h1.b-item-list__title Табуретки
+        .b-item-list__content
+          - for i in [1..6]
+            .b-item-list__item
+              %a.b-item{href: 'product.html'}
+                .b-item__pic-wrap
+                  %img.b-item__pic{src: 'images/product-square.jpg', alt:'paste product name here'}
+                  .b-item__status
+                    -if i == 1
+                      %span.b-status.b-status_sold Распродано
+                    -if i == 2
+                      %span.b-status.b-status_preorder Под заказ
+                    -if i == 3
+                      %span.b-status.b-status_sale Sale -24%
+                .b-item__info
+                  %h2.b-item__name Моно-серьга имитация тоннеля серебряная с белыми цирконами
+                  .b-item__price 8 900 руб.
 
-      .application-slider.application-slider_photos(application-slider)
-        .application-slider__inner
-          - for i in [1..8]
-            .application-slider__slide
-              %img{src: 'http://www.gold4u.ru/pictures/large/R00173.jpg', alt: ''}
-
-
-      +include 'app/haml/shared/_footer_sugar.haml'
-
-      +include 'app/haml/shared/_themeswitcher.haml'
+      +include 'app/haml/shared/_footer.haml'
 
     %script{src: 'scripts/vendor.js'}
     %script{src: 'scripts/client.js'}

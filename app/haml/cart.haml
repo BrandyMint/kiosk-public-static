@@ -2,93 +2,71 @@
 %html
   %head
     +include 'app/haml/shared/_head.haml'
+  %body.b-page
+    .b-page__content
+      
+      +include 'app/haml/shared/_navbar.haml'
 
-  %body.theme-basic
-    .application
-      +include 'app/haml/shared/_navbar_empty.haml'
+      %section.b-cart
+        .b-cart__content
+          %h1.b-cart__title(data-title="Корзина номер 123") Корзина
+          %form
+            %ul.b-cart__list
+              - for i in [1..5]
+                %li.b-cart__item{cart-item: i, data-item-price: '12000', data-item-total-price: '24000'}
+                  .b-cart__item__col-img
+                    %img.b-cart__item__img{ src: "http://placehold.it/92x92", alt: 'cart item'}
 
-      .application-content
-        .container-fluid
-          .cart
-            %h1.page-title(tooltip=true title="Корзина номер 123") Корзина
-            %form{action: 'checkout.html'}
-              .cart__list
-                - for i in [1..5]
-                  .cart__list-item{cart-item: i, data-item-price: '12000', data-item-total-price: '24000'}
-                    .row
-                      .col-lg-2.col-md-2.col-sm-2.col-xs-4
-                        %img.cart__list-item-image{ src: "http://placehold.it/92x92", alt: 'cart item', width: '100%'}
-                      .col-lg-4.col-md-3.col-sm-4.col-xs-8
-                        .cart__list-item-title
-                          Моно-серьга имитация тоннеля серебряная с белыми цирконами
-                        .cart__list-item-option
-                          Размер 16
-                        .cart__list-item-option
-                          Арт. 123456
-                        .cart__list-item-quantity.cart__list-item-quantity_xs.visible-xs
-                          %span.cart__list-item-quantity__text{cart-item-block: 'basic'}
-                            Количество
-                          .cart__list-item-quantity-select
-                            %select{cart-item-selector: 'basic'}
-                              %option 1
-                              %option{selected} 2
-                              %option 3
-                              %option 4
-                              %option 5
-                              %option 6
-                              %option 7
-                              %option 8
-                              %option 9
-                              %option 10
-                        .cart__list-item-price.visible-xs{cart-item-total-price: true} 24 000 руб.
-                        %span.cart__list-item-remove.cart__list-item-remove_xs.visible-xs
-                          %a{href:'#'}
-                            %img{src: 'images/cross_white.svg', alt: ''}
-                      %div{cart-item-block: 'additional'}
-                        .col-lg-3.col-md-3.col-sm-3.hidden-xs
-                          .cart__list-item-quantity
-                            %span.cart__list-item-quantity__text
-                              Количество
-                            .cart__list-item-quantity-select
-                              %select{cart-item-selector: 'additional'}
-                                %option 1
-                                %option{selected} 2
-                                %option 3
-                                %option 4
-                                %option 5
-                                %option 6
-                                %option 7
-                                %option 8
-                                %option 9
-                                %option 10
-                        .col-lg-2.col-md-3.col-sm-2.hidden-xs
-                          .cart__list-item-price{cart-item-total-price: true} 24 000 руб.
-                        .col-lg-1.col-md-1.col-sm-1.hidden-xs
-                          %span.cart__list-item-remove
-                            %img{src: 'images/cross_white.svg', alt: ''}
-                .cart__list-item.cart__list-item_sum
-                  .cart__list-item-sum
-                    Итого:
-                    %span{cart-total: true} 24 000 руб.
+                  .b-cart__item__col-content
+                    %h2.b-cart__item__title
+                      Моно-серьга имитация тоннеля серебряная с белыми цирконами
+                    .b-cart__item__option
+                      Размер 16
+                    .b-cart__item__option
+                      Арт. 123456
 
-              .cart__list-actions
-                .row
-                  .col-lg-3.col-md-4.hidden-sm.hidden-xs
-                    %a.cart-btn.cart-btn_clear.cart__list-actions-btn{href: 'welcome.html'}
-                      Очистить корзину
-                  .col-lg-6.col-lg-offset-3.col-md-6.col-md-offset-2.col-sm-12
-                    .row
-                      .col-md-6.col-sm-6.col-xs-12
-                        %input.cart__list-actions-code{type: 'text', placeholder: 'Промо-код (если есть)'}
-                      .col-md-6.col-sm-6.col-xs-12
-                        .cart-btn-checkout-wrap
-                          %button.cart-btn-checkout.cart__list-actions-btn{type: 'submit'}
-                            Оформить заказ
+                  .b-cart__item__col-quantity
+                    .b-cart__item__quantity
+                      %span.b-cart__item__quantity__text{cart-item-block: 'basic'}
+                        Количество
+                      .b-cart__item__quantity__select
+                        %select{cart-item-selector: 'basic'}
+                          %option 1
+                          %option{selected} 2
+                          %option 3
+                          %option 4
+                          %option 5
+                          %option 6
+                          %option 7
+                          %option 8
+                          %option 9
+                          %option 10
+
+                  .b-cart__item__col-price  
+                    .b-cart__item__price
+                      24 000 руб.
+
+                  .b-cart__item__col-remove  
+                    %a.b-cart__item__remove{href:'#'}
+                      %img{src: 'images/cross_white.svg', alt: ''}
+
+            .b-cart__total-sum
+              Итого:
+              %span{cart-total: true} 24 000 руб.
+
+            .b-cart__action
+              .b-cart__action__container
+                .b-cart__action__col-clear
+                  %a.b-cart__action__clear.b-btn.b-btn_trans{href: 'welcome.html'}
+                    Очистить корзину
+
+                .b-cart__action__col-code
+                  %input.b-cart__action__code{type: 'text', placeholder: 'Промо-код (если есть)'}
+                  %button.b-cart__action__submit.b-btn{type: 'submit'}
+                    Оформить заказ
 
 
       +include 'app/haml/shared/_footer.haml'
-
-      +include 'app/haml/shared/_themeswitcher.haml'
 
     %script{src: 'scripts/vendor.js'}
     %script{src: 'scripts/client.js'}

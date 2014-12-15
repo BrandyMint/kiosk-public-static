@@ -2,6 +2,15 @@ $articulColor: #828282
 
 .b-item-full
   @extend .b-layout
+  margin-top: 70px
+
+  &__header
+    @include grid-media-query("lap")
+      display: none
+    &_mobile
+      display: none
+      @include grid-media-query("lap")
+        display: block
 
   &__content
     @extend %grid

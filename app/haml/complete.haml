@@ -2,27 +2,20 @@
 %html
   %head
     +include 'app/haml/shared/_head.haml'
+  %body.b-page
+    .b-page__content
+      
+      +include 'app/haml/shared/_navbar.haml'
 
-
-  %body.theme-basic
-    .application
-      +include 'app/haml/shared/_navbar_empty.haml'
-
-
-      .application-content
-        .container-fluid
-          .products__show
-            %h1.page-title
-              Спасибо за заказ
-            
-            .cart__complete
-              %p Спасибо за заказ. Тут еще какой-то текст, но я не могу скопипастить. Наш телефон +7 (395) 228-88-14
-              %a{href: 'welcome.html'} Продолжить покупку
+      %section.b-cart
+        .b-cart__content
+          %h1.b-cart__title Спасибо за заказ
+          .b-cart__message
+            %p Спасибо за заказ. Тут еще какой-то текст, но я не могу скопипастить. Наш телефон +7 (395) 228-88-14
+            %a{href: 'welcome.html'} Продолжить покупку
 
 
       +include 'app/haml/shared/_footer.haml'
-
-      +include 'app/haml/shared/_themeswitcher.haml'
 
     %script{src: 'scripts/vendor.js'}
     %script{src: 'scripts/client.js'}

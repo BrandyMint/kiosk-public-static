@@ -2,106 +2,98 @@
 %html
   %head
     +include 'app/haml/shared/_head.haml'
+  %body.b-page
+    .b-page__content
+      
+      +include 'app/haml/shared/_navbar.haml'
 
-  %body.theme-basic
-    .application
-      +include 'app/haml/shared/_navbar_empty.haml'
+      %section.b-cart
+        .b-cart__content
+          %h1.b-cart__title Оформление заказа.
+            %strong 5 товаров
+            на сумму
+            %strong{checkout-total: true, data-products-price: 16000, data-delivery-price: 0} 16 000 руб.
 
-      .application-content
-        .container-fluid
-          .products__show
-            %h1.page-title
-              Оформление заказа.
-              %strong 5 товаров
-              на сумму
-              %strong{checkout-total: true, data-products-price: 16000, data-delivery-price: 0} 16 000 руб.
+          %form{"accept-charset" => "UTF-8", :action => "/order", :method => "post", :novalidate => "novalidate"}
+            %div{:style => "display:none"}
+              %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+              %input{:name => "authenticity_token", :type => "hidden", :value => "oBDbmcDA0JU1rJJfqNAVU8YSF425ggRQQu4MuZ8em+c="}
 
-            %form#new_vendor_order.simple_form.new_vendor_order{"accept-charset" => "UTF-8", :action => "/order", :method => "post", :novalidate => "novalidate"}
-              %div{:style => "display:none"}
-                %input{:name => "utf8", :type => "hidden", :value => "✓"}/
-                %input{:name => "authenticity_token", :type => "hidden", :value => "oBDbmcDA0JU1rJJfqNAVU8YSF425ggRQQu4MuZ8em+c="}/
-              .cart__form
-                .alert.alert-danger Обнаружены ошибки, пожалуйста, взгляните на них
-                .cart__form__row
-                  .cart__form__row__num 1
-                  .cart__form__row__content
-                    .cart__form__row__title
-                      Выберите тип доставки. Ваш город
-                      %strong Москва
-                    .form-group.radio_buttons.required.vendor_order_delivery_type_id
-                      %span.radio
-                        %label{:for => "vendor_order_delivery_type_id_1", :name => "vendor_order[delivery_type_id]"}
-                          %input#vendor_order_delivery_type_id_1.radio_buttons.required.form-control{:name => "vendor_order[delivery_type_id]", :type => "radio", :value => "1", data-delivery-price: 600, delivery-type: true, data-delivery-only-city: 'Москва', data-show-fields: 'courier-moscow'}>
-                          .cart__form__delivery-name Курьером по Москве или Области
-                          .cart__form__delivery-price 600 рублей
-                      %span.radio
-                        %label{:for => "vendor_order_delivery_type_id_2", :name => "vendor_order[delivery_type_id]"}
-                          %input#vendor_order_delivery_type_id_2.radio_buttons.required.form-control{:name => "vendor_order[delivery_type_id]", :type => "radio", :value => "2", data-delivery-price: 0, delivery-type: true, 'checked': 'checked'}>
-                          .cart__form__delivery-name Самовывоз
-                          .cart__form__delivery-price 0 рублей
-                      %span.radio
-                        %label{:for => "vendor_order_delivery_type_id_3", :name => "vendor_order[delivery_type_id]"}
-                          %input#vendor_order_delivery_type_id_3.radio_buttons.required.form-control{:name => "vendor_order[delivery_type_id]", :type => "radio", :value => "3", data-delivery-price: 200, delivery-type: true, data-show-fields: 'courier-region'}>
-                          .cart__form__delivery-name Курьером в Регионы
-                          .cart__form__delivery-price 200 рублей
-                .cart__form__row
-                  .cart__form__row__num 2
-                  .cart__form__row__content
-                    .cart__form__row__title
-                      Введите данные
-                    .form-group.string.required.vendor_order_phone.has-error
+            .b-cart__form.b-form
+              .b-alert.b-alert_danger Обнаружены ошибки, пожалуйста, взгляните на них
+              .b-form__row
+                .b-form__row__num 1
+                .b-form__row__content
+                  .b-form__row__title
+                    Выберите тип доставки. Ваш город
+                    %strong Москва
+                  .b-form__row__widget
+                    %span.b-form__radio
+                      %label{:for => "vendor_order_delivery_type_id_1", :name => "vendor_order[delivery_type_id]"}
+                        %input#vendor_order_delivery_type_id_1.radio_buttons.required.form-control{:name => "vendor_order[delivery_type_id]", :type => "radio", :value => "1", data-delivery-price: 600, delivery-type: true, data-delivery-only-city: 'Москва', data-show-fields: 'courier-moscow'}>
+                        .b-cart__form__delivery-name Курьером по Москве или Области
+                        .b-cart__form__delivery-price 600 рублей
+                  .b-form__row__widget
+                    %span.b-form__radio
+                      %label{:for => "vendor_order_delivery_type_id_2", :name => "vendor_order[delivery_type_id]"}
+                        %input#vendor_order_delivery_type_id_2.radio_buttons.required.form-control{:name => "vendor_order[delivery_type_id]", :type => "radio", :value => "2", data-delivery-price: 0, delivery-type: true, 'checked': 'checked'}>
+                        .b-cart__form__delivery-name Самовывоз
+                        .b-cart__form__delivery-price 0 рублей
+                  .b-form__row__widget
+                    %span.b-form__radio
+                      %label{:for => "vendor_order_delivery_type_id_3", :name => "vendor_order[delivery_type_id]"}
+                        %input#vendor_order_delivery_type_id_3.radio_buttons.required.form-control{:name => "vendor_order[delivery_type_id]", :type => "radio", :value => "3", data-delivery-price: 200, delivery-type: true, data-show-fields: 'courier-region'}>
+                        .b-cart__form__delivery-name Курьером в Регионы
+                        .b-cart__form__delivery-price 200 рублей
+              
+              .b-form__row
+                .b-form__row__num 2
+                .b-form__row__content
+                  .b-form__row__title Введите данные
+                  .b-form__row__widget
+                    .b-form__row__widget.string.required.vendor_order_phone.has-error
                       %label.string.required.control-label{:for => "vendor_order_phone"} Телефон
                       %input#vendor_order_phone.string.required.form-control{:name => "vendor_order[phone]", :placeholder => "Прим.: +7 913 123 32 10", :type => "text"}
-                      %p.help-block Неверный формат телефона
-                    .form-group.string.required.vendor_order_name
+                      .b-alert.b-alert_danger Неверный формат телефона
+                    .b-form__row__widget.string.required.vendor_order_name
                       %label.string.required.control-label{:for => "vendor_order_name"} Как к вам обращаться?
                       %input#vendor_order_name.string.required.form-control{:name => "vendor_order[name]", :placeholder => "Как к вам обращаться", :type => "text"}
-                    .form-group.select.required.vendor_order_city_id{show-courier-moscow: true, show-courier-region: true, hideable: true}
+                    .b-form__row__widget.select.required.vendor_order_city_id{show-courier-moscow: true, show-courier-region: true, hideable: true}
                       %label.select.required.control-label{:for => "vendor_order_city_id"} Город доставки
                       %input#vendor_order_name.string.required.form-control{:name => "vendor_order[city_title]", :placeholder => "Город", :type => "text", 'city-field' => true}
-                      -#%select#vendor_order_city_id.select.required.form-control{:name => "vendor_order[city_id]"}
-                        -#%option{:value => "1"} Чебоксары
-                        -#%option{:value => "2"} Москва
-                    .form-group.text.required.vendor_order_address{show-courier-moscow: true, show-courier-region: true, hideable: true}
-                      %label.text.required.control-label{:for => "vendor_order_address"} Адрес доставки
-                      %textarea#vendor_order_address.text.required.form-control{:name => "vendor_order[address]", :placeholder => "Академика Вавилова 12-10"}
-                    .form-group.text.optional.vendor_order_comment
-                      %label.text.optional.control-label{:for => "vendor_order_comment"} Комментарий
-                      %textarea#vendor_order_comment.text.optional.form-control{:name => "vendor_order[comment]", :placeholder => "Ваш комментарий"}
-                .cart__form__row
-                  .cart__form__row__num 3
-                  .cart__form__row__content
-                    .alert.alert-danger Обнаружены ошибки, пожалуйста, взгляните на них
-                    .cart__form__row__title
-                      Способы оплаты
-                    .form-group.radio_buttons.required.vendor_order_payment_type_id
-                      %span.radio
-                        %label{:for => "vendor_order_payment_type_id_1", :name => "vendor_order[payment_type_id]"}
-                          %input#vendor_order_payment_type_id_1.radio_buttons.required.form-control{:name => "vendor_order[payment_type_id]", :type => "radio", :value => "1"}>
-                          Банковской картой на сайте
-                      %span.radio
-                        %label{:for => "vendor_order_payment_type_id_2", :name => "vendor_order[payment_type_id]"}
-                          %input#vendor_order_payment_type_id_2.radio_buttons.required.form-control{:name => "vendor_order[payment_type_id]", :type => "radio", :value => "2"}>
-                          Через ближайший салон связи
-                      %span.radio{show-courier-moscow: true, hideable: true}
-                        %label{:for => "vendor_order_payment_type_id_3", :name => "vendor_order[payment_type_id]"}
-                          %input#vendor_order_payment_type_id_3.radio_buttons.required.form-control{:name => "vendor_order[payment_type_id]", :type => "radio", :value => "3"}>
-                          Наличными или банковской картой курьеру
-              .cart__list-actions.cart__list-actions_after-form
-                .row
-                  .col-md-5.col-sm-6.hidden-xs
-                    %a.cart-btn.cart-btn_clear.cart__list-actions-btn{:href => "/cart"}
-                      Вернуться назад
-                  .col-md-5.col-md-offset-1.col-sm-6
-                    %input.cart-btn-checkout.cart__list-actions-btn{:name => "commit", :type => "submit", :value => "Продолжить"}
-                  .col-md-5.col-sm-6.visible-xs
-                    %a.cart-btn.cart-btn_clear.cart__list-actions-btn{:href => "/cart"}
-                      Вернуться назад
-                        
+              
+              .b-form__row
+                .b-form__row__num 3
+                .b-form__row__content
+                  .b-alert.b-alert_danger Обнаружены ошибки, пожалуйста, взгляните на них
+                  .b-form__row__title Способы оплаты
+                  .b-form__row__widget
+                    %span.b-form__radio
+                      %label{:for => "vendor_order_payment_type_id_1", :name => "vendor_order[payment_type_id]"}
+                        %input#vendor_order_payment_type_id_1.radio_buttons.required.form-control{:name => "vendor_order[payment_type_id]", :type => "radio", :value => "1"}>
+                        Банковской картой на сайте
+                  .b-form__row__widget
+                    %span.b-form__radio
+                      %label{:for => "vendor_order_payment_type_id_2", :name => "vendor_order[payment_type_id]"}
+                        %input#vendor_order_payment_type_id_2.radio_buttons.required.form-control{:name => "vendor_order[payment_type_id]", :type => "radio", :value => "2"}>
+                        Через ближайший салон связи
+                  .b-form__row__widget
+                    %span.b-form__radio{show-courier-moscow: true, hideable: true}
+                      %label{:for => "vendor_order_payment_type_id_3", :name => "vendor_order[payment_type_id]"}
+                        %input#vendor_order_payment_type_id_3.radio_buttons.required.form-control{:name => "vendor_order[payment_type_id]", :type => "radio", :value => "3"}>
+                        Наличными или банковской картой курьеру
+
+              .b-form__row                
+                .b-cart__action
+                  .b-cart__action__container
+                    .b-cart__action__col-back
+                      %a.b-cart__action__clear.b-btn.b-btn_trans{href: 'welcome.html'}
+                        Вернуться назад
+
+                    .b-cart__action__col-submit
+                      %button.b-cart__action__submit.b-btn{type: 'submit', :name => "commit", :type => "submit"} Продолжить
 
       +include 'app/haml/shared/_footer.haml'
-      
-      +include 'app/haml/shared/_themeswitcher.haml'
 
     %script{src: 'scripts/vendor.js'}
     %script{src: 'scripts/client.js'}

@@ -1,0 +1,58 @@
+.b-text
+  h1
+    font-size: 3.429em
+    margin: 0 0 38px
+  
+  h2
+    font-size: 1.857em
+    font-weight: normal
+    margin: 0 0 50px
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6
+    text-align: center
+  
+  p
+    margin: 20px 0
+
+  ul
+    padding-left: 1em
+    li
+      margin: 1em 0
+
+  table
+    width: 100%
+    th,
+    td
+      padding: 15px
+
+    th
+      border-bottom: 1px solid #e2e2e2
+      text-align: left
+      font-weight: normal
+
+  &__image
+    margin: 0 -140px
+    overflow: hidden
+    &__container
+      @extend %grid
+    &__wrap
+      @extend %grid__item
+      @extend %one-half
+      @extend %palm--one-whole
+    img
+      width: 100%
+    @include grid-media-query("lap")
+      margin-left: 0
+      margin-right: 0
+
+.map-embed
+  overflow: hidden
+  height: 400px
+  max-width: 800px
+  width: 100%
+  margin: 40px auto
