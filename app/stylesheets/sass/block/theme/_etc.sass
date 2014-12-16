@@ -1,0 +1,86 @@
+.b-page_theme-etc
+  color: $etcText
+  background-color: $etcPageBg
+  font-family: $font-stack-verdana-family
+  a
+    color: $etcText
+    &:hover
+      color: $etcHover
+
+  .b-nav
+    border-color: transparent
+
+  .b-item-list__title
+    font-weight: normal
+
+  .b-item
+    color: $etcPageBg
+    &__info
+      background-color: #fff
+      margin-top: 0
+      padding: 7px 7px 10px
+      text-align: center
+    &__name,
+    &__price
+      font-size: 1em
+    &__price
+      font-weight: bold
+
+  .b-item-full
+    &__gallery,
+    &__description
+      @extend %one-whole
+
+    &__content
+      max-width: 700px
+      margin: 0 auto
+      background-color: $etcText
+      color: $etcPageBg
+      padding: 0 95px 24px 71px
+      box-sizing: border-box
+      .b-breadcrumbs
+        a
+          color: $etcPageBg
+      @include grid-media-query("palm")
+        padding: 0 24px 24px 0
+
+  .b-slider
+    &_thumbs
+      display: none !important
+
+    .owl-pagination
+      background: none
+
+  .owl-theme .owl-controls .owl-page span
+    background: $etcPageBg
+    width: 6px
+    height: 6px
+
+  .b-full-filter
+    .b-btn
+      background-color: $etcText
+      color: $etcPageBg
+      &:hover
+        background-color: $etcHover
+    &__value
+      background-color: $etcText
+      color: $etcPageBg
+      &:before
+        background-image: url(#{$images-path}/cross_black.svg)
+
+  .b-cbox input[type="checkbox"]:checked ~ .b-cbox__val
+    color: $etcText
+    &:before
+      background-color: $etcHover
+
+  .noUi-handle
+    border-color: $etcHover
+
+  .noUi-connect
+    background-color: $etcText
+
+  .b-form__row__num
+    background-color: $etcText
+    color: $etcPageBg
+
+
