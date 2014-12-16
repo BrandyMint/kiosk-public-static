@@ -73,6 +73,10 @@
 @import "utilities/_normalize";
 @import "utilities/grid";
 
+@import "fonts/gotham";
+
+@import "settings/vars"; // Переменные
+
 @import "modules/owlcarousel";
 @import "modules/fancybox";
 @import "modules/range";
@@ -81,7 +85,7 @@
 @import "block/b-layout"; // Лейаут
 @import "block/b-btn"; // Кнопочки
 @import "block/b-alert"; // Алерты
-@import "block/b-logo";	// Логотип
+@import "block/b-logo"; // Логотип
 @import "block/b-site-description"; // Описание сайта
 @import "block/b-item-list"; // Список товаров
 @import "block/b-item"; // Товар в списке
@@ -100,6 +104,7 @@
 @import "block/b-form"; // Форма
 @import "block/b-cbox"; // Чекбокс
 @import "block/b-full-filter"; // Фильтр
+@import "block/b-theme-switcher"; // Свитч для тем
 // @import "blocks/b-breadcrumbs"; //Хлебные крошки
 
 //Global layout blocks
@@ -107,3 +112,11 @@
 @import "block/b-header"; // Шапка сайта
 @import "block/b-nav"; // Основная навигация по сайту
 @import "block/b-footer"; // Подвал сайта
+
+//Themes
+@import "block/theme/dark"; // Темная тема
+@import "block/theme/wannabe"; // Вонаби тема
+@import "block/theme/sugar"; // Сахар тема
+@import "block/theme/etc"; // Etc тема
+
+@import "demo"; // Login demo page
