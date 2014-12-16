@@ -1,0 +1,103 @@
+.b-full-filter
+  &__list-wrap
+    list-style: none
+    padding: 0
+    margin: 0
+    
+  &__submit
+    max-width: 125px
+
+  &__item
+    margin: 22px 0 0
+    &:first-child
+      margin-top: 0
+    &_price
+      margin-top: 36px
+
+    &__title
+      font-size: 1.143em
+      margin: 0 0 12px
+
+  &__slider
+    padding: 5px 0 0
+    &__value
+        span
+          color: #bebebe
+    &__embed
+      margin: 17px 0 44px
+      padding: 0 2px
+
+  &__value
+    cursor: pointer
+    font-size: 12px
+    padding: 5px 30px 5px 10px
+    background-color: #121212
+    border-radius: 3px
+    color: #fff
+    position: relative
+    display: inline-block
+    vertical-align: top
+    margin: 0 0 4px
+    line-height: 1.6
+    box-sizing: border-box;
+    width: 100%;
+    &:before
+      content: ''
+      position: absolute
+      top: 50%
+      margin-top: -10px
+      right: 5px
+      width: 20px
+      height: 20px
+      background: url(#{$images-path}/cross_white.svg)
+      background-size: 20px 20px
+    &:hover
+      &:before
+        transform: scale(1.2)
+
+  &__notifiction-wrap
+    position: relative
+    display: inline-block
+    vertical-align: top
+
+  &__notifiction
+    position: absolute
+    left: 100%
+    top: 0
+    border-radius: 3px
+    background-color: #4e4e4e
+    color: #fff
+    font-size: 12px
+    padding: 9px 12px
+    margin: -6px 0 0 19px
+    white-space: nowrap
+    z-index: 5
+    &:before
+      content: ''
+      width: 0
+      height: 0
+      border-style: solid
+      border-width: 4.5px 5px 4.5px 0
+      border-color: transparent #4e4e4e transparent transparent
+      position: absolute
+      right: 100%
+      top: 13px
+    a
+      color: #fff
+      text-decoration: none
+      border-bottom: 1px solid
+
+  // @media (max-width: 750px)
+  //   &__list-wrap
+  //     padding: 0 0 40px
+  //   &__content-wrap
+  //     padding-left: 0
+  //     border-left: 0
+  //   &__submit
+  //     max-width: 100%
+
+.noUi-handle
+  border-color: #121212
+
+.noUi-connect
+  background-color: #121212
