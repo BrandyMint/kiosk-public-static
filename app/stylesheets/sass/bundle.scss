@@ -75,6 +75,7 @@
 
 @import "modules/owlcarousel";
 @import "modules/fancybox";
+@import "modules/range";
 
 //Blocks
 @import "block/b-layout"; // Лейаут
@@ -97,6 +98,8 @@
 @import "block/b-article"; // Статья
 @import "block/b-text"; // Текстовый блок
 @import "block/b-form"; // Форма
+@import "block/b-cbox"; // Чекбокс
+@import "block/b-full-filter"; // Фильтр
 // @import "blocks/b-breadcrumbs"; //Хлебные крошки
 
 //Global layout blocks

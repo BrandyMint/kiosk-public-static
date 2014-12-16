@@ -2,36 +2,33 @@
 %html
   %head
     +include 'app/haml/shared/_head.haml'
-  %body.theme-basic.style-sugar
-    
-    .application
+  %body.b-page
+    .b-page__content
+      
       +include 'app/haml/shared/_navbar.haml'
 
-      .application-content
-        .container-fluid
-          .full-filter
-            .row
-              .col-md-3
-                +include 'app/haml/shared/_filter.haml'
-              .col-md-9
-                .products__list
-                  .row
-                    - for i in [1..12]
-                      %a.products__list-item-wrap{href: 'product.html'}
-                        .products__list-item
-                          .products__list-item-image-block
-                            %img.products__list-item-image{ src: "images/product-square.jpg" }
-                          .products__list-item-title
-                            Моно-серьга имитация тоннеля серебряная с белыми цирконами
-                          .products__list-item-price
-                            8 900 руб.
+      %section.b-item-list.b-item-list_has-filter
+        .b-item-list__filter
+          +include 'app/haml/shared/_filter.haml'
+        
+        .b-item-list__content
+          - for i in [1..8]
+            .b-item-list__item
+              %a.b-item{href: 'product.html'}
+                .b-item__pic-wrap
+                  %img.b-item__pic{src: 'images/product-square.jpg', alt:'paste product name here'}
+                  .b-item__status
+                    -if i == 1
+                      %span.b-status.b-status_sold Распродано
+                    -if i == 2
+                      %span.b-status.b-status_preorder Под заказ
+                    -if i == 3
+                      %span.b-status.b-status_sale Sale -24%
+                .b-item__info
+                  %h2.b-item__name Моно-серьга имитация тоннеля серебряная с белыми цирконами
+                  .b-item__price 8 900 руб.
+
       +include 'app/haml/shared/_footer.haml'
 
-      #instagram{data-react-class: 'InstagramFeed_Controllable', data-react-props: '{"clientId": "295b9ad8c3304e5f8cf9a27da8014082", "userId": 30090607, "isVisible": false}'}
-
-      +include 'app/haml/shared/_themeswitcher.haml'
-
-      +include 'app/haml/shared/_adm.haml'
-      
     %script{src: 'scripts/vendor.js'}
     %script{src: 'scripts/client.js'}
