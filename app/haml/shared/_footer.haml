@@ -1,13 +1,14 @@
 %footer.b-footer
-  .b-footer__content
-    .b-footer__nav.b-footer__nav_main
-      - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
-      - for l in footer_links
-        %a.b-footer__link{href: '#'}= "#{l}"
-    
-    .b-footer__nav.b-footer__nav_soc
-      %a.b-footer__link{href: '#'} Facebook
-      %a.b-footer__link{'href': '#instagram', 'onClick': '$(document).trigger("instagram:clicked")'} Instagram
+  .b-footer__container
+    .b-footer__content
+      .b-footer__nav.b-footer__nav_main
+        - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
+        - for l in footer_links
+          %a.b-footer__link{href: '#'}= "#{l}"
+      
+      .b-footer__nav.b-footer__nav_soc
+        %a.b-footer__link{href: '#'} Facebook
+        %a.b-footer__link{'href': '#instagram', 'onClick': '$(document).trigger("instagram:clicked")'} Instagram
 
 %a.b-admin{href:'/admin'} Панель администратора
 

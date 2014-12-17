@@ -1,15 +1,26 @@
 .b-header
-  @extend .b-layout
-
   &__content
     @extend %grid
     padding: 30px 0 15px
+
+  &__container
+    @extend .b-layout
+    position: relative
   
   &__search,
   &__desc,
-  &__logo
+  &__logo,
+  &__nav
     @extend %grid__item
+    
+  &__search,
+  &__desc,
+  &__logo
     @extend %four-twelfths
+    @extend %palm--one-whole
+
+  &__nav
+    @extend %eight-twelfths
     @extend %palm--one-whole
 
   &__search
@@ -18,3 +29,7 @@
       max-width: 250px
       display: inline-block
       vertical-align: top
+
+  &__top-line
+    .b-header__content
+      padding: 6px 0

@@ -1,1 +1,90 @@
 .b-page_theme-cc
+  font-family: $font-stack-apercu-family
+  line-height: $ccLineHeight
+  color: $ccText
+
+  // a
+  //   color: $ccLink
+  //   &:hover
+  //     color: $ccLinkHover
+
+  .b-header
+    position: relative
+    z-index: 2
+    &__content
+      padding-top: 13px
+    
+    &__top-line
+      background-color: $ccBar
+      color: $ccBarText
+
+      .b-header
+        &__desc,
+        &__search
+          @extend %six-twelfths
+        &__content
+          padding: 6px 0
+      
+      .b-site-description
+          white-space: nowrap
+          padding: 9px 0
+          *
+            display: inline
+
+    &__logo
+      @extend %two-twelfths
+
+    &__nav
+      @extend %ten-twelfths
+
+  .b-nav
+    border: none
+    margin: 0
+    &__list
+      text-align: left
+      &_sub
+        .b-nav__link
+          padding: 8px 20px 4px 0
+    &__link
+      font-weight: bold
+      text-transform: uppercase
+      padding: 0 7px 13px
+      letter-spacing: 0.04em
+      font-size: 13px
+
+  .b-slider
+    &_promo
+      margin-top: -73px
+    &_thumbs
+      display: none !important
+
+  .b-item
+    &__name
+      font-size: 1em
+    &__price
+      font-weight: bold
+
+  .b-item-full
+    margin-top: -35px
+
+    &__gallery,
+    &__description
+      width: 100%
+
+    &__header
+      text-align: center
+      
+    &__title
+      margin: 12px 20px 8px
+      font-size: 3.214em
+      line-height: 1
+
+  .b-footer
+    background-color: $ccBar
+    color: $ccBarText
+    &__link
+      font-size: 1em
+      font-weight: bold
+      color: #fff
+      &:hover
+        color: $ccBarText
