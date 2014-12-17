@@ -1,23 +1,24 @@
-%header.b-header
-  .b-header__content{'itemscope': '', 'itemtype': 'http://schema.org/Organization'}
-    .b-header__desc
-      .b-site-description{'itemprop': 'description'}
-        Магазин мебели ручной работы
-        %ul
-          %li
-            ="+7 903 595 1737"
-          %li
-            ="+7 903 595 1737"
+%header.b-header{'itemscope': '', 'itemtype': 'http://schema.org/Organization'}
+  .b-header__container
+    .b-header__content
+      .b-header__desc
+        .b-site-description{'itemprop': 'description'}
+          Магазин мебели ручной работы
+          %ul
+            %li
+              ="+7 903 595 1737"
+            %li
+              ="+7 903 595 1737"
 
-    .b-header__logo
-      %a.b-logo{'itemprop': 'url', href: 'http://wannabe.ru', href: 'welcome.html'}
-        %img.b-logo__img{src: 'images/wannabe/logo.png', alt:'logo'}
+      .b-header__logo
+        %a.b-logo{'itemprop': 'url', href: 'http://wannabe.ru', href: 'welcome.html'}
+          %img.b-logo__img{src: 'images/wannabe/logo.png', alt:'logo'}
 
-    .b-header__search
-      .b-search
-        %form
-          %input.b-search__field{type: 'text', placeholder: 'Поиск'}
-          %button.b-search__submit{type: 'submit'}
+      .b-header__search
+        .b-search
+          %form
+            %input.b-search__field{type: 'text', placeholder: 'Поиск'}
+            %button.b-search__submit{type: 'submit'}
 
 %nav.b-nav
   %ul.b-nav__list

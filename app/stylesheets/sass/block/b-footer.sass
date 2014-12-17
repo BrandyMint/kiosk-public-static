@@ -1,6 +1,8 @@
 .b-footer
-  @extend .b-layout
   margin-top: 70px
+
+  &__container
+    @extend .b-layout
 
   &__content
     @extend %grid
@@ -22,5 +24,6 @@
   &__link
     font-size: 1.143em
     margin-left: 25px
+    transition: color .2s ease
     &:first-child
       margin-left: 0

@@ -16,6 +16,20 @@
     @extend %palm--one-whole
     .b-item
       margin: 15px 0
+      transition: color .1s ease
+      &__pic
+        transition: opacity .1s ease
+        backface-visibility: hidden
+      &:hover
+        .b-item__pic
+          opacity: .8
+
+  &_four-in-row
+    .b-item-list
+      &__item
+        @extend %three-twelfths
+        @extend %lap--one-half
+        @extend %palm--one-whole
 
   &_has-filter
     margin-top: 55px
@@ -28,4 +42,24 @@
         padding-right: 10px
       &__content
         margin-left: 210px
+
+    @include grid-media-query("lap")
+      .b-item-list
+        &__filter
+          float: none
+          width: 100%
+          padding: 0
+          border: none
+        &__content
+          margin-left: 0
+
+    @include grid-media-query("palm")
+      .b-item-list
+        &__filter
+          float: none
+          width: 100%
+          padding: 0
+          border: none
+        &__content
+          margin-left: 0
         

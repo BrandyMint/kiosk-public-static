@@ -2,102 +2,125 @@
 %html
   %head
     +include 'app/haml/shared/_head.haml'
-
-  %body.theme-basic.style-cc
-    .application
+  %body.b-page.b-page_theme-cc
+    .b-page__content
+      
       +include 'app/haml/shared/_navbar_cc.haml'
 
+      .b-item-full
+        .b-item-full__header
+          .b-breadcrumbs
+            %a{href: '/'}
+              Столы
+            \ /
+            %a{href: '/'}
+              Маленькие столы
 
-      .application-content
-        .container-fluid
-          .products__show
-            .products__show-item-category
-              %a{href: ''} Столы
-              %a{href: ''} Маленькие столы
-            %h1.products__show-item-title
-              Велосипед Linus «Dutchi 1»,<br>односкоростной / Кремовый
+          %h1.b-item-full__title
+            Велосипед Linus «Dutchi 1», односкоростной / Кремовый
 
-            +include 'app/haml/shared/_product-cc-carousel.haml'
+        / Основной контент о товаре
+        .b-item-full__content.b-item-full__content_no-cols
+          .b-item-full__gallery
+            +include 'app/haml/shared/_product-carousel.haml'
 
-            .products__show-item__main
-              .row
-                .col-md-5
-                  .products__show-item-price
-                    .big-price
-                      %big 19990
-                      %span.currency руб
-                      %br/
-                      %span.price-old 20990 руб
-                      %span.sale –5%
-                  .products__show-item-description
-                    Fuji «Declaration» — упрощенный вариант модели «Classic Track», приспособленный для езды преимущественно по городу
+          .b-item-full__description
+            .b-item-full__description-inner
+              .b-item-full__description-inner__col-left
+                .b-item-full__price 12 000
+                  %span.b-item-full__price__currency руб.
+                  %br
+                  %span.b-item-full__price__old 20990 руб
+                  %span.b-item-full__price__sale -5%
 
-                .col-md-7
-                  +include 'app/haml/shared/_modification-list.haml'
+                .b-item-full__text
+                  Make peace, not war! Настоящий блокбастер среди украшений - серебряная моносерьга в виде пули Wanna?Be! - попала в самое сердце столичных модниц. Инкрустированный цирконами аксессуар не оставил и знаменитую на весь мир икону стилю, Рианну. Известная дива не раз дополняла этим аксессуаром свои образы. Рекомендуем надевать кулон вместе с белыми майками, кружевными эспадрильями и джинсами бойфренда.
 
-            .products__show-item__features
-              .row
-                - for i in [1..6]
-                  .col-md-2.col-sm-4
-                    .products__show-item__feature
-                      .products__show-item__feature__pic
-                        %img{src: 'http://citycycle.ru/upload/product_images/21702/f2a3684cba49a5ee5aeb5cc8748f5d4a_0x0.jpg', alt: ''}
-                      Крепкая стальная рама
-            
-            .row
-              .col-md-5.col-sm-6
-                %ul.products__show-item-details
-                  %li.products__show-item-details__title
-                    Технические характеристики
-                  - details = [{'Рама и вилка': 'сталь'}, {'Колесо': 'есть'}, {'Ездить': 'может'}, {'Цепь': 'слетает' }]
-                  - for obj, i in details
-                    - for key of obj
-                      %li
-                        .products__show-item-details__name
+              .b-item-full__description-inner__col-right
+                %ul.b-modification-list
+                  - for i in [1..3]
+                    %li.b-modification
+                      .b-modification__content  
+                        Велосипед Fuji «Declaration» (2014), рост 560, фиолетовый
+                        .b-q-status
+                          %span.b-q-status__state.b-q-status__state_ok
+                          %span.b-q-status__state.b-q-status__state_ok
+                          %span.b-q-status__state
+                      .b-modification__action
+                        %div{data-react-class: 'AddToBasketButton'}
+
+        %ul.b-feature-list
+          - for i in [1..6]
+            %li
+              .b-feature
+                %figure.b-feature__pic
+                  %img{src: 'http://citycycle.ru/upload/product_images/21702/f2a3684cba49a5ee5aeb5cc8748f5d4a_0x0.jpg', alt: ''}
+                %h3.b-feature__name Крепкая стальная рама
+
+        .b-item-full__content.b-item-full__content_no-cols
+          .b-item-full__description
+            .b-item-full__description-inner
+              .b-item-full__description-inner__col-left
+                .b-item-full__text.b-item-full__text_etc
+                  %h2 Технические характеристики
+                  %ul.b-characteristics
+                    - details = [{'Серебро': '12 К'}, {'Цирконы': '10 К'}, {'Кристаллов': '1294'}, {'Вес': '3 гр' }]
+                    - for obj, i in details
+                      - for key of obj
+                        %li
                           = "#{key}:"
-                        .products__show-item-details__val
                           = obj[key]
-                %a{href: '#'} Показать полностью
 
-              .col-md-7.col-sm-6
-                .products__show-item-text
-                  %h3
-                    Наличие и условия поставки
-                  %p
-                    Эта модель отгружается как с нашего склада, так и со склада производителя и может требовать уточнения наличия велосипеда в нужной ростовке и цвете. Перед заказом свяжитесь и уточните наличие с менеджером по телефону +7 903 500 20 70.
-                  %p
-                    Велосипед доставляется в коробке, в фабричной упаковке, частично-разобранный. Набор инструментов для сборки в комплект не входит.
-                  %p
-                    Если вам необходимо получить уже собранный и настроенный велосипед перед заказом свяжитесь и уточните все детали с менеджером по телефону +7 903 500 20 70. 
+              .b-item-full__description-inner__col-right
+                %h2 Технические характеристики
+                %p Эта модель отгружается как с нашего склада, так и со склада производителя и может требовать уточнения наличия велосипеда в нужной ростовке и цвете. Перед заказом свяжитесь и уточните наличие с менеджером по телефону +7 903 500 20 70.
+                %p Велосипед доставляется в коробке, в фабричной упаковке, частично-разобранный. Набор инструментов для сборки в комплект не входит.
+                %p Если вам необходимо получить уже собранный и настроенный велосипед перед заказом свяжитесь и уточните все детали с менеджером по телефону +7 903 500 20 70.
 
-          .products__list.products__list_four-in-row
-            %h2.products__list__title С этим товаром мы рекомендуем
-            .row
-              - for i in [1..4]
-                .products__list-item-wrap
-                  %a.products__list-item{'href': 'product_cc_2.html'}
-                    .products__list-item-image-block
-                      %img.products__list-item-image{ src: "http://citycycle.ru/upload/iblock/c2f/c2fc837702ea76c8c335085bfbda3d05.jpg" }
-                    .products__list-item-title
-                      Моно-серьга имитация тоннеля серебряная с белыми цирконами
-                    .products__list-item-price
-                      8 900 руб.
 
-          .products__list
-            %h2.products__list__title Этот товар, но другого цвета
-            .row
-              - for i in [1..6]
-                .products__list-item-wrap
-                  %a.products__list-item{'href': 'product_cc_2.html'}
-                    .products__list-item-image-block
-                      %img.products__list-item-image{ src: "http://citycycle.ru/upload/product_images/26237/38ad26c8324bca1f4af84156c9a64c40_350x235.jpg" }
-                    .products__list-item-title
-                      Моно-серьга имитация тоннеля серебряная с белыми цирконами
-                    .products__list-item-price
-                      8 900 руб.
+
+      / Иные товары
+
+      %section.b-item-list.b-item-list_four-in-row
+        %h2.b-item-list__title С этим товаром мы рекомендуем
+        .b-item-list__content
+          - for i in [1..4]
+            .b-item-list__item
+              %a.b-item{href: 'product.html'}
+                .b-item__pic-wrap
+                  %img.b-item__pic{src: 'images/product-square.jpg', alt:'paste product name here'}
+                  .b-item__status
+                    -if i == 1
+                      %span.b-status.b-status_sold Распродано
+                    -if i == 2
+                      %span.b-status.b-status_preorder Под заказ
+                    -if i == 3
+                      %span.b-status.b-status_sale Sale -24%
+                .b-item__info
+                  %h2.b-item__name Моно-серьга имитация тоннеля серебряная с белыми цирконами
+                  .b-item__price 8 900 руб.
+
+      %section.b-item-list
+        %h2.b-item-list__title Этот товар, но другого цвета
+        .b-item-list__content
+          - for i in [1..6]
+            .b-item-list__item
+              %a.b-item{href: 'product.html'}
+                .b-item__pic-wrap
+                  %img.b-item__pic{src: 'images/product-square.jpg', alt:'paste product name here'}
+                  .b-item__status
+                    -if i == 1
+                      %span.b-status.b-status_sold Распродано
+                    -if i == 2
+                      %span.b-status.b-status_preorder Под заказ
+                    -if i == 3
+                      %span.b-status.b-status_sale Sale -24%
+                .b-item__info
+                  %h2.b-item__name Моно-серьга имитация тоннеля серебряная с белыми цирконами
+                  .b-item__price 8 900 руб.
+        
+
       +include 'app/haml/shared/_footer.haml'
-
-      +include 'app/haml/shared/_themeswitcher.haml'
-
+    
     %script{src: 'scripts/vendor.js'}
     %script{src: 'scripts/client.js'}
