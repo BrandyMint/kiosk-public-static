@@ -22,20 +22,26 @@
         &__desc,
         &__search
           @extend %six-twelfths
+          @extend %palm--one-whole
         &__content
           padding: 6px 0
       
       .b-site-description
-          white-space: nowrap
           padding: 9px 0
-          *
-            display: inline
+          a
+            color: $ccBarText
+            &:hover
+              color: $ccLinkHover
 
     &__logo
       @extend %two-twelfths
+      @extend %lap--one-whole
+      @extend %palm--one-whole
 
     &__nav
       @extend %ten-twelfths
+      @extend %lap--one-whole
+      @extend %palm--one-whole
 
   .b-nav
     border: none
@@ -58,18 +64,40 @@
     &_thumbs
       display: none !important
 
+  .b-btn
+    border-radius: 2em
+    padding-top: 10px
+    padding-bottom: 9px
+    &:hover
+      color: #fff
+      background-color: $ccLinkHover
+
   .b-item
     &__name
       font-size: 1em
     &__price
       font-weight: bold
 
+  .b-item-list
+    &__title
+      font-size: 20px
+      text-align: left
+      margin: 17px 0 16px
+
+  .b-item-list
+    margin-top: 60px
+    &:first-child
+      margin-top: 0
+
+  .owl-pagination
+    display: none
+
   .b-item-full
     margin-top: -35px
 
     &__gallery,
     &__description
-      width: 100%
+      width: 100%      
 
     &__header
       text-align: center
@@ -78,6 +106,37 @@
       margin: 12px 20px 8px
       font-size: 3.214em
       line-height: 1
+
+    &__text
+      &_intro
+        font-size: 1.357em
+      &_etc
+        font-size: 1em
+        h2
+          margin: 0 0 12px
+          font-size: 1.429em
+        p
+          margin: 0 0 10px
+
+    &__price
+      font-size: 2.429em
+      font-weight: bold
+      &__currency
+        font-weight: normal
+
+  .b-characteristics
+    font-size: 1em
+    li
+      margin: 0 0 12px
+      &:before
+        display: none
+    &__name
+      width: 105px
+      float: left
+      color: #999
+    &__val
+      margin-left: 120px
+      display: block
 
   .b-footer
     background-color: $ccBar
