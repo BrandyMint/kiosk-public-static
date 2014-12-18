@@ -1,0 +1,41 @@
+.b-header
+  &__content
+    @extend %grid
+    padding: 30px 0 15px
+
+  &__container
+    @extend .b-layout
+    position: relative
+
+  &__search
+    text-align: right
+    .b-search
+      max-width: 250px
+      display: inline-block
+      vertical-align: top
+      @include grid-media-query("palm")
+        max-width: 100%
+        display: block
+  
+  &__search,
+  &__desc,
+  &__logo,
+  &__nav
+    @extend %grid__item
+    
+  &__search,
+  &__desc,
+  &__logo
+    @extend %four-twelfths
+    @extend %palm--one-whole
+    @include grid-media-query("palm")
+      text-align: center
+      margin-bottom: 20px
+
+  &__nav
+    @extend %eight-twelfths
+    @extend %palm--one-whole
+
+  &__top-line
+    .b-header__content
+      padding: 6px 0

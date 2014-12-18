@@ -1,0 +1,18 @@
+$item-status-sold: #E8E8E8
+$item-status-sold-text: #4D4D4D
+$item-status-sale: #F60528
+$item-status-sale-text: #FFF
+$item-status-preorder: #10C1F8
+
+.b-status
+  background-color: $item-status-sold
+  color: $item-status-sold-text
+  padding: 5px 8px
+  text-transform: uppercase
+  &_sale,
+  &_preorder
+    color: $item-status-sale-text
+  &_sale
+    background-color: $item-status-sale
+  &_preorder
+    background-color: $item-status-preorder

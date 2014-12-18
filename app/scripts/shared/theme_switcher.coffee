@@ -1,7 +1,7 @@
 $ ->
   # Style changer
 
-  logo = $('.navbar-brand-image')
+  logo = $('.b-logo__img')
 
   $('[ks-theme-switcher]').on 'click', ()->
     classlistVal = $(this).data "classlist"

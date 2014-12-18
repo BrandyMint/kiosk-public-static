@@ -1,0 +1,27 @@
+.b-theme-switch
+  position: fixed
+  bottom: 0
+  right: 0
+  width: 15px
+  overflow: hidden
+  transition: width .2s ease
+  &:hover
+    width: 140px
+
+.b-theme-switch__item
+  cursor: pointer
+  font-size: 12px
+  padding: 5px 15px
+  background: #cbcbcb
+  white-space: nowrap
+  font-family: $font-stack-gotham-family
+  font-weight: bold
+  color: #fff
+  &:hover
+    background-color: tomato
+  &:active
+    background-color: red
+
+.feature_touch
+  .b-theme-switch
+    width: 140px

@@ -101,3 +101,64 @@
 .owl-item.loading
   min-height: 150px
   background: url(#{$images-path}/loader.gif) center center no-repeat
+
+.owl-buttons
+  opacity: 0
+  transition: opacity .2s ease
+
+.owl-carousel
+  &:hover
+    .owl-buttons
+      opacity: 1
+
+.owl-theme .owl-controls
+  line-height: 0
+  .owl-buttons div
+    width: 44px
+    height: 100px
+    position: absolute
+    top: 50%
+    margin-top: -50px
+    font: 0/0 a
+    opacity: 1
+    background: none
+    padding: 0
+    background-size: 100% 100%
+
+    &.owl-prev
+      left: 20px
+      background-image: url(#{$images-path}/ar_right-c.svg)
+
+    &.owl-next
+      right: 20px
+      background-image: url(#{$images-path}/ar_left-c.svg)
+
+.owl-theme .owl-controls
+  position: absolute
+  bottom: 0
+  left: 0
+  right: 0
+  margin: 0
+  text-align: center
+
+.owl-pagination
+  display: inline-block
+  vertical-align: top
+  background-color: rgba(0,0,0,.6)
+  border-radius: 20px
+  padding: 0 10px
+  margin: 0
+  box-sizing: border-box
+  .owl-page span
+    box-sizing: content-box
+    display: block
+    opacity: 1
+    width: 4px
+    height: 4px
+    background: #fff
+    margin: 11px 6px
+    border-radius: 10px
+    box-sizing: border-box
+  .owl-page.active span
+    border-color: #fff
+    box-shadow: 0 0 0 3px #fff

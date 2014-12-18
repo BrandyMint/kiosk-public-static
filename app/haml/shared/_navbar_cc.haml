@@ -1,111 +1,59 @@
-.navbar-head
-  .container-fluid
-    .row
-      .col-md-9
-        .navbar-description
-          Магазин мебели ручной работы
-          %a.tel-link{href: 'tel:123123123'}
-            ="+7 903 595 1737"
-      .col-md-3
-        %div.search
-          %form
-            %input.search__field{type: 'text', placeholder: 'Поиск'}
-            %button.search__submit{type: 'submit'}
-        
-        %div{data-react-class: 'BasketButton', data-react-props: '{"itemsCount": 5, "cartUrl": "cart.html", "totalPrice": 1200}'}
-        
-        %div{data-react-class: 'BasketPopup'}
-.application-navbar
-  .container-fluid
-    .row
-      .col-md-2
-        %a.navbar-brand-link{href: 'welcome.html'}
-          %img.navbar-brand-image{src: 'images/cc/logo.png', alt:'field & rage'}
-      .col-md-10
-        .collapse.navbar-collapse{'categories-nav': ''}
-          %ul.categories-nav
-            %li.dropdown
-              %a.dropdown-toggle{href: '#', data-toggle: "dropdown"} Аксессуары
-              %ul.dropdown-menu
-                %li.dropdown-col
-                  %ul
-                    %li
-                      %a{href: '#', data-count:'45'} Кольца
-                    %li
-                      %a{href: '#', data-count:'1'} Цепи
-                    %li
-                      %a{href: '#', data-count:'6'} Злато
-                    %li
-                      %a{href: '#', data-count:'12'} Тренд
-                    %li
-                      %a{href: '#', data-count:'4'} Миднайт
-                    %li
-                      %a{href: '#', data-count:'9'} Дисплей
-                    %li
-                      %a{href: '#', data-count:'1'} Цепи
-                    %li
-                      %a{href: '#', data-count:'6'} Злато
+%header.b-header{'itemscope': '', 'itemtype': 'http://schema.org/Organization'}
+  .b-header__top-line
+    .b-header__container
+      .b-header__content
+        .b-header__desc
+          .b-site-description{'itemprop': 'description'}
+            Магазин мебели ручной работы
+            %a{href: 'tel:1123'}
+              ="+7 903 595 1737"
+        .b-header__search
+          .b-search
+            %form
+              %input.b-search__field{type: 'text', placeholder: 'Поиск'}
+              %button.b-search__submit{type: 'submit'}
+  
+  .b-header__container
+    .b-header__content
+      .b-header__logo
+        %a.b-logo{'itemprop': 'url', href: 'http://wannabe.ru', href: 'welcome.html'}
+          %img.b-logo__img{src: 'images/wannabe/logo.png', alt:'logo'}
 
-
+      .b-header__nav
+        %nav.b-nav
+          %ul.b-nav__list
             - categories = ['Столы', 'Стулья', 'Свет', 'Декор' ]
             - for c in categories
-              %li
-                %a{href: '#'}= "#{c}"
-            %li.dropdown.dropdown_right
-              %a.dropdown-toggle{href: '#', data-toggle: "dropdown"} Аксессуары
-              %ul.dropdown-menu
-                %li.dropdown-col
-                  %ul
-                    %li
-                      %a{href: '#', data-count:'45'} Кольца
-                    %li
-                      %a{href: '#', data-count:'1'} Цепи
-                    %li
-                      %a{href: '#', data-count:'6'} Злато
-                    %li
-                      %a{href: '#', data-count:'12'} Тренд
-                    %li
-                      %a{href: '#', data-count:'4'} Миднайт
-                    %li
-                      %a{href: '#', data-count:'9'} Дисплей
-                    %li
-                      %a{href: '#', data-count:'1'} Цепи
-                    %li
-                      %a{href: '#', data-count:'6'} Злато
-                %li.dropdown-col
-                  %ul
-                    %li
-                      %a{href: '#', data-count:'45'} Кольца
-                    %li
-                      %a{href: '#', data-count:'1'} Цепи
-                    %li
-                      %a{href: '#', data-count:'6'} Злато
-                    %li
-                      %a{href: '#', data-count:'45'} Кольца
-
-          #nav
-            %ul
-              - categories = ['Столы', 'Стулья', 'Свет', 'Декор' ]
-              - for c in categories
-                %li
-                  %a{href: '#'}= "#{c}"
-              %li
-                %span Аксессуары
-                %ul
-                  %li
-                    %a{href: '#', data-count:'45'} Категория
-                  %li
-                    %a{href: '#', data-count:'1'} Категория
-                  %li
-                    %a{href: '#', data-count:'6'} Категория
-                  %li
-                    %a{href: '#', data-count:'12'} Категория
-                  %li
-                    %a{href: '#', data-count:'4'} Категория
-                  %li
-                    %a{href: '#', data-count:'9'} Категория
-    
-    %a#navopen.mmenu-open.visible-sm.visible-xs{href: "#nav"}
-      %span.mmenu-open__tick.mmenu-open__tick_f
-      %span.mmenu-open__tick.mmenu-open__tick_s
-      %span.mmenu-open__tick.mmenu-open__tick_t
+              %li.b-nav__item
+                %a.b-nav__link{href: '#'}= "#{c}"
+            %li.b-nav__item.b-nav__item_has-sub.b-nav__item_has-sub_reverse
+              %a.b-nav__link{href: '#'} Аксессуары
+              %ul.b-nav__list.b-nav__list_sub
+                %li.b-nav__list__col
+                  %ul.b-nav__list
+                    %li.b-nav__item
+                      %a.b-nav__link{href: '#', data-count:'45'} Кольца
+                    %li.b-nav__item
+                      %a.b-nav__link{href: '#', data-count:'1'} Цепи
+                    %li.b-nav__item
+                      %a.b-nav__link{href: '#', data-count:'6'} Злато
+                    %li.b-nav__item
+                      %a.b-nav__link{href: '#', data-count:'12'} Тренд
+                    %li.b-nav__item
+                      %a.b-nav__link{href: '#', data-count:'4'} Миднайт
+                    %li.b-nav__item
+                      %a.b-nav__link{href: '#', data-count:'9'} Дисплей
+                    %li.b-nav__item
+                      %a.b-nav__link{href: '#', data-count:'1'} Цепи
+                    %li.b-nav__item
+                      %a.b-nav__link{href: '#', data-count:'6'} Злато
+                %li.b-nav__list__col
+                  %ul.b-nav__list
+                    %li.b-nav__item
+                      %a.b-nav__link{href: '#', data-count:'45'} Кольца
+                    %li.b-nav__item
+                      %a.b-nav__link{href: '#', data-count:'1'} Цепи
+                    %li.b-nav__item
+                      %a.b-nav__link{href: '#', data-count:'6'} Злато
+                    %li.b-nav__item
+                      %a.b-nav__link{href: '#', data-count:'45'} Кольца

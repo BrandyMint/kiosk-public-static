@@ -1,0 +1,25 @@
+.b-slider
+  margin: 0 auto 14px
+  &__item
+    display: block
+    img
+      max-width: 100%
+
+  &_thumbs
+    @include grid-media-query("lap")
+      display: none !important
+    .owl-item
+      transition: opacity .2s ease
+      &.synced
+        opacity: .8
+
+  &_promo
+    max-height: 731px
+    max-width: 1000px
+    margin: 0 auto
+    overflow: hidden
+    .owl-controls
+      position: static
+    .b-slider
+      &__item
+        text-align: center

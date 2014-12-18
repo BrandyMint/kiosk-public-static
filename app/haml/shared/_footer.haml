@@ -1,16 +1,54 @@
-.application-footer
-  .container-fluid
-    .application-footer__inner
-      .row
-        .col-md-8
-          %ul.footer-nav
-            - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
-            - for l in footer_links
-              %li
-                %a{href: '#'}= "#{l}"
-        .col-md-4
-          %ul.footer-nav
-            %li
-              %a{href: '#'} Facebook
-            %li
-              %a.footer-nav__trigger{'href': '#instagram', 'onClick': '$(document).trigger("instagram:clicked")'} Instagram
+%footer.b-footer
+  .b-footer__container
+    .b-footer__content
+      .b-footer__nav.b-footer__nav_main
+        - footer_links = ['Доставка', 'Оплата', 'Контакты', 'О нас', 'Новости']
+        - for l in footer_links
+          %a.b-footer__link{href: '#'}= "#{l}"
+      
+      .b-footer__nav.b-footer__nav_soc
+        %a.b-footer__link{href: '#'} Facebook
+        %a.b-footer__link{'href': '#instagram', 'onClick': '$(document).trigger("instagram:clicked")'} Instagram
+
+%a.b-admin{href:'/admin'} Панель администратора
+
+#instagram{data-react-class: 'InstagramFeed_Controllable', data-react-props: '{"clientId": "295b9ad8c3304e5f8cf9a27da8014082", "userId": 30090607, "isVisible": false}'}
+
+%div{data-react-class: 'BasketButton', data-react-props: '{"cartUrl": "cart.html"}'}
+  
+%div{data-react-class: 'BasketPopup'}
+
+.b-theme-switch
+  .b-theme-switch__item{ks-theme-switcher: "", data-classlist: "b-page", data-logourl: "images/wannabe/logo.png"} Basic
+  .b-theme-switch__item{ks-theme-switcher: "", data-classlist: "b-page b-page_theme-dark", data-logourl: "images/wannabe/logo.png"} Basic dark
+  .b-theme-switch__item{ks-theme-switcher: "", data-classlist: "b-page b-page_theme-wannabe", data-logourl: "images/wannabe/logo.svg"} Wannabe
+  .b-theme-switch__item{ks-theme-switcher: "", data-classlist: "b-page b-page_theme-sugar", data-logourl: "images/sugar/logo.png"} Sugar
+  .b-theme-switch__item{ks-theme-switcher: "", data-classlist: "b-page b-page_theme-cc", data-logourl: "images/cc/logo.png"} Citycicle
+  .b-theme-switch__item{ks-theme-switcher: "", data-classlist: "b-page b-page_theme-etc", data-logourl: "images/etc/logo.png"} etc
+
+#nav
+  %ul
+    - categories = ['Столы', 'Стулья', 'Свет', 'Декор' ]
+    - for c in categories
+      %li
+        %a{href: '#'}= "#{c}"
+    %li
+      %span Аксессуары
+      %ul
+        %li
+          %a{href: '#', data-count:'45'} Категория
+        %li
+          %a{href: '#', data-count:'1'} Категория
+        %li
+          %a{href: '#', data-count:'6'} Категория
+        %li
+          %a{href: '#', data-count:'12'} Категория
+        %li
+          %a{href: '#', data-count:'4'} Категория
+        %li
+          %a{href: '#', data-count:'9'} Категория
+
+%a#navopen.mmenu-open{href: "#nav"}
+  %span.mmenu-open__tick.mmenu-open__tick_f
+  %span.mmenu-open__tick.mmenu-open__tick_s
+  %span.mmenu-open__tick.mmenu-open__tick_t

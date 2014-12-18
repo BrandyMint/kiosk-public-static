@@ -73,14 +73,14 @@ window.InstagramFeed = React.createClass
 
 window.InstagramFeed_Error = React.createClass
   render: ->
-    `<div className='instagram-feed instagram-feed_error'>
+    `<div className='b-instafeed b-insafeed_error'>
       Ошибка при загрузке фотографий
     </div>`
 
 window.InstagramFeed_Spinner = React.createClass
   render: ->
-    `<div className='instagram-feed instagram-feed_loading'>
-      <span className='instagram-feed__loader'/>
+    `<div className='b-instafeed b-instafeed_loading'>
+      <span className='b-instafeed__loader'/>
     </div>`
 
 window.InstagramFeed_Photo = React.createClass
@@ -88,7 +88,7 @@ window.InstagramFeed_Photo = React.createClass
     photo: React.PropTypes.object.isRequired
 
   render: ->
-    `<a className='instagram-feed__photo' href={this.props.photo.standard_resolution.url}>
+    `<a className='b-instafeed__photo' href={this.props.photo.standard_resolution.url}>
       <img className='lazyOwl' data-src={this.props.photo.low_resolution.url}/>
     </a>`
 
@@ -109,7 +109,7 @@ window.InstagramFeed_Carousel = React.createClass
         photo={photo.images}
         key={photo.id} />`
     
-    return `<div className="instagram-feed">{photos}</div>`
+    return `<div className="b-instafeed">{photos}</div>`
 
   _initCarousel: ->
     $(@getDOMNode()).owlCarousel

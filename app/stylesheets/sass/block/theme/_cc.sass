@@ -1,0 +1,165 @@
+.b-page_theme-cc
+  font-family: $font-stack-apercu-family
+  line-height: $ccLineHeight
+  color: $ccText
+
+  // a
+  //   color: $ccLink
+  //   &:hover
+  //     color: $ccLinkHover
+
+  .b-cart-trigger,
+  .b-admin
+    border-radius: 3px
+    height: 44px
+    top: 13px
+
+  .mmenu-open
+    top: 13px
+
+  .b-header
+    position: relative
+    z-index: 2
+    &__content
+      padding-top: 13px
+    
+    &__top-line
+      background-color: $ccBar
+      color: $ccBarText
+
+      .b-header
+        &__desc,
+        &__search
+          @extend %six-twelfths
+          @extend %palm--one-whole
+        &__content
+          padding: 6px 0
+      
+      .b-site-description
+          padding: 9px 0
+          a
+            color: $ccBarText
+            &:hover
+              color: $ccLinkHover
+
+    &__logo
+      @extend %two-twelfths
+      @extend %lap--one-whole
+      @extend %palm--one-whole
+
+    &__nav
+      @extend %ten-twelfths
+      @extend %lap--one-whole
+      @extend %palm--one-whole
+
+  .b-nav
+    border-top: none
+    margin: 0
+    padding-left: 0
+    &__list
+      text-align: left
+      &_sub
+        .b-nav__link
+          padding: 8px 20px 4px 0
+    &__link
+      font-weight: bold
+      text-transform: uppercase
+      padding: 0 7px 13px
+      letter-spacing: 0.04em
+      font-size: 13px
+
+  .b-slider
+    &_promo
+      margin-top: -73px
+    &_thumbs
+      display: none !important
+
+  .b-btn
+    border-radius: 2em
+    padding-top: 10px
+    padding-bottom: 9px
+    &:hover
+      color: #fff
+      background-color: $ccLinkHover
+
+  .b-item
+    &__name
+      font-size: 1em
+    &__price
+      font-weight: bold
+
+  .b-item-list
+    &__title
+      font-size: 20px
+      text-align: left
+      margin: 17px 0 16px
+
+  .b-item-list
+    margin-top: 60px
+    &:first-child
+      margin-top: 0
+
+  .owl-pagination
+    display: none
+
+  .b-feature
+    @include grid-media-query("palm")
+      margin: 15px 0 20px
+
+  .b-item-full
+    margin-top: 0
+    &__gallery,
+    &__description
+      width: 100%      
+
+    &__header
+      text-align: center
+      
+    &__title
+      margin: 12px 20px 8px
+      font-size: 3.214em
+      line-height: 1
+      @include grid-media-query("palm")
+        margin: 12px 10px 8px
+        font-size: 2em
+
+    &__text
+      &_intro
+        font-size: 1.357em
+      &_etc
+        font-size: 1em
+        h2
+          margin: 0 0 12px
+          font-size: 1.429em
+        p
+          margin: 0 0 10px
+
+    &__price
+      font-size: 2.429em
+      font-weight: bold
+      &__currency
+        font-weight: normal
+
+  .b-characteristics
+    font-size: 1em
+    li
+      margin: 0 0 12px
+      &:before
+        display: none
+    &__name
+      width: 105px
+      float: left
+      color: #999
+    &__val
+      margin-left: 120px
+      display: block
+
+  .b-footer
+    background-color: $ccBar
+    color: $ccBarText
+    &__link
+      font-size: 1em
+      font-weight: bold
+      color: #fff
+      &:hover
+        color: $ccBarText

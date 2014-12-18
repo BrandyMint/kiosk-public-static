@@ -1,0 +1,178 @@
+.b-cart
+  &__content
+    @extend .b-layout
+  
+  &__title
+    text-transform: uppercase
+    padding: 19px 0 13px
+    border: 1px solid #e2e2e2
+    border-width: 1px 0
+    margin: 0
+    text-align: center
+    font-weight: normal
+    font-size: 18px
+
+  &__message
+    padding: 38px 0
+    font-size: 1.571em
+    max-width: 800px
+    margin: 47px auto 0
+    text-align: center
+    p
+      margin: 0 0 100px
+    a
+      padding-bottom: 6px
+      color: #121212
+      font-weight: bold
+      border-bottom: 1px solid #e2e2e2
+
+  &__list,
+  &__total-sum,
+  &__action
+    margin: 47px 60px 0 100px
+    @include grid-media-query("lap")
+      margin-left: 0
+      margin-right: 0
+
+  &__total-sum
+    text-align: right
+    font-size: 2.143em
+
+  &__action
+    &__container
+      @extend %grid
+    
+    &__col
+      &-clear,
+      &-code,
+      &-back,
+      &-submit
+        @extend %grid__item
+      
+      &-clear
+        @extend %six-twelfths
+        @extend %lap--four-twelfths
+        @extend %palm--one-whole
+        @extend %desk--three-twelfths
+        
+      &-code
+        @extend %six-twelfths
+        @extend %lap--eight-twelfths
+        @extend %palm--one-whole
+        @extend %push--desk--three-twelfths
+        text-align: right
+
+      &-back,
+      &-submit
+        @extend %five-twelfths
+        @extend %palm--one-whole
+
+      &-submit
+        .b-cart__action__submit
+          width: 100%
+          margin-left: 0
+
+    &__code,
+    &__submit
+      width: 46%
+      display: inline-block
+      vertical-align: top
+
+    &__submit
+      margin-left: 2%
+
+    &__code
+      border: 1px solid #e2e2e2
+      padding: 13px 17px 12px
+      box-sizing: border-box
+
+    &__clear
+      display: block
+
+
+  &__list
+    list-style: none
+    padding: 0
+
+  &__item
+    @extend %grid
+    padding-bottom: 25px
+
+    &__img
+      width: 100%
+
+    &__title,
+    &__option
+      margin: 0
+      font-size: 1.143em
+
+    &__option
+      margin-top: 3px
+
+    &__price
+      font-size: 1.429em
+      margin-top: -5px
+
+    &__quantity
+      &__text
+        float: left
+        width: 90px
+      &__select
+        margin-left: 90px
+        select
+          width: 100%
+          box-sizing: border-box
+
+    &__remove
+      display: block
+      border-radius: 17px
+      width: 34px
+      height: 34px
+      background-color: #bcbcbc
+      cursor: pointer
+      transition: background-color 0.2s ease
+      img
+        width: 100%
+
+    &__col
+      &-img,
+      &-content,
+      &-quantity,
+      &-price,
+      &-remove
+        @extend %grid__item
+      
+      &-img
+        @extend %two-twelfths
+        @extend %portable--four-twelfths
+
+      &-content
+        @extend %four-twelfths
+        @extend %portable--eight-twelfths
+
+      &-quantity
+        @extend %three-twelfths
+        @extend %portable--four-twelfths
+
+      &-price
+        @extend %two-twelfths
+        @extend %portable--four-twelfths
+
+      &-quantity
+        @extend %one-twelfths
+        @extend %portable--one-twelfths
+
+      &-remove
+        @extend %one-twelfth
+        @extend %portable--one-twelfths
+
+  &__form
+    max-width: 580px
+    margin: 55px 0 0 205px
+    &__delivery-name,
+    &__delivery-price
+      display: inline-block
+      vertical-align: top
+      width: 40%
+    .b-cart__action
+      margin: 0
