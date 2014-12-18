@@ -8,9 +8,12 @@
       +include 'app/haml/shared/_navbar_cc.haml'
 
       .b-slider.b-slider_promo(application-slider)
-        - for i in [1..5]
-          .b-slider__item
-            %img{src: 'images/slidertest.jpg', alt: ''}
+        .b-slider__item
+          %img{src: 'images/slidertest.jpg', alt: ''}
+        .b-slider__item
+          %img{src: 'http://placehold.it/1000x300', alt: ''}
+        .b-slider__item
+          %img{src: 'http://placehold.it/400x400', alt: ''}
 
       %section.b-item-list
         %h1.b-item-list__title Табуретки

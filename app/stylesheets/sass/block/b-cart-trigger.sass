@@ -12,7 +12,20 @@ $cartTriggerCounterColor: #00AEFF
   border-radius: 25px
   margin: 0
   background-color: $cartTriggerColor
-  text-indent: -9999px
+  &__count
+    position: absolute
+    bottom: 100%
+    left: 100%
+    background: $cartTriggerCounterColor
+    width: 30px
+    height: 30px
+    margin: 0 0 -15px -15px
+    text-align: center
+    line-height: 30px
+    border-radius: 15px
+    font-size: 14px
+    color: #fff
+    font-weight: bold
   &:before
     content: ''
     width: 26px
@@ -25,18 +38,6 @@ $cartTriggerCounterColor: #00AEFF
   &_full
     background-color: $cartTriggerFullColor
     transition: background-color .2s ease
-    cursor: pointer
-    &:after
-      content: attr(data-cart)
-      position: absolute
-      bottom: 100%
-      left: 100%
-      background: $cartTriggerCounterColor
-      width: 30px
-      height: 30px
-      margin: 0 0 -15px -15px
-      text-align: center
-      line-height: 30px
-      border-radius: 15px
+    cursor: pointer  
     &:hover
       background-color: $cartTriggerColor

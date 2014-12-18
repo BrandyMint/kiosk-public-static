@@ -171,7 +171,7 @@ window.BasketButton_Full = React.createClass({displayName: 'BasketButton_Full',
     cartUrl: React.PropTypes.object
   },
   render: function() {
-    return React.DOM.a({className: "b-cart-trigger b-cart-trigger_full", 'data-cart': this.props.itemsCount, href: this.props.cartUrl});
+    return React.DOM.a({className: "b-cart-trigger b-cart-trigger_full", href: this.props.cartUrl}, React.DOM.span({className: "b-cart-trigger__count"}, this.props.itemsCount));
   }
 });
 
@@ -724,6 +724,7 @@ $(function() {
     options = defaultCarouselOptions;
     if ($(this).hasClass('b-slider_promo')) {
       options['singleItem'] = true;
+      options['autoHeight'] = true;
     }
     if ($(this).hasClass('application-slider_photos')) {
       options['singleItem'] = false;
@@ -1016,7 +1017,7 @@ $(function() {
 },{}],22:[function(require,module,exports){
 $(function() {
   var logo;
-  logo = $('.navbar-brand-image');
+  logo = $('.b-logo__img');
   return $('[ks-theme-switcher]').on('click', function() {
     var classlistVal, logoUrl;
     classlistVal = $(this).data("classlist");

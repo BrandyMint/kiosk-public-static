@@ -3240,7 +3240,7 @@ td, th {
 .b-item-list__title {
   font-size: 53px;
   text-align: center;
-  margin: 52px 0 56px; }
+  margin: 42px 0 46px; }
 /* line 17, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/block/b-item-list */
 .b-item-list__item .b-item {
   margin: 15px 0;
@@ -3511,9 +3511,23 @@ td, th {
   height: 50px;
   border-radius: 25px;
   margin: 0;
-  background-color: #cbcbcb;
-  text-indent: -9999px; }
-  /* line 16, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/block/b-cart-trigger */
+  background-color: #cbcbcb; }
+  /* line 15, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/block/b-cart-trigger */
+  .b-cart-trigger__count {
+    position: absolute;
+    bottom: 100%;
+    left: 100%;
+    background: #00AEFF;
+    width: 30px;
+    height: 30px;
+    margin: 0 0 -15px -15px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 15px;
+    font-size: 14px;
+    color: #fff;
+    font-weight: bold; }
+  /* line 29, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/block/b-cart-trigger */
   .b-cart-trigger:before {
     content: '';
     width: 26px;
@@ -3523,26 +3537,13 @@ td, th {
     position: absolute;
     top: 50%;
     left: 50%; }
-  /* line 25, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/block/b-cart-trigger */
+  /* line 38, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/block/b-cart-trigger */
   .b-cart-trigger_full {
     background-color: #121212;
     -webkit-transition: background-color 0.2s ease;
             transition: background-color 0.2s ease;
     cursor: pointer; }
-    /* line 29, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/block/b-cart-trigger */
-    .b-cart-trigger_full:after {
-      content: attr(data-cart);
-      position: absolute;
-      bottom: 100%;
-      left: 100%;
-      background: #00AEFF;
-      width: 30px;
-      height: 30px;
-      margin: 0 0 -15px -15px;
-      text-align: center;
-      line-height: 30px;
-      border-radius: 15px; }
-    /* line 41, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/block/b-cart-trigger */
+    /* line 42, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/block/b-cart-trigger */
     .b-cart-trigger_full:hover {
       background-color: #cbcbcb; }
 
@@ -3554,7 +3555,7 @@ td, th {
     display: block; }
     /* line 5, /Volumes/hdd/work/kiosk-public-static/app/stylesheets/sass/block/b-slider */
     .b-slider__item img {
-      width: 100%; }
+      max-width: 100%; }
   @media only screen and (min-width: 481px) and (max-width: 1023px) {
     .b-slider_thumbs {
       display: none !important; } }
