@@ -13,7 +13,7 @@
     @extend %grid__item
     @extend %four-twelfths
     @extend %lap--one-half
-    @extend %palm--one-whole
+    @extend %palm--one-half
     .b-item
       margin: 15px 0
       transition: color .1s ease
@@ -23,13 +23,17 @@
       &:hover
         .b-item__pic
           opacity: .8
+      @include grid-media-query("palm")
+        &__name,
+        &__price
+          font-size: 1em
 
   &_four-in-row
     .b-item-list
       &__item
         @extend %three-twelfths
         @extend %lap--one-half
-        @extend %palm--one-whole
+        @extend %palm--one-half
 
   &_has-filter
     margin-top: 55px

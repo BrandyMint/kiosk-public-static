@@ -70,6 +70,7 @@
 // @import "style-etc"; //etc тема
 
 // Refactored
+@import "jQuery.mmenu/src/scss/jquery.mmenu.all";
 @import "utilities/_normalize";
 @import "utilities/grid";
 
@@ -110,6 +111,7 @@
 @import "block/b-modification-list"; // Список модов
 @import "block/b-q-status"; // Статус количества товара
 // @import "blocks/b-breadcrumbs"; //Хлебные крошки
+@import "block/mmenu"; // Статус количества товара
 
 //Global layout blocks
 @import "block/b-page"; // Основная страница

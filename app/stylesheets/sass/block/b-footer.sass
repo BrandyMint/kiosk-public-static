@@ -9,17 +9,22 @@
 
   &__nav
     @extend %grid__item
-    @extend %lap--one-half
     @extend %palm--one-whole
     margin: 20px 0
+    @include grid-media-query("palm")
+      margin: 5px 0
     &_soc
       @extend %three-twelfths
+      @extend %lap--four-twelfths
       text-align: right
+      @include grid-media-query("palm")
+        text-align: left
       .b-footer
         &__link
           margin: 0 0 0 25px
     &_main
       @extend %nine-twelfths
+      @extend %lap--eight-twelfths
 
   &__link
     font-size: 1.143em
@@ -27,3 +32,9 @@
     transition: color .2s ease
     &:first-child
       margin-left: 0
+    @include grid-media-query("lap")
+      font-size: 1em
+      margin-left: 15px
+    @include grid-media-query("palm")
+      font-size: 1em
+      margin-left: 10px
