@@ -25,3 +25,30 @@
   .b-theme-switch__item{ks-theme-switcher: "", data-classlist: "b-page b-page_theme-sugar", data-logourl: "images/sugar/logo.png"} Sugar
   .b-theme-switch__item{ks-theme-switcher: "", data-classlist: "b-page b-page_theme-cc", data-logourl: "images/cc/logo.png"} Citycicle
   .b-theme-switch__item{ks-theme-switcher: "", data-classlist: "b-page b-page_theme-etc", data-logourl: "images/etc/logo.png"} etc
+
+#nav
+  %ul
+    - categories = ['Столы', 'Стулья', 'Свет', 'Декор' ]
+    - for c in categories
+      %li
+        %a{href: '#'}= "#{c}"
+    %li
+      %span Аксессуары
+      %ul
+        %li
+          %a{href: '#', data-count:'45'} Категория
+        %li
+          %a{href: '#', data-count:'1'} Категория
+        %li
+          %a{href: '#', data-count:'6'} Категория
+        %li
+          %a{href: '#', data-count:'12'} Категория
+        %li
+          %a{href: '#', data-count:'4'} Категория
+        %li
+          %a{href: '#', data-count:'9'} Категория
+
+%a#navopen.mmenu-open{href: "#nav"}
+  %span.mmenu-open__tick.mmenu-open__tick_f
+  %span.mmenu-open__tick.mmenu-open__tick_s
+  %span.mmenu-open__tick.mmenu-open__tick_t

@@ -8,6 +8,15 @@
   //   &:hover
   //     color: $ccLinkHover
 
+  .b-cart-trigger,
+  .b-admin
+    border-radius: 3px
+    height: 44px
+    top: 13px
+
+  .mmenu-open
+    top: 13px
+
   .b-header
     position: relative
     z-index: 2
@@ -44,8 +53,9 @@
       @extend %palm--one-whole
 
   .b-nav
-    border: none
+    border-top: none
     margin: 0
+    padding-left: 0
     &__list
       text-align: left
       &_sub
@@ -92,9 +102,12 @@
   .owl-pagination
     display: none
 
-  .b-item-full
-    margin-top: -35px
+  .b-feature
+    @include grid-media-query("palm")
+      margin: 15px 0 20px
 
+  .b-item-full
+    margin-top: 0
     &__gallery,
     &__description
       width: 100%      
@@ -106,6 +119,9 @@
       margin: 12px 20px 8px
       font-size: 3.214em
       line-height: 1
+      @include grid-media-query("palm")
+        margin: 12px 10px 8px
+        font-size: 2em
 
     &__text
       &_intro
