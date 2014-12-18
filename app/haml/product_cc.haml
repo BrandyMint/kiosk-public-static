@@ -33,21 +33,22 @@
                   %span.b-item-full__price__old 20990 руб
                   %span.b-item-full__price__sale -5%
 
-                .b-item-full__text
-                  Make peace, not war! Настоящий блокбастер среди украшений - серебряная моносерьга в виде пули Wanna?Be! - попала в самое сердце столичных модниц. Инкрустированный цирконами аксессуар не оставил и знаменитую на весь мир икону стилю, Рианну. Известная дива не раз дополняла этим аксессуаром свои образы. Рекомендуем надевать кулон вместе с белыми майками, кружевными эспадрильями и джинсами бойфренда.
+                .b-item-full__text.b-item-full__text_intro
+                  Fuji «Declaration» — упрощенный вариант модели «Classic Track», приспособленный для езды преимущественно по городу
 
               .b-item-full__description-inner__col-right
                 %ul.b-modification-list
                   - for i in [1..3]
-                    %li.b-modification
-                      .b-modification__content  
-                        Велосипед Fuji «Declaration» (2014), рост 560, фиолетовый
-                        .b-q-status
-                          %span.b-q-status__state.b-q-status__state_ok
-                          %span.b-q-status__state.b-q-status__state_ok
-                          %span.b-q-status__state
-                      .b-modification__action
-                        %div{data-react-class: 'AddToBasketButton'}
+                    %li
+                      .b-modification
+                        .b-modification__content  
+                          Велосипед Fuji «Declaration» (2014), рост 560, фиолетовый
+                          .b-q-status
+                            %span.b-q-status__state.b-q-status__state_ok
+                            %span.b-q-status__state.b-q-status__state_ok
+                            %span.b-q-status__state
+                        .b-modification__action
+                          %div{data-react-class: 'AddToBasketButton'}
 
         %ul.b-feature-list
           - for i in [1..6]
@@ -68,14 +69,17 @@
                     - for obj, i in details
                       - for key of obj
                         %li
-                          = "#{key}:"
-                          = obj[key]
+                          %strong.b-characteristics__name
+                            = "#{key}:"
+                          %span.b-characteristics__val
+                            = obj[key]
 
               .b-item-full__description-inner__col-right
-                %h2 Технические характеристики
-                %p Эта модель отгружается как с нашего склада, так и со склада производителя и может требовать уточнения наличия велосипеда в нужной ростовке и цвете. Перед заказом свяжитесь и уточните наличие с менеджером по телефону +7 903 500 20 70.
-                %p Велосипед доставляется в коробке, в фабричной упаковке, частично-разобранный. Набор инструментов для сборки в комплект не входит.
-                %p Если вам необходимо получить уже собранный и настроенный велосипед перед заказом свяжитесь и уточните все детали с менеджером по телефону +7 903 500 20 70.
+                .b-item-full__text.b-item-full__text_etc
+                  %h2 Технические характеристики
+                  %p Эта модель отгружается как с нашего склада, так и со склада производителя и может требовать уточнения наличия велосипеда в нужной ростовке и цвете. Перед заказом свяжитесь и уточните наличие с менеджером по телефону +7 903 500 20 70.
+                  %p Велосипед доставляется в коробке, в фабричной упаковке, частично-разобранный. Набор инструментов для сборки в комплект не входит.
+                  %p Если вам необходимо получить уже собранный и настроенный велосипед перед заказом свяжитесь и уточните все детали с менеджером по телефону +7 903 500 20 70.
 
 
 
@@ -103,7 +107,7 @@
       %section.b-item-list
         %h2.b-item-list__title Этот товар, но другого цвета
         .b-item-list__content
-          - for i in [1..6]
+          - for i in [1..3]
             .b-item-list__item
               %a.b-item{href: 'product.html'}
                 .b-item__pic-wrap

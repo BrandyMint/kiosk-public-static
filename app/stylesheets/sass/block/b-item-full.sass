@@ -23,6 +23,7 @@ $articulColor: #828282
 
   &__description-inner
     @extend %grid
+    margin-bottom: 55px
     
     &__col-left
       @extend %grid__item
@@ -46,6 +47,26 @@ $articulColor: #828282
   &__price
     font-size: 2em
     margin: 0 0 10px
+    &__currency
+      font-size: 0.324em
+      display: inline-block
+      vertical-align: top
+      padding: 9px 0
+    &__old,
+    &__sale
+      display: inline-block
+      vertical-align: top
+    &__sale
+      font-size: 0.412em
+      background-color: #f05a61
+      padding: 2px 2px 2px 5px
+      text-transform: uppercase
+      color: #fff
+      letter-spacing: 2px
+    &__old
+      font-size: 0.471em
+      text-decoration: line-through
+      color: $basicColorHover
 
   &__text
     margin-bottom: 1em

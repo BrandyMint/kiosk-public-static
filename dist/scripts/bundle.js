@@ -171,23 +171,13 @@ window.BasketButton_Full = React.createClass({displayName: 'BasketButton_Full',
     cartUrl: React.PropTypes.object
   },
   render: function() {
-    return React.DOM.a({className: "navbar-cart-btn navbar-cart-btn-full", 'data-cart': this.props.itemsCount, href: this.props.cartUrl}, 
-          React.DOM.span({className: "navbar-cart-btn-icon"}), 
-          React.DOM.span({className: "navbar-cart-btn-caption"}, 
-            "Корзина — ", accounting.formatMoney(this.props.totalPrice)
-          )
-        );
+    return React.DOM.a({className: "b-cart-trigger b-cart-trigger_full", 'data-cart': this.props.itemsCount, href: this.props.cartUrl});
   }
 });
 
 window.BasketButton_Empty = React.createClass({displayName: 'BasketButton_Empty',
   render: function() {
-    return React.DOM.span({className: "navbar-cart-btn navbar-cart-btn-empty"}, 
-          React.DOM.span({className: "navbar-cart-btn-icon"}), 
-          React.DOM.span({className: "navbar-cart-btn-caption"}, 
-            "Корзина"
-          )
-        );
+    return React.DOM.span({className: "b-cart-trigger"});
   }
 });
 
@@ -256,11 +246,11 @@ window.BasketPopup = React.createClass({displayName: 'BasketPopup',
   },
   render: function() {
     var classNameValue;
-    classNameValue = "float-cart";
+    classNameValue = "b-float-cart";
     if (this.state.isVisible === false) {
-      classNameValue += " float-cart_invisible";
+      classNameValue += " b-float-cart_invisible";
     }
-    return React.DOM.div({className: classNameValue}, React.DOM.div({className: "float-cart__content", onClick: this.handleClick}, 
+    return React.DOM.div({className: classNameValue}, React.DOM.div({className: "b-float-cart__content", onClick: this.handleClick}, 
           BasketPopupList({items: this.state.items}), 
           BasketPopupControl({cartUrl: this.props.cartUrl, cartClearUrl: this.props.cartClearUrl})
         ));
@@ -279,7 +269,7 @@ window.BasketPopupList = React.createClass({displayName: 'BasketPopupList',
     itemsList = this.props.items.map(function(item) {
       return BasketPopupItem({key: item.order_product_id, item: item});
     });
-    return React.DOM.div({className: "float-cart__item-wrap"}, 
+    return React.DOM.div({className: "b-float-cart__item-wrap"}, 
         itemsList
       );
   }
@@ -299,32 +289,26 @@ window.BasketPopupItem = React.createClass({displayName: 'BasketPopupItem',
   },
   render: function() {
     this.props = this.props.item;
-    return React.DOM.div({className: "float-cart__item"}, 
-          React.DOM.div({className: "row"}, 
-            React.DOM.div({className: "col-sm-3"}, 
-              React.DOM.a({className: "float-cart__item__img", href: this.props.product_id}, 
-                React.DOM.img({src: this.props.product.image.url, alt: this.props.title})
+    return React.DOM.div({className: "b-float-cart__item"}, 
+              React.DOM.div({className: "b-float-cart__item__inner"}, 
+                React.DOM.div({className: "b-float-cart__item__img"}, 
+                  React.DOM.a({href: this.props.product_id}, 
+                    React.DOM.img({src: this.props.product.image.url, alt: this.props.title})
+                  )
+                ), 
+                React.DOM.div({className: "b-float-cart__item__info"}, 
+                  React.DOM.a({className: "b-float-cart__item__name", href: this.props.product_id}, this.props.product.title), 
+                  React.DOM.div({className: "b-float-cart__item__param"}, this.props.description), 
+                  React.DOM.div({className: "b-float-cart__item__param"}, this.props.article)
+                ), 
+                React.DOM.div({className: "b-float-cart__item__q"}, this.props.count), 
+                React.DOM.div({className: "b-float-cart__item__price"}, 
+                  React.DOM.div({className: "b-float-cart__item__price-val"}, 
+                    accounting.formatMoney(this.props.product.price.cents * this.props.count)
+                  )
+                )
               )
-            ), 
-            React.DOM.div({className: "col-sm-5"}, 
-              React.DOM.div({className: "float-cart__item__nfo"}, 
-                React.DOM.a({className: "float-cart__item__name", href: this.props.product_id}, this.props.product.title), 
-                React.DOM.div({className: "float-cart__item__param"}, this.props.description), 
-                React.DOM.div({className: "float-cart__item__param"}, this.props.article)
-              )
-            ), 
-            React.DOM.div({className: "col-sm-2"}, 
-              React.DOM.div({className: "float-cart__item__q"}, 
-                this.props.count
-              )
-            ), 
-            React.DOM.div({className: "col-sm-2"}, 
-              React.DOM.div({className: "float-cart__item__price"}, 
-                accounting.formatMoney(this.props.product.price.cents * this.props.count)
-              )
-            )
-          )
-        );
+            );
   }
 });
 
@@ -334,9 +318,9 @@ window.BasketPopupControl = React.createClass({displayName: 'BasketPopupControl'
     cartClearUrl: React.PropTypes.string
   },
   render: function() {
-    return React.DOM.div({className: "float-cart__control"}, 
-          React.DOM.a({className: "cart-btn float-cart__link", href: this.props.cartUrl}, "Перейти в корзину"), 
-          React.DOM.a({className: "float-cart__clear", href: this.props.cartClearUrl}, "Очистить корзину")
+    return React.DOM.div({className: "b-float-cart__control"}, 
+          React.DOM.a({className: "b-float-cart__url b-btn", href: this.props.cartUrl}, "Перейти в корзину"), 
+          React.DOM.a({className: "b-float-cart__clear", href: this.props.cartClearUrl}, "Очистить корзину")
         );
   }
 });
@@ -455,7 +439,7 @@ window.InstagramFeed = React.createClass({displayName: 'InstagramFeed',
 
 window.InstagramFeed_Error = React.createClass({displayName: 'InstagramFeed_Error',
   render: function() {
-    return React.DOM.div({className: "instagram-feed instagram-feed_error"}, 
+    return React.DOM.div({className: "b-instafeed b-insafeed_error"}, 
       "Ошибка при загрузке фотографий"
     );
   }
@@ -463,8 +447,8 @@ window.InstagramFeed_Error = React.createClass({displayName: 'InstagramFeed_Erro
 
 window.InstagramFeed_Spinner = React.createClass({displayName: 'InstagramFeed_Spinner',
   render: function() {
-    return React.DOM.div({className: "instagram-feed instagram-feed_loading"}, 
-      React.DOM.span({className: "instagram-feed__loader"})
+    return React.DOM.div({className: "b-instafeed b-instafeed_loading"}, 
+      React.DOM.span({className: "b-instafeed__loader"})
     );
   }
 });
@@ -474,7 +458,7 @@ window.InstagramFeed_Photo = React.createClass({displayName: 'InstagramFeed_Phot
     photo: React.PropTypes.object.isRequired
   },
   render: function() {
-    return React.DOM.a({className: "instagram-feed__photo", href: this.props.photo.standard_resolution.url}, 
+    return React.DOM.a({className: "b-instafeed__photo", href: this.props.photo.standard_resolution.url}, 
       React.DOM.img({className: "lazyOwl", 'data-src': this.props.photo.low_resolution.url})
     );
   }
@@ -497,7 +481,7 @@ window.InstagramFeed_Carousel = React.createClass({displayName: 'InstagramFeed_C
         photo: photo.images, 
         key: photo.id});
     });
-    return React.DOM.div({className: "instagram-feed"}, photos);
+    return React.DOM.div({className: "b-instafeed"}, photos);
   },
   _initCarousel: function() {
     return $(this.getDOMNode()).owlCarousel({
@@ -550,7 +534,7 @@ window.AddToBasketButton = React.createClass({displayName: 'AddToBasketButton',
     }
   },
   render: function() {
-    return React.DOM.button({className: "products__show-item-cart-btn", onClick: this.addToBasket}, "В корзину");
+    return React.DOM.button({className: "b-btn", onClick: this.addToBasket}, "В корзину");
   }
 });
 
@@ -730,9 +714,7 @@ $(function() {
 $(function() {
   var defaultCarouselOptions;
   defaultCarouselOptions = {
-    singleItem: true,
     pagination: false,
-    responsiveBaseWidth: $('[application-slider]'),
     autoPlay: 5000,
     navigation: true
   };
@@ -740,6 +722,9 @@ $(function() {
     var options, thisInner;
     thisInner = $(this).find('.application-slider__inner');
     options = defaultCarouselOptions;
+    if ($(this).hasClass('b-slider_promo')) {
+      options['singleItem'] = true;
+    }
     if ($(this).hasClass('application-slider_photos')) {
       options['singleItem'] = false;
       options['items'] = 3;
@@ -751,7 +736,7 @@ $(function() {
       options['itemsDesktop'] = 6;
       options['lazyLoad'] = true;
     }
-    return thisInner.owlCarousel(options);
+    return $(this).owlCarousel(options);
   });
 });
 
