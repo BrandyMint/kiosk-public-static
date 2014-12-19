@@ -1,0 +1,24 @@
+{
+  "name": "kiosk-static",
+  "version": "0.0.1",
+  "dependencies": {
+    "accounting.js": "~0.3.2",
+    "eventEmitter": "~4.2.9",
+    "fancybox": "~2.1.5",
+    "fancybox-wannabe-fix": "https://raw.githubusercontent.com/srjsrj/fancyBox-wannabe/master/source/helpers/jquery.fancybox-thumbs.js",
+    "sticky": "~1.0.1",
+    "react": "0.11.0",
+    "react-mixin-manager": "~0.7.0",
+    "OwlCarousel": "~1.3.2",
+    "nouislider": "~7.0.9"
+  },
+  "devDependencies": {
+    "bootstrap-sass-official": "~3.2.0",
+    "compass-mixins": "~1.0.1",
+    "font-awesome": "~4.1.0",
+    "jquery": "~2.1.1",
+    "jquery.role": "git://github.com/kossnocorp/role#~1.3.1",
+    "jQuery.mmenu": "~4.5.7",
+    "lodash": "~2.4.1"
+  }
+}

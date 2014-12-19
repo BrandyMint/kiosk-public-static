@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+<title>Wanna?Be!</title>
+<meta content='' name='description'>
+<meta content='width=device-width, initial-scale=1, user-scalable=no' name='viewport'>
+<link href='stylesheets/local.css' rel='stylesheet'>
+<link href='images/wannabe/favicon.ico' rel='shortcut icon'>
+<link href='images/wannabe/apple-touch-icon-57x57.png' rel='apple-touch-icon' sizes='57x57'>
+<link href='images/wannabe/apple-touch-icon-114x114.png' rel='apple-touch-icon' sizes='114x114'>
+<link href='images/wannabe/apple-touch-icon-72x72.png' rel='apple-touch-icon' sizes='72x72'>
+<link href='images/wannabe/apple-touch-icon-144x144.png' rel='apple-touch-icon' sizes='144x144'>
+<link href='images/wannabe/apple-touch-icon-60x60.png' rel='apple-touch-icon' sizes='60x60'>
+<link href='images/wannabe/apple-touch-icon-120x120.png' rel='apple-touch-icon' sizes='120x120'>
+<link href='images/wannabe/apple-touch-icon-76x76.png' rel='apple-touch-icon' sizes='76x76'>
+<link href='images/wannabe/apple-touch-icon-152x152.png' rel='apple-touch-icon' sizes='152x152'>
+<link href='images/wannabe/apple-touch-icon-180x180.png' rel='apple-touch-icon' sizes='180x180'>
+<link href='images/wannabe/favicon-192x192.png' rel='icon' sizes='192x192' type='image/png'>
+<link href='images/wannabe/favicon-160x160.png' rel='icon' sizes='160x160' type='image/png'>
+<link href='images/wannabe/favicon-96x96.png' rel='icon' sizes='96x96' type='image/png'>
+<link href='images/wannabe/favicon-16x16.png' rel='icon' sizes='16x16' type='image/png'>
+<link href='images/wannabe/favicon-32x32.png' rel='icon' sizes='32x32' type='image/png'>
+<meta content='#00aba9' name='msapplication-TileColor'>
+<meta content='images/wannabe/mstile-144x144.png' name='msapplication-TileImage'>
+<meta content='images/wannabe/browserconfig.xml' name='msapplication-config'>
+  </head>
+  <body class='theme-basic'>
+    <div class='application'>
+      <div class='application-navbar'>
+  <div class='container-fluid'>
+    <div class='row'>
+      <div class='col-md-4 col-sm-12'>
+        <div class='navbar-description'>
+          Магазин мебели ручной работы
+          <br>
+          +7 903 595 1737
+        </div>
+      </div>
+      <div class='col-md-4 col-sm-12 col-sm-pull-0 col-xs-12'>
+        <a class='navbar-brand-link' href='welcome.html'>
+          <img class='navbar-brand-image' src='images/logo.png' alt='field & rage'>
+        </a>
+      </div>
+      <div class='row visible-xs'></div>
+      <div class='col-sm-4'>
+        <a class='navbar-cart-btn navbar-cart-btn-full' data-cart='5'>
+          <span class='navbar-cart-btn-icon'></span>
+          <span class='navbar-cart-btn-caption'>
+            Корзина — 13 000 Р
+          </span>
+        </a>
+      </div>
+      <div class='col-sm-12 col-sm-pull-0 col-xs-6 col-xs-pull-6 hidden-sm hidden-xs'>
+        <button class='collapsed navbar-categories-toggle-btn' data-target='[categories-nav]' data-toggle='collapse' type='button'>
+          <i class='fa fa-bars'></i>
+          <span class='navbar-categories-toggle-btn-caption'>
+            Каталог
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class='application-content'>
+        <div class='container-fluid'>
+          <div class='cart'>
+            <h1 class='page-title' tooltip title='Корзина номер 123'>Корзина</h1>
+            <form action='checkout.html'>
+              <div class='cart__list'>
+                <div class='cart__list-item' cart-item='1' data-item-price='12000' data-item-total-price='24000'>
+                  <div class='row'>
+                    <div class='col-lg-2 col-md-2 col-sm-2 col-xs-4'>
+                      <img class='cart__list-item-image' src='http://placehold.it/92x92' alt='cart item' width='100%'>
+                    </div>
+                    <div class='col-lg-4 col-md-3 col-sm-4 col-xs-8'>
+                      <div class='cart__list-item-title'>
+                        Моно-серьга имитация тоннеля серебряная с белыми цирконами
+                      </div>
+                      <div class='cart__list-item-option'>
+                        Размер 16
+                      </div>
+                      <div class='cart__list-item-option'>
+                        Арт. 123456
+                      </div>
+                      <div class='cart__list-item-quantity cart__list-item-quantity_xs visible-xs'>
+                        <span class='cart__list-item-quantity__text' cart-item-block='basic'>
+                          Количество
+                        </span>
+                        <div class='cart__list-item-quantity-select'>
+                          <select cart-item-selector='basic'>
+                            <option>1</option>
+                            <option selected>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class='cart__list-item-price visible-xs' cart-item-total-price>24 000 руб.</div>
+                      <span class='cart__list-item-remove cart__list-item-remove_xs visible-xs'>
+                        <a href='#'>
+                          <img src='images/cross_white.svg' alt=''>
+                        </a>
+                      </span>
+                    </div>
+                    <div cart-item-block='additional'>
+                      <div class='col-lg-3 col-md-3 col-sm-3 hidden-xs'>
+                        <div class='cart__list-item-quantity'>
+                          <span class='cart__list-item-quantity__text'>
+                            Количество
+                          </span>
+                          <div class='cart__list-item-quantity-select'>
+                            <select cart-item-selector='additional'>
+                              <option>1</option>
+                              <option selected>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                              <option>6</option>
+                              <option>7</option>
+                              <option>8</option>
+                              <option>9</option>
+                              <option>10</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='col-lg-2 col-md-3 col-sm-2 hidden-xs'>
+                        <div class='cart__list-item-price' cart-item-total-price>24 000 руб.</div>
+                      </div>
+                      <div class='col-lg-1 col-md-1 col-sm-1 hidden-xs'>
+                        <span class='cart__list-item-remove'>
+                          <img src='images/cross_white.svg' alt=''>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class='cart__list-item' cart-item='2' data-item-price='12000' data-item-total-price='24000'>
+                  <div class='row'>
+                    <div class='col-lg-2 col-md-2 col-sm-2 col-xs-4'>
+                      <img class='cart__list-item-image' src='http://placehold.it/92x92' alt='cart item' width='100%'>
+                    </div>
+                    <div class='col-lg-4 col-md-3 col-sm-4 col-xs-8'>
+                      <div class='cart__list-item-title'>
+                        Моно-серьга имитация тоннеля серебряная с белыми цирконами
+                      </div>
+                      <div class='cart__list-item-option'>
+                        Размер 16
+                      </div>
+                      <div class='cart__list-item-option'>
+                        Арт. 123456
+                      </div>
+                      <div class='cart__list-item-quantity cart__list-item-quantity_xs visible-xs'>
+                        <span class='cart__list-item-quantity__text' cart-item-block='basic'>
+                          Количество
+                        </span>
+                        <div class='cart__list-item-quantity-select'>
+                          <select cart-item-selector='basic'>
+                            <option>1</option>
+                            <option selected>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class='cart__list-item-price visible-xs' cart-item-total-price>24 000 руб.</div>
+                      <span class='cart__list-item-remove cart__list-item-remove_xs visible-xs'>
+                        <a href='#'>
+                          <img src='images/cross_white.svg' alt=''>
+                        </a>
+                      </span>
+                    </div>
+                    <div cart-item-block='additional'>
+                      <div class='col-lg-3 col-md-3 col-sm-3 hidden-xs'>
+                        <div class='cart__list-item-quantity'>
+                          <span class='cart__list-item-quantity__text'>
+                            Количество
+                          </span>
+                          <div class='cart__list-item-quantity-select'>
+                            <select cart-item-selector='additional'>
+                              <option>1</option>
+                              <option selected>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                              <option>6</option>
+                              <option>7</option>
+                              <option>8</option>
+                              <option>9</option>
+                              <option>10</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='col-lg-2 col-md-3 col-sm-2 hidden-xs'>
+                        <div class='cart__list-item-price' cart-item-total-price>24 000 руб.</div>
+                      </div>
+                      <div class='col-lg-1 col-md-1 col-sm-1 hidden-xs'>
+                        <span class='cart__list-item-remove'>
+                          <img src='images/cross_white.svg' alt=''>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class='cart__list-item' cart-item='3' data-item-price='12000' data-item-total-price='24000'>
+                  <div class='row'>
+                    <div class='col-lg-2 col-md-2 col-sm-2 col-xs-4'>
+                      <img class='cart__list-item-image' src='http://placehold.it/92x92' alt='cart item' width='100%'>
+                    </div>
+                    <div class='col-lg-4 col-md-3 col-sm-4 col-xs-8'>
+                      <div class='cart__list-item-title'>
+                        Моно-серьга имитация тоннеля серебряная с белыми цирконами
+                      </div>
+                      <div class='cart__list-item-option'>
+                        Размер 16
+                      </div>
+                      <div class='cart__list-item-option'>
+                        Арт. 123456
+                      </div>
+                      <div class='cart__list-item-quantity cart__list-item-quantity_xs visible-xs'>
+                        <span class='cart__list-item-quantity__text' cart-item-block='basic'>
+                          Количество
+                        </span>
+                        <div class='cart__list-item-quantity-select'>
+                          <select cart-item-selector='basic'>
+                            <option>1</option>
+                            <option selected>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class='cart__list-item-price visible-xs' cart-item-total-price>24 000 руб.</div>
+                      <span class='cart__list-item-remove cart__list-item-remove_xs visible-xs'>
+                        <a href='#'>
+                          <img src='images/cross_white.svg' alt=''>
+                        </a>
+                      </span>
+                    </div>
+                    <div cart-item-block='additional'>
+                      <div class='col-lg-3 col-md-3 col-sm-3 hidden-xs'>
+                        <div class='cart__list-item-quantity'>
+                          <span class='cart__list-item-quantity__text'>
+                            Количество
+                          </span>
+                          <div class='cart__list-item-quantity-select'>
+                            <select cart-item-selector='additional'>
+                              <option>1</option>
+                              <option selected>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                              <option>6</option>
+                              <option>7</option>
+                              <option>8</option>
+                              <option>9</option>
+                              <option>10</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='col-lg-2 col-md-3 col-sm-2 hidden-xs'>
+                        <div class='cart__list-item-price' cart-item-total-price>24 000 руб.</div>
+                      </div>
+                      <div class='col-lg-1 col-md-1 col-sm-1 hidden-xs'>
+                        <span class='cart__list-item-remove'>
+                          <img src='images/cross_white.svg' alt=''>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class='cart__list-item' cart-item='4' data-item-price='12000' data-item-total-price='24000'>
+                  <div class='row'>
+                    <div class='col-lg-2 col-md-2 col-sm-2 col-xs-4'>
+                      <img class='cart__list-item-image' src='http://placehold.it/92x92' alt='cart item' width='100%'>
+                    </div>
+                    <div class='col-lg-4 col-md-3 col-sm-4 col-xs-8'>
+                      <div class='cart__list-item-title'>
+                        Моно-серьга имитация тоннеля серебряная с белыми цирконами
+                      </div>
+                      <div class='cart__list-item-option'>
+                        Размер 16
+                      </div>
+                      <div class='cart__list-item-option'>
+                        Арт. 123456
+                      </div>
+                      <div class='cart__list-item-quantity cart__list-item-quantity_xs visible-xs'>
+                        <span class='cart__list-item-quantity__text' cart-item-block='basic'>
+                          Количество
+                        </span>
+                        <div class='cart__list-item-quantity-select'>
+                          <select cart-item-selector='basic'>
+                            <option>1</option>
+                            <option selected>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class='cart__list-item-price visible-xs' cart-item-total-price>24 000 руб.</div>
+                      <span class='cart__list-item-remove cart__list-item-remove_xs visible-xs'>
+                        <a href='#'>
+                          <img src='images/cross_white.svg' alt=''>
+                        </a>
+                      </span>
+                    </div>
+                    <div cart-item-block='additional'>
+                      <div class='col-lg-3 col-md-3 col-sm-3 hidden-xs'>
+                        <div class='cart__list-item-quantity'>
+                          <span class='cart__list-item-quantity__text'>
+                            Количество
+                          </span>
+                          <div class='cart__list-item-quantity-select'>
+                            <select cart-item-selector='additional'>
+                              <option>1</option>
+                              <option selected>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                              <option>6</option>
+                              <option>7</option>
+                              <option>8</option>
+                              <option>9</option>
+                              <option>10</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='col-lg-2 col-md-3 col-sm-2 hidden-xs'>
+                        <div class='cart__list-item-price' cart-item-total-price>24 000 руб.</div>
+                      </div>
+                      <div class='col-lg-1 col-md-1 col-sm-1 hidden-xs'>
+                        <span class='cart__list-item-remove'>
+                          <img src='images/cross_white.svg' alt=''>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class='cart__list-item' cart-item='5' data-item-price='12000' data-item-total-price='24000'>
+                  <div class='row'>
+                    <div class='col-lg-2 col-md-2 col-sm-2 col-xs-4'>
+                      <img class='cart__list-item-image' src='http://placehold.it/92x92' alt='cart item' width='100%'>
+                    </div>
+                    <div class='col-lg-4 col-md-3 col-sm-4 col-xs-8'>
+                      <div class='cart__list-item-title'>
+                        Моно-серьга имитация тоннеля серебряная с белыми цирконами
+                      </div>
+                      <div class='cart__list-item-option'>
+                        Размер 16
+                      </div>
+                      <div class='cart__list-item-option'>
+                        Арт. 123456
+                      </div>
+                      <div class='cart__list-item-quantity cart__list-item-quantity_xs visible-xs'>
+                        <span class='cart__list-item-quantity__text' cart-item-block='basic'>
+                          Количество
+                        </span>
+                        <div class='cart__list-item-quantity-select'>
+                          <select cart-item-selector='basic'>
+                            <option>1</option>
+                            <option selected>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            <option>7</option>
+                            <option>8</option>
+                            <option>9</option>
+                            <option>10</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class='cart__list-item-price visible-xs' cart-item-total-price>24 000 руб.</div>
+                      <span class='cart__list-item-remove cart__list-item-remove_xs visible-xs'>
+                        <a href='#'>
+                          <img src='images/cross_white.svg' alt=''>
+                        </a>
+                      </span>
+                    </div>
+                    <div cart-item-block='additional'>
+                      <div class='col-lg-3 col-md-3 col-sm-3 hidden-xs'>
+                        <div class='cart__list-item-quantity'>
+                          <span class='cart__list-item-quantity__text'>
+                            Количество
+                          </span>
+                          <div class='cart__list-item-quantity-select'>
+                            <select cart-item-selector='additional'>
+                              <option>1</option>
+                              <option selected>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                              <option>6</option>
+                              <option>7</option>
+                              <option>8</option>
+                              <option>9</option>
+                              <option>10</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class='col-lg-2 col-md-3 col-sm-2 hidden-xs'>
+                        <div class='cart__list-item-price' cart-item-total-price>24 000 руб.</div>
+                      </div>
+                      <div class='col-lg-1 col-md-1 col-sm-1 hidden-xs'>
+                        <span class='cart__list-item-remove'>
+                          <img src='images/cross_white.svg' alt=''>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class='cart__list-item cart__list-item_sum'>
+                  <div class='cart__list-item-sum'>
+                    Итого:
+                    <span cart-total>24 000 руб.</span>
+                  </div>
+                </div>
+              </div>
+              <div class='cart__list-actions'>
+                <div class='row'>
+                  <div class='col-lg-3 col-md-4 hidden-sm hidden-xs'>
+                    <a class='cart-btn cart-btn_clear cart__list-actions-btn' href='welcome.html'>
+                      Очистить корзину
+                    </a>
+                  </div>
+                  <div class='col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-2 col-sm-12'>
+                    <div class='row'>
+                      <div class='col-md-6 col-sm-6 col-xs-12'>
+                        <input class='cart__list-actions-code' type='text' placeholder='Промо-код (если есть)'>
+                      </div>
+                      <div class='col-md-6 col-sm-6 col-xs-12'>
+                        <div class='cart-btn-checkout-wrap'>
+                          <button class='cart-btn-checkout cart__list-actions-btn' type='submit'>
+                            Оформить заказ
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class='application-footer'>
+  <div class='container-fluid'>
+    <div class='application-footer__inner'>
+      <div class='row'>
+        <div class='col-md-8'>
+          <ul class='footer-nav'>
+            <li>
+              <a href='#'>Доставка</a>
+            </li>
+            <li>
+              <a href='#'>Оплата</a>
+            </li>
+            <li>
+              <a href='#'>Контакты</a>
+            </li>
+            <li>
+              <a href='#'>О нас</a>
+            </li>
+            <li>
+              <a href='#'>Новости</a>
+            </li>
+          </ul>
+        </div>
+        <div class='col-md-4'>
+          <ul class='footer-nav'>
+            <li>
+              <a href='#'>Facebook</a>
+            </li>
+            <li>
+              <a class='footer-nav__trigger' href='#instagram' onClick='$(document).trigger("instagram:clicked")'>Instagram</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      <div class='b-theme-switch'>
+  <div class='b-theme-switch__item' ks-theme-switcher='' data-classlist='theme-basic' data-logourl='images/wannabe/logo.png'>Basic</div>
+  <div class='b-theme-switch__item' ks-theme-switcher='' data-classlist='theme-basic theme-basic_black' data-logourl='images/wannabe/logo.png'>Basic dark</div>
+  <div class='b-theme-switch__item' ks-theme-switcher='' data-classlist='theme-basic style-wannabe' data-logourl='images/wannabe/logo.svg'>Wannabe</div>
+  <div class='b-theme-switch__item' ks-theme-switcher='' data-classlist='theme-basic style-sugar' data-logourl='images/sugar/logo.png'>Sugar</div>
+  <div class='b-theme-switch__item' ks-theme-switcher='' data-classlist='theme-basic style-cc' data-logourl='images/cc/logo.png'>Citycicle</div>
+  <div class='b-theme-switch__item' ks-theme-switcher='' data-classlist='theme-basic style-etc' data-logourl='images/etc/logo.png'>etc</div>
+</div>
+    </div>
+    <script src='scripts/vendor.js'></script>
+    <script src='scripts/client.js'></script>
+  </body>
+</html>
