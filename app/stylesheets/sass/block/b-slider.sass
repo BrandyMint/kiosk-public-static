@@ -4,9 +4,15 @@
     display: block
     img
       max-width: 100%
+      vertical-align: top
+
+  .owl-pagination
+    display: none
 
   &_thumbs
     @include grid-media-query("lap")
+      display: none !important
+    @include grid-media-query("palm")
       display: none !important
     .owl-item
       transition: opacity .2s ease
@@ -18,8 +24,10 @@
     max-width: 1000px
     margin: 0 auto
     overflow: hidden
+    
     .owl-controls
       position: static
     .b-slider
       &__item
         text-align: center
+        background-color: #CCCCCC

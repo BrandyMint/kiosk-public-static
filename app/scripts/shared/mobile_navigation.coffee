@@ -1,10 +1,9 @@
 $ ->
   # mobile navigation
 
-  # TODO Что делает этот код?
   menuCopy = $('#nav')
   menuCopy.mmenu({
-    classes: "mm-slide",
+    classes: false,
     counters: false
   })
 

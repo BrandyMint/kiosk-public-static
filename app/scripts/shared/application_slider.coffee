@@ -12,6 +12,7 @@ $ ->
     if $(this).hasClass 'b-slider_promo'
       options['singleItem'] = true
       options['autoHeight'] = true
+      options['autoPlay'] = false
     if $(this).hasClass 'application-slider_photos'
       options['singleItem'] = false
       options['items'] = 3

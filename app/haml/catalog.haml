@@ -28,6 +28,16 @@
                   %h2.b-item__name Моно-серьга имитация тоннеля серебряная с белыми цирконами
                   .b-item__price 8 900 руб.
 
+          .b-item-list__paginator
+            .b-paginator
+              - for i in [1..4]
+                -if i == 1
+                  %span.b-paginator__item.b-paginator__item_current{href: '#'}
+                    = i
+                -else
+                  %a.b-paginator__item{href: '#'}
+                    = i
+
       +include 'app/haml/shared/_footer.haml'
 
     %script{src: 'scripts/vendor.js'}

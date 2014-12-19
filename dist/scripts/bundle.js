@@ -725,6 +725,7 @@ $(function() {
     if ($(this).hasClass('b-slider_promo')) {
       options['singleItem'] = true;
       options['autoHeight'] = true;
+      options['autoPlay'] = false;
     }
     if ($(this).hasClass('application-slider_photos')) {
       options['singleItem'] = false;
@@ -939,7 +940,7 @@ $(function() {
   var menuCopy, navOpen;
   menuCopy = $('#nav');
   menuCopy.mmenu({
-    classes: "mm-slide",
+    classes: false,
     counters: false
   });
   navOpen = $('#navopen');

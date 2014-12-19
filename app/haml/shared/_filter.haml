@@ -1,4 +1,10 @@
 .b-full-filter
+  
+  %input.b-full-filter__toggle#filter-toggle{type: 'checkbox'}
+  %label.b-full-filter__trigger{for: 'filter-toggle'}
+    %span.b-btn.b-full-filter__trigger__action.b-full-filter__trigger__action_open Показать фильтр
+    %span.b-btn.b-full-filter__trigger__action.b-full-filter__trigger__action_close Скрыть фильтр
+  
   %ul.b-full-filter__list-wrap
     %li.b-full-filter__item
       .b-full-filter__item__title Текущий выбор

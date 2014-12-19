@@ -7,17 +7,9 @@
       
       +include 'app/haml/shared/_navbar.haml'
 
-      .b-slider.b-slider_promo(application-slider)
-        .b-slider__item
-          %img{src: 'images/slidertest.jpg', alt: ''}
-        .b-slider__item
-          %img{src: 'http://placehold.it/1000x300', alt: ''}
-        .b-slider__item
-          %img{src: 'http://placehold.it/400x400', alt: ''}
-
-      %section.b-item-list
+      %section.b-item-list.b-item-list_four-in-row
         .b-item-list__content
-          - for i in [1..6]
+          - for i in [1..8]
             .b-item-list__item
               %a.b-item{href: 'product.html'}
                 .b-item__pic-wrap

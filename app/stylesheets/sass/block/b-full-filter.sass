@@ -3,7 +3,10 @@
     list-style: none
     padding: 0
     margin: 0
-    
+    @include grid-media-query("lap")
+      display: none
+    @include grid-media-query("palm")
+      display: none
   &__submit
     max-width: 125px
 
@@ -86,6 +89,35 @@
       color: #fff
       text-decoration: none
       border-bottom: 1px solid
+
+  &__trigger
+    cursor: pointer
+    display: none
+    margin-bottom: 20px
+    @include grid-media-query("lap")
+      display: block
+    @include grid-media-query("palm")
+      display: block
+    &__action
+      display: block
+      &_close
+        display: none
+
+  &__toggle
+    visibility: hidden
+    height: 0
+    overflow: hidden
+    display: block
+    &:checked ~ 
+      .b-full-filter__trigger
+        .b-full-filter__trigger__action_close
+          display: block
+        .b-full-filter__trigger__action_open
+          display: none
+      .b-full-filter__list-wrap
+        display: block
+
+  
 
   // @media (max-width: 750px)
   //   &__list-wrap

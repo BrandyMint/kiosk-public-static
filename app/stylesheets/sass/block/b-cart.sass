@@ -14,23 +14,27 @@
 
   &__message
     padding: 38px 0
-    font-size: 1.571em
+    
     max-width: 800px
     margin: 47px auto 0
     text-align: center
     p
       margin: 0 0 100px
-    a
-      padding-bottom: 6px
-      color: #121212
-      font-weight: bold
-      border-bottom: 1px solid #e2e2e2
+      font-size: 1.571em
+    // a
+    //   padding-bottom: 6px
+    //   color: #121212
+    //   font-weight: bold
+    //   border-bottom: 1px solid #e2e2e2
 
   &__list,
   &__total-sum,
   &__action
     margin: 47px 60px 0 100px
     @include grid-media-query("lap")
+      margin-left: 0
+      margin-right: 0
+    @include grid-media-query("palm")
       margin-left: 0
       margin-right: 0
 
@@ -61,6 +65,8 @@
         @extend %palm--one-whole
         @extend %push--desk--three-twelfths
         text-align: right
+        @include grid-media-query("palm")
+          padding-top: 10px
 
       &-back,
       &-submit
@@ -97,6 +103,7 @@
   &__item
     @extend %grid
     padding-bottom: 25px
+    position: relative
 
     &__img
       width: 100%
@@ -105,6 +112,8 @@
     &__option
       margin: 0
       font-size: 1.143em
+      @include grid-media-query("palm")
+        font-size: 1em
 
     &__option
       margin-top: 3px
@@ -119,6 +128,7 @@
         width: 90px
       &__select
         margin-left: 90px
+        max-width: 60px
         select
           width: 100%
           box-sizing: border-box
@@ -133,6 +143,10 @@
       transition: background-color 0.2s ease
       img
         width: 100%
+      @include grid-media-query("palm")
+        position: absolute
+        right: 0
+        top: 0
 
     &__col
       &-img,
@@ -144,27 +158,34 @@
       
       &-img
         @extend %two-twelfths
-        @extend %portable--four-twelfths
+        @extend %lap--four-twelfths
+        @extend %palm--one-third
 
       &-content
         @extend %four-twelfths
-        @extend %portable--eight-twelfths
+        @extend %lap--eight-twelfths
+        @extend %palm--two-thirds
+        @include grid-media-query("palm")
+          padding-right: 30px
 
-      &-quantity
-        @extend %three-twelfths
-        @extend %portable--four-twelfths
+      // &-quantity
+      //   @extend %three-twelfths
+      //   @extend %portable--four-twelfths
+
 
       &-price
         @extend %two-twelfths
-        @extend %portable--four-twelfths
+        @extend %lap--four-twelfths
+        @extend %palm--one-half
 
       &-quantity
-        @extend %one-twelfths
-        @extend %portable--one-twelfths
+        @extend %three-twelfths
+        @extend %lap--four-twelfths
+        @extend %palm--one-half
 
       &-remove
         @extend %one-twelfth
-        @extend %portable--one-twelfths
+        @extend %lap--one-twelfths
 
   &__form
     max-width: 580px
