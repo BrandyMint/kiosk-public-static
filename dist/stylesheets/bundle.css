@@ -13175,6 +13175,10 @@ html.mm-opening .mm-page, html.mm-opening #mm-blocker {
   .style-wannabe .application-footer {
     border-top: 1px solid #EFEFEF;
     padding-top: 0; }
+  /* line 55, /Users/heretge/code/merchantly/vendor/static/kiosk-public/app/stylesheets/sass/style-wannabe */
+  .style-wannabe .cart__form__delivery-address {
+    margin: 10px 0;
+    font-size: 13px; }
 
 /* line 3, /Users/heretge/code/merchantly/vendor/static/kiosk-public/app/stylesheets/sass/style-cc */
 .style-cc {
