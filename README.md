@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/BrandyMint/kiosk-public-static.svg)](https://travis-ci.org/BrandyMint/kiosk-public-static)
+
 Установка и настройка
 ---------------------
 
